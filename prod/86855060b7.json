@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "Alias": {
+      "errorMessage": "MercadoPago Alias (CVU/CBU) must be have between 6 and 22 characters",
+      "maxLength": 22,
+      "minLength": 6,
+      "title": "MercadoPago Alias (CVU/CBU)",
+      "type": "string"
+    }
+  },
+  "required": ["Alias"],
+  "metadata": {
+    "channels": [
+      {
+        "country": "AR",
+        "direction": "Out",
+        "finServiceID": "b9s4g",
+        "paymentMethodType": "IdentifierAlias"
+      }
+    ],
+    "contentHash": "86855060b7ea3e205167706d9ed9a61f571e70c52d83e5078bc381830de85a15",
+    "generatedAt": "2026-01-16T08:45:23Z"
+  }
+}

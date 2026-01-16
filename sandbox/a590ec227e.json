@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "Pix": {
+      "errorMessage": "pix key must not be greater than 255 characters",
+      "maxLength": 255,
+      "title": "Pix key",
+      "type": "string"
+    }
+  },
+  "required": ["Pix"],
+  "metadata": {
+    "channels": [
+      {
+        "country": "BR",
+        "direction": "Out",
+        "finServiceID": "b9s4g",
+        "paymentMethodType": "IdentifierPix"
+      }
+    ],
+    "contentHash": "a590ec227e6f30624c007492b2f75d69c7e46278f030b9cecdf55adbdc492d5c",
+    "generatedAt": "2026-01-16T08:44:55Z"
+  }
+}

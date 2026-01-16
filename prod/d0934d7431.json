@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "BeneficiaryName": {
+      "properties": {
+        "FirstName": {
+          "errorMessage": "First Name must be between 1 and 50 characters",
+          "maxLength": 50,
+          "minLength": 1,
+          "title": "First Name",
+          "type": "string"
+        },
+        "LastName": {
+          "errorMessage": "Last Name must not be longer than 50 characters",
+          "maxLength": 50,
+          "title": "Last Name",
+          "type": "string"
+        }
+      },
+      "required": ["FirstName"],
+      "title": "Beneficiary Name",
+      "type": "object"
+    },
+    "QrPayload": {
+      "maxLength": 300,
+      "minLength": 3,
+      "title": "Pix Copy \u0026 Paste code",
+      "type": "string",
+      "x-scan-type": "qr"
+    }
+  },
+  "required": ["BeneficiaryName", "QrPayload"],
+  "metadata": {
+    "channels": [
+      {
+        "country": "BR",
+        "direction": "Out",
+        "finServiceID": "b9s4g",
+        "paymentMethodType": "IdentifierQr"
+      }
+    ],
+    "contentHash": "d0934d743175ca2cc4ba5f9228f504e84112162484167ba95bca33f0cde88993",
+    "generatedAt": "2026-01-16T08:45:23Z"
+  }
+}

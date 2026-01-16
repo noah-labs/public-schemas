@@ -1,0 +1,101 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "AccountHolderAddress": {
+      "properties": {
+        "Address": {
+          "maxLength": 70,
+          "minLength": 3,
+          "title": "Address",
+          "type": "string"
+        },
+        "City": {
+          "maxLength": 35,
+          "title": "Town",
+          "type": "string"
+        },
+        "State": {
+          "maxLength": 35,
+          "title": "State/Province",
+          "type": "string"
+        }
+      },
+      "required": ["State", "City", "Address"],
+      "title": "Account Holder Address",
+      "type": "object"
+    },
+    "TaxID": {
+      "maxLength": 11,
+      "minLength": 11,
+      "title": "Tax ID",
+      "type": "string"
+    },
+    "PaymentPurpose": {
+      "enum": [
+        "business insurance",
+        "family support",
+        "education",
+        "gift and donation",
+        "medical treatment",
+        "maintenance expenses",
+        "travel",
+        "small value remittance",
+        "construction expenses",
+        "exported goods",
+        "service charges",
+        "loan payment",
+        "property purchase",
+        "property rental",
+        "shares investment",
+        "fund investment",
+        "tax payment",
+        "personal transfer",
+        "salary payment",
+        "other fees",
+        "other",
+        "own account abroad",
+        "liberalized remittance",
+        "hotel accommodation",
+        "advertising expenses",
+        "advisory fees",
+        "insurance claims",
+        "delivery fees",
+        "office expenses",
+        "royalty fees",
+        "transportation fees",
+        "utility bills"
+      ],
+      "title": "Payment Purpose",
+      "type": "string"
+    },
+    "BankDetails": {
+      "properties": {
+        "AccountNumber": {
+          "maxLength": 22,
+          "minLength": 22,
+          "title": "Account Number (CBU)",
+          "type": "string"
+        }
+      },
+      "required": ["AccountNumber"],
+      "title": "Bank Details",
+      "type": "object"
+    }
+  },
+  "required": ["AccountHolderAddress", "TaxID", "PaymentPurpose", "BankDetails"],
+  "metadata": {
+    "channels": [
+      {
+        "country": "AR",
+        "direction": "Out",
+        "finServiceID": "x5q2r",
+        "paymentMethodType": "BankLocal"
+      }
+    ],
+    "contentHash": "060107b6fd3f4dbd3b9f675a0c57528077d99dadb2a939d63dacf6ab01462c9a",
+    "generatedAt": "2026-01-16T08:44:55Z"
+  }
+}

@@ -1,0 +1,294 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "AccountHolderName": {
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "AccountHolderType": {
+                "const": "Individual"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "Name": {
+                "properties": {
+                  "FirstName": {
+                    "errorMessage": "First Name must be between 1 and 255 characters",
+                    "maxLength": 255,
+                    "minLength": 1,
+                    "title": "First Name",
+                    "type": "string"
+                  },
+                  "LastName": {
+                    "errorMessage": "Last Name must be between 1 and 255 characters",
+                    "maxLength": 255,
+                    "minLength": 1,
+                    "title": "Last Name",
+                    "type": "string"
+                  }
+                },
+                "required": ["FirstName", "LastName"],
+                "title": "Full Name",
+                "type": "object"
+              }
+            },
+            "required": ["Name"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "AccountHolderType": {
+                "const": "Business"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "Name": {
+                "errorMessage": "Name must be between 1 and 255 characters",
+                "maxLength": 255,
+                "minLength": 1,
+                "title": "Business Name",
+                "type": "string"
+              }
+            },
+            "required": ["Name"]
+          }
+        }
+      ],
+      "properties": {
+        "AccountHolderType": {
+          "enum": ["Individual", "Business"],
+          "title": "Account Holder Type",
+          "type": "string"
+        }
+      },
+      "required": ["AccountHolderType"],
+      "title": "Account Holder Details",
+      "type": "object"
+    },
+    "BankDetails": {
+      "properties": {
+        "AccountNumber": {
+          "maxLength": 34,
+          "minLength": 15,
+          "pattern": "^[A-Z]{2}\\d{2}(?: ?[A-Z0-9]){11,30}$",
+          "title": "IBAN",
+          "type": "string"
+        }
+      },
+      "required": ["AccountNumber"],
+      "title": "Bank Details",
+      "type": "object"
+    },
+    "Reference": {
+      "description": "This reference will appear on the beneficiary's bank statement",
+      "errorMessage": "Reference must be between 2 and 140 characters and contain only SEPA-compliant characters (A-Z, a-z, 0-9, + - / ? . : , ( ) ')",
+      "maxLength": 140,
+      "minLength": 2,
+      "pattern": "^[A-Za-z0-9+-/?.:,()'][A-Za-z0-9+-/?.:,()' ]{0,138}[A-Za-z0-9+-/?.:,()']$",
+      "title": "Reference",
+      "type": "string"
+    }
+  },
+  "required": ["AccountHolderName", "BankDetails", "Reference"],
+  "metadata": {
+    "channels": [
+      {
+        "country": "AT",
+        "direction": "Out",
+        "finServiceID": "m1v7p",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "BE",
+        "direction": "Out",
+        "finServiceID": "m1v7p",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "BG",
+        "direction": "Out",
+        "finServiceID": "m1v7p",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "CH",
+        "direction": "Out",
+        "finServiceID": "m1v7p",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "CY",
+        "direction": "Out",
+        "finServiceID": "m1v7p",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "CZ",
+        "direction": "Out",
+        "finServiceID": "m1v7p",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "DE",
+        "direction": "Out",
+        "finServiceID": "m1v7p",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "DK",
+        "direction": "Out",
+        "finServiceID": "m1v7p",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "EE",
+        "direction": "Out",
+        "finServiceID": "m1v7p",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "ES",
+        "direction": "Out",
+        "finServiceID": "m1v7p",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "FI",
+        "direction": "Out",
+        "finServiceID": "m1v7p",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "FR",
+        "direction": "Out",
+        "finServiceID": "m1v7p",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "GB",
+        "direction": "Out",
+        "finServiceID": "m1v7p",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "GR",
+        "direction": "Out",
+        "finServiceID": "m1v7p",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "HR",
+        "direction": "Out",
+        "finServiceID": "m1v7p",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "HU",
+        "direction": "Out",
+        "finServiceID": "m1v7p",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "IE",
+        "direction": "Out",
+        "finServiceID": "m1v7p",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "IS",
+        "direction": "Out",
+        "finServiceID": "m1v7p",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "IT",
+        "direction": "Out",
+        "finServiceID": "m1v7p",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "LI",
+        "direction": "Out",
+        "finServiceID": "m1v7p",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "LT",
+        "direction": "Out",
+        "finServiceID": "m1v7p",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "LU",
+        "direction": "Out",
+        "finServiceID": "m1v7p",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "LV",
+        "direction": "Out",
+        "finServiceID": "m1v7p",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "MT",
+        "direction": "Out",
+        "finServiceID": "m1v7p",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "NL",
+        "direction": "Out",
+        "finServiceID": "m1v7p",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "NO",
+        "direction": "Out",
+        "finServiceID": "m1v7p",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "PL",
+        "direction": "Out",
+        "finServiceID": "m1v7p",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "PT",
+        "direction": "Out",
+        "finServiceID": "m1v7p",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "RO",
+        "direction": "Out",
+        "finServiceID": "m1v7p",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "SI",
+        "direction": "Out",
+        "finServiceID": "m1v7p",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "SK",
+        "direction": "Out",
+        "finServiceID": "m1v7p",
+        "paymentMethodType": "BankSepa"
+      }
+    ],
+    "contentHash": "962e24c848adad7573e043df2012c633a3053524d2e18805979f66f48f7bd229",
+    "generatedAt": "2026-01-16T08:45:23Z"
+  }
+}

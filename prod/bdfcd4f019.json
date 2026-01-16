@@ -1,0 +1,223 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "BankDetails": {
+      "properties": {
+        "AccountType": {
+          "enum": ["Checking", "Savings"],
+          "title": "Account Type",
+          "type": "string"
+        },
+        "AccountNumber": {
+          "maxLength": 34,
+          "minLength": 15,
+          "pattern": "^[A-Z]{2}\\d{2}(?: ?[A-Z0-9]){11,30}$",
+          "title": "IBAN",
+          "type": "string"
+        }
+      },
+      "required": ["AccountType", "AccountNumber"],
+      "title": "Bank Details",
+      "type": "object"
+    },
+    "Reference": {
+      "description": "This reference will appear on the beneficiary's bank statement",
+      "errorMessage": "Reference must be between 2 and 40 characters and contain only SEPA-compliant characters (A-Z, a-z, 0-9, + - / ? . : , ( ) and spaces)",
+      "maxLength": 40,
+      "minLength": 2,
+      "pattern": "^[A-Za-z0-9+-/?.:,()][A-Za-z0-9+-/?.:,() ]{0,38}[A-Za-z0-9+-/?.:,()]$",
+      "title": "Reference",
+      "type": "string"
+    }
+  },
+  "required": ["BankDetails"],
+  "metadata": {
+    "channels": [
+      {
+        "country": "AT",
+        "direction": "Out",
+        "finServiceID": "c2j6s",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "BE",
+        "direction": "Out",
+        "finServiceID": "c2j6s",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "BG",
+        "direction": "Out",
+        "finServiceID": "c2j6s",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "CH",
+        "direction": "Out",
+        "finServiceID": "c2j6s",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "CY",
+        "direction": "Out",
+        "finServiceID": "c2j6s",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "CZ",
+        "direction": "Out",
+        "finServiceID": "c2j6s",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "DE",
+        "direction": "Out",
+        "finServiceID": "c2j6s",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "DK",
+        "direction": "Out",
+        "finServiceID": "c2j6s",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "EE",
+        "direction": "Out",
+        "finServiceID": "c2j6s",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "ES",
+        "direction": "Out",
+        "finServiceID": "c2j6s",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "FI",
+        "direction": "Out",
+        "finServiceID": "c2j6s",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "FR",
+        "direction": "Out",
+        "finServiceID": "c2j6s",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "GR",
+        "direction": "Out",
+        "finServiceID": "c2j6s",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "HR",
+        "direction": "Out",
+        "finServiceID": "c2j6s",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "HU",
+        "direction": "Out",
+        "finServiceID": "c2j6s",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "IE",
+        "direction": "Out",
+        "finServiceID": "c2j6s",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "IS",
+        "direction": "Out",
+        "finServiceID": "c2j6s",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "IT",
+        "direction": "Out",
+        "finServiceID": "c2j6s",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "LI",
+        "direction": "Out",
+        "finServiceID": "c2j6s",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "LT",
+        "direction": "Out",
+        "finServiceID": "c2j6s",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "LU",
+        "direction": "Out",
+        "finServiceID": "c2j6s",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "LV",
+        "direction": "Out",
+        "finServiceID": "c2j6s",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "MT",
+        "direction": "Out",
+        "finServiceID": "c2j6s",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "NL",
+        "direction": "Out",
+        "finServiceID": "c2j6s",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "NO",
+        "direction": "Out",
+        "finServiceID": "c2j6s",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "PL",
+        "direction": "Out",
+        "finServiceID": "c2j6s",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "PT",
+        "direction": "Out",
+        "finServiceID": "c2j6s",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "RO",
+        "direction": "Out",
+        "finServiceID": "c2j6s",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "SI",
+        "direction": "Out",
+        "finServiceID": "c2j6s",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "country": "SK",
+        "direction": "Out",
+        "finServiceID": "c2j6s",
+        "paymentMethodType": "BankSepa"
+      }
+    ],
+    "contentHash": "bdfcd4f0194f02786e26b04b90ba508b4f6034fd5b9da0f50269c5baa3c603ff",
+    "generatedAt": "2026-01-16T08:45:23Z"
+  }
+}

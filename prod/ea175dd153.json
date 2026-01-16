@@ -1,0 +1,165 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "AccountHolderAddress": {
+      "properties": {
+        "Address": {
+          "maxLength": 70,
+          "minLength": 3,
+          "title": "Address",
+          "type": "string"
+        },
+        "City": {
+          "maxLength": 35,
+          "title": "Town",
+          "type": "string"
+        },
+        "State": {
+          "maxLength": 35,
+          "title": "State/Province",
+          "type": "string"
+        }
+      },
+      "required": ["State", "City", "Address"],
+      "title": "Account Holder Address",
+      "type": "object"
+    },
+    "TaxID": {
+      "pattern": "^\\d{11}$",
+      "title": "Tax ID (CPF)",
+      "type": "string"
+    },
+    "PhoneNumber": {
+      "pattern": "^\\+[0-9]{6,15}$",
+      "title": "Phone Number",
+      "type": "string"
+    },
+    "PaymentPurpose": {
+      "enum": [
+        "business insurance",
+        "family support",
+        "education",
+        "gift and donation",
+        "medical treatment",
+        "maintenance expenses",
+        "travel",
+        "small value remittance",
+        "construction expenses",
+        "exported goods",
+        "service charges",
+        "loan payment",
+        "property purchase",
+        "property rental",
+        "shares investment",
+        "fund investment",
+        "tax payment",
+        "personal transfer",
+        "salary payment",
+        "other fees",
+        "other",
+        "own account abroad",
+        "liberalized remittance",
+        "hotel accommodation",
+        "advertising expenses",
+        "advisory fees",
+        "insurance claims",
+        "delivery fees",
+        "office expenses",
+        "royalty fees",
+        "transportation fees",
+        "utility bills"
+      ],
+      "title": "Payment Purpose",
+      "type": "string"
+    },
+    "IdentifierDetails": {
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "IdentifierType": {
+                "const": "Email"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "Identifier": {
+                "errorMessage": "Email must be a valid email address",
+                "format": "email",
+                "title": "Identifier",
+                "type": "string"
+              }
+            },
+            "required": ["Identifier"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "IdentifierType": {
+                "const": "UUID"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "Identifier": {
+                "errorMessage": "Alias must be between 3 and 32 characters",
+                "maxLength": 32,
+                "minLength": 3,
+                "title": "Identifier",
+                "type": "string"
+              }
+            },
+            "required": ["Identifier"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "IdentifierType": {
+                "enum": ["PhoneNumber", "TaxID"]
+              }
+            }
+          },
+          "then": {
+            "properties": {}
+          }
+        }
+      ],
+      "properties": {
+        "IdentifierType": {
+          "enum": ["PhoneNumber", "Email", "TaxID", "UUID"],
+          "title": "Identifier Type",
+          "type": "string"
+        }
+      },
+      "required": ["IdentifierType"],
+      "title": "Identifier Details",
+      "type": "object"
+    }
+  },
+  "required": [
+    "AccountHolderAddress",
+    "TaxID",
+    "PhoneNumber",
+    "PaymentPurpose",
+    "IdentifierDetails"
+  ],
+  "metadata": {
+    "channels": [
+      {
+        "country": "BR",
+        "direction": "Out",
+        "finServiceID": "x5q2r",
+        "paymentMethodType": "IdentifierPix"
+      }
+    ],
+    "contentHash": "ea175dd1531a43eba6b56aab19a2379c7f42c2c539831b9030a31906e1c5ec68",
+    "generatedAt": "2026-01-16T08:45:23Z"
+  }
+}

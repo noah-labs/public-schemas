@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "AcceptTerms": {
+      "description": "Terms \u0026 Conditions: https://www.lead.bank/privacy-and-terms",
+      "enum": [true],
+      "title": "I agree",
+      "type": "boolean"
+    }
+  },
+  "required": [],
+  "metadata": {
+    "channels": [
+      {
+        "country": "US",
+        "direction": "In",
+        "finServiceID": "t6f2c",
+        "paymentMethodType": "BankAch"
+      },
+      {
+        "country": "US",
+        "direction": "In",
+        "finServiceID": "t6f2c",
+        "paymentMethodType": "BankFedwire"
+      }
+    ],
+    "contentHash": "457194ba66614b69cb814bd6337f4978c952d06aeb06d81eb966ec42cd873564",
+    "generatedAt": "2026-01-16T08:45:23Z"
+  }
+}
