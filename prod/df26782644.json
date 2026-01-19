@@ -1,0 +1,111 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "BankDetails": {
+      "properties": {
+        "AccountNumber": {
+          "maxLength": 20,
+          "minLength": 5,
+          "title": "Account Number",
+          "type": "string"
+        },
+        "Bank": {
+          "enum": [
+            "First National Bank Ghana Limited",
+            "OMNIBANK GHANA LIMITED",
+            "GHL Bank Ltd",
+            "Consolidated Bank Ghana Limited",
+            "Standard Chartered Bk Ghana Int",
+            "UNITED BANK FOR AFRICA (GHANA) LTD",
+            "Agricultural Development Bank Limited",
+            "Bank of Ghana",
+            "ABSA (Barclays Bank of Ghana Limited)",
+            "GCB Bank Limited",
+            "Universal Merchant Bank",
+            "National Investment Bank Ltd",
+            "Societe Generale Ghana Limited",
+            "Standard Chartered Bank Ghana Limited",
+            "Societe Generale Haitienne de Banque S.A. (Sogebank)",
+            "BNG Bank N V",
+            "Cal Bank Limited",
+            "DBS Group Holdings Ltd",
+            "Financial Brokerage Group",
+            "Arb Apex Bank Limited",
+            "Stock Exchange Of Hong Kong Ltd.",
+            "Guaranty Trust Bank (Ghana) Ltd",
+            "Fidelity Bank Ghana Ltd.",
+            "Banque Sahelo-Saharienne Pour LInvestissment et le Commerce (Ghana) Lt",
+            "Guaranty Trust Bank (UK) Limited",
+            "Bank of Baroda (Ghana) Limited",
+            "Gatehouse Bank PLC",
+            "Access Bank (Ghana) PLC",
+            "Noble Group Ltd",
+            "Ghazanfar Bank",
+            "Social Security And National Insurance Trust",
+            "Energy Bank Ghana Limited",
+            "Ghana Revenue Authority",
+            "Pacific Eagle Asset Management Ltd",
+            "Independent Petroleum Group",
+            "Controller And Accountant-GeneralS Department",
+            "Partners Group AG",
+            "Compass Global Holdings Pty Ltd",
+            "Global Exchange Centre Limited",
+            "Volta River Authority",
+            "Norma Group Holding",
+            "Tronox Global Holdings Pty Limited",
+            "Cqlt Saargummi Technologies SAR.l",
+            "Pigeon Corporation",
+            "Gebr. Heinemann Se And Co. KG",
+            "Cgnpc Huasheng Investment Limited",
+            "Premium Bank Ghana Limited",
+            "G.H. Financials Ltd",
+            "Asahi Group Holdings Ltd.",
+            "Heritage Bank Limited",
+            "Grabtaxi Holdings PTE LTD",
+            "Al Ghurair International Exchange",
+            "Dogan Sirketler Grubu Holding AS",
+            "GN Bank Limited",
+            "Banque Populaire de Rabat-Kenitra",
+            "Prudential Bank Ltd",
+            "First Atlantic Bank Ltd",
+            "FBN Bank (Ghana) Limited",
+            "Privredna banka Zagreb d.d.",
+            "Ghana International Bank plc",
+            "Republic Bank (Ghana) Ltd",
+            "Guaranty Trust Bank Kenya Limited",
+            "Stanbic Bank Ghana Limited",
+            "Bank of Africa - Ghana",
+            "ZENITH BANK (GHANA) LIMITED",
+            "FINANCIJSKA AGENCIJA",
+            "Ecobank Ghana (GH130100)"
+          ],
+          "title": "Bank",
+          "type": "string"
+        }
+      },
+      "required": ["AccountNumber", "Bank"],
+      "title": "Bank Details",
+      "type": "object"
+    },
+    "PaymentPurpose": {
+      "title": "Payment Purpose",
+      "type": "string"
+    }
+  },
+  "required": ["BankDetails", "PaymentPurpose"],
+  "metadata": {
+    "channels": [
+      {
+        "country": "GH",
+        "direction": "Out",
+        "finServiceID": "h5j1y",
+        "paymentMethodType": "BankLocal"
+      }
+    ],
+    "contentHash": "df267826441b6815377e7b88bd9065fd69a511e5ec84b0b1ec76a2634b0a3d1e",
+    "generatedAt": "2026-01-16T20:22:09Z"
+  }
+}
