@@ -156,21 +156,9 @@
         "direction": "Out",
         "finServiceID": "k7m2x",
         "paymentMethodType": "BankFedwire"
-      },
-      {
-        "country": "XX",
-        "direction": "In",
-        "finServiceID": "k7m2x",
-        "paymentMethodType": "BankFedwire"
-      },
-      {
-        "country": "XX",
-        "direction": "Out",
-        "finServiceID": "k7m2x",
-        "paymentMethodType": "BankFedwire"
       }
     ],
     "contentHash": "1a353c7f6da51907b0ca742aa05af9db169fe2454d4c36b237a04474eecf1658",
-    "generatedAt": "2026-01-22T11:55:57Z"
+    "generatedAt": "2026-01-22T11:56:01Z"
   }
 }
