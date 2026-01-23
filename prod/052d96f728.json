@@ -124,9 +124,21 @@
         "direction": "Out",
         "finServiceID": "k7m2x",
         "paymentMethodType": "BankAch"
+      },
+      {
+        "country": "XX",
+        "direction": "In",
+        "finServiceID": "k7m2x",
+        "paymentMethodType": "BankAch"
+      },
+      {
+        "country": "XX",
+        "direction": "Out",
+        "finServiceID": "k7m2x",
+        "paymentMethodType": "BankAch"
       }
     ],
     "contentHash": "052d96f7281186604629263c2716ec42768fcb8095e97e3c93c086d45195d964",
-    "generatedAt": "2026-01-22T16:48:17Z"
+    "generatedAt": "2026-01-23T13:27:02Z"
   }
 }
