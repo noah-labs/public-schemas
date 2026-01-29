@@ -93,10 +93,6 @@
       "title": "Account Holder Name",
       "type": "object"
     },
-    "Issuer": {
-      "title": "Bank Name",
-      "type": "string"
-    },
     "PaymentPurpose": {
       "enum": [
         "Payment for Services",
@@ -136,71 +132,17 @@
       "type": "string"
     }
   },
-  "required": ["BankDetails", "AccountHolderName", "Issuer", "PaymentPurpose"],
+  "required": ["BankDetails", "AccountHolderName", "PaymentPurpose"],
   "metadata": {
     "channels": [
       {
-        "country": "ID",
-        "direction": "Out",
-        "finServiceID": "y7n3f",
-        "paymentMethodType": "BankSwift"
-      },
-      {
-        "country": "IN",
-        "direction": "Out",
-        "finServiceID": "y7n3f",
-        "paymentMethodType": "BankSwift"
-      },
-      {
-        "country": "KR",
-        "direction": "Out",
-        "finServiceID": "y7n3f",
-        "paymentMethodType": "BankSwift"
-      },
-      {
-        "country": "LK",
-        "direction": "Out",
-        "finServiceID": "y7n3f",
-        "paymentMethodType": "BankSwift"
-      },
-      {
-        "country": "PH",
-        "direction": "Out",
-        "finServiceID": "y7n3f",
-        "paymentMethodType": "BankSwift"
-      },
-      {
-        "country": "TH",
-        "direction": "Out",
-        "finServiceID": "y7n3f",
-        "paymentMethodType": "BankSwift"
-      },
-      {
-        "country": "TR",
-        "direction": "Out",
-        "finServiceID": "y7n3f",
-        "paymentMethodType": "BankSwift"
-      },
-      {
-        "country": "VN",
-        "direction": "Out",
-        "finServiceID": "y7n3f",
-        "paymentMethodType": "BankSwift"
-      },
-      {
-        "country": "XX",
-        "direction": "Out",
-        "finServiceID": "y7n3f",
-        "paymentMethodType": "BankSwift"
-      },
-      {
-        "country": "ZA",
+        "country": "MY",
         "direction": "Out",
         "finServiceID": "y7n3f",
         "paymentMethodType": "BankSwift"
       }
     ],
-    "contentHash": "6c71f00db7579b36ae76562790db81e3e824955664a87bc76f26457ceaad5817",
+    "contentHash": "354b51683900329d0c90252f3f8b51ed13501dbc525d862c30a5b32a1d2b9648",
     "generatedAt": "2026-01-29T16:35:09Z"
   }
 }
