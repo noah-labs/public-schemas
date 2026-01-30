@@ -87,21 +87,21 @@ These schemas describe the data required to complete a payment. Use them with fo
 | SK      | BankSepa        | Out       | m1v7p      | [962e24c848.json](./962e24c848.json) |
 | TH      | BankSwift       | Out       | y7n3f      | [6c71f00db7.json](./6c71f00db7.json) |
 | TR      | BankSwift       | Out       | y7n3f      | [6c71f00db7.json](./6c71f00db7.json) |
-| US      | BankAch         | In        | k7m2x      | [052d96f728.json](./052d96f728.json) |
+| US      | BankAch         | In        | k7m2x      | [2672f77e41.json](./2672f77e41.json) |
 | US      | BankAch         | In        | t6f2c      | [457194ba66.json](./457194ba66.json) |
-| US      | BankAch         | Out       | k7m2x      | [052d96f728.json](./052d96f728.json) |
+| US      | BankAch         | Out       | k7m2x      | [2672f77e41.json](./2672f77e41.json) |
 | US      | BankAch         | Out       | t6f2c      | [eda5d74d98.json](./eda5d74d98.json) |
-| US      | BankFedwire     | In        | k7m2x      | [1a353c7f6d.json](./1a353c7f6d.json) |
+| US      | BankFedwire     | In        | k7m2x      | [2672f77e41.json](./2672f77e41.json) |
 | US      | BankFedwire     | In        | t6f2c      | [457194ba66.json](./457194ba66.json) |
-| US      | BankFedwire     | Out       | k7m2x      | [1a353c7f6d.json](./1a353c7f6d.json) |
+| US      | BankFedwire     | Out       | k7m2x      | [2672f77e41.json](./2672f77e41.json) |
 | US      | BankFedwire     | Out       | t6f2c      | [bfd73e8c30.json](./bfd73e8c30.json) |
 | VN      | BankSwift       | Out       | y7n3f      | [6c71f00db7.json](./6c71f00db7.json) |
-| XX      | BankSwift       | In        | k7m2x      | [096819c2d2.json](./096819c2d2.json) |
-| XX      | BankSwift       | Out       | k7m2x      | [096819c2d2.json](./096819c2d2.json) |
+| XX      | BankSwift       | In        | k7m2x      | [a8ac15238b.json](./a8ac15238b.json) |
+| XX      | BankSwift       | Out       | k7m2x      | [a8ac15238b.json](./a8ac15238b.json) |
 | XX      | BankSwift       | Out       | y7n3f      | [6c71f00db7.json](./6c71f00db7.json) |
 | ZA      | BankLocal       | Out       | h5j1y      | [b50380d1b8.json](./b50380d1b8.json) |
 | ZA      | BankSwift       | Out       | y7n3f      | [6c71f00db7.json](./6c71f00db7.json) |
 
 ---
 
-_Generated: 2026-01-29T16:35:09Z_
+_Generated: 2026-01-30T13:30:59Z_
