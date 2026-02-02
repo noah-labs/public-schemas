@@ -25,6 +25,10 @@
       "title": "Bank Details",
       "type": "object"
     },
+    "Issuer": {
+      "title": "Bank Name",
+      "type": "string"
+    },
     "PaymentPurpose": {
       "enum": [
         "Payment for Services",
@@ -64,17 +68,17 @@
       "type": "string"
     }
   },
-  "required": ["BankDetails", "PaymentPurpose"],
+  "required": ["BankDetails", "Issuer", "PaymentPurpose"],
   "metadata": {
     "channels": [
       {
-        "country": "MY",
+        "country": "SG",
         "direction": "Out",
         "finServiceID": "y7n3f",
         "paymentMethodType": "BankLocal"
       }
     ],
-    "contentHash": "e73946afb13bea0e2b10e9b2f280e0cba4b5e03a997e680872c773c2243abf95",
-    "generatedAt": "2026-02-02T09:16:21Z"
+    "contentHash": "1ffe32688d41e98960959e60887555987266757138956041fa4648990c3d050b",
+    "generatedAt": "2026-02-02T09:16:23Z"
   }
 }
