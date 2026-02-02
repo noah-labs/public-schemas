@@ -19,16 +19,16 @@
               "Name": {
                 "properties": {
                   "FirstName": {
-                    "errorMessage": "First Name must be between 3 and 32 characters",
-                    "maxLength": 32,
-                    "minLength": 3,
+                    "errorMessage": "First Name must be between 1 and 22 characters",
+                    "maxLength": 22,
+                    "minLength": 1,
                     "title": "First Name",
                     "type": "string"
                   },
                   "LastName": {
-                    "errorMessage": "Last Name must be between 3 and 32 characters",
-                    "maxLength": 32,
-                    "minLength": 3,
+                    "errorMessage": "Last Name must be between 1 and 22 characters",
+                    "maxLength": 22,
+                    "minLength": 1,
                     "title": "Last Name",
                     "type": "string"
                   }
@@ -36,8 +36,8 @@
                 "required": ["FirstName", "LastName"],
                 "title": "Full Name",
                 "type": "object",
-                "x-total-max-length": 35,
-                "x-validation-message": "Combined first and last name must not exceed 35 characters"
+                "x-total-max-length": 45,
+                "x-validation-message": "Combined first and last name must not exceed 45 characters"
               }
             },
             "required": ["Name"]
@@ -54,8 +54,8 @@
           "then": {
             "properties": {
               "Name": {
-                "errorMessage": "Name must be between 3 and 35 characters",
-                "maxLength": 35,
+                "errorMessage": "Name must be between 3 and 50 characters",
+                "maxLength": 50,
                 "minLength": 3,
                 "title": "Business Name",
                 "type": "string"
@@ -76,79 +76,92 @@
       "title": "Account Holder Name",
       "type": "object"
     },
+    "BankDetails": {
+      "properties": {
+        "AccountNumber": {
+          "maxLength": 34,
+          "minLength": 1,
+          "title": "Account Number",
+          "type": "string"
+        },
+        "AccountType": {
+          "enum": ["Checking", "Savings"],
+          "title": "Account Type",
+          "type": "string"
+        },
+        "SwiftCode": {
+          "title": "BIC/SWIFT Code",
+          "type": "string"
+        }
+      },
+      "required": ["AccountNumber", "AccountType", "SwiftCode"],
+      "title": "Bank Details",
+      "type": "object"
+    },
     "AccountHolderAddress": {
       "properties": {
-        "Address": {
+        "city": {
+          "maxLength": 35,
+          "minLength": 1,
+          "title": "City",
+          "type": "string"
+        },
+        "countryCode": {
+          "maxLength": 2,
+          "minLength": 2,
+          "title": "Country Code",
+          "type": "string"
+        },
+        "line1": {
           "maxLength": 70,
           "minLength": 3,
           "title": "Address",
           "type": "string"
         },
-        "City": {
-          "maxLength": 35,
-          "title": "Town",
-          "type": "string"
-        },
-        "PostalCode": {
-          "maxLength": 9,
-          "minLength": 5,
+        "postalCode": {
+          "maxLength": 20,
+          "minLength": 1,
           "title": "Postal Code",
           "type": "string"
         },
-        "State": {
+        "state": {
           "maxLength": 35,
-          "title": "State/Province",
-          "type": "string"
-        }
-      },
-      "required": ["State", "City", "Address", "PostalCode"],
-      "title": "Account Holder Address",
-      "type": "object"
-    },
-    "BankDetails": {
-      "properties": {
-        "AccountNumber": {
-          "maxLength": 17,
           "minLength": 1,
-          "title": "Account Number",
-          "type": "string"
-        },
-        "BankCode": {
-          "maxLength": 9,
-          "minLength": 9,
-          "title": "Routing Number",
+          "title": "State",
           "type": "string"
         }
       },
-      "required": ["AccountNumber", "BankCode"],
-      "title": "Bank Details",
+      "required": ["line1", "city", "state", "postalCode", "countryCode"],
+      "title": "Account Holder Address",
       "type": "object"
     },
     "Reference": {
       "description": "This reference will appear on the beneficiary's bank statement",
-      "errorMessage": "Reference must be at most 140 characters",
-      "maxLength": 140,
+      "errorMessage": "Reference must be at most 10 characters",
+      "maxLength": 10,
       "minLength": 0,
-      "pattern": "^[\\w!\"#$%\u0026'()+,\\-./:;\u003c=\u003e?@\\\\_`~]*$",
+      "pattern": "^[\\x20-\\x7E]*$",
       "title": "Reference",
-      "type": "string"
-    },
-    "PaymentPurpose": {
-      "title": "Payment Purpose",
       "type": "string"
     }
   },
-  "required": ["AccountHolderName", "AccountHolderAddress", "BankDetails", "PaymentPurpose"],
+  "required": ["AccountHolderName", "BankDetails", "AccountHolderAddress", "Reference"],
   "metadata": {
     "channels": [
       {
-        "country": "US",
+        "country": "XX",
+        "direction": "In",
+        "finServiceID": "k7m2x",
+        "paymentMethodType": "BankSwift"
+      },
+      {
+        "country": "XX",
         "direction": "Out",
-        "finServiceID": "t6f2c",
-        "paymentMethodType": "BankFedwire"
+        "finServiceID": "k7m2x",
+        "paymentMethodType": "BankSwift"
       }
     ],
-    "contentHash": "bfd73e8c30c59c7357bd7d707e8781a3986e4ea95ba3dc27511fc708091f4a9b",
+    "contentHash": "cb08a7cfe6338e5bfb6a91475a05e1b95277ea3b94272498944d4e2e9b37c891",
     "generatedAt": "2026-02-02T13:27:25Z"
   }
 }

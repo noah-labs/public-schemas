@@ -80,23 +80,23 @@ These schemas describe the data required to complete a payment. Use them with fo
 | SI      | BankSepa        | Out       | m1v7p      | [301e80cca6.json](./301e80cca6.json) |
 | SK      | BankSepa        | Out       | c2j6s      | [89e4ebd5a2.json](./89e4ebd5a2.json) |
 | SK      | BankSepa        | Out       | m1v7p      | [301e80cca6.json](./301e80cca6.json) |
-| US      | BankAch         | In        | k7m2x      | [2672f77e41.json](./2672f77e41.json) |
+| US      | BankAch         | In        | k7m2x      | [8eeab2402f.json](./8eeab2402f.json) |
 | US      | BankAch         | In        | t6f2c      | [457194ba66.json](./457194ba66.json) |
-| US      | BankAch         | Out       | k7m2x      | [2672f77e41.json](./2672f77e41.json) |
+| US      | BankAch         | Out       | k7m2x      | [8eeab2402f.json](./8eeab2402f.json) |
 | US      | BankAch         | Out       | t6f2c      | [eda5d74d98.json](./eda5d74d98.json) |
-| US      | BankFedwire     | In        | k7m2x      | [2672f77e41.json](./2672f77e41.json) |
+| US      | BankFedwire     | In        | k7m2x      | [8eeab2402f.json](./8eeab2402f.json) |
 | US      | BankFedwire     | In        | t6f2c      | [457194ba66.json](./457194ba66.json) |
-| US      | BankFedwire     | Out       | k7m2x      | [2672f77e41.json](./2672f77e41.json) |
+| US      | BankFedwire     | Out       | k7m2x      | [8eeab2402f.json](./8eeab2402f.json) |
 | US      | BankFedwire     | Out       | t6f2c      | [bfd73e8c30.json](./bfd73e8c30.json) |
-| US      | BankSwift       | In        | k7m2x      | [a8ac15238b.json](./a8ac15238b.json) |
-| US      | BankSwift       | Out       | k7m2x      | [a8ac15238b.json](./a8ac15238b.json) |
-| XX      | BankAch         | In        | k7m2x      | [2672f77e41.json](./2672f77e41.json) |
-| XX      | BankAch         | Out       | k7m2x      | [2672f77e41.json](./2672f77e41.json) |
-| XX      | BankFedwire     | In        | k7m2x      | [2672f77e41.json](./2672f77e41.json) |
-| XX      | BankFedwire     | Out       | k7m2x      | [2672f77e41.json](./2672f77e41.json) |
-| XX      | BankSwift       | In        | k7m2x      | [a8ac15238b.json](./a8ac15238b.json) |
-| XX      | BankSwift       | Out       | k7m2x      | [a8ac15238b.json](./a8ac15238b.json) |
+| US      | BankSwift       | In        | k7m2x      | [cb08a7cfe6.json](./cb08a7cfe6.json) |
+| US      | BankSwift       | Out       | k7m2x      | [cb08a7cfe6.json](./cb08a7cfe6.json) |
+| XX      | BankAch         | In        | k7m2x      | [8eeab2402f.json](./8eeab2402f.json) |
+| XX      | BankAch         | Out       | k7m2x      | [8eeab2402f.json](./8eeab2402f.json) |
+| XX      | BankFedwire     | In        | k7m2x      | [8eeab2402f.json](./8eeab2402f.json) |
+| XX      | BankFedwire     | Out       | k7m2x      | [8eeab2402f.json](./8eeab2402f.json) |
+| XX      | BankSwift       | In        | k7m2x      | [cb08a7cfe6.json](./cb08a7cfe6.json) |
+| XX      | BankSwift       | Out       | k7m2x      | [cb08a7cfe6.json](./cb08a7cfe6.json) |
 
 ---
 
-_Generated: 2026-02-02T09:16:23Z_
+_Generated: 2026-02-02T13:28:00Z_
