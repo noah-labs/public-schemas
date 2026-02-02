@@ -149,6 +149,18 @@
   "metadata": {
     "channels": [
       {
+        "country": "US",
+        "direction": "In",
+        "finServiceID": "k7m2x",
+        "paymentMethodType": "BankSwift"
+      },
+      {
+        "country": "US",
+        "direction": "Out",
+        "finServiceID": "k7m2x",
+        "paymentMethodType": "BankSwift"
+      },
+      {
         "country": "XX",
         "direction": "In",
         "finServiceID": "k7m2x",
@@ -162,6 +174,6 @@
       }
     ],
     "contentHash": "a8ac15238b0c4e267e31768922741edc05d7e890b1e7f2ed50166942f3e106dd",
-    "generatedAt": "2026-02-02T09:16:21Z"
+    "generatedAt": "2026-02-02T09:16:23Z"
   }
 }

@@ -173,9 +173,33 @@
         "direction": "Out",
         "finServiceID": "k7m2x",
         "paymentMethodType": "BankFedwire"
+      },
+      {
+        "country": "XX",
+        "direction": "In",
+        "finServiceID": "k7m2x",
+        "paymentMethodType": "BankAch"
+      },
+      {
+        "country": "XX",
+        "direction": "Out",
+        "finServiceID": "k7m2x",
+        "paymentMethodType": "BankAch"
+      },
+      {
+        "country": "XX",
+        "direction": "In",
+        "finServiceID": "k7m2x",
+        "paymentMethodType": "BankFedwire"
+      },
+      {
+        "country": "XX",
+        "direction": "Out",
+        "finServiceID": "k7m2x",
+        "paymentMethodType": "BankFedwire"
       }
     ],
     "contentHash": "2672f77e4162a8eb3cfcc04b6795a7fdf3d83bd1b336218ebd19d3a7f39b6326",
-    "generatedAt": "2026-02-02T09:16:21Z"
+    "generatedAt": "2026-02-02T09:16:23Z"
   }
 }
