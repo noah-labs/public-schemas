@@ -1,0 +1,205 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "BankDetails": {
+      "properties": {
+        "BankCode": {
+          "maxLength": 11,
+          "minLength": 8,
+          "title": "Bank Code",
+          "type": "string"
+        },
+        "AccountNumber": {
+          "maxLength": 34,
+          "minLength": 12,
+          "title": "Account Number",
+          "type": "string"
+        }
+      },
+      "required": ["BankCode", "AccountNumber"],
+      "title": "Bank Details",
+      "type": "object"
+    },
+    "AccountHolderName": {
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "AccountHolderType": {
+                "const": "Individual"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "Name": {
+                "properties": {
+                  "FirstName": {
+                    "errorMessage": "First Name must be between 3 and 50 characters",
+                    "maxLength": 50,
+                    "minLength": 3,
+                    "title": "First Name",
+                    "type": "string"
+                  },
+                  "LastName": {
+                    "errorMessage": "Last Name must be between 3 and 50 characters",
+                    "maxLength": 50,
+                    "minLength": 3,
+                    "title": "Last Name",
+                    "type": "string"
+                  }
+                },
+                "required": ["FirstName", "LastName"],
+                "title": "Full Name",
+                "type": "object"
+              }
+            },
+            "required": ["Name"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "AccountHolderType": {
+                "const": "Business"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "Name": {
+                "errorMessage": "Name must be between 3 and 50 characters",
+                "maxLength": 50,
+                "minLength": 3,
+                "title": "Business Name",
+                "type": "string"
+              }
+            },
+            "required": ["Name"]
+          }
+        }
+      ],
+      "properties": {
+        "AccountHolderType": {
+          "enum": ["Individual", "Business"],
+          "title": "Account Holder Type",
+          "type": "string"
+        }
+      },
+      "required": ["AccountHolderType"],
+      "title": "Account Holder Name",
+      "type": "object"
+    },
+    "Issuer": {
+      "title": "Bank Name",
+      "type": "string"
+    },
+    "PaymentPurpose": {
+      "enum": [
+        "Payment for Services",
+        "Payment for Software",
+        "Payments for imported goods",
+        "Travel Services",
+        "Vendor / Contractor Payouts",
+        "Transfer to own account",
+        "Investment in Shares",
+        "Purchase of Property",
+        "Repayment of Loans",
+        "Salary",
+        "Payment of Property Rental",
+        "Information Service Charges",
+        "Advertising \u0026 Public relations-related expenses",
+        "Royalty fees, trademark fees, patent fees, and copyright fees",
+        "Fees for brokers",
+        "Front end fee",
+        "Commitment fee",
+        "Guarantee fee",
+        "Custodian fee",
+        "Fees for advisors, technical assistance, and academic knowledge, including remuneration for specialists",
+        "Representative office expenses",
+        "Tax Payment",
+        "Transportation fees for goods",
+        "Construction costs/expenses",
+        "Insurance Premium",
+        "General Goods Trades - Offline trade",
+        "Insurance Claims Payment",
+        "Family Maintenance",
+        "Education-related student expenses",
+        "Medical Treatment",
+        "Mutual Fund Investment"
+      ],
+      "title": "Payment Purpose",
+      "type": "string"
+    }
+  },
+  "required": ["BankDetails", "AccountHolderName", "Issuer", "PaymentPurpose"],
+  "metadata": {
+    "channels": [
+      {
+        "country": "ID",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankSwift"
+      },
+      {
+        "country": "IN",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankSwift"
+      },
+      {
+        "country": "KR",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankSwift"
+      },
+      {
+        "country": "LK",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankSwift"
+      },
+      {
+        "country": "PH",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankSwift"
+      },
+      {
+        "country": "TH",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankSwift"
+      },
+      {
+        "country": "TR",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankSwift"
+      },
+      {
+        "country": "VN",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankSwift"
+      },
+      {
+        "country": "XX",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankSwift"
+      },
+      {
+        "country": "ZA",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankSwift"
+      }
+    ],
+    "contentHash": "18da57fd7b6efcac6fb2c111eaa4e37781f99e693a4189bab192d3177d46069a",
+    "generatedAt": "2026-02-10T14:11:15Z"
+  }
+}

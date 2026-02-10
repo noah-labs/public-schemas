@@ -1,0 +1,159 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "BankDetails": {
+      "properties": {
+        "AccountNumber": {
+          "errorMessage": "Account number must contain only digits",
+          "maxLength": 20,
+          "minLength": 5,
+          "pattern": "^[0-9]+$",
+          "title": "Account Number",
+          "type": "string"
+        },
+        "BankCode": {
+          "errorMessage": "Enter a valid SWIFT/BIC code (e.g., DBSSSGSG)",
+          "maxLength": 11,
+          "minLength": 8,
+          "pattern": "^[A-Z]{6}[A-Z0-9]{2}([A-Z0-9]{3})?$",
+          "title": "SWIFT/BIC Code",
+          "type": "string"
+        },
+        "BankName": {
+          "title": "Bank Name",
+          "type": "string"
+        }
+      },
+      "required": ["AccountNumber", "BankCode"],
+      "title": "Bank Details",
+      "type": "object"
+    },
+    "AccountHolderName": {
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "AccountHolderType": {
+                "const": "Individual"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "Name": {
+                "properties": {
+                  "FirstName": {
+                    "errorMessage": "First Name must be between 3 and 50 characters",
+                    "maxLength": 50,
+                    "minLength": 3,
+                    "title": "First Name",
+                    "type": "string"
+                  },
+                  "LastName": {
+                    "errorMessage": "Last Name must be between 3 and 50 characters",
+                    "maxLength": 50,
+                    "minLength": 3,
+                    "title": "Last Name",
+                    "type": "string"
+                  }
+                },
+                "required": ["FirstName", "LastName"],
+                "title": "Full Name",
+                "type": "object"
+              }
+            },
+            "required": ["Name"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "AccountHolderType": {
+                "const": "Business"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "Name": {
+                "errorMessage": "Name must be between 3 and 50 characters",
+                "maxLength": 50,
+                "minLength": 3,
+                "title": "Business Name",
+                "type": "string"
+              }
+            },
+            "required": ["Name"]
+          }
+        }
+      ],
+      "properties": {
+        "AccountHolderType": {
+          "enum": ["Individual", "Business"],
+          "title": "Account Holder Type",
+          "type": "string"
+        }
+      },
+      "required": ["AccountHolderType"],
+      "title": "Account Holder Name",
+      "type": "object"
+    },
+    "Issuer": {
+      "title": "Bank Name",
+      "type": "string"
+    },
+    "PaymentPurpose": {
+      "enum": [
+        "Payment for Services",
+        "Payment for Software",
+        "Payments for imported goods",
+        "Travel Services",
+        "Vendor / Contractor Payouts",
+        "Transfer to own account",
+        "Investment in Shares",
+        "Purchase of Property",
+        "Repayment of Loans",
+        "Salary",
+        "Payment of Property Rental",
+        "Information Service Charges",
+        "Advertising \u0026 Public relations-related expenses",
+        "Royalty fees, trademark fees, patent fees, and copyright fees",
+        "Fees for brokers",
+        "Front end fee",
+        "Commitment fee",
+        "Guarantee fee",
+        "Custodian fee",
+        "Fees for advisors, technical assistance, and academic knowledge, including remuneration for specialists",
+        "Representative office expenses",
+        "Tax Payment",
+        "Transportation fees for goods",
+        "Construction costs/expenses",
+        "Insurance Premium",
+        "General Goods Trades - Offline trade",
+        "Insurance Claims Payment",
+        "Family Maintenance",
+        "Education-related student expenses",
+        "Medical Treatment",
+        "Mutual Fund Investment"
+      ],
+      "title": "Payment Purpose",
+      "type": "string"
+    }
+  },
+  "required": ["BankDetails", "AccountHolderName", "Issuer", "PaymentPurpose"],
+  "metadata": {
+    "channels": [
+      {
+        "country": "SG",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankLocal"
+      }
+    ],
+    "contentHash": "8f2b36d26324fadbab63c39120c806cb32911d60e3cdc028bf4e889d3e15345c",
+    "generatedAt": "2026-02-10T14:11:47Z"
+  }
+}
