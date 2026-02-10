@@ -6,63 +6,20 @@
   "properties": {
     "BankDetails": {
       "properties": {
-        "AccountNumber": {
-          "errorMessage": "Account number must contain only digits",
-          "maxLength": 20,
-          "minLength": 5,
-          "pattern": "^[0-9]+$",
-          "title": "Account Number",
-          "type": "string"
-        },
         "BankCode": {
-          "errorMessage": "Enter a valid SWIFT/BIC code (e.g., DBSSSGSG)",
           "maxLength": 11,
           "minLength": 8,
-          "pattern": "^[A-Z]{6}[A-Z0-9]{2}([A-Z0-9]{3})?$",
-          "title": "SWIFT/BIC Code",
+          "title": "Bank Code",
           "type": "string"
         },
-        "BankName": {
-          "enum": [
-            "Affin Bank",
-            "Agrobank",
-            "Alliance Bank",
-            "Al Rajhi Bank",
-            "Ambank",
-            "Bangkok Bank",
-            "Bank Islam",
-            "Bank Muamalat",
-            "Bank of America",
-            "Bank of China",
-            "Bank Rakyat",
-            "Bank Simpanan Nasional",
-            "BNP Paribas",
-            "China Construction Bank",
-            "CIMB Bank",
-            "Citibank",
-            "Deutsche Bank",
-            "DuitNow Proxy",
-            "Hong Leong Bank",
-            "HSBC Bank",
-            "Industrial \u0026 Commercial Bank of China",
-            "JP Morgan Chase",
-            "Kuwait Finance House",
-            "Maybank",
-            "MBSB Bank Berhad",
-            "Mizuho Bank",
-            "MUFG bank",
-            "OCBC Bank",
-            "Public Bank",
-            "RHB Bank",
-            "Standard Chartered Bank",
-            "Sumitomo Mitsui Banking Corporation",
-            "UOB Bank"
-          ],
-          "title": "Bank Name",
+        "AccountNumber": {
+          "maxLength": 34,
+          "minLength": 12,
+          "title": "Account Number",
           "type": "string"
         }
       },
-      "required": ["AccountNumber", "BankCode"],
+      "required": ["BankCode", "AccountNumber"],
       "title": "Bank Details",
       "type": "object"
     },
@@ -181,10 +138,10 @@
         "country": "MY",
         "direction": "Out",
         "finServiceID": "y7n3f",
-        "paymentMethodType": "BankLocal"
+        "paymentMethodType": "BankSwift"
       }
     ],
-    "contentHash": "210a3fd860e6d3d7be9895a9be6564ceb14e3fed4738ea02b057819fef1e2d13",
+    "contentHash": "a5a2aa29d6eb9158600ed6a0d53577b48025ec2a07c7327c2387b9a7061bd5ec",
     "generatedAt": "2026-02-10T14:12:07Z"
   }
 }
