@@ -96,12 +96,12 @@ These schemas describe the data required to complete a payment. Use them with fo
 | US      | BankFedwire     | Out       | k7m2x      | [8eeab2402f.json](./8eeab2402f.json) |
 | US      | BankFedwire     | Out       | t6f2c      | [bfd73e8c30.json](./bfd73e8c30.json) |
 | VN      | BankSwift       | Out       | y7n3f      | [18da57fd7b.json](./18da57fd7b.json) |
-| XX      | BankSwift       | In        | k7m2x      | [cb08a7cfe6.json](./cb08a7cfe6.json) |
-| XX      | BankSwift       | Out       | k7m2x      | [cb08a7cfe6.json](./cb08a7cfe6.json) |
+| XX      | BankSwift       | In        | k7m2x      | [4e336fe251.json](./4e336fe251.json) |
+| XX      | BankSwift       | Out       | k7m2x      | [4e336fe251.json](./4e336fe251.json) |
 | XX      | BankSwift       | Out       | y7n3f      | [18da57fd7b.json](./18da57fd7b.json) |
 | ZA      | BankLocal       | Out       | h5j1y      | [b50380d1b8.json](./b50380d1b8.json) |
 | ZA      | BankSwift       | Out       | y7n3f      | [18da57fd7b.json](./18da57fd7b.json) |
 
 ---
 
-_Generated: 2026-02-10T22:11:26Z_
+_Generated: 2026-02-11T09:09:35Z_

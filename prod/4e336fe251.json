@@ -84,19 +84,23 @@
           "title": "Account Number",
           "type": "string"
         },
-        "RoutingNumber": {
-          "maxLength": 9,
-          "minLength": 9,
-          "title": "Routing Number",
-          "type": "string"
-        },
         "AccountType": {
           "enum": ["Checking", "Savings"],
           "title": "Account Type",
           "type": "string"
+        },
+        "SwiftCode": {
+          "title": "BIC/SWIFT Code",
+          "type": "string"
+        },
+        "CorrespondentBankCode": {
+          "maxLength": 11,
+          "minLength": 8,
+          "title": "Correspondent Bank Code",
+          "type": "string"
         }
       },
-      "required": ["AccountNumber", "RoutingNumber", "AccountType"],
+      "required": ["AccountNumber", "AccountType", "SwiftCode"],
       "title": "Bank Details",
       "type": "object"
     },
@@ -154,28 +158,28 @@
         "country": "US",
         "direction": "In",
         "finServiceID": "k7m2x",
-        "paymentMethodType": "BankAch"
+        "paymentMethodType": "BankSwift"
       },
       {
         "country": "US",
         "direction": "Out",
         "finServiceID": "k7m2x",
-        "paymentMethodType": "BankAch"
+        "paymentMethodType": "BankSwift"
       },
       {
-        "country": "US",
+        "country": "XX",
         "direction": "In",
         "finServiceID": "k7m2x",
-        "paymentMethodType": "BankFedwire"
+        "paymentMethodType": "BankSwift"
       },
       {
-        "country": "US",
+        "country": "XX",
         "direction": "Out",
         "finServiceID": "k7m2x",
-        "paymentMethodType": "BankFedwire"
+        "paymentMethodType": "BankSwift"
       }
     ],
-    "contentHash": "8eeab2402f4b13abbe8bcf29712dfaa0b5aff0f6da1c13db32048f8b0e53f8a8",
-    "generatedAt": "2026-02-11T09:09:35Z"
+    "contentHash": "4e336fe251442e331f650083dfc8b8855ca5972416d39ef82386fe4c3675e4f9",
+    "generatedAt": "2026-02-11T09:09:36Z"
   }
 }
