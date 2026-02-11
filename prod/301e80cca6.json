@@ -106,192 +106,224 @@
   "metadata": {
     "channels": [
       {
+        "id": "5080cbb9-12f8-5d6a-b74a-b5d0563cbbf4",
         "country": "AT",
         "direction": "Out",
         "finServiceID": "m1v7p",
         "paymentMethodType": "BankSepa"
       },
       {
+        "id": "a76040a7-41c7-54ac-b126-307aaafeb026",
         "country": "BE",
         "direction": "Out",
         "finServiceID": "m1v7p",
         "paymentMethodType": "BankSepa"
       },
       {
+        "id": "1a02550f-b0a2-59af-8732-44e2687c1d2c",
         "country": "BG",
         "direction": "Out",
         "finServiceID": "m1v7p",
         "paymentMethodType": "BankSepa"
       },
       {
+        "id": "0b7f6ce4-18be-52b2-ac7b-dab0a2a980b6",
         "country": "CH",
         "direction": "Out",
         "finServiceID": "m1v7p",
         "paymentMethodType": "BankSepa"
       },
       {
+        "id": "20b08107-6daa-5872-a990-e51b723a492b",
         "country": "CY",
         "direction": "Out",
         "finServiceID": "m1v7p",
         "paymentMethodType": "BankSepa"
       },
       {
+        "id": "1b6438a6-c52d-5571-86a8-aef06c274875",
         "country": "CZ",
         "direction": "Out",
         "finServiceID": "m1v7p",
         "paymentMethodType": "BankSepa"
       },
       {
+        "id": "1b1d6b46-2b7e-5e23-acd7-de09ae4d561c",
         "country": "DE",
         "direction": "Out",
         "finServiceID": "m1v7p",
         "paymentMethodType": "BankSepa"
       },
       {
+        "id": "6de6158e-d634-5aef-b09c-84a384e50078",
         "country": "DK",
         "direction": "Out",
         "finServiceID": "m1v7p",
         "paymentMethodType": "BankSepa"
       },
       {
+        "id": "dd6653c3-ceb4-5e76-b199-84f3f15b03fc",
         "country": "EE",
         "direction": "Out",
         "finServiceID": "m1v7p",
         "paymentMethodType": "BankSepa"
       },
       {
+        "id": "a4949a9e-7e55-52ae-b3e0-7f5a3faf2eed",
         "country": "ES",
         "direction": "Out",
         "finServiceID": "m1v7p",
         "paymentMethodType": "BankSepa"
       },
       {
+        "id": "b1756b87-9eb8-530c-a6c2-cd2a936a2b71",
         "country": "FI",
         "direction": "Out",
         "finServiceID": "m1v7p",
         "paymentMethodType": "BankSepa"
       },
       {
+        "id": "18af6cf4-d4d2-566f-bfdb-bceb42f47ffb",
         "country": "FR",
         "direction": "Out",
         "finServiceID": "m1v7p",
         "paymentMethodType": "BankSepa"
       },
       {
+        "id": "3e388565-4320-5c73-a00a-4582ca107c05",
         "country": "GB",
         "direction": "Out",
         "finServiceID": "m1v7p",
         "paymentMethodType": "BankSepa"
       },
       {
+        "id": "68b53505-61da-54b8-a3e3-39c5a6315a27",
         "country": "GR",
         "direction": "Out",
         "finServiceID": "m1v7p",
         "paymentMethodType": "BankSepa"
       },
       {
+        "id": "6dfc22ac-63ac-5d98-9d6a-e474190639b7",
         "country": "HR",
         "direction": "Out",
         "finServiceID": "m1v7p",
         "paymentMethodType": "BankSepa"
       },
       {
+        "id": "2287dcf1-cef4-57d4-a988-b5f415b8af38",
         "country": "HU",
         "direction": "Out",
         "finServiceID": "m1v7p",
         "paymentMethodType": "BankSepa"
       },
       {
+        "id": "0c30712a-8107-55d8-9bdc-7ccd925e6425",
         "country": "IE",
         "direction": "Out",
         "finServiceID": "m1v7p",
         "paymentMethodType": "BankSepa"
       },
       {
+        "id": "ab4ded70-b61a-52f7-8926-8f554e9ef640",
         "country": "IS",
         "direction": "Out",
         "finServiceID": "m1v7p",
         "paymentMethodType": "BankSepa"
       },
       {
+        "id": "57562065-2ca2-5b97-b705-4a4ec67a42b9",
         "country": "IT",
         "direction": "Out",
         "finServiceID": "m1v7p",
         "paymentMethodType": "BankSepa"
       },
       {
+        "id": "cd6750da-6fad-570d-9bd9-918dd31682cd",
         "country": "LI",
         "direction": "Out",
         "finServiceID": "m1v7p",
         "paymentMethodType": "BankSepa"
       },
       {
+        "id": "0578e0f4-988e-556f-a079-76a72fd3378f",
         "country": "LT",
         "direction": "Out",
         "finServiceID": "m1v7p",
         "paymentMethodType": "BankSepa"
       },
       {
+        "id": "36e12662-5ecb-5cb9-a652-1bbef2358d7c",
         "country": "LU",
         "direction": "Out",
         "finServiceID": "m1v7p",
         "paymentMethodType": "BankSepa"
       },
       {
+        "id": "d03e247d-cce7-55d2-960b-213a65821069",
         "country": "LV",
         "direction": "Out",
         "finServiceID": "m1v7p",
         "paymentMethodType": "BankSepa"
       },
       {
+        "id": "824cf14e-1518-5c78-a298-dd83bdc3f343",
         "country": "MT",
         "direction": "Out",
         "finServiceID": "m1v7p",
         "paymentMethodType": "BankSepa"
       },
       {
+        "id": "cc80b92e-3f36-5d83-bdf2-6fa3fe7ebae4",
         "country": "NL",
         "direction": "Out",
         "finServiceID": "m1v7p",
         "paymentMethodType": "BankSepa"
       },
       {
+        "id": "e12bd501-6820-54b9-a37e-92d2f493a63a",
         "country": "NO",
         "direction": "Out",
         "finServiceID": "m1v7p",
         "paymentMethodType": "BankSepa"
       },
       {
+        "id": "d38f4b9c-7048-55f8-b62c-6813ae767182",
         "country": "PL",
         "direction": "Out",
         "finServiceID": "m1v7p",
         "paymentMethodType": "BankSepa"
       },
       {
+        "id": "7db2821d-ae62-5685-8737-94cd93333c93",
         "country": "PT",
         "direction": "Out",
         "finServiceID": "m1v7p",
         "paymentMethodType": "BankSepa"
       },
       {
+        "id": "6cb3b9d4-5683-5f54-a50f-e81f52531c15",
         "country": "RO",
         "direction": "Out",
         "finServiceID": "m1v7p",
         "paymentMethodType": "BankSepa"
       },
       {
+        "id": "bc5695b8-e3d2-5c79-800d-f0fdafca64ee",
         "country": "SE",
         "direction": "Out",
         "finServiceID": "m1v7p",
         "paymentMethodType": "BankSepa"
       },
       {
+        "id": "798bc7fc-de43-56a7-bdd1-8494072ad44d",
         "country": "SI",
         "direction": "Out",
         "finServiceID": "m1v7p",
         "paymentMethodType": "BankSepa"
       },
       {
+        "id": "a3469fed-5c74-5241-ad0e-8111c150edd2",
         "country": "SK",
         "direction": "Out",
         "finServiceID": "m1v7p",
@@ -299,6 +331,6 @@
       }
     ],
     "contentHash": "301e80cca62a7df2c1bfe9e0e1978a1cbfcf7372fd64ec44fee7d387aa2406e6",
-    "generatedAt": "2026-02-11T09:09:36Z"
+    "generatedAt": "2026-02-11T10:11:51Z"
   }
 }

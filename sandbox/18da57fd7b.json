@@ -139,60 +139,245 @@
   "metadata": {
     "channels": [
       {
+        "id": "cdea65df-9d46-515b-8b55-601c53698ddb",
         "country": "ID",
         "direction": "Out",
         "finServiceID": "y7n3f",
         "paymentMethodType": "BankSwift"
       },
       {
+        "id": "1c3bcfd2-77f8-555f-a486-9130d8da8d34",
         "country": "IN",
         "direction": "Out",
         "finServiceID": "y7n3f",
         "paymentMethodType": "BankSwift"
       },
       {
+        "id": "e3a54904-ade3-5d1d-8f87-36b0d66c4c00",
         "country": "KR",
         "direction": "Out",
         "finServiceID": "y7n3f",
         "paymentMethodType": "BankSwift"
       },
       {
+        "id": "e86af2a8-9d5c-50f4-be70-4750a513816e",
         "country": "LK",
         "direction": "Out",
         "finServiceID": "y7n3f",
         "paymentMethodType": "BankSwift"
       },
       {
+        "id": "ec00be07-1610-5907-94e0-ef6903dc068e",
         "country": "PH",
         "direction": "Out",
         "finServiceID": "y7n3f",
         "paymentMethodType": "BankSwift"
       },
       {
+        "id": "5ffc9c0c-acf1-51ef-a816-541100f6ad96",
         "country": "TH",
         "direction": "Out",
         "finServiceID": "y7n3f",
         "paymentMethodType": "BankSwift"
       },
       {
+        "id": "14c8be36-da9d-5eca-8e86-ec37048ee95b",
         "country": "TR",
         "direction": "Out",
         "finServiceID": "y7n3f",
         "paymentMethodType": "BankSwift"
       },
       {
+        "id": "4b85b641-4f05-559c-a4c9-0aabe2755956",
         "country": "VN",
         "direction": "Out",
         "finServiceID": "y7n3f",
         "paymentMethodType": "BankSwift"
       },
       {
+        "id": "0aee0b5f-d381-569e-828c-eee5475f1e36",
         "country": "XX",
         "direction": "Out",
         "finServiceID": "y7n3f",
         "paymentMethodType": "BankSwift"
       },
       {
+        "id": "11e625a9-a1f0-5031-a5f8-8a383f49b634",
+        "country": "XX",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankSwift"
+      },
+      {
+        "id": "128be4ae-5ab8-5274-8dc9-ae66694b470f",
+        "country": "XX",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankSwift"
+      },
+      {
+        "id": "18f345ce-f88b-55a7-8789-90a5a8f4811f",
+        "country": "XX",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankSwift"
+      },
+      {
+        "id": "1d28dca0-408f-5ce4-8957-d6042d9c3b56",
+        "country": "XX",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankSwift"
+      },
+      {
+        "id": "32697535-1941-56ed-9617-450cbb52567a",
+        "country": "XX",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankSwift"
+      },
+      {
+        "id": "3df89004-d7cc-5cd9-846d-bb73034b77bd",
+        "country": "XX",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankSwift"
+      },
+      {
+        "id": "5a1cbbb9-a768-5f36-83d6-740b04c7f8b7",
+        "country": "XX",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankSwift"
+      },
+      {
+        "id": "61ccc32d-f5b7-5584-9e4f-eb7d8687fa6a",
+        "country": "XX",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankSwift"
+      },
+      {
+        "id": "6af4eb2f-7602-53ba-ae43-b31faf6be78c",
+        "country": "XX",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankSwift"
+      },
+      {
+        "id": "6c26c45d-b2b3-53fe-8ffc-90ab69c9393b",
+        "country": "XX",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankSwift"
+      },
+      {
+        "id": "7589a89e-89b7-5111-abc4-d3f239f7b94f",
+        "country": "XX",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankSwift"
+      },
+      {
+        "id": "825ca840-7a19-504e-b8a7-01bfe4f136fc",
+        "country": "XX",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankSwift"
+      },
+      {
+        "id": "93a3c807-1749-53f6-901b-d0324090b641",
+        "country": "XX",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankSwift"
+      },
+      {
+        "id": "95d2c612-ef88-5a93-a40e-4ec8e0b91578",
+        "country": "XX",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankSwift"
+      },
+      {
+        "id": "b3c9ae70-c4e0-551f-b5ac-97da4ee5a0ae",
+        "country": "XX",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankSwift"
+      },
+      {
+        "id": "b73b930b-caeb-5e32-9e02-63c42fc4e8d6",
+        "country": "XX",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankSwift"
+      },
+      {
+        "id": "bea7d1d4-9521-5b8f-98d7-bc788ddd21c7",
+        "country": "XX",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankSwift"
+      },
+      {
+        "id": "c1409c39-d166-5204-9368-c0719b8615eb",
+        "country": "XX",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankSwift"
+      },
+      {
+        "id": "c1a968c2-0b4e-5bea-89f0-b7d5cdd7231d",
+        "country": "XX",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankSwift"
+      },
+      {
+        "id": "c252210a-c35a-5e3a-86ba-cc769627e9ac",
+        "country": "XX",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankSwift"
+      },
+      {
+        "id": "d62871d8-2fe9-597a-a9d1-b95257d0647f",
+        "country": "XX",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankSwift"
+      },
+      {
+        "id": "e01f68a3-3a0c-5ada-8396-b98c954d1095",
+        "country": "XX",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankSwift"
+      },
+      {
+        "id": "e3e7e7bb-6810-58f7-945c-20e808447f97",
+        "country": "XX",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankSwift"
+      },
+      {
+        "id": "f06fbf02-e659-563b-8f8a-2d87e095f8d8",
+        "country": "XX",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankSwift"
+      },
+      {
+        "id": "f3b2fa13-90ad-5f19-b6ba-51bd549f917b",
+        "country": "XX",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankSwift"
+      },
+      {
+        "id": "94d7bc14-9c9a-511a-a0f5-1587c79fca01",
         "country": "ZA",
         "direction": "Out",
         "finServiceID": "y7n3f",
@@ -200,6 +385,6 @@
       }
     ],
     "contentHash": "18da57fd7b6efcac6fb2c111eaa4e37781f99e693a4189bab192d3177d46069a",
-    "generatedAt": "2026-02-11T09:09:35Z"
+    "generatedAt": "2026-02-11T10:12:09Z"
   }
 }

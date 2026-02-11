@@ -223,6 +223,7 @@
   "metadata": {
     "channels": [
       {
+        "id": "ee8086cd-5709-5838-aa85-b6a04b69ab99",
         "country": "CO",
         "direction": "Out",
         "finServiceID": "x5q2r",
@@ -230,6 +231,6 @@
       }
     ],
     "contentHash": "badcc234ab533255d2de4902b39ed902a1e8693bab0612a51d6a5ede7b8c3fed",
-    "generatedAt": "2026-02-11T09:09:36Z"
+    "generatedAt": "2026-02-11T10:11:51Z"
   }
 }

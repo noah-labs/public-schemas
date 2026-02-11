@@ -135,6 +135,14 @@
   "metadata": {
     "channels": [
       {
+        "id": "1a15d644-afbf-5c4f-adf2-c0442d840760",
+        "country": "MY",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankSwift"
+      },
+      {
+        "id": "c0a64810-8062-58ca-84a2-69d4a6405075",
         "country": "MY",
         "direction": "Out",
         "finServiceID": "y7n3f",
@@ -142,6 +150,6 @@
       }
     ],
     "contentHash": "a5a2aa29d6eb9158600ed6a0d53577b48025ec2a07c7327c2387b9a7061bd5ec",
-    "generatedAt": "2026-02-11T09:09:35Z"
+    "generatedAt": "2026-02-11T10:12:09Z"
   }
 }

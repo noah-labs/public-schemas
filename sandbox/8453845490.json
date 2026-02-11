@@ -93,6 +93,7 @@
   "metadata": {
     "channels": [
       {
+        "id": "482fcbfe-b993-58f2-bcfb-c0dc88456a37",
         "country": "MX",
         "direction": "Out",
         "finServiceID": "x5q2r",
@@ -100,6 +101,6 @@
       }
     ],
     "contentHash": "845384549074863f1cf98d3681aba918fb21dcf6f32f923dae761ec516c43f70",
-    "generatedAt": "2026-02-11T09:09:35Z"
+    "generatedAt": "2026-02-11T10:12:09Z"
   }
 }
