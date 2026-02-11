@@ -23,41 +23,6 @@
           "type": "string"
         },
         "BankName": {
-          "enum": [
-            "Affin Bank",
-            "Agrobank",
-            "Alliance Bank",
-            "Al Rajhi Bank",
-            "Ambank",
-            "Bangkok Bank",
-            "Bank Islam",
-            "Bank Muamalat",
-            "Bank of America",
-            "Bank of China",
-            "Bank Rakyat",
-            "Bank Simpanan Nasional",
-            "BNP Paribas",
-            "China Construction Bank",
-            "CIMB Bank",
-            "Citibank",
-            "Deutsche Bank",
-            "DuitNow Proxy",
-            "Hong Leong Bank",
-            "HSBC Bank",
-            "Industrial \u0026 Commercial Bank of China",
-            "JP Morgan Chase",
-            "Kuwait Finance House",
-            "Maybank",
-            "MBSB Bank Berhad",
-            "Mizuho Bank",
-            "MUFG bank",
-            "OCBC Bank",
-            "Public Bank",
-            "RHB Bank",
-            "Standard Chartered Bank",
-            "Sumitomo Mitsui Banking Corporation",
-            "UOB Bank"
-          ],
           "title": "Bank Name",
           "type": "string"
         }
@@ -136,6 +101,10 @@
       "title": "Account Holder Name",
       "type": "object"
     },
+    "Issuer": {
+      "title": "Bank Name",
+      "type": "string"
+    },
     "PaymentPurpose": {
       "enum": [
         "Payment for Services",
@@ -174,18 +143,18 @@
       "type": "string"
     }
   },
-  "required": ["BankDetails", "AccountHolderName", "PaymentPurpose"],
+  "required": ["BankDetails", "AccountHolderName", "Issuer", "PaymentPurpose"],
   "metadata": {
     "channels": [
       {
-        "id": "d013b40c-0a8d-5ae9-b6d6-7c9bb30a729b",
-        "country": "MY",
+        "id": "6bbb5643-9652-52a1-8060-8c7bf4c27948",
+        "country": "SG",
         "direction": "Out",
         "finServiceID": "y7n3f",
         "paymentMethodType": "BankLocal"
       }
     ],
-    "contentHash": "210a3fd860e6d3d7be9895a9be6564ceb14e3fed4738ea02b057819fef1e2d13",
+    "contentHash": "8f2b36d26324fadbab63c39120c806cb32911d60e3cdc028bf4e889d3e15345c",
     "generatedAt": "2026-02-11T10:12:23Z"
   }
 }
