@@ -135,6 +135,7 @@
   "metadata": {
     "channels": [
       {
+        "id": "428d2a41-4e28-5012-9049-dd542114378a",
         "country": "MY",
         "direction": "Out",
         "finServiceID": "y7n3f",
@@ -142,6 +143,6 @@
       }
     ],
     "contentHash": "a5a2aa29d6eb9158600ed6a0d53577b48025ec2a07c7327c2387b9a7061bd5ec",
-    "generatedAt": "2026-02-10T22:11:26Z"
+    "generatedAt": "2026-02-12T11:55:12Z"
   }
 }

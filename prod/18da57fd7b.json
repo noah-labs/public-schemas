@@ -139,67 +139,14 @@
   "metadata": {
     "channels": [
       {
-        "country": "ID",
-        "direction": "Out",
-        "finServiceID": "y7n3f",
-        "paymentMethodType": "BankSwift"
-      },
-      {
-        "country": "IN",
-        "direction": "Out",
-        "finServiceID": "y7n3f",
-        "paymentMethodType": "BankSwift"
-      },
-      {
-        "country": "KR",
-        "direction": "Out",
-        "finServiceID": "y7n3f",
-        "paymentMethodType": "BankSwift"
-      },
-      {
-        "country": "LK",
-        "direction": "Out",
-        "finServiceID": "y7n3f",
-        "paymentMethodType": "BankSwift"
-      },
-      {
-        "country": "PH",
-        "direction": "Out",
-        "finServiceID": "y7n3f",
-        "paymentMethodType": "BankSwift"
-      },
-      {
-        "country": "TH",
-        "direction": "Out",
-        "finServiceID": "y7n3f",
-        "paymentMethodType": "BankSwift"
-      },
-      {
-        "country": "TR",
-        "direction": "Out",
-        "finServiceID": "y7n3f",
-        "paymentMethodType": "BankSwift"
-      },
-      {
-        "country": "VN",
-        "direction": "Out",
-        "finServiceID": "y7n3f",
-        "paymentMethodType": "BankSwift"
-      },
-      {
-        "country": "XX",
-        "direction": "Out",
-        "finServiceID": "y7n3f",
-        "paymentMethodType": "BankSwift"
-      },
-      {
-        "country": "ZA",
+        "id": "3c0dd46a-44a0-5721-a882-06e191361e33",
+        "country": "SG",
         "direction": "Out",
         "finServiceID": "y7n3f",
         "paymentMethodType": "BankSwift"
       }
     ],
     "contentHash": "18da57fd7b6efcac6fb2c111eaa4e37781f99e693a4189bab192d3177d46069a",
-    "generatedAt": "2026-02-10T22:11:26Z"
+    "generatedAt": "2026-02-12T11:55:12Z"
   }
 }
