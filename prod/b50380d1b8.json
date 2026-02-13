@@ -85,6 +85,7 @@
   "metadata": {
     "channels": [
       {
+        "id": "219d5377-f48e-5f63-9f0b-dc3a971ff92b",
         "country": "ZA",
         "direction": "Out",
         "finServiceID": "h5j1y",
@@ -92,6 +93,6 @@
       }
     ],
     "contentHash": "b50380d1b87dfe275feb9d3020e9819eecba3eb2e88f6f0271d85a634bc0b1fd",
-    "generatedAt": "2026-02-10T22:11:26Z"
+    "generatedAt": "2026-02-13T12:49:45Z"
   }
 }
