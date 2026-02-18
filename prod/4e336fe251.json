@@ -155,14 +155,28 @@
   "metadata": {
     "channels": [
       {
-        "id": "5b9d2e99-5a95-5b98-a62c-8ffee4b9dd68",
+        "id": "02c12825-ecfd-594a-8458-82cc02c65615",
+        "country": "US",
+        "direction": "In",
+        "finServiceID": "k7m2x",
+        "paymentMethodType": "BankSwift"
+      },
+      {
+        "id": "0effa3e9-410d-51c5-b795-9fab03a9b5f5",
+        "country": "US",
+        "direction": "Out",
+        "finServiceID": "k7m2x",
+        "paymentMethodType": "BankSwift"
+      },
+      {
+        "id": "4e294347-9513-5716-b690-2b17b98a0314",
         "country": "XX",
         "direction": "In",
         "finServiceID": "k7m2x",
         "paymentMethodType": "BankSwift"
       },
       {
-        "id": "1269c7e1-cd53-5c2e-8cb5-2ca3c5f59675",
+        "id": "43c031ba-1bf5-5bd9-b075-e0d30dbe5161",
         "country": "XX",
         "direction": "Out",
         "finServiceID": "k7m2x",
@@ -170,6 +184,6 @@
       }
     ],
     "contentHash": "4e336fe251442e331f650083dfc8b8855ca5972416d39ef82386fe4c3675e4f9",
-    "generatedAt": "2026-02-17T19:54:39Z"
+    "generatedAt": "2026-02-18T17:23:56Z"
   }
 }
