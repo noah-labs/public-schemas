@@ -162,13 +162,6 @@
         "paymentMethodType": "BankSwift"
       },
       {
-        "id": "0effa3e9-410d-51c5-b795-9fab03a9b5f5",
-        "country": "US",
-        "direction": "Out",
-        "finServiceID": "k7m2x",
-        "paymentMethodType": "BankSwift"
-      },
-      {
         "id": "4e294347-9513-5716-b690-2b17b98a0314",
         "country": "XX",
         "direction": "In",
@@ -184,6 +177,6 @@
       }
     ],
     "contentHash": "4e336fe251442e331f650083dfc8b8855ca5972416d39ef82386fe4c3675e4f9",
-    "generatedAt": "2026-02-18T17:23:56Z"
+    "generatedAt": "2026-02-19T23:08:37Z"
   }
 }
