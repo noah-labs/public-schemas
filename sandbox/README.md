@@ -46,7 +46,7 @@ These schemas describe the data required to complete a payment. Use them with fo
 | HR      | BankSepa        | Out       | m1v7p      | [301e80cca6.json](./301e80cca6.json) |
 | HU      | BankSepa        | Out       | c2j6s      | [89e4ebd5a2.json](./89e4ebd5a2.json) |
 | HU      | BankSepa        | Out       | m1v7p      | [301e80cca6.json](./301e80cca6.json) |
-| ID      | BankSwift       | Out       | y7n3f      | [18da57fd7b.json](./18da57fd7b.json) |
+| ID      | BankSwift       | Out       | y7n3f      | [ddaea49158.json](./ddaea49158.json) |
 | IE      | BankSepa        | Out       | c2j6s      | [89e4ebd5a2.json](./89e4ebd5a2.json) |
 | IE      | BankSepa        | Out       | m1v7p      | [301e80cca6.json](./301e80cca6.json) |
 | IN      | BankSwift       | Out       | y7n3f      | [18da57fd7b.json](./18da57fd7b.json) |
@@ -86,7 +86,7 @@ These schemas describe the data required to complete a payment. Use them with fo
 | SI      | BankSepa        | Out       | m1v7p      | [301e80cca6.json](./301e80cca6.json) |
 | SK      | BankSepa        | Out       | c2j6s      | [89e4ebd5a2.json](./89e4ebd5a2.json) |
 | SK      | BankSepa        | Out       | m1v7p      | [301e80cca6.json](./301e80cca6.json) |
-| TH      | BankSwift       | Out       | y7n3f      | [18da57fd7b.json](./18da57fd7b.json) |
+| TH      | BankSwift       | Out       | y7n3f      | [8d09cf74ef.json](./8d09cf74ef.json) |
 | TR      | BankSwift       | Out       | y7n3f      | [18da57fd7b.json](./18da57fd7b.json) |
 | US      | BankAch         | In        | k7m2x      | [8eeab2402f.json](./8eeab2402f.json) |
 | US      | BankAch         | In        | t6f2c      | [457194ba66.json](./457194ba66.json) |
@@ -130,4 +130,4 @@ These schemas describe the data required to complete a payment. Use them with fo
 
 ---
 
-_Generated: 2026-02-19T23:08:50Z_
+_Generated: 2026-02-20T00:17:27Z_

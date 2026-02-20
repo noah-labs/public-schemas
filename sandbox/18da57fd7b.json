@@ -139,13 +139,6 @@
   "metadata": {
     "channels": [
       {
-        "id": "cdea65df-9d46-515b-8b55-601c53698ddb",
-        "country": "ID",
-        "direction": "Out",
-        "finServiceID": "y7n3f",
-        "paymentMethodType": "BankSwift"
-      },
-      {
         "id": "1c3bcfd2-77f8-555f-a486-9130d8da8d34",
         "country": "IN",
         "direction": "Out",
@@ -169,13 +162,6 @@
       {
         "id": "ec00be07-1610-5907-94e0-ef6903dc068e",
         "country": "PH",
-        "direction": "Out",
-        "finServiceID": "y7n3f",
-        "paymentMethodType": "BankSwift"
-      },
-      {
-        "id": "5ffc9c0c-acf1-51ef-a816-541100f6ad96",
-        "country": "TH",
         "direction": "Out",
         "finServiceID": "y7n3f",
         "paymentMethodType": "BankSwift"
@@ -385,6 +371,6 @@
       }
     ],
     "contentHash": "18da57fd7b6efcac6fb2c111eaa4e37781f99e693a4189bab192d3177d46069a",
-    "generatedAt": "2026-02-19T23:08:50Z"
+    "generatedAt": "2026-02-20T00:17:27Z"
   }
 }
