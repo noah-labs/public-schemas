@@ -95,7 +95,7 @@ These schemas describe the data required to complete a payment. Use them with fo
 | US      | BankFedwire     | In        | k7m2x      | [8eeab2402f.json](./8eeab2402f.json) |
 | US      | BankFedwire     | In        | t6f2c      | [457194ba66.json](./457194ba66.json) |
 | US      | BankFedwire     | Out       | k7m2x      | [8eeab2402f.json](./8eeab2402f.json) |
-| US      | BankFedwire     | Out       | t6f2c      | [bfd73e8c30.json](./bfd73e8c30.json) |
+| US      | BankFedwire     | Out       | t6f2c      | [577ce3b50b.json](./577ce3b50b.json) |
 | VN      | BankSwift       | Out       | y7n3f      | [18da57fd7b.json](./18da57fd7b.json) |
 | XX      | BankSwift       | In        | k7m2x      | [4e336fe251.json](./4e336fe251.json) |
 | XX      | BankSwift       | Out       | k7m2x      | [4e336fe251.json](./4e336fe251.json) |
@@ -130,4 +130,4 @@ These schemas describe the data required to complete a payment. Use them with fo
 
 ---
 
-_Generated: 2026-02-20T14:17:52Z_
+_Generated: 2026-02-23T09:02:49Z_

@@ -19,16 +19,16 @@
               "Name": {
                 "properties": {
                   "FirstName": {
-                    "errorMessage": "First Name must be between 1 and 21 characters",
-                    "maxLength": 21,
-                    "minLength": 1,
+                    "errorMessage": "First Name must be between 3 and 32 characters",
+                    "maxLength": 32,
+                    "minLength": 3,
                     "title": "First Name",
                     "type": "string"
                   },
                   "LastName": {
-                    "errorMessage": "Last Name must be between 1 and 21 characters",
-                    "maxLength": 21,
-                    "minLength": 1,
+                    "errorMessage": "Last Name must be between 3 and 32 characters",
+                    "maxLength": 32,
+                    "minLength": 3,
                     "title": "Last Name",
                     "type": "string"
                   }
@@ -36,8 +36,8 @@
                 "required": ["FirstName", "LastName"],
                 "title": "Full Name",
                 "type": "object",
-                "x-total-max-length": 22,
-                "x-validation-message": "Combined first and last name must not exceed 22 characters"
+                "x-total-max-length": 35,
+                "x-validation-message": "Combined first and last name must not exceed 35 characters"
               }
             },
             "required": ["Name"]
@@ -54,9 +54,9 @@
           "then": {
             "properties": {
               "Name": {
-                "errorMessage": "Name must be between 1 and 22 characters",
-                "maxLength": 22,
-                "minLength": 1,
+                "errorMessage": "Name must be between 3 and 35 characters",
+                "maxLength": 35,
+                "minLength": 3,
                 "title": "Business Name",
                 "type": "string"
               }
@@ -118,23 +118,18 @@
           "minLength": 9,
           "title": "Routing Number",
           "type": "string"
-        },
-        "AccountType": {
-          "enum": ["Checking", "Savings"],
-          "title": "Account Type",
-          "type": "string"
         }
       },
-      "required": ["AccountNumber", "BankCode", "AccountType"],
+      "required": ["AccountNumber", "BankCode"],
       "title": "Bank Details",
       "type": "object"
     },
     "Reference": {
       "description": "This reference will appear on the beneficiary's bank statement",
-      "errorMessage": "Reference must be at most 80 characters",
-      "maxLength": 80,
+      "errorMessage": "Reference must be at most 140 characters",
+      "maxLength": 140,
       "minLength": 0,
-      "pattern": "^[\\x20-\\x7E]*$",
+      "pattern": "^[\\w !\"#$%\u0026'()+,\\-./:;\u003c=\u003e?@\\\\_`~]*$",
       "title": "Reference",
       "type": "string"
     },
@@ -147,14 +142,14 @@
   "metadata": {
     "channels": [
       {
-        "id": "214eab50-e22b-5e0f-b487-37dc1addee90",
+        "id": "d0388d20-f8f5-56d9-8310-9831698c7764",
         "country": "US",
         "direction": "Out",
         "finServiceID": "t6f2c",
-        "paymentMethodType": "BankAch"
+        "paymentMethodType": "BankFedwire"
       }
     ],
-    "contentHash": "eda5d74d98e3e7429644fd7f74d4979638eca0e9aa7422091a600d85c1f3422a",
-    "generatedAt": "2026-02-23T09:02:49Z"
+    "contentHash": "577ce3b50b6ff09799d78111ad0990a4c4ac747a646905601f5b1905eb7423d8",
+    "generatedAt": "2026-02-23T09:02:34Z"
   }
 }
