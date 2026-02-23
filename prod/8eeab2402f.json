@@ -151,28 +151,28 @@
   "metadata": {
     "channels": [
       {
-        "id": "bdb2fe66-150d-5677-bca9-b6c44bfcb586",
+        "id": "91975b73-416e-5f07-ad80-cce742271382",
         "country": "US",
         "direction": "In",
         "finServiceID": "k7m2x",
         "paymentMethodType": "BankAch"
       },
       {
-        "id": "dd1045e1-8d54-5a10-bbe6-f1aaae446d10",
+        "id": "0369a140-8b18-51ca-8ce6-f1dff5ba0362",
         "country": "US",
         "direction": "Out",
         "finServiceID": "k7m2x",
         "paymentMethodType": "BankAch"
       },
       {
-        "id": "ca32275d-0b57-567d-9b33-af7f514626e9",
+        "id": "48609092-2ee1-5436-8ac4-6b09128c0361",
         "country": "US",
         "direction": "In",
         "finServiceID": "k7m2x",
         "paymentMethodType": "BankFedwire"
       },
       {
-        "id": "e9480746-e6d8-5ebd-b010-3ab34d209e1a",
+        "id": "c71d435d-2f26-504b-b2ff-744a6e1ab5dd",
         "country": "US",
         "direction": "Out",
         "finServiceID": "k7m2x",
@@ -180,6 +180,6 @@
       }
     ],
     "contentHash": "8eeab2402f4b13abbe8bcf29712dfaa0b5aff0f6da1c13db32048f8b0e53f8a8",
-    "generatedAt": "2026-02-23T09:02:49Z"
+    "generatedAt": "2026-02-23T09:58:16Z"
   }
 }
