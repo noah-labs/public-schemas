@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "BankDetails": {
+      "properties": {
+        "AccountNumber": {
+          "maxLength": 20,
+          "minLength": 5,
+          "title": "Account Number",
+          "type": "string"
+        },
+        "Bank": {
+          "enum": [
+            "ABSA",
+            "Access",
+            "Afribank",
+            "African Bank",
+            "Bidvest Bank",
+            "The Bank of New York Mellon",
+            "Capitec Bank",
+            "Discovery Bank",
+            "First National Bank",
+            "Grindrod",
+            "HSBC",
+            "Imperial",
+            "Investec Bank",
+            "Mercantile Bank",
+            "Nedbank Limited",
+            "Old Mutual Money Account",
+            "Sasfin",
+            "Standard Bank",
+            "TYME",
+            "Ubank",
+            "Windhoek Bank"
+          ],
+          "title": "Bank",
+          "type": "string"
+        }
+      },
+      "required": ["AccountNumber", "Bank"],
+      "title": "Bank Details",
+      "type": "object"
+    },
+    "PaymentPurpose": {
+      "title": "Payment Purpose",
+      "type": "string"
+    }
+  },
+  "required": ["BankDetails", "PaymentPurpose"],
+  "metadata": {
+    "channels": [
+      {
+        "id": "87e0cbde-036d-562a-b882-1ce150e3cbc3",
+        "country": "ZA",
+        "direction": "Out",
+        "finServiceID": "h5j1y",
+        "paymentMethodType": "BankLocal"
+      }
+    ],
+    "contentHash": "d7e710a85df547caf6fd6f295a45b86c4203082abead5c1df46f3854ebe7a1c2",
+    "generatedAt": "2026-02-23T10:39:57Z"
+  }
+}
