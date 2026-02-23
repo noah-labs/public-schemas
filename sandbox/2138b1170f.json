@@ -23,6 +23,39 @@
           "type": "string"
         },
         "BankName": {
+          "enum": [
+            "ANZ Bank (Thai) Public Company Limited",
+            "Bangkok Bank Public Company Limited",
+            "Bank for Agriculture and Agricultural",
+            "Bank of America National Association",
+            "Bank of Ayudhya Public Company Limited",
+            "Bank of China (Thai) Public Company Limited",
+            "Bank of Thailand",
+            "BNP Paribas Bank",
+            "CIMB Thai Bank Public Company Limited",
+            "Citibank N.A.",
+            "Deutsche Bank Aktiengesellschaft",
+            "Government Housing Bank",
+            "Government Saving Bank",
+            "Hong Kong \u0026 Shanghai Corporation Limited",
+            "ICBC Thai Commercial Bank",
+            "Islamic Bank of Thailand",
+            "JP Morgan Chase Bank",
+            "Kasikornbank Public Company Limited",
+            "Kiatnakin Bank Public Company Limited",
+            "Krung Thai Bank Public Company Limited",
+            "Land and Houses Bank Public Company Limited",
+            "Mega International Commercial Bank PCL",
+            "Mizuho Corporate Bank Limited",
+            "Siam Commercial Bank Public Company Limited",
+            "Standard Chartered Bank (Thai) Public",
+            "Sumitomo Mitsui Banking Corporation",
+            "The Royal Bank of Scotland N.V.",
+            "The Thai Credit Retail Bank Public Company",
+            "Tisco Bank Public Company Limited",
+            "TTB Bank",
+            "United Overseas Bank (Thai) PCL"
+          ],
           "title": "Bank Name",
           "type": "string"
         }
@@ -102,6 +135,39 @@
       "type": "object"
     },
     "Issuer": {
+      "enum": [
+        "ANZ Bank (Thai) Public Company Limited",
+        "Bangkok Bank Public Company Limited",
+        "Bank for Agriculture and Agricultural",
+        "Bank of America National Association",
+        "Bank of Ayudhya Public Company Limited",
+        "Bank of China (Thai) Public Company Limited",
+        "Bank of Thailand",
+        "BNP Paribas Bank",
+        "CIMB Thai Bank Public Company Limited",
+        "Citibank N.A.",
+        "Deutsche Bank Aktiengesellschaft",
+        "Government Housing Bank",
+        "Government Saving Bank",
+        "Hong Kong \u0026 Shanghai Corporation Limited",
+        "ICBC Thai Commercial Bank",
+        "Islamic Bank of Thailand",
+        "JP Morgan Chase Bank",
+        "Kasikornbank Public Company Limited",
+        "Kiatnakin Bank Public Company Limited",
+        "Krung Thai Bank Public Company Limited",
+        "Land and Houses Bank Public Company Limited",
+        "Mega International Commercial Bank PCL",
+        "Mizuho Corporate Bank Limited",
+        "Siam Commercial Bank Public Company Limited",
+        "Standard Chartered Bank (Thai) Public",
+        "Sumitomo Mitsui Banking Corporation",
+        "The Royal Bank of Scotland N.V.",
+        "The Thai Credit Retail Bank Public Company",
+        "Tisco Bank Public Company Limited",
+        "TTB Bank",
+        "United Overseas Bank (Thai) PCL"
+      ],
       "title": "Bank Name",
       "type": "string"
     },
@@ -147,14 +213,14 @@
   "metadata": {
     "channels": [
       {
-        "id": "6bbb5643-9652-52a1-8060-8c7bf4c27948",
-        "country": "SG",
+        "id": "a442b2f4-2296-5e74-a10d-d2957ecc174a",
+        "country": "TH",
         "direction": "Out",
         "finServiceID": "y7n3f",
         "paymentMethodType": "BankLocal"
       }
     ],
-    "contentHash": "8f2b36d26324fadbab63c39120c806cb32911d60e3cdc028bf4e889d3e15345c",
-    "generatedAt": "2026-02-23T09:58:53Z"
+    "contentHash": "2138b1170fa530b5600baf723b6174ede63d5b6969cf127cc86962e039dbea1b",
+    "generatedAt": "2026-02-23T09:58:16Z"
   }
 }
