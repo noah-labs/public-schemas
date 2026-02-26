@@ -93,40 +93,35 @@
       "title": "Account Holder Name",
       "type": "object"
     },
+    "AccountHolderAddress": {
+      "properties": {
+        "Address": {
+          "maxLength": 70,
+          "minLength": 3,
+          "title": "Address",
+          "type": "string"
+        },
+        "City": {
+          "maxLength": 35,
+          "title": "City",
+          "type": "string"
+        },
+        "PostalCode": {
+          "maxLength": 10,
+          "title": "Postal Code",
+          "type": "string"
+        },
+        "State": {
+          "maxLength": 35,
+          "title": "State/Province",
+          "type": "string"
+        }
+      },
+      "required": ["Address", "City", "State", "PostalCode"],
+      "title": "Account Holder Address",
+      "type": "object"
+    },
     "Issuer": {
-      "enum": [
-        "ANZ Bank (Thai) Public Company Limited",
-        "Bangkok Bank Public Company Limited",
-        "Bank for Agriculture and Agricultural",
-        "Bank of America National Association",
-        "Bank of Ayudhya Public Company Limited",
-        "Bank of China (Thai) Public Company Limited",
-        "Bank of Thailand",
-        "BNP Paribas Bank",
-        "CIMB Thai Bank Public Company Limited",
-        "Citibank N.A.",
-        "Deutsche Bank Aktiengesellschaft",
-        "Government Housing Bank",
-        "Government Saving Bank",
-        "Hong Kong \u0026 Shanghai Corporation Limited",
-        "ICBC Thai Commercial Bank",
-        "Islamic Bank of Thailand",
-        "JP Morgan Chase Bank",
-        "Kasikornbank Public Company Limited",
-        "Kiatnakin Bank Public Company Limited",
-        "Krung Thai Bank Public Company Limited",
-        "Land and Houses Bank Public Company Limited",
-        "Mega International Commercial Bank PCL",
-        "Mizuho Corporate Bank Limited",
-        "Siam Commercial Bank Public Company Limited",
-        "Standard Chartered Bank (Thai) Public",
-        "Sumitomo Mitsui Banking Corporation",
-        "The Royal Bank of Scotland N.V.",
-        "The Thai Credit Retail Bank Public Company",
-        "Tisco Bank Public Company Limited",
-        "TTB Bank",
-        "United Overseas Bank (Thai) PCL"
-      ],
       "title": "Bank Name",
       "type": "string"
     },
@@ -168,18 +163,24 @@
       "type": "string"
     }
   },
-  "required": ["BankDetails", "AccountHolderName", "Issuer", "PaymentPurpose"],
+  "required": [
+    "BankDetails",
+    "AccountHolderName",
+    "AccountHolderAddress",
+    "Issuer",
+    "PaymentPurpose"
+  ],
   "metadata": {
     "channels": [
       {
-        "id": "5ffc9c0c-acf1-51ef-a816-541100f6ad96",
-        "country": "TH",
+        "id": "1c3bcfd2-77f8-555f-a486-9130d8da8d34",
+        "country": "IN",
         "direction": "Out",
         "finServiceID": "y7n3f",
         "paymentMethodType": "BankSwift"
       }
     ],
-    "contentHash": "8d09cf74ef6152987731ab73e5770779b21cd266e316fc4a7a01878e76875be2",
+    "contentHash": "603cbe1baa8c133b7ae1869fa427b5b75a82521cf440765be23f55e6de32a12e",
     "generatedAt": "2026-02-26T17:16:03Z"
   }
 }

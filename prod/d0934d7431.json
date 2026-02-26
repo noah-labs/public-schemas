@@ -36,7 +36,7 @@
   "metadata": {
     "channels": [
       {
-        "id": "61d7f970-95d4-56a8-b29c-a10956dfffb6",
+        "id": "8e5efb9a-9f52-5253-a5bb-1603e9ad093e",
         "country": "BR",
         "direction": "Out",
         "finServiceID": "b9s4g",
@@ -44,6 +44,6 @@
       }
     ],
     "contentHash": "d0934d743175ca2cc4ba5f9228f504e84112162484167ba95bca33f0cde88993",
-    "generatedAt": "2026-02-26T17:15:39Z"
+    "generatedAt": "2026-02-26T17:16:03Z"
   }
 }
