@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "MobileMoneyDetails": {
+      "properties": {
+        "MobileNumber": {
+          "pattern": "^\\+[0-9]{6,15}$",
+          "title": "Mobile Number",
+          "type": "string"
+        }
+      },
+      "required": ["MobileNumber"],
+      "title": "Mobile Money Details",
+      "type": "object"
+    },
+    "PaymentPurpose": {
+      "title": "Payment Purpose",
+      "type": "string"
+    }
+  },
+  "required": ["MobileMoneyDetails", "PaymentPurpose"],
+  "metadata": {
+    "channels": [
+      {
+        "id": "18f3cc1f-9a02-5558-b306-a2a881a8083d",
+        "country": "KE",
+        "direction": "Out",
+        "finServiceID": "h5j1y",
+        "paymentMethodType": "IdentifierMobileMoney"
+      },
+      {
+        "id": "21c265c4-3eb5-5d1a-93de-f3a9a66f4b50",
+        "country": "KE",
+        "direction": "Out",
+        "finServiceID": "h5j1y",
+        "paymentMethodType": "IdentifierMobileMoney"
+      }
+    ],
+    "contentHash": "d459eccc3e474e09e8d8eb78e28b78f65780c8990c0acfbe493786fce2006b88",
+    "generatedAt": "2026-02-26T16:25:30Z"
+  }
+}
