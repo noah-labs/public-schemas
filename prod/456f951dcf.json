@@ -603,7 +603,7 @@
   "metadata": {
     "channels": [
       {
-        "id": "6345a991-0d2d-520e-8d84-f92c9c8c3172",
+        "id": "ae1f871a-f2cd-5eab-84bf-5240091d9767",
         "country": "NG",
         "direction": "Out",
         "finServiceID": "h5j1y",
@@ -611,6 +611,6 @@
       }
     ],
     "contentHash": "456f951dcf76f630412b930764442cda9b0c9c0b02ab02b6f923cb8e0d09957f",
-    "generatedAt": "2026-02-26T17:16:03Z"
+    "generatedAt": "2026-02-27T16:43:48Z"
   }
 }
