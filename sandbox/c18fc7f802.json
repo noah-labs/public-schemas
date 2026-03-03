@@ -4,44 +4,16 @@
   "description": "",
   "type": "object",
   "properties": {
-    "BankDetails": {
+    "MobileMoneyDetails": {
       "properties": {
-        "AccountNumber": {
-          "maxLength": 20,
-          "minLength": 5,
-          "title": "Account Number",
-          "type": "string"
-        },
-        "Bank": {
-          "enum": [
-            "ABSA",
-            "Access",
-            "Afribank",
-            "African Bank",
-            "Bidvest Bank",
-            "The Bank of New York Mellon",
-            "Capitec Bank",
-            "Discovery Bank",
-            "First National Bank",
-            "Grindrod",
-            "HSBC",
-            "Imperial",
-            "Investec Bank",
-            "Mercantile Bank",
-            "Nedbank Limited",
-            "Old Mutual Money Account",
-            "Sasfin",
-            "Standard Bank",
-            "TYME",
-            "Ubank",
-            "Windhoek Bank"
-          ],
-          "title": "Bank",
+        "MobileNumber": {
+          "pattern": "^\\+[0-9]{6,15}$",
+          "title": "Mobile Number",
           "type": "string"
         }
       },
-      "required": ["AccountNumber", "Bank"],
-      "title": "Bank Details",
+      "required": ["MobileNumber"],
+      "title": "Mobile Money Details",
       "type": "object"
     },
     "AccountHolderName": {
@@ -114,64 +86,30 @@
       "title": "Account Holder Name",
       "type": "object"
     },
-    "Email": {
-      "format": "email",
-      "title": "Email",
-      "type": "string"
-    },
-    "PhoneNumber": {
-      "title": "Phone Number",
-      "type": "string"
-    },
-    "AccountHolderAddress": {
-      "properties": {
-        "Address": {
-          "maxLength": 70,
-          "minLength": 3,
-          "title": "Address",
-          "type": "string"
-        },
-        "City": {
-          "maxLength": 35,
-          "minLength": 2,
-          "title": "Town",
-          "type": "string"
-        },
-        "State": {
-          "maxLength": 35,
-          "minLength": 2,
-          "title": "State/Province",
-          "type": "string"
-        }
-      },
-      "required": ["State", "City", "Address"],
-      "title": "Account Holder Address",
-      "type": "object"
-    },
     "PaymentPurpose": {
       "title": "Payment Purpose",
       "type": "string"
     }
   },
-  "required": [
-    "BankDetails",
-    "AccountHolderName",
-    "Email",
-    "PhoneNumber",
-    "AccountHolderAddress",
-    "PaymentPurpose"
-  ],
+  "required": ["MobileMoneyDetails", "AccountHolderName", "PaymentPurpose"],
   "metadata": {
     "channels": [
       {
-        "id": "87e0cbde-036d-562a-b882-1ce150e3cbc3",
-        "country": "ZA",
+        "id": "18f3cc1f-9a02-5558-b306-a2a881a8083d",
+        "country": "KE",
         "direction": "Out",
         "finServiceID": "h5j1y",
-        "paymentMethodType": "BankLocal"
+        "paymentMethodType": "IdentifierMobileMoney"
+      },
+      {
+        "id": "21c265c4-3eb5-5d1a-93de-f3a9a66f4b50",
+        "country": "KE",
+        "direction": "Out",
+        "finServiceID": "h5j1y",
+        "paymentMethodType": "IdentifierMobileMoney"
       }
     ],
-    "contentHash": "57f03fc2d73072ff420539f6b63c2248a2649c348c687361d31ede7742914b31",
+    "contentHash": "c18fc7f802b0588f9cc790864b913d2c15f64c3f121d1421689fae809adc84e9",
     "generatedAt": "2026-03-03T16:08:58Z"
   }
 }
