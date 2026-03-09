@@ -15,54 +15,27 @@
           "type": "string"
         },
         "BankCode": {
-          "errorMessage": "Enter a valid SWIFT/BIC code (e.g., DBSSSGSG)",
-          "maxLength": 11,
-          "minLength": 8,
-          "pattern": "^[A-Z]{6}[A-Z0-9]{2}([A-Z0-9]{3})?$",
-          "title": "SWIFT/BIC Code",
+          "errorMessage": "Enter a valid 3-digit institution number",
+          "maxLength": 3,
+          "minLength": 3,
+          "pattern": "^[0-9]{3}$",
+          "title": "Bank Code (Institution Number)",
+          "type": "string"
+        },
+        "BranchCode": {
+          "errorMessage": "Enter a valid 5-digit transit number",
+          "maxLength": 5,
+          "minLength": 5,
+          "pattern": "^[0-9]{5}$",
+          "title": "Branch Code (Transit Number)",
           "type": "string"
         },
         "BankName": {
-          "enum": [
-            "Affin Bank",
-            "Agrobank",
-            "Alliance Bank",
-            "Al Rajhi Bank",
-            "Ambank",
-            "Bangkok Bank",
-            "Bank Islam",
-            "Bank Muamalat",
-            "Bank of America",
-            "Bank of China",
-            "Bank Rakyat",
-            "Bank Simpanan Nasional",
-            "BNP Paribas",
-            "China Construction Bank",
-            "CIMB Bank",
-            "Citibank",
-            "Deutsche Bank",
-            "DuitNow Proxy",
-            "Hong Leong Bank",
-            "HSBC Bank",
-            "Industrial \u0026 Commercial Bank of China",
-            "JP Morgan Chase",
-            "Kuwait Finance House",
-            "Maybank",
-            "MBSB Bank Berhad",
-            "Mizuho Bank",
-            "MUFG bank",
-            "OCBC Bank",
-            "Public Bank",
-            "RHB Bank",
-            "Standard Chartered Bank",
-            "Sumitomo Mitsui Banking Corporation",
-            "UOB Bank"
-          ],
           "title": "Bank Name",
           "type": "string"
         }
       },
-      "required": ["AccountNumber", "BankCode"],
+      "required": ["AccountNumber", "BankCode", "BranchCode"],
       "title": "Bank Details",
       "type": "object"
     },
@@ -136,6 +109,38 @@
       "title": "Account Holder Name",
       "type": "object"
     },
+    "AccountHolderAddress": {
+      "properties": {
+        "Address": {
+          "maxLength": 70,
+          "minLength": 3,
+          "title": "Address",
+          "type": "string"
+        },
+        "City": {
+          "maxLength": 35,
+          "title": "City",
+          "type": "string"
+        },
+        "PostalCode": {
+          "maxLength": 10,
+          "title": "Postal Code",
+          "type": "string"
+        },
+        "State": {
+          "maxLength": 35,
+          "title": "State/Province",
+          "type": "string"
+        }
+      },
+      "required": ["Address", "City", "State", "PostalCode"],
+      "title": "Account Holder Address",
+      "type": "object"
+    },
+    "Issuer": {
+      "title": "Bank Name",
+      "type": "string"
+    },
     "PaymentPurpose": {
       "enum": [
         "Payment for Services",
@@ -174,18 +179,24 @@
       "type": "string"
     }
   },
-  "required": ["BankDetails", "AccountHolderName", "PaymentPurpose"],
+  "required": [
+    "BankDetails",
+    "AccountHolderName",
+    "AccountHolderAddress",
+    "Issuer",
+    "PaymentPurpose"
+  ],
   "metadata": {
     "channels": [
       {
-        "id": "acc7d425-dfa9-5130-8d0d-6b6fdd496c1d",
-        "country": "MY",
+        "id": "1208258f-528c-5fa1-9851-ec21f803de6b",
+        "country": "CA",
         "direction": "Out",
         "finServiceID": "y7n3f",
         "paymentMethodType": "BankLocal"
       }
     ],
-    "contentHash": "210a3fd860e6d3d7be9895a9be6564ceb14e3fed4738ea02b057819fef1e2d13",
-    "generatedAt": "2026-03-09T15:13:26Z"
+    "contentHash": "3f3402e1f0d9fc1f4bdf437f756ed4bf8c569d94906a0d4010862302139907d2",
+    "generatedAt": "2026-03-09T15:12:24Z"
   }
 }
