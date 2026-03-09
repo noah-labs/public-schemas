@@ -1,0 +1,200 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "BankDetails": {
+      "properties": {
+        "BankCode": {
+          "maxLength": 11,
+          "minLength": 8,
+          "title": "Bank Code",
+          "type": "string"
+        },
+        "AccountNumber": {
+          "maxLength": 34,
+          "minLength": 12,
+          "title": "Account Number",
+          "type": "string"
+        }
+      },
+      "required": ["BankCode", "AccountNumber"],
+      "title": "Bank Details",
+      "type": "object"
+    },
+    "AccountHolderName": {
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "AccountHolderType": {
+                "const": "Individual"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "Name": {
+                "properties": {
+                  "FirstName": {
+                    "errorMessage": "First Name must be between 3 and 50 characters",
+                    "maxLength": 50,
+                    "minLength": 3,
+                    "title": "First Name",
+                    "type": "string"
+                  },
+                  "LastName": {
+                    "errorMessage": "Last Name must be between 3 and 50 characters",
+                    "maxLength": 50,
+                    "minLength": 3,
+                    "title": "Last Name",
+                    "type": "string"
+                  }
+                },
+                "required": ["FirstName", "LastName"],
+                "title": "Full Name",
+                "type": "object"
+              }
+            },
+            "required": ["Name"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "AccountHolderType": {
+                "const": "Business"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "Name": {
+                "errorMessage": "Name must be between 3 and 50 characters",
+                "maxLength": 50,
+                "minLength": 3,
+                "title": "Business Name",
+                "type": "string"
+              }
+            },
+            "required": ["Name"]
+          }
+        }
+      ],
+      "properties": {
+        "AccountHolderType": {
+          "enum": ["Individual", "Business"],
+          "title": "Account Holder Type",
+          "type": "string"
+        }
+      },
+      "required": ["AccountHolderType"],
+      "title": "Account Holder Name",
+      "type": "object"
+    },
+    "Issuer": {
+      "enum": [
+        "Affin Bank",
+        "Agrobank",
+        "Alliance Bank",
+        "Al Rajhi Bank",
+        "Ambank",
+        "Bangkok Bank",
+        "Bank Islam",
+        "Bank Muamalat",
+        "Bank of America",
+        "Bank of China",
+        "Bank Rakyat",
+        "Bank Simpanan Nasional",
+        "BNP Paribas",
+        "China Construction Bank",
+        "CIMB Bank",
+        "Citibank",
+        "Deutsche Bank",
+        "DuitNow Proxy",
+        "Hong Leong Bank",
+        "HSBC Bank",
+        "Industrial \u0026 Commercial Bank of China",
+        "JP Morgan Chase",
+        "Kuwait Finance House",
+        "Maybank",
+        "MBSB Bank Berhad",
+        "Mizuho Bank",
+        "MUFG bank",
+        "OCBC Bank",
+        "Public Bank",
+        "RHB Bank",
+        "Standard Chartered Bank",
+        "Sumitomo Mitsui Banking Corporation",
+        "UOB Bank"
+      ],
+      "title": "Bank Name",
+      "type": "string"
+    },
+    "PaymentPurpose": {
+      "enum": [
+        "Payment for Services",
+        "Payment for Software",
+        "Payments for imported goods",
+        "Travel Services",
+        "Vendor / Contractor Payouts",
+        "Transfer to own account",
+        "Investment in Shares",
+        "Purchase of Property",
+        "Repayment of Loans",
+        "Salary",
+        "Payment of Property Rental",
+        "Information Service Charges",
+        "Advertising \u0026 Public relations-related expenses",
+        "Royalty fees, trademark fees, patent fees, and copyright fees",
+        "Fees for brokers",
+        "Front end fee",
+        "Commitment fee",
+        "Guarantee fee",
+        "Custodian fee",
+        "Fees for advisors, technical assistance, and academic knowledge, including remuneration for specialists",
+        "Representative office expenses",
+        "Tax Payment",
+        "Transportation fees for goods",
+        "Construction costs/expenses",
+        "Insurance Premium",
+        "General Goods Trades - Offline trade",
+        "Insurance Claims Payment",
+        "Family Maintenance",
+        "Education-related student expenses",
+        "Medical Treatment",
+        "Mutual Fund Investment",
+        "Currency Exchange",
+        "User Withdrawal",
+        "Advance Payments for goods",
+        "Vendor / Contractor payouts for software development",
+        "Merchant Settlement",
+        "Repatriation Fund Settlement"
+      ],
+      "title": "Payment Purpose",
+      "type": "string"
+    }
+  },
+  "required": ["BankDetails", "AccountHolderName", "Issuer", "PaymentPurpose"],
+  "metadata": {
+    "channels": [
+      {
+        "id": "1a15d644-afbf-5c4f-adf2-c0442d840760",
+        "country": "MY",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankSwift"
+      },
+      {
+        "id": "c0a64810-8062-58ca-84a2-69d4a6405075",
+        "country": "MY",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankSwift"
+      }
+    ],
+    "contentHash": "f791af4782c926c0a96c4c86e99b95f232cef2c065affb253ef0ebd0c2faa969",
+    "generatedAt": "2026-03-09T16:08:18Z"
+  }
+}

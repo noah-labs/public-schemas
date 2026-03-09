@@ -7,44 +7,23 @@
     "BankDetails": {
       "properties": {
         "AccountNumber": {
+          "errorMessage": "Account number must contain only digits",
           "maxLength": 20,
           "minLength": 5,
+          "pattern": "^[0-9]+$",
           "title": "Account Number",
           "type": "string"
         },
-        "Bank": {
-          "enum": [
-            "KCB Bank Kenya Ltd",
-            "Equity Bank Kenya Ltd",
-            "Co-operative Bank of Kenya Ltd",
-            "Absa Bank Kenya PLC",
-            "Access Bank (Kenya) PLC",
-            "Bank of Africa Kenya Ltd",
-            "Bank of Baroda (Kenya) Ltd",
-            "Bank of India",
-            "NCBA Bank Kenya PLC",
-            "SBM Bank Kenya Ltd",
-            "I\u0026M Bank Ltd",
-            "National Bank of Kenya Ltd",
-            "Credit Bank PLC",
-            "Diamond Trust Bank Kenya Ltd",
-            "Ecobank Kenya Ltd",
-            "Family Bank Ltd",
-            "Guardian Bank Ltd",
-            "Gulf African Bank Ltd",
-            "Habib Bank AG Zurich",
-            "M-Oriental Bank Ltd",
-            "Paramount Bank Ltd",
-            "Prime Bank Ltd",
-            "Sidian Bank Ltd",
-            "Victoria Commercial Bank PLC",
-            "Kenya Post Office Savings Bank"
-          ],
-          "title": "Bank",
+        "IfscCode": {
+          "title": "Ifsc Code",
+          "type": "string"
+        },
+        "BankName": {
+          "title": "Bank Name",
           "type": "string"
         }
       },
-      "required": ["AccountNumber", "Bank"],
+      "required": ["AccountNumber", "IfscCode"],
       "title": "Bank Details",
       "type": "object"
     },
@@ -118,23 +97,52 @@
       "title": "Account Holder Name",
       "type": "object"
     },
+    "AccountHolderAddress": {
+      "properties": {
+        "Address": {
+          "maxLength": 70,
+          "minLength": 3,
+          "title": "Address",
+          "type": "string"
+        },
+        "City": {
+          "maxLength": 35,
+          "title": "City",
+          "type": "string"
+        },
+        "PostalCode": {
+          "maxLength": 10,
+          "title": "Postal Code",
+          "type": "string"
+        },
+        "State": {
+          "maxLength": 35,
+          "title": "State/Province",
+          "type": "string"
+        }
+      },
+      "required": ["Address", "City", "State", "PostalCode"],
+      "title": "Account Holder Address",
+      "type": "object"
+    },
     "PaymentPurpose": {
+      "enum": ["Transfer to own account", "Family Maintenance", "User Withdrawal"],
       "title": "Payment Purpose",
       "type": "string"
     }
   },
-  "required": ["BankDetails", "AccountHolderName", "PaymentPurpose"],
+  "required": ["BankDetails", "AccountHolderName", "AccountHolderAddress", "PaymentPurpose"],
   "metadata": {
     "channels": [
       {
-        "id": "5e67e9b5-2a8c-5520-9915-34d25511d2c4",
-        "country": "KE",
+        "id": "fdb657a5-dbc0-51dc-bb30-181604267a66",
+        "country": "IN",
         "direction": "Out",
-        "finServiceID": "h5j1y",
+        "finServiceID": "y7n3f",
         "paymentMethodType": "BankLocal"
       }
     ],
-    "contentHash": "4b8621937a562320666e8ee3bb04c3a4a2efff826aac400b8dd4196f9cc00bff",
+    "contentHash": "41dd4a474e355cf7fd4ba919fafcf6ef24904cc9ca75b72f8b586fb14ebcbaf3",
     "generatedAt": "2026-03-09T16:08:14Z"
   }
 }
