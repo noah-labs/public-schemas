@@ -100,16 +100,9 @@
         "direction": "Out",
         "finServiceID": "h5j1y",
         "paymentMethodType": "IdentifierMobileMoney"
-      },
-      {
-        "id": "21c265c4-3eb5-5d1a-93de-f3a9a66f4b50",
-        "country": "KE",
-        "direction": "Out",
-        "finServiceID": "h5j1y",
-        "paymentMethodType": "IdentifierMobileMoney"
       }
     ],
     "contentHash": "c18fc7f802b0588f9cc790864b913d2c15f64c3f121d1421689fae809adc84e9",
-    "generatedAt": "2026-03-04T17:26:45Z"
+    "generatedAt": "2026-03-10T13:20:56Z"
   }
 }
