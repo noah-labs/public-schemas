@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "QrPayload": {
+      "maxLength": 300,
+      "minLength": 3,
+      "title": "QR3",
+      "type": "string",
+      "x-scan-type": "qr"
+    }
+  },
+  "required": ["QrPayload"],
+  "metadata": {
+    "channels": [
+      {
+        "id": "e02b495b-6644-562d-a35a-060b4e405348",
+        "country": "AR",
+        "direction": "Out",
+        "finServiceID": "b9s4g",
+        "paymentMethodType": "IdentifierQr"
+      }
+    ],
+    "contentHash": "054407430dda5d6b451687346993afa06cf76290772954bd442fd2b59c076f09",
+    "generatedAt": "2026-03-18T12:00:35Z"
+  }
+}

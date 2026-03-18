@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "QrPayload": {
+      "maxLength": 300,
+      "minLength": 3,
+      "title": "Pix Copy \u0026 Paste code",
+      "type": "string",
+      "x-scan-type": "qr"
+    }
+  },
+  "required": ["QrPayload"],
+  "metadata": {
+    "channels": [
+      {
+        "id": "61d7f970-95d4-56a8-b29c-a10956dfffb6",
+        "country": "BR",
+        "direction": "Out",
+        "finServiceID": "b9s4g",
+        "paymentMethodType": "IdentifierQr"
+      },
+      {
+        "id": "9a44a3de-dd02-52ca-b7db-d6a83d1ef1f7",
+        "country": "BR",
+        "direction": "Out",
+        "finServiceID": "b9s4g",
+        "paymentMethodType": "IdentifierQr"
+      }
+    ],
+    "contentHash": "971c24a3795fd2c392397087e8da997301441bd531da1ef2092874131f70c20f",
+    "generatedAt": "2026-03-18T12:00:35Z"
+  }
+}
