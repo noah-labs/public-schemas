@@ -10,12 +10,12 @@ These schemas describe the data required to complete a payment. Use them with fo
 | ------- | --------------------- | --------- | ---------- | ------------------------------------ |
 | AE      | BankLocal             | Out       | y7n3f      | [fed78db728.json](./fed78db728.json) |
 | AR      | BankLocal             | Out       | x5q2r      | [060107b6fd.json](./060107b6fd.json) |
-| AR      | IdentifierAlias       | Out       | b9s4g      | [86855060b7.json](./86855060b7.json) |
+| AR      | IdentifierAlias       | Out       | b9s4g      | [21c66497c5.json](./21c66497c5.json) |
 | AR      | IdentifierQr          | Out       | b9s4g      | [054407430d.json](./054407430d.json) |
 | AT      | BankSepa              | Out       | m1v7p      | [301e80cca6.json](./301e80cca6.json) |
 | BE      | BankSepa              | Out       | m1v7p      | [301e80cca6.json](./301e80cca6.json) |
 | BG      | BankSepa              | Out       | m1v7p      | [301e80cca6.json](./301e80cca6.json) |
-| BR      | IdentifierPix         | Out       | b9s4g      | [a590ec227e.json](./a590ec227e.json) |
+| BR      | IdentifierPix         | Out       | b9s4g      | [fa07076864.json](./fa07076864.json) |
 | BR      | IdentifierPix         | Out       | x5q2r      | [ea175dd153.json](./ea175dd153.json) |
 | BR      | IdentifierQr          | Out       | b9s4g      | [971c24a379.json](./971c24a379.json) |
 | BR      | IdentifierQr          | Out       | b9s4g      | [971c24a379.json](./971c24a379.json) |
@@ -79,4 +79,4 @@ These schemas describe the data required to complete a payment. Use them with fo
 
 ---
 
-_Generated: 2026-03-25T13:23:55Z_
+_Generated: 2026-03-26T11:23:25Z_

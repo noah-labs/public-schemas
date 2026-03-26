@@ -1,0 +1,136 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "IdentifierDetails": {
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "IdentifierType": {
+                "const": "Email"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "Identifier": {
+                "errorMessage": "must be a valid email address",
+                "format": "email",
+                "title": "Email",
+                "type": "string"
+              }
+            },
+            "required": ["Identifier"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "IdentifierType": {
+                "const": "UUID"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "Identifier": {
+                "errorMessage": "must be a valid UUID",
+                "maxLength": 255,
+                "title": "Random key (UUID)",
+                "type": "string"
+              }
+            },
+            "required": ["Identifier"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "IdentifierType": {
+                "const": "PhoneNumber"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "Identifier": {
+                "errorMessage": "must be a mobile number without country code nor '+' (e.g. 21999999999)",
+                "pattern": "^[1-9]{2}9[0-9]{8}$",
+                "title": "Phone Number",
+                "type": "string"
+              }
+            },
+            "required": ["Identifier"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "IdentifierType": {
+                "const": "TaxID"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "Identifier": {
+                "errorMessage": "must be a valid CPF (11 digits) or CNPJ (14 digits)",
+                "pattern": "^\\d{11}$|^\\d{14}$",
+                "title": "CPF or CNPJ",
+                "type": "string"
+              }
+            },
+            "required": ["Identifier"]
+          }
+        }
+      ],
+      "properties": {
+        "IdentifierType": {
+          "enum": ["PhoneNumber", "Email", "TaxID", "UUID"],
+          "title": "Pix Key Type",
+          "type": "string"
+        }
+      },
+      "required": ["IdentifierType"],
+      "title": "Pix Key Details",
+      "type": "object"
+    },
+    "BeneficiaryName": {
+      "properties": {
+        "FirstName": {
+          "errorMessage": "First Name must be between 1 and 50 characters",
+          "maxLength": 50,
+          "minLength": 1,
+          "title": "First Name",
+          "type": "string"
+        },
+        "LastName": {
+          "errorMessage": "Last Name must not be longer than 50 characters",
+          "maxLength": 50,
+          "title": "Last Name",
+          "type": "string"
+        }
+      },
+      "required": ["FirstName"],
+      "title": "Beneficiary Name",
+      "type": "object"
+    }
+  },
+  "required": ["IdentifierDetails", "BeneficiaryName"],
+  "metadata": {
+    "channels": [
+      {
+        "id": "653b8ad5-c523-5511-b8f4-46d34c51046a",
+        "country": "BR",
+        "direction": "Out",
+        "finServiceID": "b9s4g",
+        "paymentMethodType": "IdentifierPix"
+      }
+    ],
+    "contentHash": "fa0707686452adaf7278703957eb09618730a44732fff8ce61ef4c4deffb5c76",
+    "generatedAt": "2026-03-26T11:23:25Z"
+  }
+}
