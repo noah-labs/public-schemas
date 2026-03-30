@@ -16,14 +16,7 @@
   "metadata": {
     "channels": [
       {
-        "id": "61d7f970-95d4-56a8-b29c-a10956dfffb6",
-        "country": "BR",
-        "direction": "Out",
-        "finServiceID": "b9s4g",
-        "paymentMethodType": "IdentifierQr"
-      },
-      {
-        "id": "9a44a3de-dd02-52ca-b7db-d6a83d1ef1f7",
+        "id": "8e5efb9a-9f52-5253-a5bb-1603e9ad093e",
         "country": "BR",
         "direction": "Out",
         "finServiceID": "b9s4g",
@@ -31,6 +24,6 @@
       }
     ],
     "contentHash": "971c24a3795fd2c392397087e8da997301441bd531da1ef2092874131f70c20f",
-    "generatedAt": "2026-03-27T16:37:00Z"
+    "generatedAt": "2026-03-30T10:36:29Z"
   }
 }
