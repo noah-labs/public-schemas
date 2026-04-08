@@ -123,7 +123,7 @@
   "metadata": {
     "channels": [
       {
-        "id": "a66e5007-3965-51d4-8b34-73eaf3590c05",
+        "id": "653b8ad5-c523-5511-b8f4-46d34c51046a",
         "country": "BR",
         "direction": "Out",
         "finServiceID": "b9s4g",
@@ -131,6 +131,6 @@
       }
     ],
     "contentHash": "fa0707686452adaf7278703957eb09618730a44732fff8ce61ef4c4deffb5c76",
-    "generatedAt": "2026-04-08T18:27:16Z"
+    "generatedAt": "2026-04-08T18:27:22Z"
   }
 }
