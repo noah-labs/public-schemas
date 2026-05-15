@@ -180,9 +180,16 @@
         "direction": "Out",
         "finServiceID": "y7n3f",
         "paymentMethodType": "BankLocal"
+      },
+      {
+        "id": "3d2ba9db-0478-5564-86f1-c2c01780f8f6",
+        "country": "PL",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankLocal"
       }
     ],
     "contentHash": "fed78db728892b14fff855af67b8a01d04229f0fc979b4f97b8818fc937f19a0",
-    "generatedAt": "2026-05-15T08:48:25Z"
+    "generatedAt": "2026-05-15T20:53:01Z"
   }
 }
