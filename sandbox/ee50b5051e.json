@@ -12,20 +12,12 @@
           "title": "IBAN",
           "type": "string"
         },
-        "BankCode": {
-          "errorMessage": "Enter a valid SWIFT/BIC code (e.g., DBSSSGSG)",
-          "maxLength": 11,
-          "minLength": 8,
-          "pattern": "^[A-Z]{6}[A-Z0-9]{2}([A-Z0-9]{3})?$",
-          "title": "SWIFT/BIC Code",
-          "type": "string"
-        },
         "BankName": {
           "title": "Bank Name",
           "type": "string"
         }
       },
-      "required": ["AccountNumber", "BankCode"],
+      "required": ["AccountNumber"],
       "title": "Bank Details",
       "type": "object"
     },
@@ -175,21 +167,28 @@
   "metadata": {
     "channels": [
       {
-        "id": "e23af6d7-274c-5576-9c47-63b677a6b3bc",
-        "country": "AE",
+        "id": "500797aa-4742-5709-9ef8-3770284d0022",
+        "country": "CZ",
         "direction": "Out",
         "finServiceID": "y7n3f",
         "paymentMethodType": "BankLocal"
       },
       {
-        "id": "3d2ba9db-0478-5564-86f1-c2c01780f8f6",
-        "country": "PL",
+        "id": "eb457ac8-f08e-5bd2-a0cf-61feef119cd8",
+        "country": "HU",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankLocal"
+      },
+      {
+        "id": "ca6c77ce-4e1d-5a26-954a-ad0a635b244f",
+        "country": "RO",
         "direction": "Out",
         "finServiceID": "y7n3f",
         "paymentMethodType": "BankLocal"
       }
     ],
-    "contentHash": "fed78db728892b14fff855af67b8a01d04229f0fc979b4f97b8818fc937f19a0",
+    "contentHash": "ee50b5051e8d4bb5fde95586d8f4812aa01040fa6c33565ad3017afa42790173",
     "generatedAt": "2026-05-18T08:18:34Z"
   }
 }

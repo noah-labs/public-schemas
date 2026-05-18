@@ -7,17 +7,17 @@
     "BankDetails": {
       "properties": {
         "AccountNumber": {
-          "maxLength": 34,
-          "minLength": 12,
-          "title": "IBAN",
+          "errorMessage": "Account number must contain only digits",
+          "maxLength": 20,
+          "minLength": 5,
+          "pattern": "^[0-9]+$",
+          "title": "Account Number",
           "type": "string"
         },
         "BankCode": {
-          "errorMessage": "Enter a valid SWIFT/BIC code (e.g., DBSSSGSG)",
-          "maxLength": 11,
-          "minLength": 8,
-          "pattern": "^[A-Z]{6}[A-Z0-9]{2}([A-Z0-9]{3})?$",
-          "title": "SWIFT/BIC Code",
+          "errorMessage": "Enter a valid bank code",
+          "minLength": 1,
+          "title": "Bank Code",
           "type": "string"
         },
         "BankName": {
@@ -175,21 +175,14 @@
   "metadata": {
     "channels": [
       {
-        "id": "e23af6d7-274c-5576-9c47-63b677a6b3bc",
-        "country": "AE",
-        "direction": "Out",
-        "finServiceID": "y7n3f",
-        "paymentMethodType": "BankLocal"
-      },
-      {
-        "id": "3d2ba9db-0478-5564-86f1-c2c01780f8f6",
-        "country": "PL",
+        "id": "6f3ad230-8d99-542b-89f2-0613a37724f8",
+        "country": "SE",
         "direction": "Out",
         "finServiceID": "y7n3f",
         "paymentMethodType": "BankLocal"
       }
     ],
-    "contentHash": "fed78db728892b14fff855af67b8a01d04229f0fc979b4f97b8818fc937f19a0",
+    "contentHash": "0439bdd4ed50a6a37fc025383f993d553723e884b9803bd9bd3cbb6cd2bc3946",
     "generatedAt": "2026-05-18T08:18:34Z"
   }
 }
