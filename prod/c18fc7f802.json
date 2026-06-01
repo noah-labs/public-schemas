@@ -95,14 +95,49 @@
   "metadata": {
     "channels": [
       {
+        "id": "46990827-29fc-5fe2-bf29-38f71aeb9516",
+        "country": "GH",
+        "direction": "Out",
+        "finServiceID": "h5j1y",
+        "paymentMethodType": "IdentifierMobileMoney"
+      },
+      {
+        "id": "5a998baf-8aed-58be-ac78-d996d147d517",
+        "country": "GH",
+        "direction": "Out",
+        "finServiceID": "h5j1y",
+        "paymentMethodType": "IdentifierMobileMoney"
+      },
+      {
+        "id": "9202978b-de84-5a32-874a-d547db6eca29",
+        "country": "GH",
+        "direction": "Out",
+        "finServiceID": "h5j1y",
+        "paymentMethodType": "IdentifierMobileMoney"
+      },
+      {
         "id": "18f3cc1f-9a02-5558-b306-a2a881a8083d",
         "country": "KE",
+        "direction": "Out",
+        "finServiceID": "h5j1y",
+        "paymentMethodType": "IdentifierMobileMoney"
+      },
+      {
+        "id": "1ebc9945-52d6-50b6-b832-1468dfc92873",
+        "country": "RW",
+        "direction": "Out",
+        "finServiceID": "h5j1y",
+        "paymentMethodType": "IdentifierMobileMoney"
+      },
+      {
+        "id": "230059fd-88b7-5b84-89f4-d6e19f7d20f4",
+        "country": "RW",
         "direction": "Out",
         "finServiceID": "h5j1y",
         "paymentMethodType": "IdentifierMobileMoney"
       }
     ],
     "contentHash": "c18fc7f802b0588f9cc790864b913d2c15f64c3f121d1421689fae809adc84e9",
-    "generatedAt": "2026-05-28T16:11:51Z"
+    "generatedAt": "2026-06-01T16:22:18Z"
   }
 }
