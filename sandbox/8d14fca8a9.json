@@ -7,23 +7,34 @@
     "BankDetails": {
       "properties": {
         "AccountNumber": {
-          "errorMessage": "Account number must contain only digits",
           "maxLength": 20,
           "minLength": 5,
-          "pattern": "^[0-9]+$",
           "title": "Account Number",
           "type": "string"
         },
-        "IfscCode": {
-          "title": "Ifsc Code",
-          "type": "string"
-        },
-        "BankName": {
-          "title": "Bank Name",
+        "Bank": {
+          "enum": [
+            "National Bank of Rwanda",
+            "I and M bank",
+            "Bank of Kigali",
+            "GT bank",
+            "Ecobank Rwanda",
+            "Access Bank",
+            "Cogebank",
+            "Urwego Opportinuity Bank",
+            "Kenya Commercial Bank",
+            "Equity Bank",
+            "Agaseke Bank",
+            "Unguka Bank",
+            "Banque Populaire du Rwanda",
+            "Banque de Developpement du Rwanda",
+            "Zigama CSS Bank"
+          ],
+          "title": "Bank",
           "type": "string"
         }
       },
-      "required": ["AccountNumber", "IfscCode"],
+      "required": ["AccountNumber", "Bank"],
       "title": "Bank Details",
       "type": "object"
     },
@@ -97,52 +108,23 @@
       "title": "Account Holder Name",
       "type": "object"
     },
-    "AccountHolderAddress": {
-      "properties": {
-        "Address": {
-          "maxLength": 70,
-          "minLength": 3,
-          "title": "Address",
-          "type": "string"
-        },
-        "City": {
-          "maxLength": 35,
-          "title": "City",
-          "type": "string"
-        },
-        "PostalCode": {
-          "maxLength": 10,
-          "title": "Postal Code",
-          "type": "string"
-        },
-        "State": {
-          "maxLength": 35,
-          "title": "State/Province",
-          "type": "string"
-        }
-      },
-      "required": ["Address", "City", "State", "PostalCode"],
-      "title": "Account Holder Address",
-      "type": "object"
-    },
     "PaymentPurpose": {
-      "enum": ["Transfer to own account", "Family Maintenance", "User Withdrawal"],
       "title": "Payment Purpose",
       "type": "string"
     }
   },
-  "required": ["BankDetails", "AccountHolderName", "AccountHolderAddress", "PaymentPurpose"],
+  "required": ["BankDetails", "AccountHolderName", "PaymentPurpose"],
   "metadata": {
     "channels": [
       {
-        "id": "fdb657a5-dbc0-51dc-bb30-181604267a66",
-        "country": "IN",
+        "id": "70913917-4f42-5f3a-b8e6-4b6ffaf4ba2c",
+        "country": "RW",
         "direction": "Out",
-        "finServiceID": "y7n3f",
+        "finServiceID": "h5j1y",
         "paymentMethodType": "BankLocal"
       }
     ],
-    "contentHash": "41dd4a474e355cf7fd4ba919fafcf6ef24904cc9ca75b72f8b586fb14ebcbaf3",
+    "contentHash": "8d14fca8a95865f3d39c32609e766cce52a4af0e91856db56d7bb134a04271a3",
     "generatedAt": "2026-06-03T07:04:27Z"
   }
 }

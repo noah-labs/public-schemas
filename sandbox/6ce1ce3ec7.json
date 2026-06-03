@@ -7,27 +7,15 @@
     "BankDetails": {
       "properties": {
         "AccountNumber": {
-          "errorMessage": "Account number must contain only digits",
-          "maxLength": 20,
-          "minLength": 5,
-          "pattern": "^[0-9]+$",
-          "title": "Account Number",
+          "maxLength": 34,
+          "minLength": 12,
+          "title": "IBAN",
           "type": "string"
         },
         "BankCode": {
-          "errorMessage": "Enter a valid 3-digit institution number",
-          "maxLength": 3,
-          "minLength": 3,
-          "pattern": "^[0-9]{3}$",
-          "title": "Bank Code (Institution Number)",
-          "type": "string"
-        },
-        "BranchCode": {
-          "errorMessage": "Enter a valid 5-digit transit number",
-          "maxLength": 5,
-          "minLength": 5,
-          "pattern": "^[0-9]{5}$",
-          "title": "Branch Code (Transit Number)",
+          "errorMessage": "Enter a valid bank code",
+          "minLength": 1,
+          "title": "Bank Code",
           "type": "string"
         },
         "BankName": {
@@ -35,7 +23,7 @@
           "type": "string"
         }
       },
-      "required": ["AccountNumber", "BankCode", "BranchCode"],
+      "required": ["AccountNumber", "BankCode"],
       "title": "Bank Details",
       "type": "object"
     },
@@ -185,14 +173,21 @@
   "metadata": {
     "channels": [
       {
-        "id": "1208258f-528c-5fa1-9851-ec21f803de6b",
-        "country": "CA",
+        "id": "ee03167e-d967-5799-a8e5-680c05a4ebbf",
+        "country": "DK",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankLocal"
+      },
+      {
+        "id": "e95db600-df41-5f9d-950d-bb859ec85d9a",
+        "country": "NO",
         "direction": "Out",
         "finServiceID": "y7n3f",
         "paymentMethodType": "BankLocal"
       }
     ],
-    "contentHash": "b4bd1ee78931fcba426ccead328ef95d0d8db04945653671306b9ab2ffa6b3ba",
+    "contentHash": "6ce1ce3ec70757c02721b6577677f08b0abe0158f15c926350fc00735d7d3e64",
     "generatedAt": "2026-06-03T07:04:27Z"
   }
 }
