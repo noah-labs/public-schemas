@@ -7,9 +7,19 @@
     "BankDetails": {
       "properties": {
         "AccountNumber": {
-          "maxLength": 34,
-          "minLength": 12,
-          "title": "IBAN",
+          "errorMessage": "Account number must contain only digits",
+          "maxLength": 20,
+          "minLength": 5,
+          "pattern": "^[0-9]+$",
+          "title": "Account Number",
+          "type": "string"
+        },
+        "BsbCode": {
+          "errorMessage": "Enter a valid 6-digit BSB code",
+          "maxLength": 6,
+          "minLength": 6,
+          "pattern": "^[0-9]{6}$",
+          "title": "BSB Code",
           "type": "string"
         },
         "BankName": {
@@ -17,7 +27,7 @@
           "type": "string"
         }
       },
-      "required": ["AccountNumber"],
+      "required": ["AccountNumber", "BsbCode"],
       "title": "Bank Details",
       "type": "object"
     },
@@ -91,6 +101,34 @@
       "title": "Account Holder Name",
       "type": "object"
     },
+    "AccountHolderAddress": {
+      "properties": {
+        "Address": {
+          "maxLength": 70,
+          "minLength": 3,
+          "title": "Address",
+          "type": "string"
+        },
+        "City": {
+          "maxLength": 35,
+          "title": "City",
+          "type": "string"
+        },
+        "PostalCode": {
+          "maxLength": 10,
+          "title": "Postal Code",
+          "type": "string"
+        },
+        "State": {
+          "maxLength": 35,
+          "title": "State/Province",
+          "type": "string"
+        }
+      },
+      "required": ["Address", "City", "State", "PostalCode"],
+      "title": "Account Holder Address",
+      "type": "object"
+    },
     "PaymentPurpose": {
       "enum": [
         "Payment for Services",
@@ -135,18 +173,18 @@
       "type": "string"
     }
   },
-  "required": ["BankDetails", "AccountHolderName", "PaymentPurpose"],
+  "required": ["BankDetails", "AccountHolderName", "AccountHolderAddress", "PaymentPurpose"],
   "metadata": {
     "channels": [
       {
-        "id": "d87173b1-aa3d-5e2c-9f8f-2631a8ebc744",
-        "country": "TR",
+        "id": "1a0e94fe-47a9-544f-a7a7-538cdfc0d8ce",
+        "country": "AU",
         "direction": "Out",
         "finServiceID": "y7n3f",
         "paymentMethodType": "BankLocal"
       }
     ],
-    "contentHash": "ee2ec6f93f7dc923d9b45e1064164dc11f4b30d8f6a841c97b59f3f4fcd1b774",
+    "contentHash": "fc04435b2a12f4541ca718dd8d3077d9e22f4451f34e4733883555d18f4497fd",
     "generatedAt": "2026-06-16T10:53:13Z"
   }
 }
