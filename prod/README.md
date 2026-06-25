@@ -37,7 +37,7 @@ These schemas describe the data required to complete a payment. Use them with fo
 | FR      | BankSepa        | Out       | c2j6s      | [89e4ebd5a2.json](./89e4ebd5a2.json) |
 | FR      | BankSepa        | Out       | m1v7p      | [301e80cca6.json](./301e80cca6.json) |
 | GB      | BankLocal       | Out       | y7n3f      | [ff2e099fc8.json](./ff2e099fc8.json) |
-| GH      | BankLocal       | Out       | h5j1y      | [e023051a63.json](./e023051a63.json) |
+| GH      | BankLocal       | Out       | h5j1y      | [1e8c23083a.json](./1e8c23083a.json) |
 | GR      | BankSepa        | Out       | c2j6s      | [89e4ebd5a2.json](./89e4ebd5a2.json) |
 | GR      | BankSepa        | Out       | m1v7p      | [301e80cca6.json](./301e80cca6.json) |
 | HR      | BankSepa        | Out       | c2j6s      | [89e4ebd5a2.json](./89e4ebd5a2.json) |
@@ -68,7 +68,7 @@ These schemas describe the data required to complete a payment. Use them with fo
 | MY      | BankLocal       | Out       | y7n3f      | [56d9e8cf7a.json](./56d9e8cf7a.json) |
 | MY      | BankSwift       | Out       | y7n3f      | [f791af4782.json](./f791af4782.json) |
 | MY      | BankSwift       | Out       | y7n3f      | [f791af4782.json](./f791af4782.json) |
-| NG      | BankLocal       | Out       | h5j1y      | [456f951dcf.json](./456f951dcf.json) |
+| NG      | BankLocal       | Out       | h5j1y      | [ed7de1a6b2.json](./ed7de1a6b2.json) |
 | NL      | BankSepa        | Out       | c2j6s      | [89e4ebd5a2.json](./89e4ebd5a2.json) |
 | NL      | BankSepa        | Out       | m1v7p      | [301e80cca6.json](./301e80cca6.json) |
 | NO      | BankSepa        | Out       | c2j6s      | [89e4ebd5a2.json](./89e4ebd5a2.json) |
@@ -123,9 +123,9 @@ These schemas describe the data required to complete a payment. Use them with fo
 | XX      | BankSwift       | Out       | y7n3f      | [26dde6ba0a.json](./26dde6ba0a.json) |
 | XX      | BankSwift       | Out       | y7n3f      | [26dde6ba0a.json](./26dde6ba0a.json) |
 | XX      | BankSwift       | Out       | y7n3f      | [26dde6ba0a.json](./26dde6ba0a.json) |
-| ZA      | BankLocal       | Out       | h5j1y      | [57f03fc2d7.json](./57f03fc2d7.json) |
+| ZA      | BankLocal       | Out       | h5j1y      | [ff4516bbd8.json](./ff4516bbd8.json) |
 | ZA      | BankSwift       | Out       | y7n3f      | [26dde6ba0a.json](./26dde6ba0a.json) |
 
 ---
 
-_Generated: 2026-06-25T12:46:51Z_
+_Generated: 2026-06-25T17:26:14Z_
