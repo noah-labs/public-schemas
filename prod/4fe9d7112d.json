@@ -7,17 +7,34 @@
     "BankDetails": {
       "properties": {
         "AccountNumber": {
-          "maxLength": 34,
-          "minLength": 12,
-          "title": "IBAN",
+          "maxLength": 30,
+          "minLength": 5,
+          "title": "Account Number",
           "type": "string"
         },
-        "BankName": {
-          "title": "Bank Name",
+        "Bank": {
+          "enum": [
+            "National Bank of Rwanda",
+            "I and M bank",
+            "Bank of Kigali",
+            "GT bank",
+            "Ecobank Rwanda",
+            "Access Bank",
+            "Cogebank",
+            "Urwego Opportinuity Bank",
+            "Kenya Commercial Bank",
+            "Equity Bank",
+            "Agaseke Bank",
+            "Unguka Bank",
+            "Banque Populaire du Rwanda",
+            "Banque de Developpement du Rwanda",
+            "Zigama CSS Bank"
+          ],
+          "title": "Bank",
           "type": "string"
         }
       },
-      "required": ["AccountNumber"],
+      "required": ["AccountNumber", "Bank"],
       "title": "Bank Details",
       "type": "object"
     },
@@ -92,45 +109,6 @@
       "type": "object"
     },
     "PaymentPurpose": {
-      "enum": [
-        "Payment for Services",
-        "Payment for Software",
-        "Payments for imported goods",
-        "Travel Services",
-        "Vendor / Contractor Payouts",
-        "Transfer to own account",
-        "Investment in Shares",
-        "Purchase of Property",
-        "Repayment of Loans",
-        "Salary",
-        "Payment of Property Rental",
-        "Information Service Charges",
-        "Advertising \u0026 Public relations-related expenses",
-        "Royalty fees, trademark fees, patent fees, and copyright fees",
-        "Fees for brokers",
-        "Front end fee",
-        "Commitment fee",
-        "Guarantee fee",
-        "Custodian fee",
-        "Fees for advisors, technical assistance, and academic knowledge, including remuneration for specialists",
-        "Representative office expenses",
-        "Tax Payment",
-        "Transportation fees for goods",
-        "Construction costs/expenses",
-        "Insurance Premium",
-        "General Goods Trades - Offline trade",
-        "Insurance Claims Payment",
-        "Family Maintenance",
-        "Education-related student expenses",
-        "Medical Treatment",
-        "Mutual Fund Investment",
-        "Currency Exchange",
-        "User Withdrawal",
-        "Advance Payments for goods",
-        "Vendor / Contractor payouts for software development",
-        "Merchant Settlement",
-        "Repatriation Fund Settlement"
-      ],
       "title": "Payment Purpose",
       "type": "string"
     }
@@ -139,14 +117,14 @@
   "metadata": {
     "channels": [
       {
-        "id": "d87173b1-aa3d-5e2c-9f8f-2631a8ebc744",
-        "country": "TR",
+        "id": "70913917-4f42-5f3a-b8e6-4b6ffaf4ba2c",
+        "country": "RW",
         "direction": "Out",
-        "finServiceID": "y7n3f",
+        "finServiceID": "h5j1y",
         "paymentMethodType": "BankLocal"
       }
     ],
-    "contentHash": "ee2ec6f93f7dc923d9b45e1064164dc11f4b30d8f6a841c97b59f3f4fcd1b774",
+    "contentHash": "4fe9d7112d4c314e51327d06bce8ad2cecad1b9cae0f5fc7f50950f69b70f348",
     "generatedAt": "2026-06-29T10:54:53Z"
   }
 }
