@@ -27,6 +27,7 @@ These schemas describe the data required to complete a payment. Use them with fo
 | DK      | BankLocal             | Out       | y7n3f      | [6ce1ce3ec7.json](./6ce1ce3ec7.json) |
 | DK      | BankSepa              | Out       | m1v7p      | [301e80cca6.json](./301e80cca6.json) |
 | EE      | BankSepa              | Out       | m1v7p      | [301e80cca6.json](./301e80cca6.json) |
+| EG      | BankLocal             | Out       | h5j1y      | [36b641b8e0.json](./36b641b8e0.json) |
 | ES      | BankSepa              | Out       | m1v7p      | [301e80cca6.json](./301e80cca6.json) |
 | FI      | BankSepa              | Out       | m1v7p      | [301e80cca6.json](./301e80cca6.json) |
 | FR      | BankSepa              | Out       | m1v7p      | [301e80cca6.json](./301e80cca6.json) |
@@ -88,4 +89,4 @@ These schemas describe the data required to complete a payment. Use them with fo
 
 ---
 
-_Generated: 2026-06-29T10:54:53Z_
+_Generated: 2026-06-29T14:55:45Z_

@@ -14,27 +14,48 @@
         },
         "Bank": {
           "enum": [
-            "ABSA",
-            "Access",
-            "Afribank",
-            "African Bank",
-            "Bidvest Bank",
-            "The Bank of New York Mellon",
-            "Capitec Bank",
-            "Discovery Bank",
-            "First National Bank",
-            "Grindrod",
+            "Arab African International Bank",
+            "Arab Banking Corporation",
+            "Al Ahli Bank of Kuwait – Egypt",
+            "Al Baraka Bank Egypt",
+            "Abu Dhabi Islamic Bank – Egypt",
+            "Arab Investment Bank",
+            "Arab Bank",
+            "Arab International Bank",
+            "Ahly United Bank",
+            "Audi Bank",
+            "Attijariwafa Bank Egypt",
+            "Banque Du Caire",
+            "Blom Bank Egypt",
+            "Bank of Alexandria",
+            "Credit Agricole Egypt",
+            "Central Bank of Egypt",
+            "Commercial International Bank",
+            "Citibank",
+            "Egyptian Arab Land Bank",
+            "Export Development Bank of Egypt",
+            "Egyptian Gulf Bank",
+            "EGPWALLETS",
+            "Emirates National Bank of Dubai",
+            "First Abu Dhabi Bank",
+            "Faisal Islamic Bank of Egypt",
+            "Housing And Development Bank",
             "HSBC",
-            "Imperial",
-            "Investec Bank",
-            "Mercantile Bank",
-            "Nedbank Limited",
-            "Old Mutual Money Account",
-            "Sasfin",
-            "Standard Bank",
-            "TYME",
-            "Ubank",
-            "Windhoek Bank"
+            "Industrial Development Bank of Egypt",
+            "Mashreq Bank",
+            "Misr Iran Development Bank",
+            "Meeza Digital",
+            "Banque Misr",
+            "National Bank of Egypt",
+            "National Bank of Greece",
+            "National Bank of Kuwait",
+            "Nasser social Bank",
+            "The Principal Bank for Development and Agri.",
+            "Qatar National Bank Alahli",
+            "Societe Arabe Internationale De Banque",
+            "Suez Canal Bank",
+            "The United Bank",
+            "Union National Bank"
           ],
           "title": "Bank",
           "type": "string"
@@ -114,15 +135,6 @@
       "title": "Account Holder Name",
       "type": "object"
     },
-    "Email": {
-      "format": "email",
-      "title": "Email",
-      "type": "string"
-    },
-    "PhoneNumber": {
-      "title": "Phone Number",
-      "type": "string"
-    },
     "AccountHolderAddress": {
       "properties": {
         "Address": {
@@ -149,29 +161,62 @@
       "type": "object"
     },
     "PaymentPurpose": {
+      "enum": [
+        "Paying Installments",
+        "Payment of taxes",
+        "Payment of movable property rental",
+        "Purchase sale of digital goods",
+        "Paying Invoices",
+        "Payment of study/tuition costs",
+        "Payment for charity reasons",
+        "Payment of property purchase",
+        "Payment of travel tickets or tourism agencies",
+        "Payment for logistic and/or delivery services",
+        "Payment of Insurances",
+        "Education",
+        "Payment to common utility provider",
+        "Pension payment",
+        "Payment of an investment (interest) owed to a financial entity",
+        "Business to Business",
+        "Disponibilidades",
+        "Rewards",
+        "Affiliation programs",
+        "Purchase sale of goods",
+        "Supplier payment",
+        "Mobile Wallet Transfer",
+        "Refund",
+        "Payment of an investment",
+        "Tourism",
+        "Individuals Transfers",
+        "Paying Expenses",
+        "Payment of shares",
+        "Payment to savings/retirement account",
+        "Payment of payroll",
+        "Payment of capital contribution",
+        "Public/government services",
+        "Loans",
+        "Payment for medical care services",
+        "Remittances",
+        "Family maintenance",
+        "Purchase sale of services",
+        "Entertainment"
+      ],
       "title": "Payment Purpose",
       "type": "string"
     }
   },
-  "required": [
-    "BankDetails",
-    "AccountHolderName",
-    "Email",
-    "PhoneNumber",
-    "AccountHolderAddress",
-    "PaymentPurpose"
-  ],
+  "required": ["BankDetails", "AccountHolderName", "AccountHolderAddress", "PaymentPurpose"],
   "metadata": {
     "channels": [
       {
-        "id": "219d5377-f48e-5f63-9f0b-dc3a971ff92b",
-        "country": "ZA",
+        "id": "055190ce-a8dd-500f-a3cc-6ac6dff97bc4",
+        "country": "EG",
         "direction": "Out",
         "finServiceID": "h5j1y",
         "paymentMethodType": "BankLocal"
       }
     ],
-    "contentHash": "ff4516bbd866980ac18a7c70883c90679b86ecec6f1eecc665c6ed8f190ad627",
-    "generatedAt": "2026-06-29T14:55:26Z"
+    "contentHash": "36b641b8e06cdd35f815ec6ff43ae7aaa4325c8779b6e38bb6e502105694b38c",
+    "generatedAt": "2026-06-29T14:55:45Z"
   }
 }
