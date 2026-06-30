@@ -190,6 +190,13 @@
         "paymentMethodType": "BankSepa"
       },
       {
+        "id": "f31c3195-ccb3-5193-bb2b-698b4e15b697",
+        "country": "GB",
+        "direction": "Out",
+        "finServiceID": "m1v7p",
+        "paymentMethodType": "BankSepa"
+      },
+      {
         "id": "a25f42ac-22ba-5f26-8195-1cd8908b91a5",
         "country": "GR",
         "direction": "Out",
@@ -302,6 +309,13 @@
         "paymentMethodType": "BankSepa"
       },
       {
+        "id": "95bbd184-9469-5142-b4c7-5f200a61a3e3",
+        "country": "SE",
+        "direction": "Out",
+        "finServiceID": "m1v7p",
+        "paymentMethodType": "BankSepa"
+      },
+      {
         "id": "1b4ed6dd-6789-5914-8f71-f2c9689a8293",
         "country": "SI",
         "direction": "Out",
@@ -317,6 +331,6 @@
       }
     ],
     "contentHash": "301e80cca62a7df2c1bfe9e0e1978a1cbfcf7372fd64ec44fee7d387aa2406e6",
-    "generatedAt": "2026-06-29T20:28:13Z"
+    "generatedAt": "2026-06-30T12:37:29Z"
   }
 }

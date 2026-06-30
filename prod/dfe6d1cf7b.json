@@ -1,0 +1,182 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "AccountHolderName": {
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "AccountHolderType": {
+                "const": "Individual"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "Name": {
+                "properties": {
+                  "FirstName": {
+                    "errorMessage": "First Name must be between 1 and 22 characters",
+                    "maxLength": 22,
+                    "minLength": 1,
+                    "title": "First Name",
+                    "type": "string"
+                  },
+                  "LastName": {
+                    "errorMessage": "Last Name must be between 1 and 22 characters",
+                    "maxLength": 22,
+                    "minLength": 1,
+                    "title": "Last Name",
+                    "type": "string"
+                  }
+                },
+                "required": ["FirstName", "LastName"],
+                "title": "Full Name",
+                "type": "object",
+                "x-total-max-length": 45,
+                "x-validation-message": "Combined first and last name must not exceed 45 characters"
+              }
+            },
+            "required": ["Name"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "AccountHolderType": {
+                "const": "Business"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "Name": {
+                "errorMessage": "Name must be between 3 and 50 characters",
+                "maxLength": 50,
+                "minLength": 3,
+                "title": "Business Name",
+                "type": "string"
+              }
+            },
+            "required": ["Name"]
+          }
+        }
+      ],
+      "properties": {
+        "AccountHolderType": {
+          "enum": ["Individual", "Business"],
+          "title": "Account Holder Type",
+          "type": "string"
+        }
+      },
+      "required": ["AccountHolderType"],
+      "title": "Account Holder Name",
+      "type": "object"
+    },
+    "BankDetails": {
+      "properties": {
+        "AccountNumber": {
+          "maxLength": 34,
+          "minLength": 1,
+          "title": "Account Number",
+          "type": "string"
+        },
+        "AccountType": {
+          "enum": ["Checking", "Savings"],
+          "title": "Account Type",
+          "type": "string"
+        },
+        "SwiftCode": {
+          "title": "BIC/SWIFT Code",
+          "type": "string"
+        },
+        "CorrespondentBankCode": {
+          "maxLength": 11,
+          "minLength": 8,
+          "title": "Correspondent Bank Code",
+          "type": "string"
+        }
+      },
+      "required": ["AccountNumber", "AccountType", "SwiftCode"],
+      "title": "Bank Details",
+      "type": "object"
+    },
+    "AccountHolderAddress": {
+      "properties": {
+        "city": {
+          "maxLength": 35,
+          "minLength": 1,
+          "title": "City",
+          "type": "string"
+        },
+        "countryCode": {
+          "maxLength": 2,
+          "minLength": 2,
+          "title": "Country Code",
+          "type": "string"
+        },
+        "line1": {
+          "maxLength": 70,
+          "minLength": 3,
+          "title": "Address",
+          "type": "string"
+        },
+        "postalCode": {
+          "maxLength": 20,
+          "minLength": 1,
+          "title": "Postal Code",
+          "type": "string"
+        },
+        "state": {
+          "maxLength": 35,
+          "minLength": 1,
+          "title": "State",
+          "type": "string"
+        }
+      },
+      "required": ["line1", "city", "state", "postalCode", "countryCode"],
+      "title": "Account Holder Address",
+      "type": "object"
+    },
+    "Reference": {
+      "description": "This reference will appear on the beneficiary's bank statement",
+      "errorMessage": "Reference must be at most 140 characters",
+      "maxLength": 140,
+      "minLength": 0,
+      "pattern": "^[\\x20-\\x7E]*$",
+      "title": "Reference",
+      "type": "string"
+    }
+  },
+  "required": ["AccountHolderName", "BankDetails", "AccountHolderAddress", "Reference"],
+  "metadata": {
+    "channels": [
+      {
+        "id": "02c12825-ecfd-594a-8458-82cc02c65615",
+        "country": "US",
+        "direction": "In",
+        "finServiceID": "k7m2x",
+        "paymentMethodType": "BankSwift"
+      },
+      {
+        "id": "4e294347-9513-5716-b690-2b17b98a0314",
+        "country": "XX",
+        "direction": "In",
+        "finServiceID": "k7m2x",
+        "paymentMethodType": "BankSwift"
+      },
+      {
+        "id": "43c031ba-1bf5-5bd9-b075-e0d30dbe5161",
+        "country": "XX",
+        "direction": "Out",
+        "finServiceID": "k7m2x",
+        "paymentMethodType": "BankSwift"
+      }
+    ],
+    "contentHash": "dfe6d1cf7b42596640f5747814de13266521140ded098033953c6c1f2b47ea2d",
+    "generatedAt": "2026-06-30T12:37:39Z"
+  }
+}

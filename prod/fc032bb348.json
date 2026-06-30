@@ -14,27 +14,48 @@
         },
         "Bank": {
           "enum": [
-            "ABSA",
-            "Access",
-            "Afribank",
-            "African Bank",
-            "Bidvest Bank",
-            "The Bank of New York Mellon",
-            "Capitec Bank",
-            "Discovery Bank",
-            "First National Bank",
-            "Grindrod",
+            "Arab African International Bank",
+            "Arab Banking Corporation",
+            "Al Ahli Bank of Kuwait – Egypt",
+            "Al Baraka Bank Egypt",
+            "Abu Dhabi Islamic Bank – Egypt",
+            "Arab Investment Bank",
+            "Arab Bank",
+            "Arab International Bank",
+            "Ahly United Bank",
+            "Audi Bank",
+            "Attijariwafa Bank Egypt",
+            "Banque Du Caire",
+            "Blom Bank Egypt",
+            "Bank of Alexandria",
+            "Credit Agricole Egypt",
+            "Central Bank of Egypt",
+            "Commercial International Bank",
+            "Citibank",
+            "Egyptian Arab Land Bank",
+            "Export Development Bank of Egypt",
+            "Egyptian Gulf Bank",
+            "EGPWALLETS",
+            "Emirates National Bank of Dubai",
+            "First Abu Dhabi Bank",
+            "Faisal Islamic Bank of Egypt",
+            "Housing And Development Bank",
             "HSBC",
-            "Imperial",
-            "Investec Bank",
-            "Mercantile Bank",
-            "Nedbank Limited",
-            "Old Mutual Money Account",
-            "Sasfin",
-            "Standard Bank",
-            "TYME",
-            "Ubank",
-            "Windhoek Bank"
+            "Industrial Development Bank of Egypt",
+            "Mashreq Bank",
+            "Misr Iran Development Bank",
+            "Meeza Digital",
+            "Banque Misr",
+            "National Bank of Egypt",
+            "National Bank of Greece",
+            "National Bank of Kuwait",
+            "Nasser social Bank",
+            "The Principal Bank for Development and Agri.",
+            "Qatar National Bank Alahli",
+            "Societe Arabe Internationale De Banque",
+            "Suez Canal Bank",
+            "The United Bank",
+            "Union National Bank"
           ],
           "title": "Bank",
           "type": "string"
@@ -114,15 +135,6 @@
       "title": "Account Holder Name",
       "type": "object"
     },
-    "Email": {
-      "format": "email",
-      "title": "Email",
-      "type": "string"
-    },
-    "PhoneNumber": {
-      "title": "Phone Number",
-      "type": "string"
-    },
     "AccountHolderAddress": {
       "properties": {
         "Address": {
@@ -149,6 +161,46 @@
       "type": "object"
     },
     "PaymentPurpose": {
+      "enum": [
+        "Purchase sale of goods",
+        "Payment to common utility provider",
+        "Mobile Wallet Transfer",
+        "Paying Invoices",
+        "Paying Expenses",
+        "Payment of shares",
+        "Payment of travel tickets or tourism agencies",
+        "Purchase sale of services",
+        "Payment of movable property rental",
+        "Payment of taxes",
+        "Payment of payroll",
+        "Refund",
+        "Payment for medical care services",
+        "Payment of property purchase",
+        "Tourism",
+        "Payment for logistic and/or delivery services",
+        "Payment of an investment (interest) owed to a financial entity",
+        "Business to Business",
+        "Affiliation programs",
+        "Purchase sale of digital goods",
+        "Individuals Transfers",
+        "Payment to savings/retirement account",
+        "Pension payment",
+        "Remittances",
+        "Payment of Insurances",
+        "Family maintenance",
+        "Payment of an investment",
+        "Supplier payment",
+        "Disponibilidades",
+        "Entertainment",
+        "Public/government services",
+        "Education",
+        "Payment for charity reasons",
+        "Payment of capital contribution",
+        "Rewards",
+        "Loans",
+        "Paying Installments",
+        "Payment of study/tuition costs"
+      ],
       "title": "Payment Purpose",
       "type": "string"
     },
@@ -165,22 +217,21 @@
   "required": [
     "BankDetails",
     "AccountHolderName",
-    "Email",
-    "PhoneNumber",
     "AccountHolderAddress",
-    "PaymentPurpose"
+    "PaymentPurpose",
+    "Reference"
   ],
   "metadata": {
     "channels": [
       {
-        "id": "87e0cbde-036d-562a-b882-1ce150e3cbc3",
-        "country": "ZA",
+        "id": "055190ce-a8dd-500f-a3cc-6ac6dff97bc4",
+        "country": "EG",
         "direction": "Out",
         "finServiceID": "h5j1y",
         "paymentMethodType": "BankLocal"
       }
     ],
-    "contentHash": "85b76f350f303bb87f46dab760f167df7d4b0bb74ba45e0192f563bb217588fe",
+    "contentHash": "fc032bb34813085411e447b4de26a67d5085545043f3881fc1f603fce9e3cedb",
     "generatedAt": "2026-06-30T12:37:39Z"
   }
 }
