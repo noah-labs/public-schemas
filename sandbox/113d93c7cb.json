@@ -151,14 +151,14 @@
   "metadata": {
     "channels": [
       {
-        "id": "ca32275d-0b57-567d-9b33-af7f514626e9",
+        "id": "48609092-2ee1-5436-8ac4-6b09128c0361",
         "country": "US",
         "direction": "In",
         "finServiceID": "k7m2x",
         "paymentMethodType": "BankFedwire"
       },
       {
-        "id": "e9480746-e6d8-5ebd-b010-3ab34d209e1a",
+        "id": "c71d435d-2f26-504b-b2ff-744a6e1ab5dd",
         "country": "US",
         "direction": "Out",
         "finServiceID": "k7m2x",
@@ -166,6 +166,6 @@
       }
     ],
     "contentHash": "113d93c7cb6b8cf74afda2a6c102aab80e0aa36071651a868f1905fbcd626ed2",
-    "generatedAt": "2026-07-01T14:59:15Z"
+    "generatedAt": "2026-07-01T14:59:25Z"
   }
 }
