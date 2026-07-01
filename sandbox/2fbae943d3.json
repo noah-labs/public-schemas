@@ -151,14 +151,14 @@
   "metadata": {
     "channels": [
       {
-        "id": "91975b73-416e-5f07-ad80-cce742271382",
+        "id": "bdb2fe66-150d-5677-bca9-b6c44bfcb586",
         "country": "US",
         "direction": "In",
         "finServiceID": "k7m2x",
         "paymentMethodType": "BankAch"
       },
       {
-        "id": "0369a140-8b18-51ca-8ce6-f1dff5ba0362",
+        "id": "dd1045e1-8d54-5a10-bbe6-f1aaae446d10",
         "country": "US",
         "direction": "Out",
         "finServiceID": "k7m2x",
@@ -166,6 +166,6 @@
       }
     ],
     "contentHash": "2fbae943d3b2da8c3a2d5f20586c6831be0ad038a799f77a0ff87c82e6d4cc8e",
-    "generatedAt": "2026-06-30T12:37:39Z"
+    "generatedAt": "2026-07-01T13:31:07Z"
   }
 }

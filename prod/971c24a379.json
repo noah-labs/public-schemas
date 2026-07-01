@@ -21,16 +21,9 @@
         "direction": "Out",
         "finServiceID": "b9s4g",
         "paymentMethodType": "IdentifierQr"
-      },
-      {
-        "id": "9a44a3de-dd02-52ca-b7db-d6a83d1ef1f7",
-        "country": "BR",
-        "direction": "Out",
-        "finServiceID": "b9s4g",
-        "paymentMethodType": "IdentifierQr"
       }
     ],
     "contentHash": "971c24a3795fd2c392397087e8da997301441bd531da1ef2092874131f70c20f",
-    "generatedAt": "2026-06-30T12:37:39Z"
+    "generatedAt": "2026-07-01T13:30:29Z"
   }
 }

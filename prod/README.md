@@ -17,7 +17,6 @@ These schemas describe the data required to complete a payment. Use them with fo
 | BG      | BankSepa              | Out       | m1v7p      | [301e80cca6.json](./301e80cca6.json) |
 | BR      | IdentifierPix         | Out       | b9s4g      | [fa07076864.json](./fa07076864.json) |
 | BR      | IdentifierQr          | Out       | b9s4g      | [971c24a379.json](./971c24a379.json) |
-| BR      | IdentifierQr          | Out       | b9s4g      | [971c24a379.json](./971c24a379.json) |
 | CA      | BankLocal             | Out       | y7n3f      | [b4bd1ee789.json](./b4bd1ee789.json) |
 | CH      | BankSepa              | Out       | m1v7p      | [301e80cca6.json](./301e80cca6.json) |
 | CY      | BankSepa              | Out       | m1v7p      | [301e80cca6.json](./301e80cca6.json) |
@@ -27,7 +26,7 @@ These schemas describe the data required to complete a payment. Use them with fo
 | DK      | BankLocal             | Out       | y7n3f      | [6ce1ce3ec7.json](./6ce1ce3ec7.json) |
 | DK      | BankSepa              | Out       | m1v7p      | [301e80cca6.json](./301e80cca6.json) |
 | EE      | BankSepa              | Out       | m1v7p      | [301e80cca6.json](./301e80cca6.json) |
-| EG      | BankLocal             | Out       | h5j1y      | [fc032bb348.json](./fc032bb348.json) |
+| EG      | BankLocal             | Out       | h5j1y      | [f190a8b110.json](./f190a8b110.json) |
 | ES      | BankSepa              | Out       | m1v7p      | [301e80cca6.json](./301e80cca6.json) |
 | FI      | BankSepa              | Out       | m1v7p      | [301e80cca6.json](./301e80cca6.json) |
 | FR      | BankSepa              | Out       | m1v7p      | [301e80cca6.json](./301e80cca6.json) |
@@ -89,4 +88,4 @@ These schemas describe the data required to complete a payment. Use them with fo
 
 ---
 
-_Generated: 2026-06-30T12:37:39Z_
+_Generated: 2026-07-01T13:30:29Z_
