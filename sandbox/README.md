@@ -45,6 +45,7 @@ These schemas describe the data required to complete a payment. Use them with fo
 | PL      | BankSepa        | Out       | m1v7p      | [301e80cca6.json](./301e80cca6.json) |
 | PT      | BankSepa        | Out       | m1v7p      | [301e80cca6.json](./301e80cca6.json) |
 | RO      | BankSepa        | Out       | m1v7p      | [301e80cca6.json](./301e80cca6.json) |
+| RS      | BankSepa        | Out       | m1v7p      | [301e80cca6.json](./301e80cca6.json) |
 | SE      | BankSepa        | Out       | m1v7p      | [301e80cca6.json](./301e80cca6.json) |
 | SI      | BankSepa        | Out       | m1v7p      | [301e80cca6.json](./301e80cca6.json) |
 | SK      | BankSepa        | Out       | m1v7p      | [301e80cca6.json](./301e80cca6.json) |
@@ -63,4 +64,4 @@ These schemas describe the data required to complete a payment. Use them with fo
 
 ---
 
-_Generated: 2026-07-07T10:20:47Z_
+_Generated: 2026-07-07T14:36:07Z_

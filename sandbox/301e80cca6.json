@@ -309,6 +309,13 @@
         "paymentMethodType": "BankSepa"
       },
       {
+        "id": "0fbcd3e4-d562-5822-a932-eb8ac127a600",
+        "country": "RS",
+        "direction": "Out",
+        "finServiceID": "m1v7p",
+        "paymentMethodType": "BankSepa"
+      },
+      {
         "id": "95bbd184-9469-5142-b4c7-5f200a61a3e3",
         "country": "SE",
         "direction": "Out",
@@ -331,6 +338,6 @@
       }
     ],
     "contentHash": "301e80cca62a7df2c1bfe9e0e1978a1cbfcf7372fd64ec44fee7d387aa2406e6",
-    "generatedAt": "2026-07-07T10:20:47Z"
+    "generatedAt": "2026-07-07T14:36:07Z"
   }
 }
