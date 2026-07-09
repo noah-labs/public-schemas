@@ -175,13 +175,6 @@
   "metadata": {
     "channels": [
       {
-        "id": "e23af6d7-274c-5576-9c47-63b677a6b3bc",
-        "country": "AE",
-        "direction": "Out",
-        "finServiceID": "y7n3f",
-        "paymentMethodType": "BankLocal"
-      },
-      {
         "id": "3d2ba9db-0478-5564-86f1-c2c01780f8f6",
         "country": "PL",
         "direction": "Out",
@@ -190,6 +183,6 @@
       }
     ],
     "contentHash": "fed78db728892b14fff855af67b8a01d04229f0fc979b4f97b8818fc937f19a0",
-    "generatedAt": "2026-07-08T20:01:07Z"
+    "generatedAt": "2026-07-09T16:27:42Z"
   }
 }
