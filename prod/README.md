@@ -8,6 +8,7 @@ These schemas describe the data required to complete a payment. Use them with fo
 
 | Country | Payment Method        | Direction | FinService | Schema                               |
 | ------- | --------------------- | --------- | ---------- | ------------------------------------ |
+| AE      | BankLocal             | Out       | y7n3f      | [fed78db728.json](./fed78db728.json) |
 | AR      | IdentifierAlias       | Out       | b9s4g      | [21c66497c5.json](./21c66497c5.json) |
 | AR      | IdentifierQr          | Out       | b9s4g      | [054407430d.json](./054407430d.json) |
 | AT      | BankSepa              | Out       | m1v7p      | [301e80cca6.json](./301e80cca6.json) |
@@ -25,7 +26,7 @@ These schemas describe the data required to complete a payment. Use them with fo
 | DK      | BankLocal             | Out       | y7n3f      | [6ce1ce3ec7.json](./6ce1ce3ec7.json) |
 | DK      | BankSepa              | Out       | m1v7p      | [301e80cca6.json](./301e80cca6.json) |
 | EE      | BankSepa              | Out       | m1v7p      | [301e80cca6.json](./301e80cca6.json) |
-| EG      | BankLocal             | Out       | h5j1y      | [1512d37fc5.json](./1512d37fc5.json) |
+| EG      | BankLocal             | Out       | h5j1y      | [221c6f3faa.json](./221c6f3faa.json) |
 | ES      | BankSepa              | Out       | m1v7p      | [301e80cca6.json](./301e80cca6.json) |
 | FI      | BankSepa              | Out       | m1v7p      | [301e80cca6.json](./301e80cca6.json) |
 | FR      | BankSepa              | Out       | m1v7p      | [301e80cca6.json](./301e80cca6.json) |
@@ -87,4 +88,4 @@ These schemas describe the data required to complete a payment. Use them with fo
 
 ---
 
-_Generated: 2026-07-09T16:27:42Z_
+_Generated: 2026-07-14T08:22:05Z_
