@@ -1655,21 +1655,21 @@
   "metadata": {
     "channels": [
       {
-        "id": "02c12825-ecfd-594a-8458-82cc02c65615",
+        "id": "08a58d07-5c0f-5e4d-8dea-a4835ea5ce7e",
         "country": "US",
         "direction": "In",
         "finServiceID": "k7m2x",
         "paymentMethodType": "BankSwift"
       },
       {
-        "id": "4e294347-9513-5716-b690-2b17b98a0314",
+        "id": "5b9d2e99-5a95-5b98-a62c-8ffee4b9dd68",
         "country": "XX",
         "direction": "In",
         "finServiceID": "k7m2x",
         "paymentMethodType": "BankSwift"
       },
       {
-        "id": "43c031ba-1bf5-5bd9-b075-e0d30dbe5161",
+        "id": "1269c7e1-cd53-5c2e-8cb5-2ca3c5f59675",
         "country": "XX",
         "direction": "Out",
         "finServiceID": "k7m2x",
@@ -1677,6 +1677,6 @@
       }
     ],
     "contentHash": "06a380717daf68460a1b514e576d4384876f2a38b78b4a893a4818a3583e100a",
-    "generatedAt": "2026-07-16T07:17:15Z"
+    "generatedAt": "2026-07-17T20:09:06Z"
   }
 }
