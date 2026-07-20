@@ -1,0 +1,218 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "Beneficiary": {
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "BeneficiaryType": {
+                "const": "Individual"
+              }
+            },
+            "required": ["BeneficiaryType"]
+          },
+          "then": {
+            "properties": {
+              "DocumentID": {
+                "title": "Document ID",
+                "type": "string"
+              },
+              "DocumentType": {
+                "enum": ["RFC", "CURP"],
+                "title": "Document Type",
+                "type": "string"
+              },
+              "FirstName": {
+                "errorMessage": "must be between 1 and 50 characters",
+                "maxLength": 50,
+                "minLength": 1,
+                "title": "Beneficiary Name",
+                "type": "string"
+              },
+              "LastName": {
+                "errorMessage": "must be between 1 and 50 characters",
+                "maxLength": 50,
+                "minLength": 1,
+                "title": "Beneficiary Last Name",
+                "type": "string"
+              }
+            },
+            "required": ["FirstName", "LastName", "DocumentType", "DocumentID"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "BeneficiaryType": {
+                "const": "Business"
+              }
+            },
+            "required": ["BeneficiaryType"]
+          },
+          "then": {
+            "properties": {
+              "CompanyName": {
+                "errorMessage": "must be between 1 and 100 characters",
+                "maxLength": 100,
+                "minLength": 1,
+                "title": "Company Name",
+                "type": "string"
+              },
+              "DocumentID": {
+                "title": "Document ID",
+                "type": "string"
+              },
+              "DocumentType": {
+                "enum": ["RFC"],
+                "title": "Document Type",
+                "type": "string"
+              }
+            },
+            "required": ["CompanyName", "DocumentType", "DocumentID"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "DocumentType": {
+                "const": "RFC"
+              }
+            },
+            "required": ["DocumentType"]
+          },
+          "then": {
+            "properties": {
+              "DocumentID": {
+                "errorMessage": "RFC must be 12 or 13 alphanumeric characters",
+                "pattern": "^\\w{12,13}$",
+                "title": "Document ID",
+                "type": "string"
+              }
+            },
+            "required": ["DocumentID"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "DocumentType": {
+                "const": "CURP"
+              }
+            },
+            "required": ["DocumentType"]
+          },
+          "then": {
+            "properties": {
+              "DocumentID": {
+                "errorMessage": "CURP must be exactly 18 alphanumeric characters",
+                "pattern": "^[a-zA-Z0-9]{18}$",
+                "title": "Document ID",
+                "type": "string"
+              }
+            },
+            "required": ["DocumentID"]
+          }
+        }
+      ],
+      "properties": {
+        "BeneficiaryType": {
+          "enum": ["Individual", "Business"],
+          "title": "Beneficiary Type",
+          "type": "string"
+        },
+        "Bank": {
+          "enum": [
+            "BANAMEX (BANCO NACIONAL DE MÉXICO)",
+            "BANCOMEXT (BANCO NACIONAL DE COMERCIO EXTERIOR)",
+            "BBVA MEXICO (EX BANCOMER)",
+            "SANTANDER (BANCO SANTANDER MEXICO)",
+            "BANJERCITO (BANCO NACIONAL DEL EJÉRCITO)",
+            "HSBC MÉXICO",
+            "BANBAJIO (BANCO DEL BAJÍO)",
+            "INBURSA (BANCO INBURSA)",
+            "BANCA MIFEL",
+            "SCOTIABANK INVERLAT",
+            "BANREGIO (BANCO REGIONAL DE MONTERREY)",
+            "INVEX (BANCO INVEX)",
+            "BANSI",
+            "AFIRME (BANCA AFIRME)",
+            "BANORTE (BANCO MERCANTIL DEL NORTE)",
+            "BANK OF AMERICA MÉXICO",
+            "MUFG (BANK OF TOKYO-MITSUBISHI UFJ MEX)",
+            "J.P. MORGAN (BANCO J.P. MORGAN)",
+            "MONEX (BANCO MONEX)",
+            "BANCO VE POR MAS",
+            "CITI MEXICO (EX DEUTSCHE BANK MÉXICO)",
+            "AUTOFIN (BANCO AUTOFIN MÉXICO)",
+            "COMPARTAMOS (BANCO COMPARTAMOS)",
+            "MULTIVA (BANCO MULTIVA)",
+            "ACTINVER (BANCO ACTINVER)",
+            "BANCOPPEL",
+            "BANCO BASE",
+            "BANKAOOL",
+            "BANCREA",
+            "ICBC",
+            "BANCO DE SABADELL",
+            "SHINHAN BANK MEXICO",
+            "MIZUHO BANK",
+            "HEY BANCO (BANREGIO)",
+            "STP (SISTEMA DE TRANSFERENCIAS Y PAGOS)",
+            "NU MEXICO",
+            "MERCADO PAGO W"
+          ],
+          "title": "Bank",
+          "type": "string"
+        },
+        "AccountType": {
+          "enum": ["Checking", "Savings"],
+          "title": "Account Type",
+          "type": "string"
+        },
+        "AccountNumber": {
+          "errorMessage": "must be between 10 and 18 digits",
+          "maxLength": 18,
+          "minLength": 10,
+          "pattern": "^[0-9]{10,18}$",
+          "title": "CLABE / Account Number",
+          "type": "string"
+        },
+        "DocumentType": {
+          "title": "Document Type",
+          "type": "string"
+        },
+        "DocumentID": {
+          "title": "Document ID",
+          "type": "string"
+        }
+      },
+      "required": [
+        "BeneficiaryType",
+        "Bank",
+        "AccountType",
+        "AccountNumber",
+        "DocumentType",
+        "DocumentID"
+      ],
+      "title": "Beneficiary",
+      "type": "object"
+    }
+  },
+  "required": ["Beneficiary"],
+  "metadata": {
+    "channels": [
+      {
+        "id": "e1a9b968-3e7f-5974-a7aa-80816ecf598a",
+        "country": "MX",
+        "direction": "Out",
+        "finServiceID": "l4p8x",
+        "paymentMethodType": "BankLocal"
+      }
+    ],
+    "contentHash": "b3f9e28b5c680f3f633fe0c77721a64d03b30e0fa1faff0061b1814c3b7f101f",
+    "generatedAt": "2026-07-20T23:11:12Z"
+  }
+}

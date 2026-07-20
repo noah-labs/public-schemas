@@ -20,6 +20,7 @@
               "Identifier": {
                 "errorMessage": "must be a valid email address",
                 "format": "email",
+                "maxLength": 255,
                 "title": "Email",
                 "type": "string"
               }
@@ -40,7 +41,8 @@
             "properties": {
               "Identifier": {
                 "errorMessage": "must be a valid UUID",
-                "maxLength": 255,
+                "maxLength": 36,
+                "minLength": 3,
                 "title": "Random key (UUID)",
                 "type": "string"
               }
@@ -102,39 +104,83 @@
       "title": "Pix Key Details",
       "type": "object"
     },
-    "BeneficiaryName": {
-      "properties": {
-        "FirstName": {
-          "errorMessage": "First Name must be between 1 and 50 characters",
-          "maxLength": 50,
-          "minLength": 1,
-          "title": "First Name",
-          "type": "string"
+    "Beneficiary": {
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "BeneficiaryType": {
+                "const": "Individual"
+              }
+            },
+            "required": ["BeneficiaryType"]
+          },
+          "then": {
+            "properties": {
+              "FirstName": {
+                "errorMessage": "First Name must be between 1 and 50 characters",
+                "maxLength": 50,
+                "minLength": 1,
+                "title": "First Name",
+                "type": "string"
+              },
+              "LastName": {
+                "errorMessage": "Last Name must not be longer than 50 characters",
+                "maxLength": 50,
+                "title": "Last Name",
+                "type": "string"
+              }
+            },
+            "required": ["FirstName", "LastName"]
+          }
         },
-        "LastName": {
-          "errorMessage": "Last Name must not be longer than 50 characters",
-          "maxLength": 50,
-          "title": "Last Name",
+        {
+          "if": {
+            "properties": {
+              "BeneficiaryType": {
+                "const": "Business"
+              }
+            },
+            "required": ["BeneficiaryType"]
+          },
+          "then": {
+            "properties": {
+              "CompanyName": {
+                "errorMessage": "Company Name must be between 1 and 100 characters",
+                "maxLength": 100,
+                "minLength": 1,
+                "title": "Company Name",
+                "type": "string"
+              }
+            },
+            "required": ["CompanyName"]
+          }
+        }
+      ],
+      "properties": {
+        "BeneficiaryType": {
+          "enum": ["Individual", "Business"],
+          "title": "Beneficiary Type",
           "type": "string"
         }
       },
-      "required": ["FirstName"],
-      "title": "Beneficiary Name",
+      "required": ["BeneficiaryType"],
+      "title": "Beneficiary",
       "type": "object"
     }
   },
-  "required": ["IdentifierDetails", "BeneficiaryName"],
+  "required": ["IdentifierDetails", "Beneficiary"],
   "metadata": {
     "channels": [
       {
-        "id": "653b8ad5-c523-5511-b8f4-46d34c51046a",
+        "id": "e05c99f1-51d8-59af-abfb-77445fa2dce2",
         "country": "BR",
         "direction": "Out",
-        "finServiceID": "b9s4g",
+        "finServiceID": "l4p8x",
         "paymentMethodType": "IdentifierPix"
       }
     ],
-    "contentHash": "90567053fd9e30ba94656baaea7353382a71e744e147099712b570a8f2efa54b",
+    "contentHash": "36e3c28b97c54fa974a0a580aed65ad79f41aca3b3bbc75acfa27eb1c4b374c4",
     "generatedAt": "2026-07-20T23:11:12Z"
   }
 }
