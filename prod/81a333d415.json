@@ -147,7 +147,7 @@
   "metadata": {
     "channels": [
       {
-        "id": "c013a21a-eae6-5118-be31-94ad6c80fc99",
+        "id": "214eab50-e22b-5e0f-b487-37dc1addee90",
         "country": "US",
         "direction": "Out",
         "finServiceID": "t6f2c",
@@ -155,6 +155,6 @@
       }
     ],
     "contentHash": "81a333d415687942c3b86b482e7e8a6c5d70db652e0c3b380f1b6976f7c2283a",
-    "generatedAt": "2026-07-23T15:38:44Z"
+    "generatedAt": "2026-07-23T15:39:20Z"
   }
 }
