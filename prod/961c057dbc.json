@@ -1,0 +1,186 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "BankDetails": {
+      "properties": {
+        "AccountNumber": {
+          "maxLength": 30,
+          "minLength": 5,
+          "title": "Account number",
+          "type": "string"
+        },
+        "Bank": {
+          "enum": [
+            "ABSA",
+            "Access",
+            "Afribank",
+            "African Bank",
+            "Bidvest Bank",
+            "The Bank of New York Mellon",
+            "Capitec Bank",
+            "Discovery Bank",
+            "First National Bank",
+            "Grindrod",
+            "HSBC",
+            "Imperial",
+            "Investec Bank",
+            "Mercantile Bank",
+            "Nedbank Limited",
+            "Old Mutual Money Account",
+            "Sasfin",
+            "Standard Bank",
+            "TYME",
+            "Ubank",
+            "Windhoek Bank"
+          ],
+          "title": "Bank",
+          "type": "string"
+        }
+      },
+      "required": ["AccountNumber", "Bank"],
+      "title": "Bank details",
+      "type": "object"
+    },
+    "AccountHolderName": {
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "AccountHolderType": {
+                "const": "Individual"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "Name": {
+                "properties": {
+                  "FirstName": {
+                    "errorMessage": "First name must be between 3 and 50 characters",
+                    "maxLength": 50,
+                    "minLength": 3,
+                    "title": "First name",
+                    "type": "string"
+                  },
+                  "LastName": {
+                    "errorMessage": "Last name must be between 3 and 50 characters",
+                    "maxLength": 50,
+                    "minLength": 3,
+                    "title": "Last name",
+                    "type": "string"
+                  }
+                },
+                "required": ["FirstName", "LastName"],
+                "title": "Full name",
+                "type": "object"
+              }
+            },
+            "required": ["Name"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "AccountHolderType": {
+                "const": "Business"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "Name": {
+                "errorMessage": "Name must be between 3 and 50 characters",
+                "maxLength": 50,
+                "minLength": 3,
+                "title": "Business name",
+                "type": "string"
+              }
+            },
+            "required": ["Name"]
+          }
+        }
+      ],
+      "properties": {
+        "AccountHolderType": {
+          "enum": ["Individual", "Business"],
+          "title": "Account holder type",
+          "type": "string"
+        }
+      },
+      "required": ["AccountHolderType"],
+      "title": "Account holder name",
+      "type": "object"
+    },
+    "Email": {
+      "format": "email",
+      "title": "Email",
+      "type": "string"
+    },
+    "PhoneNumber": {
+      "title": "Phone number",
+      "type": "string"
+    },
+    "AccountHolderAddress": {
+      "properties": {
+        "Address": {
+          "maxLength": 70,
+          "minLength": 3,
+          "title": "Address",
+          "type": "string"
+        },
+        "City": {
+          "maxLength": 35,
+          "minLength": 2,
+          "title": "Town",
+          "type": "string"
+        },
+        "State": {
+          "maxLength": 35,
+          "minLength": 2,
+          "title": "State/province",
+          "type": "string"
+        }
+      },
+      "required": ["State", "City", "Address"],
+      "title": "Account holder address",
+      "type": "object"
+    },
+    "PaymentPurpose": {
+      "title": "Payment purpose",
+      "type": "string"
+    },
+    "Reference": {
+      "description": "This reference will appear on the beneficiary's bank statement",
+      "errorMessage": "",
+      "maxLength": 180,
+      "minLength": 0,
+      "pattern": "",
+      "title": "Reference",
+      "type": "string"
+    }
+  },
+  "required": [
+    "BankDetails",
+    "AccountHolderName",
+    "Email",
+    "PhoneNumber",
+    "AccountHolderAddress",
+    "PaymentPurpose"
+  ],
+  "metadata": {
+    "channels": [
+      {
+        "id": "87e0cbde-036d-562a-b882-1ce150e3cbc3",
+        "country": "ZA",
+        "direction": "Out",
+        "finServiceID": "h5j1y",
+        "paymentMethodType": "BankLocal"
+      }
+    ],
+    "contentHash": "961c057dbcd548f883b8fbee67704420ae14c86ccc006cddf41e0bbcf5bcdc7a",
+    "generatedAt": "2026-07-23T15:38:44Z"
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "BankDetails": {
+      "properties": {
+        "AccountNumber": {
+          "errorMessage": "Account number must contain only digits",
+          "maxLength": 20,
+          "minLength": 5,
+          "pattern": "^[0-9]+$",
+          "title": "Account number",
+          "type": "string"
+        },
+        "IfscCode": {
+          "title": "IFSC code",
+          "type": "string"
+        },
+        "BankName": {
+          "title": "Bank name",
+          "type": "string"
+        }
+      },
+      "required": ["AccountNumber", "IfscCode"],
+      "title": "Bank details",
+      "type": "object"
+    },
+    "AccountHolderName": {
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "AccountHolderType": {
+                "const": "Individual"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "Name": {
+                "properties": {
+                  "FirstName": {
+                    "errorMessage": "First name must be between 3 and 50 characters",
+                    "maxLength": 50,
+                    "minLength": 3,
+                    "title": "First name",
+                    "type": "string"
+                  },
+                  "LastName": {
+                    "errorMessage": "Last name must be between 3 and 50 characters",
+                    "maxLength": 50,
+                    "minLength": 3,
+                    "title": "Last name",
+                    "type": "string"
+                  }
+                },
+                "required": ["FirstName", "LastName"],
+                "title": "Full name",
+                "type": "object"
+              }
+            },
+            "required": ["Name"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "AccountHolderType": {
+                "const": "Business"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "Name": {
+                "errorMessage": "Name must be between 3 and 50 characters",
+                "maxLength": 50,
+                "minLength": 3,
+                "title": "Business name",
+                "type": "string"
+              }
+            },
+            "required": ["Name"]
+          }
+        }
+      ],
+      "properties": {
+        "AccountHolderType": {
+          "enum": ["Individual", "Business"],
+          "title": "Account holder type",
+          "type": "string"
+        }
+      },
+      "required": ["AccountHolderType"],
+      "title": "Account holder name",
+      "type": "object"
+    },
+    "AccountHolderAddress": {
+      "properties": {
+        "Address": {
+          "maxLength": 70,
+          "minLength": 3,
+          "title": "Address",
+          "type": "string"
+        },
+        "City": {
+          "maxLength": 35,
+          "title": "City",
+          "type": "string"
+        },
+        "PostalCode": {
+          "maxLength": 10,
+          "title": "Postal code",
+          "type": "string"
+        },
+        "State": {
+          "maxLength": 35,
+          "title": "State/province",
+          "type": "string"
+        }
+      },
+      "required": ["Address", "City", "State", "PostalCode"],
+      "title": "Account holder address",
+      "type": "object"
+    },
+    "PaymentPurpose": {
+      "oneOf": [
+        {
+          "const": "Transfer to own account",
+          "title": "Transfer to own account",
+          "type": "string"
+        },
+        {
+          "const": "Family Maintenance",
+          "title": "Family maintenance",
+          "type": "string"
+        },
+        {
+          "const": "User Withdrawal",
+          "title": "User withdrawal",
+          "type": "string"
+        }
+      ],
+      "title": "Payment purpose",
+      "type": "string"
+    }
+  },
+  "required": ["BankDetails", "AccountHolderName", "AccountHolderAddress", "PaymentPurpose"],
+  "metadata": {
+    "channels": [
+      {
+        "id": "fdb657a5-dbc0-51dc-bb30-181604267a66",
+        "country": "IN",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankLocal"
+      }
+    ],
+    "contentHash": "0ae86bc3ef597d645384977a3e3da47fa3a57eddf6825b93a1b1f62500b42936",
+    "generatedAt": "2026-07-23T15:38:44Z"
+  }
+}

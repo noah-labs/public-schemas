@@ -7,7 +7,7 @@
     "QrPayload": {
       "maxLength": 300,
       "minLength": 3,
-      "title": "QR3",
+      "title": "Pix copy \u0026 paste code",
       "type": "string",
       "x-scan-type": "qr"
     }
@@ -16,14 +16,14 @@
   "metadata": {
     "channels": [
       {
-        "id": "d06f3e81-f046-5dcc-91bf-18df3c185448",
-        "country": "AR",
+        "id": "61d7f970-95d4-56a8-b29c-a10956dfffb6",
+        "country": "BR",
         "direction": "Out",
         "finServiceID": "b9s4g",
         "paymentMethodType": "IdentifierQr"
       }
     ],
-    "contentHash": "054407430dda5d6b451687346993afa06cf76290772954bd442fd2b59c076f09",
-    "generatedAt": "2026-07-23T15:39:20Z"
+    "contentHash": "61082f127f6aad02069c3533413ada66b3df36cb7e4172ef4780451bb970ec01",
+    "generatedAt": "2026-07-23T15:38:44Z"
   }
 }

@@ -1,0 +1,289 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "Beneficiary": {
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "BeneficiaryType": {
+                "const": "Individual"
+              }
+            },
+            "required": ["BeneficiaryType"]
+          },
+          "then": {
+            "properties": {
+              "DocumentID": {
+                "title": "Document ID",
+                "type": "string"
+              },
+              "DocumentType": {
+                "enum": ["DNI", "CUIL", "CUIT", "CDI"],
+                "title": "Document type",
+                "type": "string"
+              },
+              "FirstName": {
+                "errorMessage": "must be between 1 and 50 characters",
+                "maxLength": 50,
+                "minLength": 1,
+                "title": "Beneficiary name",
+                "type": "string"
+              },
+              "LastName": {
+                "errorMessage": "must be between 1 and 50 characters",
+                "maxLength": 50,
+                "minLength": 1,
+                "title": "Beneficiary last name",
+                "type": "string"
+              }
+            },
+            "required": ["FirstName", "LastName", "DocumentType", "DocumentID"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "BeneficiaryType": {
+                "const": "Business"
+              }
+            },
+            "required": ["BeneficiaryType"]
+          },
+          "then": {
+            "properties": {
+              "CompanyName": {
+                "errorMessage": "must be between 1 and 100 characters",
+                "maxLength": 100,
+                "minLength": 1,
+                "title": "Company name",
+                "type": "string"
+              },
+              "DocumentID": {
+                "title": "Document ID",
+                "type": "string"
+              },
+              "DocumentType": {
+                "enum": ["CUIT", "CDI"],
+                "title": "Document type",
+                "type": "string"
+              }
+            },
+            "required": ["CompanyName", "DocumentType", "DocumentID"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "DocumentType": {
+                "const": "DNI"
+              }
+            },
+            "required": ["DocumentType"]
+          },
+          "then": {
+            "properties": {
+              "DocumentID": {
+                "errorMessage": "DNI must be exactly 8 digits",
+                "pattern": "^[0-9]{8}$",
+                "title": "Document ID",
+                "type": "string"
+              }
+            },
+            "required": ["DocumentID"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "DocumentType": {
+                "const": "CUIL"
+              }
+            },
+            "required": ["DocumentType"]
+          },
+          "then": {
+            "properties": {
+              "DocumentID": {
+                "errorMessage": "CUIL must match format XX-XXXXXXXX-X (11 digits)",
+                "pattern": "^(20|23|24|25|26|27|30|33|34)-?\\d{2}[.]?\\d{3}[.]?\\d{3}-?\\d$",
+                "title": "Document ID",
+                "type": "string"
+              }
+            },
+            "required": ["DocumentID"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "DocumentType": {
+                "const": "CUIT"
+              }
+            },
+            "required": ["DocumentType"]
+          },
+          "then": {
+            "properties": {
+              "DocumentID": {
+                "errorMessage": "CUIT must match format XX-XXXXXXXX-X (11 digits)",
+                "pattern": "^(20|23|24|25|26|27|30|33|34)-?\\d{2}[.]?\\d{3}[.]?\\d{3}-?\\d$",
+                "title": "Document ID",
+                "type": "string"
+              }
+            },
+            "required": ["DocumentID"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "DocumentType": {
+                "const": "CDI"
+              }
+            },
+            "required": ["DocumentType"]
+          },
+          "then": {
+            "properties": {
+              "DocumentID": {
+                "errorMessage": "CDI must match format XX-XXXXXXXX-X (11 digits)",
+                "pattern": "^(20|23|24|25|26|27|30|33|34)-?\\d{2}[.]?\\d{3}[.]?\\d{3}-?\\d$",
+                "title": "Document ID",
+                "type": "string"
+              }
+            },
+            "required": ["DocumentID"]
+          }
+        }
+      ],
+      "properties": {
+        "BeneficiaryType": {
+          "enum": ["Individual", "Business"],
+          "title": "Beneficiary type",
+          "type": "string"
+        },
+        "Bank": {
+          "enum": [
+            "WALLETS CVU (MERCADO PAGO, PERSONAL PAY, VALEPEI, NUBI)",
+            "BANCO DE GALICIA Y BUENOS AIRES S.A.U.",
+            "BANCO DE LA NACION ARGENTINA",
+            "BANCO DE LA PROVINCIA DE BUENOS AIRES",
+            "INDUSTRIAL AND COMMERCIAL BANK OF CHINA",
+            "CITIBANK N.A.",
+            "BANCO BBVA ARGENTINA S.A.",
+            "BANCO DE LA PROVINCIA DE CORDOBA S.A.",
+            "BANCO SUPERVIELLE S.A.",
+            "BANCO DE LA CIUDAD DE BUENOS AIRES",
+            "BANCO PATAGONIA S.A.",
+            "BANCO HIPOTECARIO S.A.",
+            "BANCO DE SAN JUAN S.A.",
+            "BANCO MUNICIPAL DE ROSARIO",
+            "BANCO SANTANDER ARGENTINA S.A.",
+            "BANCO DEL CHUBUT S.A.",
+            "BANCO DE SANTA CRUZ S.A.",
+            "BANCO DE LA PAMPA SOCIEDAD DE ECONOMIA M",
+            "BANCO DE CORRIENTES S.A.",
+            "BANCO PROVINCIA DEL NEUQUEN SOCIEDAD ANO",
+            "BANK OF CHINA LIMITED SUCURSAL BUENOS AI",
+            "BRUBANK S.A.U.",
+            "BIBANK S.A.",
+            "HSBC BANK ARGENTINA S.A.",
+            "OPEN BANK ARGENTINA S.A.",
+            "JPMORGAN CHASE BANK",
+            "BANCO CREDICOOP COOPERATIVO LIMITADO",
+            "BANCO DE VALORES S.A.",
+            "CREDITO REGIONAL COMPANIA FINANCIERA S.A",
+            "BANCO ROELA S.A.",
+            "BANCO MARIVA S.A.",
+            "BNP PARIBAS",
+            "BANCO PROVINCIA DE TIERRA DEL FUEGO",
+            "BANCO DE LA REPUBLICA ORIENTAL DEL URUGU",
+            "BANCO SAENZ S.A.",
+            "BANCO MERIDIAN S.A.",
+            "BANCO MACRO S.A.",
+            "BANCO COMAFI SOCIEDAD ANONIMA",
+            "BANCO DE INVERSION Y COMERCIO EXTERIOR S",
+            "BANCO PIANO S.A.",
+            "BANCO JULIO SOCIEDAD ANONIMA",
+            "BANCO RIOJA SOCIEDAD ANONIMA UNIPERSONAL",
+            "BANCO DEL SOL S.A.",
+            "NUEVO BANCO DEL CHACO S. A.",
+            "BANCO VOII S.A.",
+            "BANCO DE FORMOSA S.A.",
+            "BANCO CMF S.A.",
+            "BANCO DE SANTIAGO DEL ESTERO S.A.",
+            "BANCO INDUSTRIAL S.A.",
+            "NUEVO BANCO DE SANTA FE SOCIEDAD ANONIMA",
+            "BANCO CETELEM ARGENTINA S.A.",
+            "BANCO DE SERVICIOS FINANCIEROS S.A.",
+            "BANCO DE SERVICIOS Y TRANSACCIONES S.A.",
+            "RCI BANQUE S.A.",
+            "BACS BANCO DE CREDITO Y SECURITIZACION S",
+            "BANCO MASVENTAS S.A.",
+            "WILOBANK S.A. (UILO BANK - UALA)",
+            "NUEVO BANCO DE ENTRE RIOS S.A.",
+            "BANCO COLUMBIA S.A.",
+            "REBANKING HOLDING SA.",
+            "BANCO BICA S.A.",
+            "BANCO COINAG S.A.",
+            "BANCO DE COMERCIO S.A.",
+            "BANCO SUCREDITO REGIONAL S.A.U.",
+            "BANCO DINO S.A.",
+            "NARANJA X"
+          ],
+          "title": "Bank",
+          "type": "string"
+        },
+        "AccountType": {
+          "enum": ["Checking", "Savings"],
+          "title": "Account type",
+          "type": "string"
+        },
+        "AccountNumber": {
+          "errorMessage": "must be a 22-digit CBU or CVU",
+          "maxLength": 22,
+          "minLength": 22,
+          "pattern": "^[0-9]{22}$",
+          "title": "CBU/CVU",
+          "type": "string"
+        },
+        "DocumentType": {
+          "title": "Document type",
+          "type": "string"
+        },
+        "DocumentID": {
+          "title": "Document ID",
+          "type": "string"
+        }
+      },
+      "required": [
+        "BeneficiaryType",
+        "Bank",
+        "AccountType",
+        "AccountNumber",
+        "DocumentType",
+        "DocumentID"
+      ],
+      "title": "Beneficiary",
+      "type": "object"
+    }
+  },
+  "required": ["Beneficiary"],
+  "metadata": {
+    "channels": [
+      {
+        "id": "00111c37-92fe-58d0-b70e-1ce891a0f253",
+        "country": "AR",
+        "direction": "Out",
+        "finServiceID": "l4p8x",
+        "paymentMethodType": "BankLocal"
+      }
+    ],
+    "contentHash": "8fb1c1f380aee413c6355e5100fedf6a7278ca45c494a2e9dc958cd898de1b05",
+    "generatedAt": "2026-07-23T15:38:44Z"
+  }
+}

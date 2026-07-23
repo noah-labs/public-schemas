@@ -1,0 +1,388 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "BankDetails": {
+      "properties": {
+        "AccountNumber": {
+          "maxLength": 30,
+          "minLength": 5,
+          "title": "Account number",
+          "type": "string"
+        },
+        "Bank": {
+          "enum": [
+            "Arab African International Bank",
+            "Arab Banking Corporation",
+            "Al Ahli Bank of Kuwait – Egypt",
+            "Al Baraka Bank Egypt",
+            "Abu Dhabi Islamic Bank – Egypt",
+            "Arab Investment Bank",
+            "Arab Bank",
+            "Arab International Bank",
+            "Ahly United Bank",
+            "Audi Bank",
+            "Attijariwafa Bank Egypt",
+            "Banque Du Caire",
+            "Blom Bank Egypt",
+            "Bank of Alexandria",
+            "Credit Agricole Egypt",
+            "Central Bank of Egypt",
+            "Commercial International Bank",
+            "Citibank",
+            "Egyptian Arab Land Bank",
+            "Export Development Bank of Egypt",
+            "Egyptian Gulf Bank",
+            "Emirates National Bank of Dubai",
+            "First Abu Dhabi Bank",
+            "Faisal Islamic Bank of Egypt",
+            "Housing And Development Bank",
+            "HSBC",
+            "Industrial Development Bank of Egypt",
+            "Mashreq Bank",
+            "Misr Iran Development Bank",
+            "Meeza Digital",
+            "Banque Misr",
+            "National Bank of Egypt",
+            "National Bank of Greece",
+            "National Bank of Kuwait",
+            "Nasser social Bank",
+            "The Principal Bank for Development and Agri.",
+            "Qatar National Bank Alahli",
+            "Societe Arabe Internationale De Banque",
+            "Suez Canal Bank",
+            "The United Bank",
+            "Union National Bank"
+          ],
+          "title": "Bank",
+          "type": "string"
+        }
+      },
+      "required": ["AccountNumber", "Bank"],
+      "title": "Bank details",
+      "type": "object"
+    },
+    "AccountHolderName": {
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "AccountHolderType": {
+                "const": "Individual"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "Name": {
+                "properties": {
+                  "FirstName": {
+                    "errorMessage": "First name must be between 3 and 50 characters",
+                    "maxLength": 50,
+                    "minLength": 3,
+                    "title": "First name",
+                    "type": "string"
+                  },
+                  "LastName": {
+                    "errorMessage": "Last name must be between 3 and 50 characters",
+                    "maxLength": 50,
+                    "minLength": 3,
+                    "title": "Last name",
+                    "type": "string"
+                  }
+                },
+                "required": ["FirstName", "LastName"],
+                "title": "Full name",
+                "type": "object"
+              }
+            },
+            "required": ["Name"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "AccountHolderType": {
+                "const": "Business"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "Name": {
+                "errorMessage": "Name must be between 3 and 50 characters",
+                "maxLength": 50,
+                "minLength": 3,
+                "title": "Business name",
+                "type": "string"
+              }
+            },
+            "required": ["Name"]
+          }
+        }
+      ],
+      "properties": {
+        "AccountHolderType": {
+          "enum": ["Individual", "Business"],
+          "title": "Account holder type",
+          "type": "string"
+        }
+      },
+      "required": ["AccountHolderType"],
+      "title": "Account holder name",
+      "type": "object"
+    },
+    "AccountHolderAddress": {
+      "properties": {
+        "Address": {
+          "maxLength": 70,
+          "minLength": 3,
+          "title": "Address",
+          "type": "string"
+        },
+        "City": {
+          "maxLength": 35,
+          "minLength": 2,
+          "title": "Town",
+          "type": "string"
+        },
+        "State": {
+          "maxLength": 35,
+          "minLength": 2,
+          "title": "State/province",
+          "type": "string"
+        }
+      },
+      "required": ["State", "City", "Address"],
+      "title": "Account holder address",
+      "type": "object"
+    },
+    "PaymentPurpose": {
+      "oneOf": [
+        {
+          "const": "Individuals Transfers",
+          "title": "Individuals transfers",
+          "type": "string"
+        },
+        {
+          "const": "Remittances",
+          "title": "Remittances",
+          "type": "string"
+        },
+        {
+          "const": "Rewards",
+          "title": "Rewards",
+          "type": "string"
+        },
+        {
+          "const": "Mobile Wallet Transfer",
+          "title": "Mobile wallet transfer",
+          "type": "string"
+        },
+        {
+          "const": "Affiliation programs",
+          "title": "Affiliation programs",
+          "type": "string"
+        },
+        {
+          "const": "Family maintenance",
+          "title": "Family maintenance",
+          "type": "string"
+        },
+        {
+          "const": "Payment for charity reasons",
+          "title": "Payment for charity reasons",
+          "type": "string"
+        },
+        {
+          "const": "Purchase sale of goods",
+          "title": "Purchase sale of goods",
+          "type": "string"
+        },
+        {
+          "const": "Purchase sale of services",
+          "title": "Purchase sale of services",
+          "type": "string"
+        },
+        {
+          "const": "Payment of capital contribution",
+          "title": "Payment of capital contribution",
+          "type": "string"
+        },
+        {
+          "const": "Purchase sale of digital goods",
+          "title": "Purchase sale of digital goods",
+          "type": "string"
+        },
+        {
+          "const": "Education",
+          "title": "Education",
+          "type": "string"
+        },
+        {
+          "const": "Payment of travel tickets or tourism agencies",
+          "title": "Payment of travel tickets or tourism agencies",
+          "type": "string"
+        },
+        {
+          "const": "Payment of payroll",
+          "title": "Payment of payroll",
+          "type": "string"
+        },
+        {
+          "const": "Payment of an investment (interest) owed to a financial entity",
+          "title": "Payment of an investment (interest) owed to a financial entity",
+          "type": "string"
+        },
+        {
+          "const": "Refund",
+          "title": "Refund",
+          "type": "string"
+        },
+        {
+          "const": "Payment of property purchase",
+          "title": "Payment of property purchase",
+          "type": "string"
+        },
+        {
+          "const": "Tourism",
+          "title": "Tourism",
+          "type": "string"
+        },
+        {
+          "const": "Supplier payment",
+          "title": "Supplier payment",
+          "type": "string"
+        },
+        {
+          "const": "Disponibilidades",
+          "title": "Disponibilidades",
+          "type": "string"
+        },
+        {
+          "const": "Payment of Insurances",
+          "title": "Payment of insurances",
+          "type": "string"
+        },
+        {
+          "const": "Entertainment",
+          "title": "Entertainment",
+          "type": "string"
+        },
+        {
+          "const": "Paying Installments",
+          "title": "Paying installments",
+          "type": "string"
+        },
+        {
+          "const": "Paying Invoices",
+          "title": "Paying invoices",
+          "type": "string"
+        },
+        {
+          "const": "Payment for medical care services",
+          "title": "Payment for medical care services",
+          "type": "string"
+        },
+        {
+          "const": "Payment of an investment",
+          "title": "Payment of an investment",
+          "type": "string"
+        },
+        {
+          "const": "Payment to savings/retirement account",
+          "title": "Payment to savings/retirement account",
+          "type": "string"
+        },
+        {
+          "const": "Pension payment",
+          "title": "Pension payment",
+          "type": "string"
+        },
+        {
+          "const": "Business to Business",
+          "title": "Business to business",
+          "type": "string"
+        },
+        {
+          "const": "Payment of movable property rental",
+          "title": "Payment of movable property rental",
+          "type": "string"
+        },
+        {
+          "const": "Loans",
+          "title": "Loans",
+          "type": "string"
+        },
+        {
+          "const": "Payment of study/tuition costs",
+          "title": "Payment of study/tuition costs",
+          "type": "string"
+        },
+        {
+          "const": "Payment of shares",
+          "title": "Payment of shares",
+          "type": "string"
+        },
+        {
+          "const": "Payment of taxes",
+          "title": "Payment of taxes",
+          "type": "string"
+        },
+        {
+          "const": "Payment for logistic and/or delivery services",
+          "title": "Payment for logistic and/or delivery services",
+          "type": "string"
+        },
+        {
+          "const": "Public/government services",
+          "title": "Public/government services",
+          "type": "string"
+        },
+        {
+          "const": "Paying Expenses",
+          "title": "Paying expenses",
+          "type": "string"
+        },
+        {
+          "const": "Payment to common utility provider",
+          "title": "Payment to common utility provider",
+          "type": "string"
+        }
+      ],
+      "title": "Payment purpose",
+      "type": "string"
+    },
+    "Reference": {
+      "description": "This reference will appear on the beneficiary's bank statement",
+      "errorMessage": "",
+      "maxLength": 180,
+      "minLength": 0,
+      "pattern": "",
+      "title": "Reference",
+      "type": "string"
+    }
+  },
+  "required": [
+    "BankDetails",
+    "AccountHolderName",
+    "AccountHolderAddress",
+    "PaymentPurpose",
+    "Reference"
+  ],
+  "metadata": {
+    "channels": [
+      {
+        "id": "055190ce-a8dd-500f-a3cc-6ac6dff97bc4",
+        "country": "EG",
+        "direction": "Out",
+        "finServiceID": "h5j1y",
+        "paymentMethodType": "BankLocal"
+      }
+    ],
+    "contentHash": "832defbd31ed3e7e1e61ab2ee78efb26fc4fd638525b2ba810029fe3d923fdcc",
+    "generatedAt": "2026-07-23T15:38:44Z"
+  }
+}

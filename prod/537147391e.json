@@ -1,0 +1,411 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "BankDetails": {
+      "properties": {
+        "AccountNumber": {
+          "errorMessage": "Account number must contain only digits",
+          "maxLength": 20,
+          "minLength": 5,
+          "pattern": "^[0-9]+$",
+          "title": "Account number",
+          "type": "string"
+        },
+        "BankCode": {
+          "errorMessage": "Enter a valid SWIFT/BIC code (e.g., DBSSSGSG)",
+          "maxLength": 11,
+          "minLength": 8,
+          "pattern": "^[A-Z]{6}[A-Z0-9]{2}([A-Z0-9]{3})?$",
+          "title": "SWIFT/BIC code",
+          "type": "string"
+        },
+        "BankName": {
+          "enum": [
+            "AllBank Inc.",
+            "Amanah Islamic Investment Bank",
+            "Asia United Bank (AUB)",
+            "Australia and New Zealand Bank",
+            "Banco De Oro Unibank, Inc.",
+            "Bangko Kabayan Inc",
+            "Bangkok Bank Public Co, Ltd.",
+            "Bangko Mabuhay (A Rural Bank), Inc.",
+            "Bangko Nuestra Señora Del Pilar Inc",
+            "Bank of America, N.A.",
+            "Bank of China, Ltd. - Manila Branch",
+            "Bank of Commerce",
+            "Bank of Florida",
+            "Bank of Makati",
+            "Bank of the Philippine Islands (BPI)",
+            "BDO Network Bank",
+            "Binangonan Rural Bank (BRBDigital)",
+            "BPI Direct BanKO, Inc., A Savings Bank",
+            "Camalig Bank",
+            "Cantilan Bank",
+            "CARD Bank",
+            "CARD SME Bank, Inc., A Thrift Bank",
+            "Cebuana Lhuillier Rural Bank, Inc.",
+            "China Banking Corporation",
+            "China Bank Savings",
+            "CIMB Bank Philippines",
+            "Citibank, N.A.",
+            "City Savings Bank, Inc.",
+            "Community Rural Bank of Romblon",
+            "Country Builders Bank Inc",
+            "CTBC Bank (Philippines) Corp.",
+            "Deutsche Bank AG",
+            "Development Bank of the Philippines",
+            "Dumaguete City Development Bank",
+            "Dungganon Bank (A Microfinance Rural Bank), Inc.",
+            "East West Banking Corporation",
+            "EastWest Rural Bank or Komo",
+            "Equicom Savings Bank, Inc.",
+            "First Consolidated Bank Inc",
+            "GoTyme Bank",
+            "Guagua Rural Bank Inc",
+            "Hong Kong and Shanghai Banking Corp.",
+            "HSBC Savings Bank Inc",
+            "Industrial and Commercial Bank of China (ICBC) - Manila Branch",
+            "Industrial Bank of Korea",
+            "Infoserve Incorporated (Nationlink)",
+            "Innovative Rural Bank Inc",
+            "ISLA Bank",
+            "JP Morgan Chase Bank, NA.",
+            "KEB Hana Bank - Manila Branch",
+            "Korea Exchange Bank",
+            "Land Bank of The Philippines",
+            "Legazpi Savings Bank, Inc.",
+            "Malayan Bank Savings and Mortgage Bank, Inc.",
+            "Maya Bank, Inc.",
+            "Maybank Philippines",
+            "Mega International Commercial Bank Co, Ltd.",
+            "Metropolitan Bank and Trust Company (Metrobank)",
+            "Mindanao Consolidated Cooperative Bank",
+            "Mizuho Bank, Ltd. - Manila Branch",
+            "MUFG Bank, Ltd.",
+            "Netbank (Community Rural Bank of Romblon)",
+            "Omnipay, Inc.",
+            "Own Bank, The Rural Bank of Cavite City, Inc.",
+            "Pacific Ace Savings",
+            "Partner Rural Bank (Cotabato), Inc.",
+            "Philippine Bank of Communications (PBCOM)",
+            "Philippine Business Bank, Inc., A Savings Bank",
+            "Philippine National Bank (PNB)",
+            "Philippine Savings Bank (PSBank)",
+            "Philippine Trust Company",
+            "Philippine Veterans Bank",
+            "PNB Savings Bank",
+            "Producers Bank",
+            "Queen City Development Bank, Inc.",
+            "Quezon Capital Rural Bank, Inc",
+            "Rang-Ay Bank Inc",
+            "Rizal Commercial Banking Corporation (RCBC)",
+            "Robinsons Bank",
+            "Rural Bank of Digos",
+            "Rural Bank of Guinobatan, Inc.",
+            "Rural Bank of Montalban, Inc",
+            "Seabank Philippines Inc.",
+            "Security Bank Corporation",
+            "Shinhan Bank - Manila Branch",
+            "Standard Chartered Bank",
+            "Sterling Bank of Asia",
+            "Sumitomo Mitsui Banking Corporation (SMBC)",
+            "Sun Savings Bank",
+            "Tong Yang Savings Bank, Inc.",
+            "Tonik Digital Bank, Inc.",
+            "UCPB Savings bank",
+            "Union Bank of the Philippines (UBP)",
+            "Union Digital Bank",
+            "United Coconut Planters Bank (UCPB)",
+            "United Overseas Bank, Ltd. (UOB) - Manila Branch",
+            "UNObank, Inc",
+            "Wealth Development Bank Corporation",
+            "Yuanta Savings Bank, Inc."
+          ],
+          "title": "Bank name",
+          "type": "string"
+        }
+      },
+      "required": ["AccountNumber", "BankCode"],
+      "title": "Bank details",
+      "type": "object"
+    },
+    "AccountHolderName": {
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "AccountHolderType": {
+                "const": "Individual"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "Name": {
+                "properties": {
+                  "FirstName": {
+                    "errorMessage": "First name must be between 3 and 50 characters",
+                    "maxLength": 50,
+                    "minLength": 3,
+                    "title": "First name",
+                    "type": "string"
+                  },
+                  "LastName": {
+                    "errorMessage": "Last name must be between 3 and 50 characters",
+                    "maxLength": 50,
+                    "minLength": 3,
+                    "title": "Last name",
+                    "type": "string"
+                  }
+                },
+                "required": ["FirstName", "LastName"],
+                "title": "Full name",
+                "type": "object"
+              }
+            },
+            "required": ["Name"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "AccountHolderType": {
+                "const": "Business"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "Name": {
+                "errorMessage": "Name must be between 3 and 50 characters",
+                "maxLength": 50,
+                "minLength": 3,
+                "title": "Business name",
+                "type": "string"
+              }
+            },
+            "required": ["Name"]
+          }
+        }
+      ],
+      "properties": {
+        "AccountHolderType": {
+          "enum": ["Individual", "Business"],
+          "title": "Account holder type",
+          "type": "string"
+        }
+      },
+      "required": ["AccountHolderType"],
+      "title": "Account holder name",
+      "type": "object"
+    },
+    "PaymentPurpose": {
+      "oneOf": [
+        {
+          "const": "Payment for Services",
+          "title": "Payment for services",
+          "type": "string"
+        },
+        {
+          "const": "Payment for Software",
+          "title": "Payment for software",
+          "type": "string"
+        },
+        {
+          "const": "Payments for imported goods",
+          "title": "Payments for imported goods",
+          "type": "string"
+        },
+        {
+          "const": "Travel Services",
+          "title": "Travel services",
+          "type": "string"
+        },
+        {
+          "const": "Vendor / Contractor Payouts",
+          "title": "Vendor / contractor payouts",
+          "type": "string"
+        },
+        {
+          "const": "Transfer to own account",
+          "title": "Transfer to own account",
+          "type": "string"
+        },
+        {
+          "const": "Investment in Shares",
+          "title": "Investment in shares",
+          "type": "string"
+        },
+        {
+          "const": "Purchase of Property",
+          "title": "Purchase of property",
+          "type": "string"
+        },
+        {
+          "const": "Repayment of Loans",
+          "title": "Repayment of loans",
+          "type": "string"
+        },
+        {
+          "const": "Salary",
+          "title": "Salary",
+          "type": "string"
+        },
+        {
+          "const": "Payment of Property Rental",
+          "title": "Payment of property rental",
+          "type": "string"
+        },
+        {
+          "const": "Information Service Charges",
+          "title": "Information service charges",
+          "type": "string"
+        },
+        {
+          "const": "Advertising \u0026 Public relations-related expenses",
+          "title": "Advertising \u0026 public relations-related expenses",
+          "type": "string"
+        },
+        {
+          "const": "Royalty fees, trademark fees, patent fees, and copyright fees",
+          "title": "Royalty fees, trademark fees, patent fees, and copyright fees",
+          "type": "string"
+        },
+        {
+          "const": "Fees for brokers",
+          "title": "Fees for brokers",
+          "type": "string"
+        },
+        {
+          "const": "Front end fee",
+          "title": "Front end fee",
+          "type": "string"
+        },
+        {
+          "const": "Commitment fee",
+          "title": "Commitment fee",
+          "type": "string"
+        },
+        {
+          "const": "Guarantee fee",
+          "title": "Guarantee fee",
+          "type": "string"
+        },
+        {
+          "const": "Custodian fee",
+          "title": "Custodian fee",
+          "type": "string"
+        },
+        {
+          "const": "Fees for advisors, technical assistance, and academic knowledge, including remuneration for specialists",
+          "title": "Fees for advisors, technical assistance, and academic knowledge, including remuneration for specialists",
+          "type": "string"
+        },
+        {
+          "const": "Representative office expenses",
+          "title": "Representative office expenses",
+          "type": "string"
+        },
+        {
+          "const": "Tax Payment",
+          "title": "Tax payment",
+          "type": "string"
+        },
+        {
+          "const": "Transportation fees for goods",
+          "title": "Transportation fees for goods",
+          "type": "string"
+        },
+        {
+          "const": "Construction costs/expenses",
+          "title": "Construction costs/expenses",
+          "type": "string"
+        },
+        {
+          "const": "Insurance Premium",
+          "title": "Insurance premium",
+          "type": "string"
+        },
+        {
+          "const": "General Goods Trades - Offline trade",
+          "title": "General goods trades - offline trade",
+          "type": "string"
+        },
+        {
+          "const": "Insurance Claims Payment",
+          "title": "Insurance claims payment",
+          "type": "string"
+        },
+        {
+          "const": "Family Maintenance",
+          "title": "Family maintenance",
+          "type": "string"
+        },
+        {
+          "const": "Education-related student expenses",
+          "title": "Education-related student expenses",
+          "type": "string"
+        },
+        {
+          "const": "Medical Treatment",
+          "title": "Medical treatment",
+          "type": "string"
+        },
+        {
+          "const": "Mutual Fund Investment",
+          "title": "Mutual fund investment",
+          "type": "string"
+        },
+        {
+          "const": "Currency Exchange",
+          "title": "Currency exchange",
+          "type": "string"
+        },
+        {
+          "const": "User Withdrawal",
+          "title": "User withdrawal",
+          "type": "string"
+        },
+        {
+          "const": "Advance Payments for goods",
+          "title": "Advance payments for goods",
+          "type": "string"
+        },
+        {
+          "const": "Vendor / Contractor payouts for software development",
+          "title": "Vendor / contractor payouts for software development",
+          "type": "string"
+        },
+        {
+          "const": "Merchant Settlement",
+          "title": "Merchant settlement",
+          "type": "string"
+        },
+        {
+          "const": "Repatriation Fund Settlement",
+          "title": "Repatriation fund settlement",
+          "type": "string"
+        }
+      ],
+      "title": "Payment purpose",
+      "type": "string"
+    }
+  },
+  "required": ["BankDetails", "AccountHolderName", "PaymentPurpose"],
+  "metadata": {
+    "channels": [
+      {
+        "id": "44d43b90-51f1-55b3-af9b-517701fd4a0e",
+        "country": "PH",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankLocal"
+      }
+    ],
+    "contentHash": "537147391e86c77e7d1d650eeaa37555770e38e1513b3141c96c46f1ef3fbbfa",
+    "generatedAt": "2026-07-23T15:38:44Z"
+  }
+}

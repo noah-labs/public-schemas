@@ -1,0 +1,207 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "IdentifierDetails": {
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "IdentifierType": {
+                "const": "Email"
+              }
+            },
+            "required": ["IdentifierType"]
+          },
+          "then": {
+            "properties": {
+              "Identifier": {
+                "errorMessage": "must be a valid email address",
+                "format": "email",
+                "maxLength": 255,
+                "title": "Email",
+                "type": "string"
+              }
+            },
+            "required": ["Identifier"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "IdentifierType": {
+                "const": "UUID"
+              }
+            },
+            "required": ["IdentifierType"]
+          },
+          "then": {
+            "properties": {
+              "Identifier": {
+                "errorMessage": "must be a valid UUID",
+                "maxLength": 36,
+                "minLength": 3,
+                "title": "Random key (UUID)",
+                "type": "string"
+              }
+            },
+            "required": ["Identifier"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "IdentifierType": {
+                "const": "PhoneNumber"
+              }
+            },
+            "required": ["IdentifierType"]
+          },
+          "then": {
+            "properties": {
+              "Identifier": {
+                "errorMessage": "must be a mobile number without country code nor '+' (e.g. 21999999999)",
+                "pattern": "^[1-9]{2}9[0-9]{8}$",
+                "title": "Phone number",
+                "type": "string"
+              }
+            },
+            "required": ["Identifier"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "IdentifierType": {
+                "const": "TaxID"
+              }
+            },
+            "required": ["IdentifierType"]
+          },
+          "then": {
+            "properties": {
+              "Identifier": {
+                "errorMessage": "must be a valid CPF (11 digits) or CNPJ (14 digits)",
+                "pattern": "^\\d{11}$|^\\d{14}$",
+                "title": "CPF or CNPJ",
+                "type": "string"
+              }
+            },
+            "required": ["Identifier"]
+          }
+        }
+      ],
+      "properties": {
+        "IdentifierType": {
+          "oneOf": [
+            {
+              "const": "PhoneNumber",
+              "title": "Phone number",
+              "type": "string"
+            },
+            {
+              "const": "Email",
+              "title": "Email",
+              "type": "string"
+            },
+            {
+              "const": "TaxID",
+              "title": "Tax ID",
+              "type": "string"
+            },
+            {
+              "const": "UUID",
+              "title": "UUID",
+              "type": "string"
+            }
+          ],
+          "title": "Pix key type",
+          "type": "string"
+        }
+      },
+      "required": ["IdentifierType"],
+      "title": "Pix key details",
+      "type": "object"
+    },
+    "Beneficiary": {
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "BeneficiaryType": {
+                "const": "Individual"
+              }
+            },
+            "required": ["BeneficiaryType"]
+          },
+          "then": {
+            "properties": {
+              "FirstName": {
+                "errorMessage": "First Name must be between 1 and 50 characters",
+                "maxLength": 50,
+                "minLength": 1,
+                "title": "First name",
+                "type": "string"
+              },
+              "LastName": {
+                "errorMessage": "Last Name must not be longer than 50 characters",
+                "maxLength": 50,
+                "title": "Last name",
+                "type": "string"
+              }
+            },
+            "required": ["FirstName", "LastName"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "BeneficiaryType": {
+                "const": "Business"
+              }
+            },
+            "required": ["BeneficiaryType"]
+          },
+          "then": {
+            "properties": {
+              "CompanyName": {
+                "errorMessage": "Company Name must be between 1 and 100 characters",
+                "maxLength": 100,
+                "minLength": 1,
+                "title": "Company name",
+                "type": "string"
+              }
+            },
+            "required": ["CompanyName"]
+          }
+        }
+      ],
+      "properties": {
+        "BeneficiaryType": {
+          "enum": ["Individual", "Business"],
+          "title": "Beneficiary type",
+          "type": "string"
+        }
+      },
+      "required": ["BeneficiaryType"],
+      "title": "Beneficiary",
+      "type": "object"
+    }
+  },
+  "required": ["IdentifierDetails", "Beneficiary"],
+  "metadata": {
+    "channels": [
+      {
+        "id": "e05c99f1-51d8-59af-abfb-77445fa2dce2",
+        "country": "BR",
+        "direction": "Out",
+        "finServiceID": "l4p8x",
+        "paymentMethodType": "IdentifierPix"
+      }
+    ],
+    "contentHash": "f236bb544c659fb98ab53252ad04a3ff47945d0aff59835b248f299f22633140",
+    "generatedAt": "2026-07-23T15:38:44Z"
+  }
+}

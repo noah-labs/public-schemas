@@ -1,0 +1,155 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "AccountHolderName": {
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "AccountHolderType": {
+                "const": "Individual"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "Name": {
+                "properties": {
+                  "FirstName": {
+                    "errorMessage": "First name must be between 3 and 32 characters",
+                    "maxLength": 32,
+                    "minLength": 3,
+                    "title": "First name",
+                    "type": "string"
+                  },
+                  "LastName": {
+                    "errorMessage": "Last name must be between 3 and 32 characters",
+                    "maxLength": 32,
+                    "minLength": 3,
+                    "title": "Last name",
+                    "type": "string"
+                  }
+                },
+                "required": ["FirstName", "LastName"],
+                "title": "Full name",
+                "type": "object",
+                "x-total-max-length": 35,
+                "x-validation-message": "Combined first and last name must not exceed 35 characters"
+              }
+            },
+            "required": ["Name"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "AccountHolderType": {
+                "const": "Business"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "Name": {
+                "errorMessage": "Name must be between 3 and 35 characters",
+                "maxLength": 35,
+                "minLength": 3,
+                "title": "Business name",
+                "type": "string"
+              }
+            },
+            "required": ["Name"]
+          }
+        }
+      ],
+      "properties": {
+        "AccountHolderType": {
+          "enum": ["Individual", "Business"],
+          "title": "Account holder type",
+          "type": "string"
+        }
+      },
+      "required": ["AccountHolderType"],
+      "title": "Account holder name",
+      "type": "object"
+    },
+    "AccountHolderAddress": {
+      "properties": {
+        "Address": {
+          "maxLength": 70,
+          "minLength": 3,
+          "title": "Address",
+          "type": "string"
+        },
+        "City": {
+          "maxLength": 35,
+          "title": "Town",
+          "type": "string"
+        },
+        "PostalCode": {
+          "maxLength": 9,
+          "minLength": 5,
+          "title": "Postal code",
+          "type": "string"
+        },
+        "State": {
+          "maxLength": 35,
+          "title": "State/province",
+          "type": "string"
+        }
+      },
+      "required": ["State", "City", "Address", "PostalCode"],
+      "title": "Account holder address",
+      "type": "object"
+    },
+    "BankDetails": {
+      "properties": {
+        "AccountNumber": {
+          "maxLength": 17,
+          "minLength": 1,
+          "title": "Account number",
+          "type": "string"
+        },
+        "BankCode": {
+          "maxLength": 9,
+          "minLength": 9,
+          "title": "Routing number",
+          "type": "string"
+        }
+      },
+      "required": ["AccountNumber", "BankCode"],
+      "title": "Bank details",
+      "type": "object"
+    },
+    "Reference": {
+      "description": "This reference will appear on the beneficiary's bank statement",
+      "errorMessage": "Reference must be at most 140 characters",
+      "maxLength": 140,
+      "minLength": 0,
+      "pattern": "^[\\w !\"#$%\u0026'()+,\\-./:;\u003c=\u003e?@\\\\_`~]*$",
+      "title": "Reference",
+      "type": "string"
+    },
+    "PaymentPurpose": {
+      "title": "Payment purpose",
+      "type": "string"
+    }
+  },
+  "required": ["AccountHolderName", "AccountHolderAddress", "BankDetails", "PaymentPurpose"],
+  "metadata": {
+    "channels": [
+      {
+        "id": "d0388d20-f8f5-56d9-8310-9831698c7764",
+        "country": "US",
+        "direction": "Out",
+        "finServiceID": "t6f2c",
+        "paymentMethodType": "BankFedwire"
+      }
+    ],
+    "contentHash": "bc6492fb6d97829adcd09cd5ab0c501c926237130f5b0b75e68a0c09aa38e1d7",
+    "generatedAt": "2026-07-23T15:38:44Z"
+  }
+}

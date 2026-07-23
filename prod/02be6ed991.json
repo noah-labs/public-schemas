@@ -1,0 +1,153 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "BankDetails": {
+      "properties": {
+        "AccountNumber": {
+          "maxLength": 30,
+          "minLength": 5,
+          "title": "Account number",
+          "type": "string"
+        },
+        "Bank": {
+          "enum": [
+            "KCB Bank Kenya Ltd",
+            "Equity Bank Kenya Ltd",
+            "Co-operative Bank of Kenya Ltd",
+            "Absa Bank Kenya PLC",
+            "Access Bank (Kenya) PLC",
+            "Bank of Africa Kenya Ltd",
+            "Bank of Baroda (Kenya) Ltd",
+            "Bank of India",
+            "NCBA Bank Kenya PLC",
+            "SBM Bank Kenya Ltd",
+            "I\u0026M Bank Ltd",
+            "National Bank of Kenya Ltd",
+            "Credit Bank PLC",
+            "Diamond Trust Bank Kenya Ltd",
+            "Ecobank Kenya Ltd",
+            "Family Bank Ltd",
+            "Guardian Bank Ltd",
+            "Gulf African Bank Ltd",
+            "Habib Bank AG Zurich",
+            "M-Oriental Bank Ltd",
+            "Paramount Bank Ltd",
+            "Prime Bank Ltd",
+            "Sidian Bank Ltd",
+            "Victoria Commercial Bank PLC",
+            "Kenya Post Office Savings Bank"
+          ],
+          "title": "Bank",
+          "type": "string"
+        }
+      },
+      "required": ["AccountNumber", "Bank"],
+      "title": "Bank details",
+      "type": "object"
+    },
+    "AccountHolderName": {
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "AccountHolderType": {
+                "const": "Individual"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "Name": {
+                "properties": {
+                  "FirstName": {
+                    "errorMessage": "First name must be between 3 and 50 characters",
+                    "maxLength": 50,
+                    "minLength": 3,
+                    "title": "First name",
+                    "type": "string"
+                  },
+                  "LastName": {
+                    "errorMessage": "Last name must be between 3 and 50 characters",
+                    "maxLength": 50,
+                    "minLength": 3,
+                    "title": "Last name",
+                    "type": "string"
+                  }
+                },
+                "required": ["FirstName", "LastName"],
+                "title": "Full name",
+                "type": "object"
+              }
+            },
+            "required": ["Name"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "AccountHolderType": {
+                "const": "Business"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "Name": {
+                "errorMessage": "Name must be between 3 and 50 characters",
+                "maxLength": 50,
+                "minLength": 3,
+                "title": "Business name",
+                "type": "string"
+              }
+            },
+            "required": ["Name"]
+          }
+        }
+      ],
+      "properties": {
+        "AccountHolderType": {
+          "enum": ["Individual", "Business"],
+          "title": "Account holder type",
+          "type": "string"
+        }
+      },
+      "required": ["AccountHolderType"],
+      "title": "Account holder name",
+      "type": "object"
+    },
+    "PhoneNumber": {
+      "title": "Phone number",
+      "type": "string"
+    },
+    "PaymentPurpose": {
+      "title": "Payment purpose",
+      "type": "string"
+    },
+    "Reference": {
+      "description": "This reference will appear on the beneficiary's bank statement",
+      "errorMessage": "",
+      "maxLength": 180,
+      "minLength": 0,
+      "pattern": "",
+      "title": "Reference",
+      "type": "string"
+    }
+  },
+  "required": ["BankDetails", "AccountHolderName", "PhoneNumber", "PaymentPurpose"],
+  "metadata": {
+    "channels": [
+      {
+        "id": "5e67e9b5-2a8c-5520-9915-34d25511d2c4",
+        "country": "KE",
+        "direction": "Out",
+        "finServiceID": "h5j1y",
+        "paymentMethodType": "BankLocal"
+      }
+    ],
+    "contentHash": "02be6ed991991b34b49e39bd31a88d14f78de4536905c6746c47245d1f0f587e",
+    "generatedAt": "2026-07-23T15:38:44Z"
+  }
+}

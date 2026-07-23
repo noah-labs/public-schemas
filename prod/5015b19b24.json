@@ -1,0 +1,1671 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "AccountHolderName": {
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "AccountHolderType": {
+                "const": "Individual"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "Name": {
+                "properties": {
+                  "FirstName": {
+                    "errorMessage": "First name must be between 1 and 22 characters",
+                    "maxLength": 22,
+                    "minLength": 1,
+                    "title": "First name",
+                    "type": "string"
+                  },
+                  "LastName": {
+                    "errorMessage": "Last name must be between 1 and 22 characters",
+                    "maxLength": 22,
+                    "minLength": 1,
+                    "title": "Last name",
+                    "type": "string"
+                  }
+                },
+                "required": ["FirstName", "LastName"],
+                "title": "Full name",
+                "type": "object",
+                "x-total-max-length": 45,
+                "x-validation-message": "Combined first and last name must not exceed 45 characters"
+              }
+            },
+            "required": ["Name"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "AccountHolderType": {
+                "const": "Business"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "Name": {
+                "errorMessage": "Name must be between 3 and 50 characters",
+                "maxLength": 50,
+                "minLength": 3,
+                "title": "Business name",
+                "type": "string"
+              }
+            },
+            "required": ["Name"]
+          }
+        }
+      ],
+      "properties": {
+        "AccountHolderType": {
+          "enum": ["Individual", "Business"],
+          "title": "Account holder type",
+          "type": "string"
+        }
+      },
+      "required": ["AccountHolderType"],
+      "title": "Account holder name",
+      "type": "object"
+    },
+    "BankDetails": {
+      "properties": {
+        "AccountNumber": {
+          "maxLength": 34,
+          "minLength": 1,
+          "title": "Account number",
+          "type": "string"
+        },
+        "RoutingNumber": {
+          "maxLength": 9,
+          "minLength": 9,
+          "title": "Routing number",
+          "type": "string"
+        },
+        "AccountType": {
+          "enum": ["Checking", "Savings"],
+          "title": "Account type",
+          "type": "string"
+        }
+      },
+      "required": ["AccountNumber", "RoutingNumber", "AccountType"],
+      "title": "Bank details",
+      "type": "object"
+    },
+    "AccountHolderAddress": {
+      "properties": {
+        "city": {
+          "maxLength": 35,
+          "minLength": 1,
+          "title": "City",
+          "type": "string"
+        },
+        "countryCode": {
+          "oneOf": [
+            {
+              "const": "AF",
+              "title": "Afghanistan",
+              "type": "string",
+              "x-symbol": "🇦🇫"
+            },
+            {
+              "const": "AX",
+              "title": "Aland Islands",
+              "type": "string",
+              "x-symbol": "🇦🇽"
+            },
+            {
+              "const": "AL",
+              "title": "Albania",
+              "type": "string",
+              "x-symbol": "🇦🇱"
+            },
+            {
+              "const": "DZ",
+              "title": "Algeria",
+              "type": "string",
+              "x-symbol": "🇩🇿"
+            },
+            {
+              "const": "AS",
+              "title": "American Samoa",
+              "type": "string",
+              "x-symbol": "🇦🇸"
+            },
+            {
+              "const": "AD",
+              "title": "Andorra",
+              "type": "string",
+              "x-symbol": "🇦🇩"
+            },
+            {
+              "const": "AO",
+              "title": "Angola",
+              "type": "string",
+              "x-symbol": "🇦🇴"
+            },
+            {
+              "const": "AI",
+              "title": "Anguilla",
+              "type": "string",
+              "x-symbol": "🇦🇮"
+            },
+            {
+              "const": "AQ",
+              "title": "Antarctica",
+              "type": "string",
+              "x-symbol": "🇦🇶"
+            },
+            {
+              "const": "AG",
+              "title": "Antigua and Barbuda",
+              "type": "string",
+              "x-symbol": "🇦🇬"
+            },
+            {
+              "const": "AR",
+              "title": "Argentina",
+              "type": "string",
+              "x-symbol": "🇦🇷"
+            },
+            {
+              "const": "AM",
+              "title": "Armenia",
+              "type": "string",
+              "x-symbol": "🇦🇲"
+            },
+            {
+              "const": "AW",
+              "title": "Aruba",
+              "type": "string",
+              "x-symbol": "🇦🇼"
+            },
+            {
+              "const": "AU",
+              "title": "Australia",
+              "type": "string",
+              "x-symbol": "🇦🇺"
+            },
+            {
+              "const": "AT",
+              "title": "Austria",
+              "type": "string",
+              "x-symbol": "🇦🇹"
+            },
+            {
+              "const": "AZ",
+              "title": "Azerbaijan",
+              "type": "string",
+              "x-symbol": "🇦🇿"
+            },
+            {
+              "const": "BS",
+              "title": "Bahamas",
+              "type": "string",
+              "x-symbol": "🇧🇸"
+            },
+            {
+              "const": "BH",
+              "title": "Bahrain",
+              "type": "string",
+              "x-symbol": "🇧🇭"
+            },
+            {
+              "const": "BD",
+              "title": "Bangladesh",
+              "type": "string",
+              "x-symbol": "🇧🇩"
+            },
+            {
+              "const": "BB",
+              "title": "Barbados",
+              "type": "string",
+              "x-symbol": "🇧🇧"
+            },
+            {
+              "const": "BY",
+              "title": "Belarus",
+              "type": "string",
+              "x-symbol": "🇧🇾"
+            },
+            {
+              "const": "BE",
+              "title": "Belgium",
+              "type": "string",
+              "x-symbol": "🇧🇪"
+            },
+            {
+              "const": "BZ",
+              "title": "Belize",
+              "type": "string",
+              "x-symbol": "🇧🇿"
+            },
+            {
+              "const": "BJ",
+              "title": "Benin",
+              "type": "string",
+              "x-symbol": "🇧🇯"
+            },
+            {
+              "const": "BM",
+              "title": "Bermuda",
+              "type": "string",
+              "x-symbol": "🇧🇲"
+            },
+            {
+              "const": "BT",
+              "title": "Bhutan",
+              "type": "string",
+              "x-symbol": "🇧🇹"
+            },
+            {
+              "const": "BO",
+              "title": "Bolivia",
+              "type": "string",
+              "x-symbol": "🇧🇴"
+            },
+            {
+              "const": "BQ",
+              "title": "Bonaire, Sint Eustatius And Saba",
+              "type": "string",
+              "x-symbol": "🇧🇶"
+            },
+            {
+              "const": "BA",
+              "title": "Bosnia and Herzegovina",
+              "type": "string",
+              "x-symbol": "🇧🇦"
+            },
+            {
+              "const": "BW",
+              "title": "Botswana",
+              "type": "string",
+              "x-symbol": "🇧🇼"
+            },
+            {
+              "const": "BV",
+              "title": "Bouvet Island",
+              "type": "string",
+              "x-symbol": "🇧🇻"
+            },
+            {
+              "const": "BR",
+              "title": "Brazil",
+              "type": "string",
+              "x-symbol": "🇧🇷"
+            },
+            {
+              "const": "IO",
+              "title": "British Indian Ocean Territory",
+              "type": "string",
+              "x-symbol": "🇮🇴"
+            },
+            {
+              "const": "BN",
+              "title": "Brunei Darussalam",
+              "type": "string",
+              "x-symbol": "🇧🇳"
+            },
+            {
+              "const": "BG",
+              "title": "Bulgaria",
+              "type": "string",
+              "x-symbol": "🇧🇬"
+            },
+            {
+              "const": "BF",
+              "title": "Burkina Faso",
+              "type": "string",
+              "x-symbol": "🇧🇫"
+            },
+            {
+              "const": "BI",
+              "title": "Burundi",
+              "type": "string",
+              "x-symbol": "🇧🇮"
+            },
+            {
+              "const": "KH",
+              "title": "Cambodia",
+              "type": "string",
+              "x-symbol": "🇰🇭"
+            },
+            {
+              "const": "CM",
+              "title": "Cameroon",
+              "type": "string",
+              "x-symbol": "🇨🇲"
+            },
+            {
+              "const": "CA",
+              "title": "Canada",
+              "type": "string",
+              "x-symbol": "🇨🇦"
+            },
+            {
+              "const": "CV",
+              "title": "Cape Verde",
+              "type": "string",
+              "x-symbol": "🇨🇻"
+            },
+            {
+              "const": "KY",
+              "title": "Cayman Islands",
+              "type": "string",
+              "x-symbol": "🇰🇾"
+            },
+            {
+              "const": "CF",
+              "title": "Central African Republic",
+              "type": "string",
+              "x-symbol": "🇨🇫"
+            },
+            {
+              "const": "TD",
+              "title": "Chad",
+              "type": "string",
+              "x-symbol": "🇹🇩"
+            },
+            {
+              "const": "CL",
+              "title": "Chile",
+              "type": "string",
+              "x-symbol": "🇨🇱"
+            },
+            {
+              "const": "CN",
+              "title": "China",
+              "type": "string",
+              "x-symbol": "🇨🇳"
+            },
+            {
+              "const": "CX",
+              "title": "Christmas Island",
+              "type": "string",
+              "x-symbol": "🇨🇽"
+            },
+            {
+              "const": "CC",
+              "title": "Cocos (Keeling) Islands",
+              "type": "string",
+              "x-symbol": "🇨🇨"
+            },
+            {
+              "const": "CO",
+              "title": "Colombia",
+              "type": "string",
+              "x-symbol": "🇨🇴"
+            },
+            {
+              "const": "KM",
+              "title": "Comoros",
+              "type": "string",
+              "x-symbol": "🇰🇲"
+            },
+            {
+              "const": "CG",
+              "title": "Congo",
+              "type": "string",
+              "x-symbol": "🇨🇬"
+            },
+            {
+              "const": "CK",
+              "title": "Cook Islands",
+              "type": "string",
+              "x-symbol": "🇨🇰"
+            },
+            {
+              "const": "CR",
+              "title": "Costa Rica",
+              "type": "string",
+              "x-symbol": "🇨🇷"
+            },
+            {
+              "const": "CI",
+              "title": "Cote d'Ivoire",
+              "type": "string",
+              "x-symbol": "🇨🇮"
+            },
+            {
+              "const": "HR",
+              "title": "Croatia",
+              "type": "string",
+              "x-symbol": "🇭🇷"
+            },
+            {
+              "const": "CU",
+              "title": "Cuba",
+              "type": "string",
+              "x-symbol": "🇨🇺"
+            },
+            {
+              "const": "CW",
+              "title": "Curacao",
+              "type": "string",
+              "x-symbol": "🇨🇼"
+            },
+            {
+              "const": "CY",
+              "title": "Cyprus",
+              "type": "string",
+              "x-symbol": "🇨🇾"
+            },
+            {
+              "const": "CZ",
+              "title": "Czechia",
+              "type": "string",
+              "x-symbol": "🇨🇿"
+            },
+            {
+              "const": "KP",
+              "title": "Democratic People's Republic of Korea",
+              "type": "string",
+              "x-symbol": "🇰🇵"
+            },
+            {
+              "const": "CD",
+              "title": "Democratic Republic of the Congo",
+              "type": "string",
+              "x-symbol": "🇨🇩"
+            },
+            {
+              "const": "DK",
+              "title": "Denmark",
+              "type": "string",
+              "x-symbol": "🇩🇰"
+            },
+            {
+              "const": "DJ",
+              "title": "Djibouti",
+              "type": "string",
+              "x-symbol": "🇩🇯"
+            },
+            {
+              "const": "DM",
+              "title": "Dominica",
+              "type": "string",
+              "x-symbol": "🇩🇲"
+            },
+            {
+              "const": "DO",
+              "title": "Dominican Republic",
+              "type": "string",
+              "x-symbol": "🇩🇴"
+            },
+            {
+              "const": "EC",
+              "title": "Ecuador",
+              "type": "string",
+              "x-symbol": "🇪🇨"
+            },
+            {
+              "const": "EG",
+              "title": "Egypt",
+              "type": "string",
+              "x-symbol": "🇪🇬"
+            },
+            {
+              "const": "SV",
+              "title": "El Salvador",
+              "type": "string",
+              "x-symbol": "🇸🇻"
+            },
+            {
+              "const": "GQ",
+              "title": "Equatorial Guinea",
+              "type": "string",
+              "x-symbol": "🇬🇶"
+            },
+            {
+              "const": "ER",
+              "title": "Eritrea",
+              "type": "string",
+              "x-symbol": "🇪🇷"
+            },
+            {
+              "const": "EE",
+              "title": "Estonia",
+              "type": "string",
+              "x-symbol": "🇪🇪"
+            },
+            {
+              "const": "ET",
+              "title": "Ethiopia",
+              "type": "string",
+              "x-symbol": "🇪🇹"
+            },
+            {
+              "const": "FK",
+              "title": "Falkland Islands (Malvinas)",
+              "type": "string",
+              "x-symbol": "🇫🇰"
+            },
+            {
+              "const": "FO",
+              "title": "Faroe Islands",
+              "type": "string",
+              "x-symbol": "🇫🇴"
+            },
+            {
+              "const": "FJ",
+              "title": "Fiji",
+              "type": "string",
+              "x-symbol": "🇫🇯"
+            },
+            {
+              "const": "FI",
+              "title": "Finland",
+              "type": "string",
+              "x-symbol": "🇫🇮"
+            },
+            {
+              "const": "FR",
+              "title": "France",
+              "type": "string",
+              "x-symbol": "🇫🇷"
+            },
+            {
+              "const": "GF",
+              "title": "French Guiana",
+              "type": "string",
+              "x-symbol": "🇬🇫"
+            },
+            {
+              "const": "PF",
+              "title": "French Polynesia",
+              "type": "string",
+              "x-symbol": "🇵🇫"
+            },
+            {
+              "const": "TF",
+              "title": "French Southern Territories",
+              "type": "string",
+              "x-symbol": "🇹🇫"
+            },
+            {
+              "const": "GA",
+              "title": "Gabon",
+              "type": "string",
+              "x-symbol": "🇬🇦"
+            },
+            {
+              "const": "GM",
+              "title": "Gambia",
+              "type": "string",
+              "x-symbol": "🇬🇲"
+            },
+            {
+              "const": "GE",
+              "title": "Georgia",
+              "type": "string",
+              "x-symbol": "🇬🇪"
+            },
+            {
+              "const": "DE",
+              "title": "Germany",
+              "type": "string",
+              "x-symbol": "🇩🇪"
+            },
+            {
+              "const": "GH",
+              "title": "Ghana",
+              "type": "string",
+              "x-symbol": "🇬🇭"
+            },
+            {
+              "const": "GI",
+              "title": "Gibraltar",
+              "type": "string",
+              "x-symbol": "🇬🇮"
+            },
+            {
+              "const": "GR",
+              "title": "Greece",
+              "type": "string",
+              "x-symbol": "🇬🇷"
+            },
+            {
+              "const": "GL",
+              "title": "Greenland",
+              "type": "string",
+              "x-symbol": "🇬🇱"
+            },
+            {
+              "const": "GD",
+              "title": "Grenada",
+              "type": "string",
+              "x-symbol": "🇬🇩"
+            },
+            {
+              "const": "GP",
+              "title": "Guadeloupe",
+              "type": "string",
+              "x-symbol": "🇬🇵"
+            },
+            {
+              "const": "GU",
+              "title": "Guam",
+              "type": "string",
+              "x-symbol": "🇬🇺"
+            },
+            {
+              "const": "GT",
+              "title": "Guatemala",
+              "type": "string",
+              "x-symbol": "🇬🇹"
+            },
+            {
+              "const": "GG",
+              "title": "Guernsey",
+              "type": "string",
+              "x-symbol": "🇬🇬"
+            },
+            {
+              "const": "GN",
+              "title": "Guinea",
+              "type": "string",
+              "x-symbol": "🇬🇳"
+            },
+            {
+              "const": "GW",
+              "title": "Guinea-Bissau",
+              "type": "string",
+              "x-symbol": "🇬🇼"
+            },
+            {
+              "const": "GY",
+              "title": "Guyana",
+              "type": "string",
+              "x-symbol": "🇬🇾"
+            },
+            {
+              "const": "HT",
+              "title": "Haiti",
+              "type": "string",
+              "x-symbol": "🇭🇹"
+            },
+            {
+              "const": "HM",
+              "title": "Heard Island and McDonald Islands",
+              "type": "string",
+              "x-symbol": "🇭🇲"
+            },
+            {
+              "const": "VA",
+              "title": "Holy See (Vatican City State)",
+              "type": "string",
+              "x-symbol": "🇻🇦"
+            },
+            {
+              "const": "HN",
+              "title": "Honduras",
+              "type": "string",
+              "x-symbol": "🇭🇳"
+            },
+            {
+              "const": "HK",
+              "title": "Hong Kong (Special Administrative Region of China)",
+              "type": "string",
+              "x-symbol": "🇭🇰"
+            },
+            {
+              "const": "HU",
+              "title": "Hungary",
+              "type": "string",
+              "x-symbol": "🇭🇺"
+            },
+            {
+              "const": "IS",
+              "title": "Iceland",
+              "type": "string",
+              "x-symbol": "🇮🇸"
+            },
+            {
+              "const": "IN",
+              "title": "India",
+              "type": "string",
+              "x-symbol": "🇮🇳"
+            },
+            {
+              "const": "ID",
+              "title": "Indonesia",
+              "type": "string",
+              "x-symbol": "🇮🇩"
+            },
+            {
+              "const": "IR",
+              "title": "Iran (Islamic Republic of)",
+              "type": "string",
+              "x-symbol": "🇮🇷"
+            },
+            {
+              "const": "IQ",
+              "title": "Iraq",
+              "type": "string",
+              "x-symbol": "🇮🇶"
+            },
+            {
+              "const": "IE",
+              "title": "Ireland",
+              "type": "string",
+              "x-symbol": "🇮🇪"
+            },
+            {
+              "const": "IM",
+              "title": "Isle Of Man",
+              "type": "string",
+              "x-symbol": "🇮🇲"
+            },
+            {
+              "const": "IL",
+              "title": "Israel",
+              "type": "string",
+              "x-symbol": "🇮🇱"
+            },
+            {
+              "const": "IT",
+              "title": "Italy",
+              "type": "string",
+              "x-symbol": "🇮🇹"
+            },
+            {
+              "const": "JM",
+              "title": "Jamaica",
+              "type": "string",
+              "x-symbol": "🇯🇲"
+            },
+            {
+              "const": "JP",
+              "title": "Japan",
+              "type": "string",
+              "x-symbol": "🇯🇵"
+            },
+            {
+              "const": "JE",
+              "title": "Jersey",
+              "type": "string",
+              "x-symbol": "🇯🇪"
+            },
+            {
+              "const": "JO",
+              "title": "Jordan",
+              "type": "string",
+              "x-symbol": "🇯🇴"
+            },
+            {
+              "const": "KZ",
+              "title": "Kazakhstan",
+              "type": "string",
+              "x-symbol": "🇰🇿"
+            },
+            {
+              "const": "KE",
+              "title": "Kenya",
+              "type": "string",
+              "x-symbol": "🇰🇪"
+            },
+            {
+              "const": "KI",
+              "title": "Kiribati",
+              "type": "string",
+              "x-symbol": "🇰🇮"
+            },
+            {
+              "const": "XK",
+              "title": "Kosovo",
+              "type": "string",
+              "x-symbol": "🇽🇰"
+            },
+            {
+              "const": "KW",
+              "title": "Kuwait",
+              "type": "string",
+              "x-symbol": "🇰🇼"
+            },
+            {
+              "const": "KG",
+              "title": "Kyrgyzstan",
+              "type": "string",
+              "x-symbol": "🇰🇬"
+            },
+            {
+              "const": "LA",
+              "title": "Lao People's Democratic Republic",
+              "type": "string",
+              "x-symbol": "🇱🇦"
+            },
+            {
+              "const": "LV",
+              "title": "Latvia",
+              "type": "string",
+              "x-symbol": "🇱🇻"
+            },
+            {
+              "const": "LB",
+              "title": "Lebanon",
+              "type": "string",
+              "x-symbol": "🇱🇧"
+            },
+            {
+              "const": "LS",
+              "title": "Lesotho",
+              "type": "string",
+              "x-symbol": "🇱🇸"
+            },
+            {
+              "const": "LR",
+              "title": "Liberia",
+              "type": "string",
+              "x-symbol": "🇱🇷"
+            },
+            {
+              "const": "LY",
+              "title": "Libyan Arab Jamahiriya",
+              "type": "string",
+              "x-symbol": "🇱🇾"
+            },
+            {
+              "const": "LI",
+              "title": "Liechtenstein",
+              "type": "string",
+              "x-symbol": "🇱🇮"
+            },
+            {
+              "const": "LT",
+              "title": "Lithuania",
+              "type": "string",
+              "x-symbol": "🇱🇹"
+            },
+            {
+              "const": "LU",
+              "title": "Luxembourg",
+              "type": "string",
+              "x-symbol": "🇱🇺"
+            },
+            {
+              "const": "MO",
+              "title": "Macau (Special Administrative Region of China)",
+              "type": "string",
+              "x-symbol": "🇲🇴"
+            },
+            {
+              "const": "MG",
+              "title": "Madagascar",
+              "type": "string",
+              "x-symbol": "🇲🇬"
+            },
+            {
+              "const": "MW",
+              "title": "Malawi",
+              "type": "string",
+              "x-symbol": "🇲🇼"
+            },
+            {
+              "const": "MY",
+              "title": "Malaysia",
+              "type": "string",
+              "x-symbol": "🇲🇾"
+            },
+            {
+              "const": "MV",
+              "title": "Maldives",
+              "type": "string",
+              "x-symbol": "🇲🇻"
+            },
+            {
+              "const": "ML",
+              "title": "Mali",
+              "type": "string",
+              "x-symbol": "🇲🇱"
+            },
+            {
+              "const": "MT",
+              "title": "Malta",
+              "type": "string",
+              "x-symbol": "🇲🇹"
+            },
+            {
+              "const": "MH",
+              "title": "Marshall Islands",
+              "type": "string",
+              "x-symbol": "🇲🇭"
+            },
+            {
+              "const": "MQ",
+              "title": "Martinique",
+              "type": "string",
+              "x-symbol": "🇲🇶"
+            },
+            {
+              "const": "MR",
+              "title": "Mauritania",
+              "type": "string",
+              "x-symbol": "🇲🇷"
+            },
+            {
+              "const": "MU",
+              "title": "Mauritius",
+              "type": "string",
+              "x-symbol": "🇲🇺"
+            },
+            {
+              "const": "YT",
+              "title": "Mayotte",
+              "type": "string",
+              "x-symbol": "🇾🇹"
+            },
+            {
+              "const": "MX",
+              "title": "Mexico",
+              "type": "string",
+              "x-symbol": "🇲🇽"
+            },
+            {
+              "const": "FM",
+              "title": "Micronesia (Federated States of)",
+              "type": "string",
+              "x-symbol": "🇫🇲"
+            },
+            {
+              "const": "MD",
+              "title": "Moldova (Republic of)",
+              "type": "string",
+              "x-symbol": "🇲🇩"
+            },
+            {
+              "const": "MC",
+              "title": "Monaco",
+              "type": "string",
+              "x-symbol": "🇲🇨"
+            },
+            {
+              "const": "MN",
+              "title": "Mongolia",
+              "type": "string",
+              "x-symbol": "🇲🇳"
+            },
+            {
+              "const": "ME",
+              "title": "Montenegro",
+              "type": "string",
+              "x-symbol": "🇲🇪"
+            },
+            {
+              "const": "MS",
+              "title": "Montserrat",
+              "type": "string",
+              "x-symbol": "🇲🇸"
+            },
+            {
+              "const": "MA",
+              "title": "Morocco",
+              "type": "string",
+              "x-symbol": "🇲🇦"
+            },
+            {
+              "const": "MZ",
+              "title": "Mozambique",
+              "type": "string",
+              "x-symbol": "🇲🇿"
+            },
+            {
+              "const": "MM",
+              "title": "Myanmar",
+              "type": "string",
+              "x-symbol": "🇲🇲"
+            },
+            {
+              "const": "NA",
+              "title": "Namibia",
+              "type": "string",
+              "x-symbol": "🇳🇦"
+            },
+            {
+              "const": "NR",
+              "title": "Nauru",
+              "type": "string",
+              "x-symbol": "🇳🇷"
+            },
+            {
+              "const": "NP",
+              "title": "Nepal",
+              "type": "string",
+              "x-symbol": "🇳🇵"
+            },
+            {
+              "const": "NL",
+              "title": "Netherlands",
+              "type": "string",
+              "x-symbol": "🇳🇱"
+            },
+            {
+              "const": "NC",
+              "title": "New Caledonia",
+              "type": "string",
+              "x-symbol": "🇳🇨"
+            },
+            {
+              "const": "NZ",
+              "title": "New Zealand",
+              "type": "string",
+              "x-symbol": "🇳🇿"
+            },
+            {
+              "const": "NI",
+              "title": "Nicaragua",
+              "type": "string",
+              "x-symbol": "🇳🇮"
+            },
+            {
+              "const": "NE",
+              "title": "Niger",
+              "type": "string",
+              "x-symbol": "🇳🇪"
+            },
+            {
+              "const": "NG",
+              "title": "Nigeria",
+              "type": "string",
+              "x-symbol": "🇳🇬"
+            },
+            {
+              "const": "NU",
+              "title": "Niue",
+              "type": "string",
+              "x-symbol": "🇳🇺"
+            },
+            {
+              "const": "NF",
+              "title": "Norfolk Island",
+              "type": "string",
+              "x-symbol": "🇳🇫"
+            },
+            {
+              "const": "MK",
+              "title": "North Macedonia (Republic of North Macedonia)",
+              "type": "string",
+              "x-symbol": "🇲🇰"
+            },
+            {
+              "const": "MP",
+              "title": "Northern Mariana Islands",
+              "type": "string",
+              "x-symbol": "🇲🇵"
+            },
+            {
+              "const": "NO",
+              "title": "Norway",
+              "type": "string",
+              "x-symbol": "🇳🇴"
+            },
+            {
+              "const": "OM",
+              "title": "Oman",
+              "type": "string",
+              "x-symbol": "🇴🇲"
+            },
+            {
+              "const": "PK",
+              "title": "Pakistan",
+              "type": "string",
+              "x-symbol": "🇵🇰"
+            },
+            {
+              "const": "PW",
+              "title": "Palau",
+              "type": "string",
+              "x-symbol": "🇵🇼"
+            },
+            {
+              "const": "PS",
+              "title": "Palestinian Territory (Occupied)",
+              "type": "string",
+              "x-symbol": "🇵🇸"
+            },
+            {
+              "const": "PA",
+              "title": "Panama",
+              "type": "string",
+              "x-symbol": "🇵🇦"
+            },
+            {
+              "const": "PG",
+              "title": "Papua New Guinea",
+              "type": "string",
+              "x-symbol": "🇵🇬"
+            },
+            {
+              "const": "PY",
+              "title": "Paraguay",
+              "type": "string",
+              "x-symbol": "🇵🇾"
+            },
+            {
+              "const": "PE",
+              "title": "Peru",
+              "type": "string",
+              "x-symbol": "🇵🇪"
+            },
+            {
+              "const": "PH",
+              "title": "Philippines",
+              "type": "string",
+              "x-symbol": "🇵🇭"
+            },
+            {
+              "const": "PN",
+              "title": "Pitcairn",
+              "type": "string",
+              "x-symbol": "🇵🇳"
+            },
+            {
+              "const": "PL",
+              "title": "Poland",
+              "type": "string",
+              "x-symbol": "🇵🇱"
+            },
+            {
+              "const": "PT",
+              "title": "Portugal",
+              "type": "string",
+              "x-symbol": "🇵🇹"
+            },
+            {
+              "const": "PR",
+              "title": "Puerto Rico",
+              "type": "string",
+              "x-symbol": "🇵🇷"
+            },
+            {
+              "const": "QA",
+              "title": "Qatar",
+              "type": "string",
+              "x-symbol": "🇶🇦"
+            },
+            {
+              "const": "KR",
+              "title": "Republic of Korea",
+              "type": "string",
+              "x-symbol": "🇰🇷"
+            },
+            {
+              "const": "RE",
+              "title": "Reunion",
+              "type": "string",
+              "x-symbol": "🇷🇪"
+            },
+            {
+              "const": "RO",
+              "title": "Romania",
+              "type": "string",
+              "x-symbol": "🇷🇴"
+            },
+            {
+              "const": "RU",
+              "title": "Russian Federation",
+              "type": "string",
+              "x-symbol": "🇷🇺"
+            },
+            {
+              "const": "RW",
+              "title": "Rwanda",
+              "type": "string",
+              "x-symbol": "🇷🇼"
+            },
+            {
+              "const": "BL",
+              "title": "Saint Barthelemy",
+              "type": "string",
+              "x-symbol": "🇧🇱"
+            },
+            {
+              "const": "SH",
+              "title": "Saint Helena",
+              "type": "string",
+              "x-symbol": "🇸🇭"
+            },
+            {
+              "const": "KN",
+              "title": "Saint Kitts and Nevis",
+              "type": "string",
+              "x-symbol": "🇰🇳"
+            },
+            {
+              "const": "LC",
+              "title": "Saint Lucia",
+              "type": "string",
+              "x-symbol": "🇱🇨"
+            },
+            {
+              "const": "MF",
+              "title": "Saint Martin French",
+              "type": "string",
+              "x-symbol": "🇲🇫"
+            },
+            {
+              "const": "PM",
+              "title": "Saint Pierre and Miquelon",
+              "type": "string",
+              "x-symbol": "🇵🇲"
+            },
+            {
+              "const": "VC",
+              "title": "Saint Vincent and the Grenadines",
+              "type": "string",
+              "x-symbol": "🇻🇨"
+            },
+            {
+              "const": "WS",
+              "title": "Samoa",
+              "type": "string",
+              "x-symbol": "🇼🇸"
+            },
+            {
+              "const": "SM",
+              "title": "San Marino",
+              "type": "string",
+              "x-symbol": "🇸🇲"
+            },
+            {
+              "const": "ST",
+              "title": "Sao Tome and Principe",
+              "type": "string",
+              "x-symbol": "🇸🇹"
+            },
+            {
+              "const": "SA",
+              "title": "Saudi Arabia",
+              "type": "string",
+              "x-symbol": "🇸🇦"
+            },
+            {
+              "const": "SN",
+              "title": "Senegal",
+              "type": "string",
+              "x-symbol": "🇸🇳"
+            },
+            {
+              "const": "RS",
+              "title": "Serbia",
+              "type": "string",
+              "x-symbol": "🇷🇸"
+            },
+            {
+              "const": "SC",
+              "title": "Seychelles",
+              "type": "string",
+              "x-symbol": "🇸🇨"
+            },
+            {
+              "const": "SL",
+              "title": "Sierra Leone",
+              "type": "string",
+              "x-symbol": "🇸🇱"
+            },
+            {
+              "const": "SG",
+              "title": "Singapore",
+              "type": "string",
+              "x-symbol": "🇸🇬"
+            },
+            {
+              "const": "SX",
+              "title": "Sint Maarten Dutch",
+              "type": "string",
+              "x-symbol": "🇸🇽"
+            },
+            {
+              "const": "SK",
+              "title": "Slovakia",
+              "type": "string",
+              "x-symbol": "🇸🇰"
+            },
+            {
+              "const": "SI",
+              "title": "Slovenia",
+              "type": "string",
+              "x-symbol": "🇸🇮"
+            },
+            {
+              "const": "SB",
+              "title": "Solomon Islands",
+              "type": "string",
+              "x-symbol": "🇸🇧"
+            },
+            {
+              "const": "SO",
+              "title": "Somalia",
+              "type": "string",
+              "x-symbol": "🇸🇴"
+            },
+            {
+              "const": "ZA",
+              "title": "South Africa",
+              "type": "string",
+              "x-symbol": "🇿🇦"
+            },
+            {
+              "const": "GS",
+              "title": "South Georgia and The South Sandwich Islands",
+              "type": "string",
+              "x-symbol": "🇬🇸"
+            },
+            {
+              "const": "SS",
+              "title": "South Sudan",
+              "type": "string",
+              "x-symbol": "🇸🇸"
+            },
+            {
+              "const": "ES",
+              "title": "Spain",
+              "type": "string",
+              "x-symbol": "🇪🇸"
+            },
+            {
+              "const": "LK",
+              "title": "Sri Lanka",
+              "type": "string",
+              "x-symbol": "🇱🇰"
+            },
+            {
+              "const": "SD",
+              "title": "Sudan",
+              "type": "string",
+              "x-symbol": "🇸🇩"
+            },
+            {
+              "const": "SR",
+              "title": "Suriname",
+              "type": "string",
+              "x-symbol": "🇸🇷"
+            },
+            {
+              "const": "SJ",
+              "title": "Svalbard and Jan Mayen Islands",
+              "type": "string",
+              "x-symbol": "🇸🇯"
+            },
+            {
+              "const": "SZ",
+              "title": "Swaziland",
+              "type": "string",
+              "x-symbol": "🇸🇿"
+            },
+            {
+              "const": "SE",
+              "title": "Sweden",
+              "type": "string",
+              "x-symbol": "🇸🇪"
+            },
+            {
+              "const": "CH",
+              "title": "Switzerland",
+              "type": "string",
+              "x-symbol": "🇨🇭"
+            },
+            {
+              "const": "SY",
+              "title": "Syrian Arab Republic",
+              "type": "string",
+              "x-symbol": "🇸🇾"
+            },
+            {
+              "const": "TW",
+              "title": "Taiwan (Province of China)",
+              "type": "string",
+              "x-symbol": "🇹🇼"
+            },
+            {
+              "const": "TJ",
+              "title": "Tajikistan",
+              "type": "string",
+              "x-symbol": "🇹🇯"
+            },
+            {
+              "const": "TZ",
+              "title": "Tanzania (United Republic of)",
+              "type": "string",
+              "x-symbol": "🇹🇿"
+            },
+            {
+              "const": "TH",
+              "title": "Thailand",
+              "type": "string",
+              "x-symbol": "🇹🇭"
+            },
+            {
+              "const": "TL",
+              "title": "Timor-Leste (East Timor)",
+              "type": "string",
+              "x-symbol": "🇹🇱"
+            },
+            {
+              "const": "TG",
+              "title": "Togo",
+              "type": "string",
+              "x-symbol": "🇹🇬"
+            },
+            {
+              "const": "TK",
+              "title": "Tokelau",
+              "type": "string",
+              "x-symbol": "🇹🇰"
+            },
+            {
+              "const": "TO",
+              "title": "Tonga",
+              "type": "string",
+              "x-symbol": "🇹🇴"
+            },
+            {
+              "const": "TT",
+              "title": "Trinidad and Tobago",
+              "type": "string",
+              "x-symbol": "🇹🇹"
+            },
+            {
+              "const": "TN",
+              "title": "Tunisia",
+              "type": "string",
+              "x-symbol": "🇹🇳"
+            },
+            {
+              "const": "TR",
+              "title": "Turkey",
+              "type": "string",
+              "x-symbol": "🇹🇷"
+            },
+            {
+              "const": "TM",
+              "title": "Turkmenistan",
+              "type": "string",
+              "x-symbol": "🇹🇲"
+            },
+            {
+              "const": "TC",
+              "title": "Turks and Caicos Islands",
+              "type": "string",
+              "x-symbol": "🇹🇨"
+            },
+            {
+              "const": "TV",
+              "title": "Tuvalu",
+              "type": "string",
+              "x-symbol": "🇹🇻"
+            },
+            {
+              "const": "UG",
+              "title": "Uganda",
+              "type": "string",
+              "x-symbol": "🇺🇬"
+            },
+            {
+              "const": "UA",
+              "title": "Ukraine",
+              "type": "string",
+              "x-symbol": "🇺🇦"
+            },
+            {
+              "const": "AE",
+              "title": "United Arab Emirates",
+              "type": "string",
+              "x-symbol": "🇦🇪"
+            },
+            {
+              "const": "GB",
+              "title": "United Kingdom",
+              "type": "string",
+              "x-symbol": "🇬🇧"
+            },
+            {
+              "const": "US",
+              "title": "United States",
+              "type": "string",
+              "x-symbol": "🇺🇸"
+            },
+            {
+              "const": "UM",
+              "title": "United States Minor Outlying Islands",
+              "type": "string",
+              "x-symbol": "🇺🇲"
+            },
+            {
+              "const": "UY",
+              "title": "Uruguay",
+              "type": "string",
+              "x-symbol": "🇺🇾"
+            },
+            {
+              "const": "UZ",
+              "title": "Uzbekistan",
+              "type": "string",
+              "x-symbol": "🇺🇿"
+            },
+            {
+              "const": "VU",
+              "title": "Vanuatu",
+              "type": "string",
+              "x-symbol": "🇻🇺"
+            },
+            {
+              "const": "VE",
+              "title": "Venezuela",
+              "type": "string",
+              "x-symbol": "🇻🇪"
+            },
+            {
+              "const": "VN",
+              "title": "Vietnam",
+              "type": "string",
+              "x-symbol": "🇻🇳"
+            },
+            {
+              "const": "VG",
+              "title": "Virgin Islands British",
+              "type": "string",
+              "x-symbol": "🇻🇬"
+            },
+            {
+              "const": "VI",
+              "title": "Virgin Islands US",
+              "type": "string",
+              "x-symbol": "🇻🇮"
+            },
+            {
+              "const": "WF",
+              "title": "Wallis and Futuna Islands",
+              "type": "string",
+              "x-symbol": "🇼🇫"
+            },
+            {
+              "const": "EH",
+              "title": "Western Sahara",
+              "type": "string",
+              "x-symbol": "🇪🇭"
+            },
+            {
+              "const": "YE",
+              "title": "Yemen",
+              "type": "string",
+              "x-symbol": "🇾🇪"
+            },
+            {
+              "const": "ZM",
+              "title": "Zambia",
+              "type": "string",
+              "x-symbol": "🇿🇲"
+            },
+            {
+              "const": "ZW",
+              "title": "Zimbabwe",
+              "type": "string",
+              "x-symbol": "🇿🇼"
+            }
+          ],
+          "title": "Country",
+          "type": "string"
+        },
+        "line1": {
+          "maxLength": 70,
+          "minLength": 3,
+          "title": "Address",
+          "type": "string"
+        },
+        "postalCode": {
+          "maxLength": 20,
+          "minLength": 1,
+          "title": "Postal code",
+          "type": "string"
+        },
+        "state": {
+          "maxLength": 35,
+          "minLength": 1,
+          "title": "State",
+          "type": "string"
+        }
+      },
+      "required": ["line1", "city", "state", "postalCode", "countryCode"],
+      "title": "Account holder address",
+      "type": "object"
+    },
+    "Reference": {
+      "description": "This reference will appear on the beneficiary's bank statement",
+      "errorMessage": "Reference must be at most 140 characters",
+      "maxLength": 140,
+      "minLength": 0,
+      "pattern": "^[\\x20-\\x7E]*$",
+      "title": "Reference",
+      "type": "string"
+    }
+  },
+  "required": ["AccountHolderName", "BankDetails", "AccountHolderAddress", "Reference"],
+  "metadata": {
+    "channels": [
+      {
+        "id": "48609092-2ee1-5436-8ac4-6b09128c0361",
+        "country": "US",
+        "direction": "In",
+        "finServiceID": "k7m2x",
+        "paymentMethodType": "BankFedwire"
+      },
+      {
+        "id": "c71d435d-2f26-504b-b2ff-744a6e1ab5dd",
+        "country": "US",
+        "direction": "Out",
+        "finServiceID": "k7m2x",
+        "paymentMethodType": "BankFedwire"
+      }
+    ],
+    "contentHash": "5015b19b248a91abd09513aa6a292569490b9c5e6374f4bf0756dbcb53e82f5e",
+    "generatedAt": "2026-07-23T15:38:44Z"
+  }
+}

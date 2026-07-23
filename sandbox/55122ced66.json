@@ -1,0 +1,146 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "Beneficiary": {
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "BeneficiaryType": {
+                "const": "Individual"
+              }
+            },
+            "required": ["BeneficiaryType"]
+          },
+          "then": {
+            "properties": {
+              "DocumentID": {
+                "title": "Document ID",
+                "type": "string"
+              },
+              "DocumentType": {
+                "enum": ["RNC", "CE", "PASS"],
+                "title": "Document type",
+                "type": "string"
+              },
+              "FirstName": {
+                "errorMessage": "must be between 1 and 50 characters",
+                "maxLength": 50,
+                "minLength": 1,
+                "title": "Beneficiary name",
+                "type": "string"
+              },
+              "LastName": {
+                "errorMessage": "must be between 1 and 50 characters",
+                "maxLength": 50,
+                "minLength": 1,
+                "title": "Beneficiary last name",
+                "type": "string"
+              }
+            },
+            "required": ["FirstName", "LastName", "DocumentType", "DocumentID"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "BeneficiaryType": {
+                "const": "Business"
+              }
+            },
+            "required": ["BeneficiaryType"]
+          },
+          "then": {
+            "properties": {
+              "CompanyName": {
+                "errorMessage": "must be between 1 and 100 characters",
+                "maxLength": 100,
+                "minLength": 1,
+                "title": "Company name",
+                "type": "string"
+              },
+              "DocumentID": {
+                "title": "Document ID",
+                "type": "string"
+              },
+              "DocumentType": {
+                "enum": ["RNC"],
+                "title": "Document type",
+                "type": "string"
+              }
+            },
+            "required": ["CompanyName", "DocumentType", "DocumentID"]
+          }
+        }
+      ],
+      "properties": {
+        "BeneficiaryType": {
+          "enum": ["Individual", "Business"],
+          "title": "Beneficiary type",
+          "type": "string"
+        },
+        "Bank": {
+          "enum": [
+            "BANCO DE RESERVAS",
+            "BANCO SCOTIABANK",
+            "CITIBANK",
+            "BANCO POPULAR",
+            "BANCO BHD",
+            "BANCO DEL DESARROLLO ADEMI",
+            "BANCO SANTA CRUZ",
+            "BANCO DEL CARIBE",
+            "BANCO BDI",
+            "BANCO VIMENCA",
+            "BANCO LOPEZ DE HARO",
+            "BANCO EMPIRE",
+            "ASOCIACION LA NACIONAL DE AHORROS Y PRESTAMOS",
+            "BANCO ATLANTICO",
+            "BANCO BANESCO",
+            "BANCO LAFISE",
+            "BANCO MULTIPLE ACTIVO",
+            "BANCO UNION",
+            "BANFONDESA",
+            "BANCO PROMERICA",
+            "ASOCIACION POPULAR DE AHORRO",
+            "ASOCIACION CIBAO DE A/P",
+            "BANCO AGRICOLA DE LA REPUBLICA DOMINICANA",
+            "QIK BANCO DIGITAL DOMINICANO, S.A."
+          ],
+          "title": "Bank",
+          "type": "string"
+        },
+        "AccountType": {
+          "enum": ["Checking", "Savings"],
+          "title": "Account type",
+          "type": "string"
+        },
+        "AccountNumber": {
+          "maxLength": 26,
+          "minLength": 4,
+          "title": "Account number",
+          "type": "string"
+        }
+      },
+      "required": ["BeneficiaryType", "Bank", "AccountType", "AccountNumber"],
+      "title": "Beneficiary",
+      "type": "object"
+    }
+  },
+  "required": ["Beneficiary"],
+  "metadata": {
+    "channels": [
+      {
+        "id": "31867eab-a9bc-501e-8f5e-4956cdad9b2c",
+        "country": "DO",
+        "direction": "Out",
+        "finServiceID": "l4p8x",
+        "paymentMethodType": "BankAch"
+      }
+    ],
+    "contentHash": "55122ced66c29ed1c74777b4728708fd5f587c154350443ce19384f07f2de3b0",
+    "generatedAt": "2026-07-23T15:39:20Z"
+  }
+}

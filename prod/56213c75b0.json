@@ -1,0 +1,343 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "BankDetails": {
+      "properties": {
+        "AccountNumber": {
+          "maxLength": 34,
+          "minLength": 12,
+          "title": "IBAN",
+          "type": "string"
+        },
+        "BankCode": {
+          "errorMessage": "Enter a valid SWIFT/BIC code (e.g., DBSSSGSG)",
+          "maxLength": 11,
+          "minLength": 8,
+          "pattern": "^[A-Z]{6}[A-Z0-9]{2}([A-Z0-9]{3})?$",
+          "title": "SWIFT/BIC code",
+          "type": "string"
+        },
+        "BankName": {
+          "title": "Bank name",
+          "type": "string"
+        }
+      },
+      "required": ["AccountNumber", "BankCode"],
+      "title": "Bank details",
+      "type": "object"
+    },
+    "AccountHolderName": {
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "AccountHolderType": {
+                "const": "Individual"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "Name": {
+                "properties": {
+                  "FirstName": {
+                    "errorMessage": "First name must be between 3 and 50 characters",
+                    "maxLength": 50,
+                    "minLength": 3,
+                    "title": "First name",
+                    "type": "string"
+                  },
+                  "LastName": {
+                    "errorMessage": "Last name must be between 3 and 50 characters",
+                    "maxLength": 50,
+                    "minLength": 3,
+                    "title": "Last name",
+                    "type": "string"
+                  }
+                },
+                "required": ["FirstName", "LastName"],
+                "title": "Full name",
+                "type": "object"
+              }
+            },
+            "required": ["Name"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "AccountHolderType": {
+                "const": "Business"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "Name": {
+                "errorMessage": "Name must be between 3 and 50 characters",
+                "maxLength": 50,
+                "minLength": 3,
+                "title": "Business name",
+                "type": "string"
+              }
+            },
+            "required": ["Name"]
+          }
+        }
+      ],
+      "properties": {
+        "AccountHolderType": {
+          "enum": ["Individual", "Business"],
+          "title": "Account holder type",
+          "type": "string"
+        }
+      },
+      "required": ["AccountHolderType"],
+      "title": "Account holder name",
+      "type": "object"
+    },
+    "AccountHolderAddress": {
+      "properties": {
+        "Address": {
+          "maxLength": 70,
+          "minLength": 3,
+          "title": "Address",
+          "type": "string"
+        },
+        "City": {
+          "maxLength": 35,
+          "title": "City",
+          "type": "string"
+        },
+        "PostalCode": {
+          "maxLength": 10,
+          "title": "Postal code",
+          "type": "string"
+        },
+        "State": {
+          "maxLength": 35,
+          "title": "State/province",
+          "type": "string"
+        }
+      },
+      "required": ["Address", "City", "State", "PostalCode"],
+      "title": "Account holder address",
+      "type": "object"
+    },
+    "PaymentPurpose": {
+      "oneOf": [
+        {
+          "const": "Payment for Services",
+          "title": "Payment for services",
+          "type": "string"
+        },
+        {
+          "const": "Payment for Software",
+          "title": "Payment for software",
+          "type": "string"
+        },
+        {
+          "const": "Payments for imported goods",
+          "title": "Payments for imported goods",
+          "type": "string"
+        },
+        {
+          "const": "Travel Services",
+          "title": "Travel services",
+          "type": "string"
+        },
+        {
+          "const": "Vendor / Contractor Payouts",
+          "title": "Vendor / contractor payouts",
+          "type": "string"
+        },
+        {
+          "const": "Transfer to own account",
+          "title": "Transfer to own account",
+          "type": "string"
+        },
+        {
+          "const": "Investment in Shares",
+          "title": "Investment in shares",
+          "type": "string"
+        },
+        {
+          "const": "Purchase of Property",
+          "title": "Purchase of property",
+          "type": "string"
+        },
+        {
+          "const": "Repayment of Loans",
+          "title": "Repayment of loans",
+          "type": "string"
+        },
+        {
+          "const": "Salary",
+          "title": "Salary",
+          "type": "string"
+        },
+        {
+          "const": "Payment of Property Rental",
+          "title": "Payment of property rental",
+          "type": "string"
+        },
+        {
+          "const": "Information Service Charges",
+          "title": "Information service charges",
+          "type": "string"
+        },
+        {
+          "const": "Advertising \u0026 Public relations-related expenses",
+          "title": "Advertising \u0026 public relations-related expenses",
+          "type": "string"
+        },
+        {
+          "const": "Royalty fees, trademark fees, patent fees, and copyright fees",
+          "title": "Royalty fees, trademark fees, patent fees, and copyright fees",
+          "type": "string"
+        },
+        {
+          "const": "Fees for brokers",
+          "title": "Fees for brokers",
+          "type": "string"
+        },
+        {
+          "const": "Front end fee",
+          "title": "Front end fee",
+          "type": "string"
+        },
+        {
+          "const": "Commitment fee",
+          "title": "Commitment fee",
+          "type": "string"
+        },
+        {
+          "const": "Guarantee fee",
+          "title": "Guarantee fee",
+          "type": "string"
+        },
+        {
+          "const": "Custodian fee",
+          "title": "Custodian fee",
+          "type": "string"
+        },
+        {
+          "const": "Fees for advisors, technical assistance, and academic knowledge, including remuneration for specialists",
+          "title": "Fees for advisors, technical assistance, and academic knowledge, including remuneration for specialists",
+          "type": "string"
+        },
+        {
+          "const": "Representative office expenses",
+          "title": "Representative office expenses",
+          "type": "string"
+        },
+        {
+          "const": "Tax Payment",
+          "title": "Tax payment",
+          "type": "string"
+        },
+        {
+          "const": "Transportation fees for goods",
+          "title": "Transportation fees for goods",
+          "type": "string"
+        },
+        {
+          "const": "Construction costs/expenses",
+          "title": "Construction costs/expenses",
+          "type": "string"
+        },
+        {
+          "const": "Insurance Premium",
+          "title": "Insurance premium",
+          "type": "string"
+        },
+        {
+          "const": "General Goods Trades - Offline trade",
+          "title": "General goods trades - offline trade",
+          "type": "string"
+        },
+        {
+          "const": "Insurance Claims Payment",
+          "title": "Insurance claims payment",
+          "type": "string"
+        },
+        {
+          "const": "Family Maintenance",
+          "title": "Family maintenance",
+          "type": "string"
+        },
+        {
+          "const": "Education-related student expenses",
+          "title": "Education-related student expenses",
+          "type": "string"
+        },
+        {
+          "const": "Medical Treatment",
+          "title": "Medical treatment",
+          "type": "string"
+        },
+        {
+          "const": "Mutual Fund Investment",
+          "title": "Mutual fund investment",
+          "type": "string"
+        },
+        {
+          "const": "Currency Exchange",
+          "title": "Currency exchange",
+          "type": "string"
+        },
+        {
+          "const": "User Withdrawal",
+          "title": "User withdrawal",
+          "type": "string"
+        },
+        {
+          "const": "Advance Payments for goods",
+          "title": "Advance payments for goods",
+          "type": "string"
+        },
+        {
+          "const": "Vendor / Contractor payouts for software development",
+          "title": "Vendor / contractor payouts for software development",
+          "type": "string"
+        },
+        {
+          "const": "Merchant Settlement",
+          "title": "Merchant settlement",
+          "type": "string"
+        },
+        {
+          "const": "Repatriation Fund Settlement",
+          "title": "Repatriation fund settlement",
+          "type": "string"
+        }
+      ],
+      "title": "Payment purpose",
+      "type": "string"
+    }
+  },
+  "required": ["BankDetails", "AccountHolderName", "AccountHolderAddress", "PaymentPurpose"],
+  "metadata": {
+    "channels": [
+      {
+        "id": "e23af6d7-274c-5576-9c47-63b677a6b3bc",
+        "country": "AE",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankLocal"
+      },
+      {
+        "id": "3d2ba9db-0478-5564-86f1-c2c01780f8f6",
+        "country": "PL",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankLocal"
+      }
+    ],
+    "contentHash": "56213c75b0ebd4357124e5dd5ed9400deac4997f7f6a2a09d5d52223ba8773be",
+    "generatedAt": "2026-07-23T15:38:44Z"
+  }
+}
