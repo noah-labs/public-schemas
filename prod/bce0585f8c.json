@@ -19,16 +19,16 @@
               "Name": {
                 "properties": {
                   "FirstName": {
-                    "errorMessage": "First name must be between 1 and 22 characters",
-                    "maxLength": 22,
-                    "minLength": 1,
+                    "errorMessage": "First name must be between 3 and 32 characters",
+                    "maxLength": 32,
+                    "minLength": 3,
                     "title": "First name",
                     "type": "string"
                   },
                   "LastName": {
-                    "errorMessage": "Last name must be between 1 and 22 characters",
-                    "maxLength": 22,
-                    "minLength": 1,
+                    "errorMessage": "Last name must be between 3 and 32 characters",
+                    "maxLength": 32,
+                    "minLength": 3,
                     "title": "Last name",
                     "type": "string"
                   }
@@ -36,8 +36,8 @@
                 "required": ["FirstName", "LastName"],
                 "title": "Full name",
                 "type": "object",
-                "x-total-max-length": 45,
-                "x-validation-message": "Combined first and last name must not exceed 45 characters"
+                "x-total-max-length": 35,
+                "x-validation-message": "Combined first and last name must not exceed 35 characters"
               }
             },
             "required": ["Name"]
@@ -54,8 +54,8 @@
           "then": {
             "properties": {
               "Name": {
-                "errorMessage": "Name must be between 3 and 50 characters",
-                "maxLength": 50,
+                "errorMessage": "Name must be between 3 and 35 characters",
+                "maxLength": 35,
                 "minLength": 3,
                 "title": "Business name",
                 "type": "string"
@@ -76,39 +76,20 @@
       "title": "Account holder name",
       "type": "object"
     },
-    "BankDetails": {
-      "properties": {
-        "AccountNumber": {
-          "maxLength": 34,
-          "minLength": 1,
-          "title": "Account number",
-          "type": "string"
-        },
-        "RoutingNumber": {
-          "maxLength": 9,
-          "minLength": 9,
-          "title": "Routing number",
-          "type": "string"
-        },
-        "AccountType": {
-          "enum": ["Checking", "Savings"],
-          "title": "Account type",
-          "type": "string"
-        }
-      },
-      "required": ["AccountNumber", "RoutingNumber", "AccountType"],
-      "title": "Bank details",
-      "type": "object"
-    },
     "AccountHolderAddress": {
       "properties": {
-        "city": {
-          "maxLength": 35,
-          "minLength": 1,
-          "title": "City",
+        "Address": {
+          "maxLength": 70,
+          "minLength": 3,
+          "title": "Address",
           "type": "string"
         },
-        "countryCode": {
+        "City": {
+          "maxLength": 35,
+          "title": "Town",
+          "type": "string"
+        },
+        "Country": {
           "oneOf": [
             {
               "const": "AF",
@@ -1614,58 +1595,66 @@
           "title": "Country",
           "type": "string"
         },
-        "line1": {
-          "maxLength": 70,
-          "minLength": 3,
-          "title": "Address",
-          "type": "string"
-        },
-        "postalCode": {
-          "maxLength": 20,
-          "minLength": 1,
-          "title": "Postal code",
-          "type": "string"
-        },
-        "state": {
+        "PostalCode": {
           "maxLength": 35,
-          "minLength": 1,
-          "title": "State",
+          "title": "Postal Code",
+          "type": "string"
+        },
+        "State": {
+          "maxLength": 35,
+          "title": "State/Province",
           "type": "string"
         }
       },
-      "required": ["line1", "city", "state", "postalCode", "countryCode"],
+      "required": ["City", "Address", "Country"],
       "title": "Account holder address",
+      "type": "object"
+    },
+    "BankDetails": {
+      "properties": {
+        "AccountNumber": {
+          "maxLength": 17,
+          "minLength": 1,
+          "title": "Account number",
+          "type": "string"
+        },
+        "BankCode": {
+          "maxLength": 9,
+          "minLength": 9,
+          "title": "Routing number",
+          "type": "string"
+        }
+      },
+      "required": ["AccountNumber", "BankCode"],
+      "title": "Bank details",
       "type": "object"
     },
     "Reference": {
       "description": "This reference will appear on the beneficiary's bank statement",
-      "errorMessage": "Reference must be at most 80 characters",
-      "maxLength": 80,
+      "errorMessage": "Reference must be at most 140 characters",
+      "maxLength": 140,
       "minLength": 0,
-      "pattern": "^[\\x20-\\x7E]*$",
+      "pattern": "^[\\w !\"#$%\u0026'()+,\\-./:;\u003c=\u003e?@\\\\_`~]*$",
       "title": "Reference",
+      "type": "string"
+    },
+    "PaymentPurpose": {
+      "title": "Payment purpose",
       "type": "string"
     }
   },
-  "required": ["AccountHolderName", "BankDetails", "AccountHolderAddress", "Reference"],
+  "required": ["AccountHolderName", "AccountHolderAddress", "BankDetails", "PaymentPurpose"],
   "metadata": {
     "channels": [
       {
-        "id": "bdb2fe66-150d-5677-bca9-b6c44bfcb586",
-        "country": "US",
-        "direction": "In",
-        "finServiceID": "k7m2x",
-        "paymentMethodType": "BankAch"
-      },
-      {
-        "id": "dd1045e1-8d54-5a10-bbe6-f1aaae446d10",
+        "id": "d0388d20-f8f5-56d9-8310-9831698c7764",
         "country": "US",
         "direction": "Out",
-        "finServiceID": "k7m2x",
-        "paymentMethodType": "BankAch"
+        "finServiceID": "t6f2c",
+        "paymentMethodType": "BankFedwire"
       }
     ],
-    "contentHash": "d178699afe24f5f314132f89b63962f0427148d302f15942a555f5e350542a10",
-    "generatedAt": "2026-07-24T16:16:43Z"
+    "contentHash": "bce0585f8ca4344bab30d0b55e18fa7085ffb2b4e3c27000bc75958f585f7796",
+    "generatedAt": "2026-07-24T16:16:38Z"
   }
 }

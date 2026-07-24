@@ -53,11 +53,11 @@ These schemas describe the data required to complete a payment. Use them with fo
 | US      | BankAch         | In        | k7m2x      | [d178699afe.json](./d178699afe.json) |
 | US      | BankAch         | In        | t6f2c      | [457194ba66.json](./457194ba66.json) |
 | US      | BankAch         | Out       | k7m2x      | [d178699afe.json](./d178699afe.json) |
-| US      | BankAch         | Out       | t6f2c      | [81a333d415.json](./81a333d415.json) |
+| US      | BankAch         | Out       | t6f2c      | [75a47af08a.json](./75a47af08a.json) |
 | US      | BankFedwire     | In        | k7m2x      | [5015b19b24.json](./5015b19b24.json) |
 | US      | BankFedwire     | In        | t6f2c      | [457194ba66.json](./457194ba66.json) |
 | US      | BankFedwire     | Out       | k7m2x      | [5015b19b24.json](./5015b19b24.json) |
-| US      | BankFedwire     | Out       | t6f2c      | [bc6492fb6d.json](./bc6492fb6d.json) |
+| US      | BankFedwire     | Out       | t6f2c      | [bce0585f8c.json](./bce0585f8c.json) |
 | US      | BankSwift       | In        | k7m2x      | [8c8f8c4d90.json](./8c8f8c4d90.json) |
 | XX      | BankSwift       | In        | k7m2x      | [8c8f8c4d90.json](./8c8f8c4d90.json) |
 | XX      | BankSwift       | Out       | k7m2x      | [8c8f8c4d90.json](./8c8f8c4d90.json) |
@@ -65,4 +65,4 @@ These schemas describe the data required to complete a payment. Use them with fo
 
 ---
 
-_Generated: 2026-07-23T15:39:20Z_
+_Generated: 2026-07-24T16:16:43Z_

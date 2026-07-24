@@ -19,15 +19,15 @@
               "Name": {
                 "properties": {
                   "FirstName": {
-                    "errorMessage": "First name must be between 1 and 22 characters",
-                    "maxLength": 22,
+                    "errorMessage": "First name must be between 1 and 21 characters",
+                    "maxLength": 21,
                     "minLength": 1,
                     "title": "First name",
                     "type": "string"
                   },
                   "LastName": {
-                    "errorMessage": "Last name must be between 1 and 22 characters",
-                    "maxLength": 22,
+                    "errorMessage": "Last name must be between 1 and 21 characters",
+                    "maxLength": 21,
                     "minLength": 1,
                     "title": "Last name",
                     "type": "string"
@@ -36,8 +36,8 @@
                 "required": ["FirstName", "LastName"],
                 "title": "Full name",
                 "type": "object",
-                "x-total-max-length": 45,
-                "x-validation-message": "Combined first and last name must not exceed 45 characters"
+                "x-total-max-length": 22,
+                "x-validation-message": "Combined first and last name must not exceed 22 characters"
               }
             },
             "required": ["Name"]
@@ -54,9 +54,9 @@
           "then": {
             "properties": {
               "Name": {
-                "errorMessage": "Name must be between 3 and 50 characters",
-                "maxLength": 50,
-                "minLength": 3,
+                "errorMessage": "Name must be between 1 and 22 characters",
+                "maxLength": 22,
+                "minLength": 1,
                 "title": "Business name",
                 "type": "string"
               }
@@ -76,39 +76,20 @@
       "title": "Account holder name",
       "type": "object"
     },
-    "BankDetails": {
-      "properties": {
-        "AccountNumber": {
-          "maxLength": 34,
-          "minLength": 1,
-          "title": "Account number",
-          "type": "string"
-        },
-        "RoutingNumber": {
-          "maxLength": 9,
-          "minLength": 9,
-          "title": "Routing number",
-          "type": "string"
-        },
-        "AccountType": {
-          "enum": ["Checking", "Savings"],
-          "title": "Account type",
-          "type": "string"
-        }
-      },
-      "required": ["AccountNumber", "RoutingNumber", "AccountType"],
-      "title": "Bank details",
-      "type": "object"
-    },
     "AccountHolderAddress": {
       "properties": {
-        "city": {
-          "maxLength": 35,
-          "minLength": 1,
-          "title": "City",
+        "Address": {
+          "maxLength": 70,
+          "minLength": 3,
+          "title": "Address",
           "type": "string"
         },
-        "countryCode": {
+        "City": {
+          "maxLength": 35,
+          "title": "Town",
+          "type": "string"
+        },
+        "Country": {
           "oneOf": [
             {
               "const": "AF",
@@ -1614,27 +1595,43 @@
           "title": "Country",
           "type": "string"
         },
-        "line1": {
-          "maxLength": 70,
-          "minLength": 3,
-          "title": "Address",
-          "type": "string"
-        },
-        "postalCode": {
-          "maxLength": 20,
-          "minLength": 1,
-          "title": "Postal code",
-          "type": "string"
-        },
-        "state": {
+        "PostalCode": {
           "maxLength": 35,
-          "minLength": 1,
-          "title": "State",
+          "title": "Postal Code",
+          "type": "string"
+        },
+        "State": {
+          "maxLength": 35,
+          "title": "State/Province",
           "type": "string"
         }
       },
-      "required": ["line1", "city", "state", "postalCode", "countryCode"],
+      "required": ["City", "Address", "Country"],
       "title": "Account holder address",
+      "type": "object"
+    },
+    "BankDetails": {
+      "properties": {
+        "AccountNumber": {
+          "maxLength": 17,
+          "minLength": 1,
+          "title": "Account number",
+          "type": "string"
+        },
+        "BankCode": {
+          "maxLength": 9,
+          "minLength": 9,
+          "title": "Routing number",
+          "type": "string"
+        },
+        "AccountType": {
+          "enum": ["Checking", "Savings"],
+          "title": "Account type",
+          "type": "string"
+        }
+      },
+      "required": ["AccountNumber", "BankCode", "AccountType"],
+      "title": "Bank details",
       "type": "object"
     },
     "Reference": {
@@ -1645,27 +1642,24 @@
       "pattern": "^[\\x20-\\x7E]*$",
       "title": "Reference",
       "type": "string"
+    },
+    "PaymentPurpose": {
+      "title": "Payment purpose",
+      "type": "string"
     }
   },
-  "required": ["AccountHolderName", "BankDetails", "AccountHolderAddress", "Reference"],
+  "required": ["AccountHolderName", "AccountHolderAddress", "BankDetails", "PaymentPurpose"],
   "metadata": {
     "channels": [
       {
-        "id": "bdb2fe66-150d-5677-bca9-b6c44bfcb586",
-        "country": "US",
-        "direction": "In",
-        "finServiceID": "k7m2x",
-        "paymentMethodType": "BankAch"
-      },
-      {
-        "id": "dd1045e1-8d54-5a10-bbe6-f1aaae446d10",
+        "id": "214eab50-e22b-5e0f-b487-37dc1addee90",
         "country": "US",
         "direction": "Out",
-        "finServiceID": "k7m2x",
+        "finServiceID": "t6f2c",
         "paymentMethodType": "BankAch"
       }
     ],
-    "contentHash": "d178699afe24f5f314132f89b63962f0427148d302f15942a555f5e350542a10",
+    "contentHash": "75a47af08a4d6f8e160159b2be62a41b7ff789dc28336a7d58215ac25de678f9",
     "generatedAt": "2026-07-24T16:16:43Z"
   }
 }
