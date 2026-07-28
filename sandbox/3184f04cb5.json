@@ -14,27 +14,21 @@
         },
         "Bank": {
           "enum": [
-            "ABSA",
-            "Access",
-            "Afribank",
-            "African Bank",
-            "Bidvest Bank",
-            "The Bank of New York Mellon",
-            "Capitec Bank",
-            "Discovery Bank",
-            "First National Bank",
-            "Grindrod",
-            "HSBC",
-            "Imperial",
-            "Investec Bank",
-            "Mercantile Bank",
-            "Nedbank Limited",
-            "Old Mutual Money Account",
-            "Sasfin",
-            "Standard Bank",
-            "TYME",
-            "Ubank",
-            "Windhoek Bank"
+            "National Bank of Rwanda",
+            "I and M bank",
+            "Bank of Kigali",
+            "GT bank",
+            "Ecobank Rwanda",
+            "Access Bank",
+            "Cogebank",
+            "Urwego Opportinuity Bank",
+            "Kenya Commercial Bank",
+            "Equity Bank",
+            "Agaseke Bank",
+            "Unguka Bank",
+            "Banque Populaire du Rwanda",
+            "Banque de Developpement du Rwanda",
+            "Zigama CSS Bank"
           ],
           "title": "Bank",
           "type": "string"
@@ -114,40 +108,6 @@
       "title": "Account holder name",
       "type": "object"
     },
-    "Email": {
-      "format": "email",
-      "title": "Email",
-      "type": "string"
-    },
-    "PhoneNumber": {
-      "title": "Phone number",
-      "type": "string"
-    },
-    "AccountHolderAddress": {
-      "properties": {
-        "Address": {
-          "maxLength": 70,
-          "minLength": 3,
-          "title": "Address",
-          "type": "string"
-        },
-        "City": {
-          "maxLength": 35,
-          "minLength": 2,
-          "title": "Town",
-          "type": "string"
-        },
-        "State": {
-          "maxLength": 35,
-          "minLength": 2,
-          "title": "State/province",
-          "type": "string"
-        }
-      },
-      "required": ["State", "City", "Address"],
-      "title": "Account holder address",
-      "type": "object"
-    },
     "PaymentPurpose": {
       "title": "Payment purpose",
       "type": "string"
@@ -162,25 +122,18 @@
       "type": "string"
     }
   },
-  "required": [
-    "BankDetails",
-    "AccountHolderName",
-    "Email",
-    "PhoneNumber",
-    "AccountHolderAddress",
-    "PaymentPurpose"
-  ],
+  "required": ["BankDetails", "AccountHolderName", "PaymentPurpose"],
   "metadata": {
     "channels": [
       {
-        "id": "87e0cbde-036d-562a-b882-1ce150e3cbc3",
-        "country": "ZA",
+        "id": "70913917-4f42-5f3a-b8e6-4b6ffaf4ba2c",
+        "country": "RW",
         "direction": "Out",
         "finServiceID": "h5j1y",
         "paymentMethodType": "BankLocal"
       }
     ],
-    "contentHash": "961c057dbcd548f883b8fbee67704420ae14c86ccc006cddf41e0bbcf5bcdc7a",
+    "contentHash": "3184f04cb51e886bd75cdc4284a829b08976c2d8294b39ff1f15b8abac0527c6",
     "generatedAt": "2026-07-28T10:03:22Z"
   }
 }

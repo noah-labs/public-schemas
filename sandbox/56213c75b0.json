@@ -7,19 +7,17 @@
     "BankDetails": {
       "properties": {
         "AccountNumber": {
-          "errorMessage": "Account number must contain only digits",
-          "maxLength": 20,
-          "minLength": 5,
-          "pattern": "^[0-9]+$",
-          "title": "Account number",
+          "maxLength": 34,
+          "minLength": 12,
+          "title": "IBAN",
           "type": "string"
         },
-        "SortCode": {
-          "errorMessage": "Enter a valid 6-digit sort code",
-          "maxLength": 6,
-          "minLength": 6,
-          "pattern": "^[0-9]{6}$",
-          "title": "Sort code",
+        "BankCode": {
+          "errorMessage": "Enter a valid SWIFT/BIC code (e.g., DBSSSGSG)",
+          "maxLength": 11,
+          "minLength": 8,
+          "pattern": "^[A-Z]{6}[A-Z0-9]{2}([A-Z0-9]{3})?$",
+          "title": "SWIFT/BIC code",
           "type": "string"
         },
         "BankName": {
@@ -27,7 +25,7 @@
           "type": "string"
         }
       },
-      "required": ["AccountNumber", "SortCode", "BankName"],
+      "required": ["AccountNumber", "BankCode"],
       "title": "Bank details",
       "type": "object"
     },
@@ -99,6 +97,34 @@
       },
       "required": ["AccountHolderType"],
       "title": "Account holder name",
+      "type": "object"
+    },
+    "AccountHolderAddress": {
+      "properties": {
+        "Address": {
+          "maxLength": 70,
+          "minLength": 3,
+          "title": "Address",
+          "type": "string"
+        },
+        "City": {
+          "maxLength": 35,
+          "title": "City",
+          "type": "string"
+        },
+        "PostalCode": {
+          "maxLength": 10,
+          "title": "Postal code",
+          "type": "string"
+        },
+        "State": {
+          "maxLength": 35,
+          "title": "State/province",
+          "type": "string"
+        }
+      },
+      "required": ["Address", "City", "State", "PostalCode"],
+      "title": "Account holder address",
       "type": "object"
     },
     "PaymentPurpose": {
@@ -293,18 +319,25 @@
       "type": "string"
     }
   },
-  "required": ["BankDetails", "AccountHolderName", "PaymentPurpose"],
+  "required": ["BankDetails", "AccountHolderName", "AccountHolderAddress", "PaymentPurpose"],
   "metadata": {
     "channels": [
       {
-        "id": "e7f0382c-fbd8-5551-bbe0-303c944e18ce",
-        "country": "GB",
+        "id": "e23af6d7-274c-5576-9c47-63b677a6b3bc",
+        "country": "AE",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankLocal"
+      },
+      {
+        "id": "3d2ba9db-0478-5564-86f1-c2c01780f8f6",
+        "country": "PL",
         "direction": "Out",
         "finServiceID": "y7n3f",
         "paymentMethodType": "BankLocal"
       }
     ],
-    "contentHash": "225b3242a03df80ec457fb1d88ae72f0dc5ef6713b944deeca3fae444382e561",
+    "contentHash": "56213c75b0ebd4357124e5dd5ed9400deac4997f7f6a2a09d5d52223ba8773be",
     "generatedAt": "2026-07-28T10:03:22Z"
   }
 }

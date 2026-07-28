@@ -7,19 +7,9 @@
     "BankDetails": {
       "properties": {
         "AccountNumber": {
-          "errorMessage": "Account number must contain only digits",
-          "maxLength": 20,
-          "minLength": 5,
-          "pattern": "^[0-9]+$",
-          "title": "Account number",
-          "type": "string"
-        },
-        "SortCode": {
-          "errorMessage": "Enter a valid 6-digit sort code",
-          "maxLength": 6,
-          "minLength": 6,
-          "pattern": "^[0-9]{6}$",
-          "title": "Sort code",
+          "maxLength": 34,
+          "minLength": 12,
+          "title": "IBAN",
           "type": "string"
         },
         "BankName": {
@@ -27,7 +17,7 @@
           "type": "string"
         }
       },
-      "required": ["AccountNumber", "SortCode", "BankName"],
+      "required": ["AccountNumber"],
       "title": "Bank details",
       "type": "object"
     },
@@ -297,14 +287,14 @@
   "metadata": {
     "channels": [
       {
-        "id": "e7f0382c-fbd8-5551-bbe0-303c944e18ce",
-        "country": "GB",
+        "id": "d87173b1-aa3d-5e2c-9f8f-2631a8ebc744",
+        "country": "TR",
         "direction": "Out",
         "finServiceID": "y7n3f",
         "paymentMethodType": "BankLocal"
       }
     ],
-    "contentHash": "225b3242a03df80ec457fb1d88ae72f0dc5ef6713b944deeca3fae444382e561",
+    "contentHash": "7eb4c7b408e50658ec66f26fdddb6df093a2c1b0bfba829a29b6235f29ebcd0e",
     "generatedAt": "2026-07-28T10:03:22Z"
   }
 }

@@ -14,27 +14,31 @@
         },
         "Bank": {
           "enum": [
-            "ABSA",
-            "Access",
-            "Afribank",
-            "African Bank",
-            "Bidvest Bank",
-            "The Bank of New York Mellon",
-            "Capitec Bank",
-            "Discovery Bank",
-            "First National Bank",
-            "Grindrod",
-            "HSBC",
-            "Imperial",
-            "Investec Bank",
-            "Mercantile Bank",
-            "Nedbank Limited",
-            "Old Mutual Money Account",
-            "Sasfin",
-            "Standard Bank",
-            "TYME",
-            "Ubank",
-            "Windhoek Bank"
+            "KCB Bank Kenya Ltd",
+            "Equity Bank Kenya Ltd",
+            "Co-operative Bank of Kenya Ltd",
+            "Absa Bank Kenya PLC",
+            "Access Bank (Kenya) PLC",
+            "Bank of Africa Kenya Ltd",
+            "Bank of Baroda (Kenya) Ltd",
+            "Bank of India",
+            "NCBA Bank Kenya PLC",
+            "SBM Bank Kenya Ltd",
+            "I\u0026M Bank Ltd",
+            "National Bank of Kenya Ltd",
+            "Credit Bank PLC",
+            "Diamond Trust Bank Kenya Ltd",
+            "Ecobank Kenya Ltd",
+            "Family Bank Ltd",
+            "Guardian Bank Ltd",
+            "Gulf African Bank Ltd",
+            "Habib Bank AG Zurich",
+            "M-Oriental Bank Ltd",
+            "Paramount Bank Ltd",
+            "Prime Bank Ltd",
+            "Sidian Bank Ltd",
+            "Victoria Commercial Bank PLC",
+            "Kenya Post Office Savings Bank"
           ],
           "title": "Bank",
           "type": "string"
@@ -114,39 +118,9 @@
       "title": "Account holder name",
       "type": "object"
     },
-    "Email": {
-      "format": "email",
-      "title": "Email",
-      "type": "string"
-    },
     "PhoneNumber": {
       "title": "Phone number",
       "type": "string"
-    },
-    "AccountHolderAddress": {
-      "properties": {
-        "Address": {
-          "maxLength": 70,
-          "minLength": 3,
-          "title": "Address",
-          "type": "string"
-        },
-        "City": {
-          "maxLength": 35,
-          "minLength": 2,
-          "title": "Town",
-          "type": "string"
-        },
-        "State": {
-          "maxLength": 35,
-          "minLength": 2,
-          "title": "State/province",
-          "type": "string"
-        }
-      },
-      "required": ["State", "City", "Address"],
-      "title": "Account holder address",
-      "type": "object"
     },
     "PaymentPurpose": {
       "title": "Payment purpose",
@@ -162,25 +136,18 @@
       "type": "string"
     }
   },
-  "required": [
-    "BankDetails",
-    "AccountHolderName",
-    "Email",
-    "PhoneNumber",
-    "AccountHolderAddress",
-    "PaymentPurpose"
-  ],
+  "required": ["BankDetails", "AccountHolderName", "PhoneNumber", "PaymentPurpose"],
   "metadata": {
     "channels": [
       {
-        "id": "87e0cbde-036d-562a-b882-1ce150e3cbc3",
-        "country": "ZA",
+        "id": "5e67e9b5-2a8c-5520-9915-34d25511d2c4",
+        "country": "KE",
         "direction": "Out",
         "finServiceID": "h5j1y",
         "paymentMethodType": "BankLocal"
       }
     ],
-    "contentHash": "961c057dbcd548f883b8fbee67704420ae14c86ccc006cddf41e0bbcf5bcdc7a",
+    "contentHash": "02be6ed991991b34b49e39bd31a88d14f78de4536905c6746c47245d1f0f587e",
     "generatedAt": "2026-07-28T10:03:22Z"
   }
 }

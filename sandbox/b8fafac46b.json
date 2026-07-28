@@ -7,19 +7,9 @@
     "BankDetails": {
       "properties": {
         "AccountNumber": {
-          "errorMessage": "Account number must contain only digits",
-          "maxLength": 20,
-          "minLength": 5,
-          "pattern": "^[0-9]+$",
-          "title": "Account number",
-          "type": "string"
-        },
-        "SortCode": {
-          "errorMessage": "Enter a valid 6-digit sort code",
-          "maxLength": 6,
-          "minLength": 6,
-          "pattern": "^[0-9]{6}$",
-          "title": "Sort code",
+          "maxLength": 34,
+          "minLength": 12,
+          "title": "IBAN",
           "type": "string"
         },
         "BankName": {
@@ -27,7 +17,7 @@
           "type": "string"
         }
       },
-      "required": ["AccountNumber", "SortCode", "BankName"],
+      "required": ["AccountNumber"],
       "title": "Bank details",
       "type": "object"
     },
@@ -99,6 +89,34 @@
       },
       "required": ["AccountHolderType"],
       "title": "Account holder name",
+      "type": "object"
+    },
+    "AccountHolderAddress": {
+      "properties": {
+        "Address": {
+          "maxLength": 70,
+          "minLength": 3,
+          "title": "Address",
+          "type": "string"
+        },
+        "City": {
+          "maxLength": 35,
+          "title": "City",
+          "type": "string"
+        },
+        "PostalCode": {
+          "maxLength": 10,
+          "title": "Postal code",
+          "type": "string"
+        },
+        "State": {
+          "maxLength": 35,
+          "title": "State/province",
+          "type": "string"
+        }
+      },
+      "required": ["Address", "City", "State", "PostalCode"],
+      "title": "Account holder address",
       "type": "object"
     },
     "PaymentPurpose": {
@@ -293,18 +311,32 @@
       "type": "string"
     }
   },
-  "required": ["BankDetails", "AccountHolderName", "PaymentPurpose"],
+  "required": ["BankDetails", "AccountHolderName", "AccountHolderAddress", "PaymentPurpose"],
   "metadata": {
     "channels": [
       {
-        "id": "e7f0382c-fbd8-5551-bbe0-303c944e18ce",
-        "country": "GB",
+        "id": "500797aa-4742-5709-9ef8-3770284d0022",
+        "country": "CZ",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankLocal"
+      },
+      {
+        "id": "eb457ac8-f08e-5bd2-a0cf-61feef119cd8",
+        "country": "HU",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankLocal"
+      },
+      {
+        "id": "ca6c77ce-4e1d-5a26-954a-ad0a635b244f",
+        "country": "RO",
         "direction": "Out",
         "finServiceID": "y7n3f",
         "paymentMethodType": "BankLocal"
       }
     ],
-    "contentHash": "225b3242a03df80ec457fb1d88ae72f0dc5ef6713b944deeca3fae444382e561",
+    "contentHash": "b8fafac46b0126b25392782e8d8b8a092edc0b3a3de53920509beb8d2b398c91",
     "generatedAt": "2026-07-28T10:03:22Z"
   }
 }

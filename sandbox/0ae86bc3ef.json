@@ -7,40 +7,23 @@
     "BankDetails": {
       "properties": {
         "AccountNumber": {
-          "maxLength": 30,
+          "errorMessage": "Account number must contain only digits",
+          "maxLength": 20,
           "minLength": 5,
+          "pattern": "^[0-9]+$",
           "title": "Account number",
           "type": "string"
         },
-        "Bank": {
-          "enum": [
-            "ABSA",
-            "Access",
-            "Afribank",
-            "African Bank",
-            "Bidvest Bank",
-            "The Bank of New York Mellon",
-            "Capitec Bank",
-            "Discovery Bank",
-            "First National Bank",
-            "Grindrod",
-            "HSBC",
-            "Imperial",
-            "Investec Bank",
-            "Mercantile Bank",
-            "Nedbank Limited",
-            "Old Mutual Money Account",
-            "Sasfin",
-            "Standard Bank",
-            "TYME",
-            "Ubank",
-            "Windhoek Bank"
-          ],
-          "title": "Bank",
+        "IfscCode": {
+          "title": "IFSC code",
+          "type": "string"
+        },
+        "BankName": {
+          "title": "Bank name",
           "type": "string"
         }
       },
-      "required": ["AccountNumber", "Bank"],
+      "required": ["AccountNumber", "IfscCode"],
       "title": "Bank details",
       "type": "object"
     },
@@ -114,15 +97,6 @@
       "title": "Account holder name",
       "type": "object"
     },
-    "Email": {
-      "format": "email",
-      "title": "Email",
-      "type": "string"
-    },
-    "PhoneNumber": {
-      "title": "Phone number",
-      "type": "string"
-    },
     "AccountHolderAddress": {
       "properties": {
         "Address": {
@@ -133,54 +107,58 @@
         },
         "City": {
           "maxLength": 35,
-          "minLength": 2,
-          "title": "Town",
+          "title": "City",
+          "type": "string"
+        },
+        "PostalCode": {
+          "maxLength": 10,
+          "title": "Postal code",
           "type": "string"
         },
         "State": {
           "maxLength": 35,
-          "minLength": 2,
           "title": "State/province",
           "type": "string"
         }
       },
-      "required": ["State", "City", "Address"],
+      "required": ["Address", "City", "State", "PostalCode"],
       "title": "Account holder address",
       "type": "object"
     },
     "PaymentPurpose": {
+      "oneOf": [
+        {
+          "const": "Transfer to own account",
+          "title": "Transfer to own account",
+          "type": "string"
+        },
+        {
+          "const": "Family Maintenance",
+          "title": "Family maintenance",
+          "type": "string"
+        },
+        {
+          "const": "User Withdrawal",
+          "title": "User withdrawal",
+          "type": "string"
+        }
+      ],
       "title": "Payment purpose",
-      "type": "string"
-    },
-    "Reference": {
-      "description": "This reference will appear on the beneficiary's bank statement",
-      "errorMessage": "",
-      "maxLength": 180,
-      "minLength": 0,
-      "pattern": "",
-      "title": "Reference",
       "type": "string"
     }
   },
-  "required": [
-    "BankDetails",
-    "AccountHolderName",
-    "Email",
-    "PhoneNumber",
-    "AccountHolderAddress",
-    "PaymentPurpose"
-  ],
+  "required": ["BankDetails", "AccountHolderName", "AccountHolderAddress", "PaymentPurpose"],
   "metadata": {
     "channels": [
       {
-        "id": "87e0cbde-036d-562a-b882-1ce150e3cbc3",
-        "country": "ZA",
+        "id": "fdb657a5-dbc0-51dc-bb30-181604267a66",
+        "country": "IN",
         "direction": "Out",
-        "finServiceID": "h5j1y",
+        "finServiceID": "y7n3f",
         "paymentMethodType": "BankLocal"
       }
     ],
-    "contentHash": "961c057dbcd548f883b8fbee67704420ae14c86ccc006cddf41e0bbcf5bcdc7a",
+    "contentHash": "0ae86bc3ef597d645384977a3e3da47fa3a57eddf6825b93a1b1f62500b42936",
     "generatedAt": "2026-07-28T10:03:22Z"
   }
 }
