@@ -100,14 +100,32 @@
             "BANCO ATLANTICO",
             "BANCO BANESCO",
             "BANCO LAFISE",
+            "BANCO BELLBANK",
             "BANCO MULTIPLE ACTIVO",
             "BANCO UNION",
             "BANFONDESA",
             "BANCO PROMERICA",
             "ASOCIACION POPULAR DE AHORRO",
             "ASOCIACION CIBAO DE A/P",
-            "BANCO AGRICOLA DE LA REPUBLICA DOMINICANA",
-            "QIK BANCO DIGITAL DOMINICANO, S.A."
+            "ASOCIACION BONAO DE AHORROS Y PRESTAMOS",
+            "ASOCIACION DUARTE DE AHORROS Y PRESTAMOS",
+            "ASOCIACION LA VEGA REAL DE AHORROS Y PRESTAMOS",
+            "ASOCIACION MAGUANA DE AHORROS Y PRESTAMOS",
+            "ASOCIACION MOCANA DE AHORROS Y PRESTAMOS",
+            "ASOCIACION ROMANA DE AHORROS Y PRESTAMOS",
+            "BANCO BACC",
+            "BANCO FIHOGAR",
+            "BANCO DE AHORRO Y CREDITO BANCOTUI",
+            "BANCO DE AHORRO Y CREDITO COFACI",
+            "BANCO DE AHORRO Y CREDITO CONFISA",
+            "BANCO DE AHORRO Y CREDITO GRUFICORP",
+            "BANCO DE AHORRO Y CREDITO JMMB BANK",
+            "BONANZA BANCO DE AHORRO Y CREDITO",
+            "BANCO DE AHORRO Y CREDITO ADOPEM",
+            "ASOCIACION PERAVIA DE AHORROS Y PRESTAMOS",
+            "BANCO OPTIMA DE AHORRO Y CREDITO",
+            "QIK BANCO DIGITAL DOMINICANO, S.A.",
+            "MOTOR CREDITO, S.A., BANCO DE AHORROS Y CREDITO"
           ],
           "title": "Bank",
           "type": "string"
@@ -133,14 +151,14 @@
   "metadata": {
     "channels": [
       {
-        "id": "31867eab-a9bc-501e-8f5e-4956cdad9b2c",
+        "id": "8d6ec216-de07-583f-8052-ebf9042b7ee1",
         "country": "DO",
         "direction": "Out",
         "finServiceID": "l4p8x",
-        "paymentMethodType": "BankAch"
+        "paymentMethodType": "BankLocal"
       }
     ],
-    "contentHash": "55122ced66c29ed1c74777b4728708fd5f587c154350443ce19384f07f2de3b0",
+    "contentHash": "a5c82d884480fbbf8fba538ba85ab8691efc37c6ba8d83a8995016a77ec001b9",
     "generatedAt": "2026-08-04T15:04:27Z"
   }
 }
