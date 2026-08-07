@@ -1,0 +1,232 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "IdentifierDetails": {
+      "properties": {
+        "Identifier": {
+          "errorMessage": "must be 5 to 20 alphanumeric characters",
+          "pattern": "^@?[A-Za-z0-9]{5,20}$",
+          "placeholder": "@",
+          "title": "Bre-B Key (Alias)",
+          "type": "string"
+        }
+      },
+      "required": ["Identifier"],
+      "title": "Bre-B key details",
+      "type": "object"
+    },
+    "Beneficiary": {
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "BeneficiaryType": {
+                "const": "Individual"
+              }
+            },
+            "required": ["BeneficiaryType"]
+          },
+          "then": {
+            "properties": {
+              "DocumentID": {
+                "title": "Document ID",
+                "type": "string"
+              },
+              "DocumentType": {
+                "enum": ["CC", "CE", "NIT", "PASS", "TI"],
+                "title": "Document type",
+                "type": "string"
+              },
+              "FirstName": {
+                "errorMessage": "must be between 1 and 50 characters",
+                "maxLength": 50,
+                "minLength": 1,
+                "title": "Beneficiary name",
+                "type": "string"
+              },
+              "LastName": {
+                "errorMessage": "must be between 1 and 50 characters",
+                "maxLength": 50,
+                "minLength": 1,
+                "title": "Beneficiary last name",
+                "type": "string"
+              }
+            },
+            "required": ["FirstName", "LastName", "DocumentType", "DocumentID"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "BeneficiaryType": {
+                "const": "Business"
+              }
+            },
+            "required": ["BeneficiaryType"]
+          },
+          "then": {
+            "properties": {
+              "CompanyName": {
+                "errorMessage": "must be between 1 and 100 characters",
+                "maxLength": 100,
+                "minLength": 1,
+                "title": "Company name",
+                "type": "string"
+              },
+              "DocumentID": {
+                "title": "Document ID",
+                "type": "string"
+              },
+              "DocumentType": {
+                "enum": ["NIT"],
+                "title": "Document type",
+                "type": "string"
+              }
+            },
+            "required": ["CompanyName", "DocumentType", "DocumentID"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "DocumentType": {
+                "const": "NIT"
+              }
+            },
+            "required": ["DocumentType"]
+          },
+          "then": {
+            "properties": {
+              "DocumentID": {
+                "errorMessage": "NIT must be 9 digits followed by a check digit",
+                "pattern": "^[0-9]{3}[.]?[0-9]{3}[.]?[0-9]{3}-?[0-9]$",
+                "title": "Document ID",
+                "type": "string"
+              }
+            },
+            "required": ["DocumentID"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "DocumentType": {
+                "const": "CC"
+              }
+            },
+            "required": ["DocumentType"]
+          },
+          "then": {
+            "properties": {
+              "DocumentID": {
+                "errorMessage": "CC must be between 6 and 12 digits",
+                "pattern": "^\\d{6,12}$",
+                "title": "Document ID",
+                "type": "string"
+              }
+            },
+            "required": ["DocumentID"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "DocumentType": {
+                "const": "TI"
+              }
+            },
+            "required": ["DocumentType"]
+          },
+          "then": {
+            "properties": {
+              "DocumentID": {
+                "errorMessage": "TI must be between 6 and 10 digits",
+                "pattern": "^[0-9]{0,1}[.]?[0-9]{0,3}[.]?[0-9]{3}[.]?[0-9]{3}$",
+                "title": "Document ID",
+                "type": "string"
+              }
+            },
+            "required": ["DocumentID"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "DocumentType": {
+                "const": "CE"
+              }
+            },
+            "required": ["DocumentType"]
+          },
+          "then": {
+            "properties": {
+              "DocumentID": {
+                "errorMessage": "CE must be 6 or 7 alphanumeric characters",
+                "pattern": "^[a-zA-Z0-9]{6,7}$",
+                "title": "Document ID",
+                "type": "string"
+              }
+            },
+            "required": ["DocumentID"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "DocumentType": {
+                "const": "PASS"
+              }
+            },
+            "required": ["DocumentType"]
+          },
+          "then": {
+            "properties": {
+              "DocumentID": {
+                "errorMessage": "Passport must be 5-14 digits with optional letter prefix",
+                "pattern": "^([a-zA-Z]{1,6})?([0-9]{5,14})$",
+                "title": "Document ID",
+                "type": "string"
+              }
+            },
+            "required": ["DocumentID"]
+          }
+        }
+      ],
+      "properties": {
+        "BeneficiaryType": {
+          "enum": ["Individual", "Business"],
+          "title": "Beneficiary type",
+          "type": "string"
+        },
+        "DocumentType": {
+          "title": "Document type",
+          "type": "string"
+        },
+        "DocumentID": {
+          "title": "Document ID",
+          "type": "string"
+        }
+      },
+      "required": ["BeneficiaryType", "DocumentType", "DocumentID"],
+      "title": "Beneficiary",
+      "type": "object"
+    }
+  },
+  "required": ["IdentifierDetails", "Beneficiary"],
+  "metadata": {
+    "channels": [
+      {
+        "id": "ea5ad47f-22ea-5999-b9af-a7a1917f7dd7",
+        "country": "CO",
+        "direction": "Out",
+        "finServiceID": "l4p8x",
+        "paymentMethodType": "IdentifierAlias"
+      }
+    ],
+    "contentHash": "f2dee3c88085bd59c468d1db16f05c602cfcf63b2796002c6cf3d24326f578e2",
+    "generatedAt": "2026-08-07T10:32:52Z"
+  }
+}
