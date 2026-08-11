@@ -22,7 +22,7 @@
                 "type": "string"
               },
               "DocumentType": {
-                "enum": ["DNI", "CUIL", "CUIT", "CDI"],
+                "enum": ["CC", "CE", "NIT", "PASS", "TI"],
                 "title": "Document type",
                 "type": "string"
               },
@@ -67,7 +67,7 @@
                 "type": "string"
               },
               "DocumentType": {
-                "enum": ["CUIT", "CDI"],
+                "enum": ["NIT"],
                 "title": "Document type",
                 "type": "string"
               }
@@ -79,7 +79,7 @@
           "if": {
             "properties": {
               "DocumentType": {
-                "const": "DNI"
+                "const": "NIT"
               }
             },
             "required": ["DocumentType"]
@@ -87,8 +87,8 @@
           "then": {
             "properties": {
               "DocumentID": {
-                "errorMessage": "DNI must be exactly 8 digits",
-                "pattern": "^[0-9]{8}$",
+                "errorMessage": "NIT must be 9 digits followed by a check digit",
+                "pattern": "^[0-9]{3}[.]?[0-9]{3}[.]?[0-9]{3}-?[0-9]$",
                 "title": "Document ID",
                 "type": "string"
               }
@@ -100,7 +100,7 @@
           "if": {
             "properties": {
               "DocumentType": {
-                "const": "CUIL"
+                "const": "CC"
               }
             },
             "required": ["DocumentType"]
@@ -108,8 +108,8 @@
           "then": {
             "properties": {
               "DocumentID": {
-                "errorMessage": "CUIL must match format XX-XXXXXXXX-X (11 digits)",
-                "pattern": "^(20|23|24|25|26|27|30|33|34)-?\\d{2}[.]?\\d{3}[.]?\\d{3}-?\\d$",
+                "errorMessage": "CC must be between 6 and 12 digits",
+                "pattern": "^\\d{6,12}$",
                 "title": "Document ID",
                 "type": "string"
               }
@@ -121,7 +121,7 @@
           "if": {
             "properties": {
               "DocumentType": {
-                "const": "CUIT"
+                "const": "TI"
               }
             },
             "required": ["DocumentType"]
@@ -129,8 +129,8 @@
           "then": {
             "properties": {
               "DocumentID": {
-                "errorMessage": "CUIT must match format XX-XXXXXXXX-X (11 digits)",
-                "pattern": "^(20|23|24|25|26|27|30|33|34)-?\\d{2}[.]?\\d{3}[.]?\\d{3}-?\\d$",
+                "errorMessage": "TI must be between 6 and 10 digits",
+                "pattern": "^[0-9]{0,1}[.]?[0-9]{0,3}[.]?[0-9]{3}[.]?[0-9]{3}$",
                 "title": "Document ID",
                 "type": "string"
               }
@@ -142,7 +142,7 @@
           "if": {
             "properties": {
               "DocumentType": {
-                "const": "CDI"
+                "const": "CE"
               }
             },
             "required": ["DocumentType"]
@@ -150,8 +150,29 @@
           "then": {
             "properties": {
               "DocumentID": {
-                "errorMessage": "CDI must match format XX-XXXXXXXX-X (11 digits)",
-                "pattern": "^(20|23|24|25|26|27|30|33|34)-?\\d{2}[.]?\\d{3}[.]?\\d{3}-?\\d$",
+                "errorMessage": "CE must be 6 or 7 alphanumeric characters",
+                "pattern": "^[a-zA-Z0-9]{6,7}$",
+                "title": "Document ID",
+                "type": "string"
+              }
+            },
+            "required": ["DocumentID"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "DocumentType": {
+                "const": "PASS"
+              }
+            },
+            "required": ["DocumentType"]
+          },
+          "then": {
+            "properties": {
+              "DocumentID": {
+                "errorMessage": "Passport must be 5-14 digits with optional letter prefix",
+                "pattern": "^([a-zA-Z]{1,6})?([0-9]{5,14})$",
                 "title": "Document ID",
                 "type": "string"
               }
@@ -168,72 +189,55 @@
         },
         "Bank": {
           "enum": [
-            "WALLETS CVU (MERCADO PAGO, PERSONAL PAY, VALEPEI, NUBI)",
-            "BANCO DE GALICIA Y BUENOS AIRES S.A.U.",
-            "BANCO DE LA NACION ARGENTINA",
-            "BANCO DE LA PROVINCIA DE BUENOS AIRES",
-            "INDUSTRIAL AND COMMERCIAL BANK OF CHINA",
-            "CITIBANK N.A.",
-            "BANCO BBVA ARGENTINA S.A.",
-            "BANCO DE LA PROVINCIA DE CORDOBA S.A.",
-            "BANCO SUPERVIELLE S.A.",
-            "BANCO DE LA CIUDAD DE BUENOS AIRES",
-            "BANCO PATAGONIA S.A.",
-            "BANCO HIPOTECARIO S.A.",
-            "BANCO DE SAN JUAN S.A.",
-            "BANCO MUNICIPAL DE ROSARIO",
-            "BANCO SANTANDER ARGENTINA S.A.",
-            "BANCO DEL CHUBUT S.A.",
-            "BANCO DE SANTA CRUZ S.A.",
-            "BANCO DE LA PAMPA SOCIEDAD DE ECONOMIA M",
-            "BANCO DE CORRIENTES S.A.",
-            "BANCO PROVINCIA DEL NEUQUEN SOCIEDAD ANO",
-            "BANK OF CHINA LIMITED SUCURSAL BUENOS AI",
-            "BRUBANK S.A.U.",
-            "BIBANK S.A.",
-            "HSBC BANK ARGENTINA S.A.",
-            "OPEN BANK ARGENTINA S.A.",
-            "JPMORGAN CHASE BANK",
-            "BANCO CREDICOOP COOPERATIVO LIMITADO",
-            "BANCO DE VALORES S.A.",
-            "CREDITO REGIONAL COMPANIA FINANCIERA S.A",
-            "BANCO ROELA S.A.",
-            "BANCO MARIVA S.A.",
+            "BANCO DE BOGOTA",
+            "BANCO POPULAR",
+            "ITAU (EX BANCO CORPBANCA COLOMBIA S.A)",
+            "BANCOLOMBIA",
+            "CITIBANK",
+            "BANCO GNB SUDAMERIS",
+            "BBVA COLOMBIA",
+            "ITAU CORPBANCA COLOMBIA S.A.",
+            "BANCO COLPATRIA (SCOTIABANK COLPATRIA)",
+            "BANCO DE OCCIDENTE",
+            "BANCO DE COMERCIO EXTERIOR - BANCOLDEX",
+            "BANCO CAJA SOCIAL BCSC SA",
+            "BANCO AGRARIO",
             "BNP PARIBAS",
-            "BANCO PROVINCIA DE TIERRA DEL FUEGO",
-            "BANCO DE LA REPUBLICA ORIENTAL DEL URUGU",
-            "BANCO SAENZ S.A.",
-            "BANCO MERIDIAN S.A.",
-            "BANCO MACRO S.A.",
-            "BANCO COMAFI SOCIEDAD ANONIMA",
-            "BANCO DE INVERSION Y COMERCIO EXTERIOR S",
-            "BANCO PIANO S.A.",
-            "BANCO JULIO SOCIEDAD ANONIMA",
-            "BANCO RIOJA SOCIEDAD ANONIMA UNIPERSONAL",
-            "BANCO DEL SOL S.A.",
-            "NUEVO BANCO DEL CHACO S. A.",
-            "BANCO VOII S.A.",
-            "BANCO DE FORMOSA S.A.",
-            "BANCO CMF S.A.",
-            "BANCO DE SANTIAGO DEL ESTERO S.A.",
-            "BANCO INDUSTRIAL S.A.",
-            "NUEVO BANCO DE SANTA FE SOCIEDAD ANONIMA",
-            "BANCO CETELEM ARGENTINA S.A.",
-            "BANCO DE SERVICIOS FINANCIEROS S.A.",
-            "BANCO DE SERVICIOS Y TRANSACCIONES S.A.",
-            "RCI BANQUE S.A.",
-            "BACS BANCO DE CREDITO Y SECURITIZACION S",
-            "BANCO MASVENTAS S.A.",
-            "WILOBANK S.A. (UILO BANK - UALA)",
-            "NUEVO BANCO DE ENTRE RIOS S.A.",
-            "BANCO COLUMBIA S.A.",
-            "REBANKING HOLDING SA.",
-            "BANCO BICA S.A.",
-            "BANCO COINAG S.A.",
-            "BANCO DE COMERCIO S.A.",
-            "BANCO SUCREDITO REGIONAL S.A.U.",
-            "BANCO DINO S.A.",
-            "NARANJA X"
+            "BANCO MUNDO MUJER S.A.",
+            "BANCO DAVIVIENDA SA",
+            "BANCO AV VILLAS",
+            "BANCO W S.A.",
+            "BANCO DE LAS MICROFINANZAS BANCAMIA S.A.",
+            "BANCO PICHINCHA",
+            "BANCOOMEVA",
+            "BANCO FALABELLA S.A",
+            "BANCO FINANDINA S.A",
+            "BANCO SANTANDER DE NEGOCIOS COLOMBIA S.A.",
+            "BANCO COOPERATIVO COOPCENTRAL",
+            "BANCO COMPARTIR S.A.",
+            "BANCO SERFINANZA S.A.",
+            "LULO BANK S.A.",
+            "BANCO J.P. MORGAN COLOMBIA S.A",
+            "CFA (COOPERATIVA FINANCIERA DE ANTIOQUIA)",
+            "JFK COOPERATIVA FINANCIERA",
+            "COOTRAFA COOPERATIVA FINANCIERA",
+            "COOFINEP COOPERATIVA FINANCIERA",
+            "CONFIAR COOPERATIVA FINANCIERA",
+            "BANCO UNION (EX GIROS Y FINANZAS CF)",
+            "COLTEFINANCIERA S.A",
+            "BANCA DIGITAL NEQUI",
+            "DAVIPLATA",
+            "BAN100 (EX BANCO CREDIFINANCIERA SA.)",
+            "PIBANK",
+            "SUPERDIGITAL",
+            "IRIS (FINANCIERA DANN)",
+            "UALA",
+            "BANCO BTG PACTUAL",
+            "NU",
+            "RAPPIPAY",
+            "ALIANZA FIDUCIARIA",
+            "CREZCAMOS",
+            "BANCO CONTACTAR S.A"
           ],
           "title": "Bank",
           "type": "string"
@@ -244,11 +248,11 @@
           "type": "string"
         },
         "AccountNumber": {
-          "errorMessage": "must be a 22-digit CBU or CVU",
-          "maxLength": 22,
-          "minLength": 22,
-          "pattern": "^[0-9]{22}$",
-          "title": "CBU/CVU",
+          "errorMessage": "must be between 4 and 20 digits",
+          "maxLength": 20,
+          "minLength": 4,
+          "pattern": "^\\d{4,20}$",
+          "title": "Account number",
           "type": "string"
         },
         "DocumentType": {
@@ -276,14 +280,14 @@
   "metadata": {
     "channels": [
       {
-        "id": "00111c37-92fe-58d0-b70e-1ce891a0f253",
-        "country": "AR",
+        "id": "c039fa99-aea8-5107-a64f-0017ff15f5d0",
+        "country": "CO",
         "direction": "Out",
         "finServiceID": "l4p8x",
-        "paymentMethodType": "BankLocal"
+        "paymentMethodType": "BankAch"
       }
     ],
-    "contentHash": "8fb1c1f380aee413c6355e5100fedf6a7278ca45c494a2e9dc958cd898de1b05",
+    "contentHash": "3bf733bfa63086f093e35d6216a5aa3396ed6bf342754069cc68dc49acfdc0c5",
     "generatedAt": "2026-08-11T19:11:21Z"
   }
 }
