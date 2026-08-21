@@ -22,7 +22,7 @@
                 "type": "string"
               },
               "DocumentType": {
-                "enum": ["RNC", "CE", "PASS"],
+                "enum": ["NIT", "CUI"],
                 "title": "Document type",
                 "type": "string"
               },
@@ -67,12 +67,54 @@
                 "type": "string"
               },
               "DocumentType": {
-                "enum": ["RNC"],
+                "enum": ["NIT"],
                 "title": "Document type",
                 "type": "string"
               }
             },
             "required": ["CompanyName", "DocumentType", "DocumentID"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "DocumentType": {
+                "const": "NIT"
+              }
+            },
+            "required": ["DocumentType"]
+          },
+          "then": {
+            "properties": {
+              "DocumentID": {
+                "errorMessage": "NIT must be digits with an optional check digit",
+                "pattern": "^[0-9]+(-?[0-9kK])?$",
+                "title": "Document ID",
+                "type": "string"
+              }
+            },
+            "required": ["DocumentID"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "DocumentType": {
+                "const": "CUI"
+              }
+            },
+            "required": ["DocumentType"]
+          },
+          "then": {
+            "properties": {
+              "DocumentID": {
+                "errorMessage": "CUI must be exactly 13 digits",
+                "pattern": "^[0-9]{13}$",
+                "title": "Document ID",
+                "type": "string"
+              }
+            },
+            "required": ["DocumentID"]
           }
         }
       ],
@@ -84,48 +126,25 @@
         },
         "Bank": {
           "enum": [
-            "BANCO DE RESERVAS",
-            "BANCO SCOTIABANK",
-            "CITIBANK",
-            "BANCO POPULAR",
-            "BANCO BHD",
-            "BANCO DEL DESARROLLO ADEMI",
-            "BANCO SANTA CRUZ",
-            "BANCO DEL CARIBE",
-            "BANCO BDI",
-            "BANCO VIMENCA",
-            "BANCO LOPEZ DE HARO",
-            "BANCO EMPIRE",
-            "ASOCIACION LA NACIONAL DE AHORROS Y PRESTAMOS",
-            "BANCO ATLANTICO",
-            "BANCO BANESCO",
-            "BANCO LAFISE",
-            "BANCO BELLBANK",
-            "BANCO MULTIPLE ACTIVO",
-            "BANCO UNION",
-            "BANFONDESA",
-            "BANCO PROMERICA",
-            "ASOCIACION POPULAR DE AHORRO",
-            "ASOCIACION CIBAO DE A/P",
-            "ASOCIACION BONAO DE AHORROS Y PRESTAMOS",
-            "ASOCIACION DUARTE DE AHORROS Y PRESTAMOS",
-            "ASOCIACION LA VEGA REAL DE AHORROS Y PRESTAMOS",
-            "ASOCIACION MAGUANA DE AHORROS Y PRESTAMOS",
-            "ASOCIACION MOCANA DE AHORROS Y PRESTAMOS",
-            "ASOCIACION ROMANA DE AHORROS Y PRESTAMOS",
-            "BANCO BACC",
-            "BANCO FIHOGAR",
-            "BANCO DE AHORRO Y CREDITO BANCOTUI",
-            "BANCO DE AHORRO Y CREDITO COFACI",
-            "BANCO DE AHORRO Y CREDITO CONFISA",
-            "BANCO DE AHORRO Y CREDITO GRUFICORP",
-            "BANCO DE AHORRO Y CREDITO JMMB BANK",
-            "BONANZA BANCO DE AHORRO Y CREDITO",
-            "BANCO DE AHORRO Y CREDITO ADOPEM",
-            "ASOCIACION PERAVIA DE AHORROS Y PRESTAMOS",
-            "BANCO OPTIMA DE AHORRO Y CREDITO",
-            "QIK BANCO DIGITAL DOMINICANO, S.A.",
-            "MOTOR CREDITO, S.A., BANCO DE AHORROS Y CREDITO"
+            "BANCO DE GUATEMALA",
+            "EL CRÉDITO HIPOTECARIO NACIONAL DE GUATEMALA",
+            "BANCO DE LOS TRABAJADORES",
+            "BANCO INMOBILIARIO, S.A.",
+            "BANCO INDUSTRIAL, S.A.",
+            "BANCO DE DESARROLLO RURAL, S.A. (BANRURAL)",
+            "BANCO INTERNACIONAL, S.A.",
+            "CITIBANK, N.A. SUCURSAL GUATEMALA",
+            "VIVIBANCO, S.A.",
+            "BANCO FICOHSA GUATEMALA, S.A.",
+            "PROMERICA (BANCASOL S.A.)",
+            "BANCO DE ANTIGUA, S.A.",
+            "BANCO DE AMÉRICA CENTRAL, S.A. (BAC)",
+            "BANCO AGROMERCANTIL DE GUATEMALA, S.A.",
+            "BANCO G\u0026T CONTINENTAL, S.A.",
+            "BANCO AZTECA DE GUATEMALA, S.A.",
+            "BANCO INV, S.A.",
+            "BANCO CREDICORP, S.A.",
+            "BANCO NEXA, S.A."
           ],
           "title": "Bank",
           "type": "string"
@@ -136,13 +155,30 @@
           "type": "string"
         },
         "AccountNumber": {
-          "maxLength": 26,
+          "errorMessage": "must be between 4 and 20 digits",
+          "maxLength": 20,
           "minLength": 4,
+          "pattern": "^\\d{4,20}$",
           "title": "Account number",
+          "type": "string"
+        },
+        "DocumentType": {
+          "title": "Document type",
+          "type": "string"
+        },
+        "DocumentID": {
+          "title": "Document ID",
           "type": "string"
         }
       },
-      "required": ["BeneficiaryType", "Bank", "AccountType", "AccountNumber"],
+      "required": [
+        "BeneficiaryType",
+        "Bank",
+        "AccountType",
+        "AccountNumber",
+        "DocumentType",
+        "DocumentID"
+      ],
       "title": "Beneficiary",
       "type": "object"
     }
@@ -151,14 +187,14 @@
   "metadata": {
     "channels": [
       {
-        "id": "8d6ec216-de07-583f-8052-ebf9042b7ee1",
-        "country": "DO",
+        "id": "f1c83839-b8b9-5a6c-92b2-749cbb8fee8a",
+        "country": "GT",
         "direction": "Out",
         "finServiceID": "l4p8x",
         "paymentMethodType": "BankLocal"
       }
     ],
-    "contentHash": "a5c82d884480fbbf8fba538ba85ab8691efc37c6ba8d83a8995016a77ec001b9",
-    "generatedAt": "2026-08-21T14:19:42Z"
+    "contentHash": "b226a58210fad5cfcd0be5d160ac380609dd61b6b5ffbc2a684218f7ab2d82e5",
+    "generatedAt": "2026-08-21T14:19:49Z"
   }
 }
