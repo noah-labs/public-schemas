@@ -22,7 +22,7 @@
                 "type": "string"
               },
               "DocumentType": {
-                "enum": ["RFC", "CURP"],
+                "enum": ["NIT", "CUI"],
                 "title": "Document type",
                 "type": "string"
               },
@@ -67,7 +67,7 @@
                 "type": "string"
               },
               "DocumentType": {
-                "enum": ["RFC"],
+                "enum": ["NIT"],
                 "title": "Document type",
                 "type": "string"
               }
@@ -79,7 +79,7 @@
           "if": {
             "properties": {
               "DocumentType": {
-                "const": "RFC"
+                "const": "NIT"
               }
             },
             "required": ["DocumentType"]
@@ -87,8 +87,8 @@
           "then": {
             "properties": {
               "DocumentID": {
-                "errorMessage": "RFC must be 12 or 13 alphanumeric characters",
-                "pattern": "^\\w{12,13}$",
+                "errorMessage": "NIT must be digits with an optional check digit",
+                "pattern": "^[0-9]+(-?[0-9kK])?$",
                 "title": "Document ID",
                 "type": "string"
               }
@@ -100,7 +100,7 @@
           "if": {
             "properties": {
               "DocumentType": {
-                "const": "CURP"
+                "const": "CUI"
               }
             },
             "required": ["DocumentType"]
@@ -108,8 +108,8 @@
           "then": {
             "properties": {
               "DocumentID": {
-                "errorMessage": "CURP must be exactly 18 alphanumeric characters",
-                "pattern": "^[a-zA-Z0-9]{18}$",
+                "errorMessage": "CUI must be exactly 13 digits",
+                "pattern": "^[0-9]{13}$",
                 "title": "Document ID",
                 "type": "string"
               }
@@ -126,93 +126,25 @@
         },
         "Bank": {
           "enum": [
-            "BANXICO (BANCO DE MEXICO)",
-            "BANAMEX (BANCO NACIONAL DE MÉXICO)",
-            "BANCOMEXT (BANCO NACIONAL DE COMERCIO EXTERIOR)",
-            "BANOBRAS (BANCO NACIONAL DE OBRAS Y SERVICIOS PÚBLICOS)",
-            "BBVA MEXICO (EX BANCOMER)",
-            "SANTANDER (BANCO SANTANDER MEXICO)",
-            "BANJERCITO (BANCO NACIONAL DEL EJÉRCITO)",
-            "HSBC MÉXICO",
-            "BANBAJIO (BANCO DEL BAJÍO)",
-            "INBURSA (BANCO INBURSA)",
-            "BANCA MIFEL",
-            "SCOTIABANK INVERLAT",
-            "BANREGIO (BANCO REGIONAL DE MONTERREY)",
-            "INVEX (BANCO INVEX)",
-            "BANSI",
-            "AFIRME (BANCA AFIRME)",
-            "BANORTE (BANCO MERCANTIL DEL NORTE)",
-            "BANK OF AMERICA MÉXICO",
-            "MUFG (BANK OF TOKYO-MITSUBISHI UFJ MEX)",
-            "J.P. MORGAN (BANCO J.P. MORGAN)",
-            "MONEX (BANCO MONEX)",
-            "BANCO VE POR MAS",
-            "CITI MEXICO (EX DEUTSCHE BANK MÉXICO)",
-            "AUTOFIN (BANCO AUTOFIN MÉXICO)",
-            "BARCLAYS BANK MÉXICO",
-            "COMPARTAMOS (BANCO COMPARTAMOS)",
-            "MULTIVA (BANCO MULTIVA)",
-            "ACTINVER (BANCO ACTINVER)",
-            "NACIONAL FINANCIERA",
-            "BANCOPPEL",
-            "UALA",
-            "CONSUBANCO",
-            "VOLKSWAGEN BANK",
-            "BANCO BASE",
-            "BANKAOOL",
-            "PAGATODO",
-            "INMOBILIARIO",
-            "DONDE",
-            "BANCREA",
-            "BANCO COBALTO (EX BANCO FINTERRA)",
-            "ICBC",
-            "BANCO DE SABADELL",
-            "SHINHAN BANK MEXICO",
-            "MIZUHO BANK",
-            "BANK OF CHINA",
-            "BANCO S3",
-            "BANCO DEL AHORRO NACIONAL Y SERVICIOS FINANCIEROS",
-            "HEY BANCO (BANREGIO)",
-            "SOCIEDAD HIPOTECARIA FEDERAL",
-            "MONEX CASA DE BOLSA",
-            "GBM GRUPO BURSÁTIL MEXICANO",
-            "MASARI CASA DE BOLSA",
-            "VALUE CASA DE BOLSA",
-            "CASA DE BOLSA FINAMEX",
-            "VALORES MEXICANOS CASA DE BOLSA",
-            "PROFUTURO G.N.P.",
-            "FINCOMÚN",
-            "NU MEXICO",
-            "STP (SISTEMA DE TRANSFERENCIAS Y PAGOS)",
-            "SOLUCIÓN ASEA",
-            "KUSPIT CASA DE BOLSA",
-            "UNAGRA",
-            "OPCIONES EMPRESARIALES DEL NORESTE",
-            "KLAR",
-            "LIBERTAD SERVICIOS FINANCIEROS",
-            "CAJA POP MEXICA",
-            "CRISTOBAL COLON",
-            "CAJA TELEFONIST",
-            "TRANSFER",
-            "FONDO (FIRA)",
-            "CREDICLUB",
-            "FOMPED",
-            "FONDEADORA",
-            "TESORED",
-            "ARCUS",
-            "NVIO",
-            "CASHI CUENTA",
-            "MEXPAGO",
-            "ALBO",
-            "MERCADO PAGO W",
-            "CUENCA",
-            "SPIN BY OXXO",
-            "PEIBO",
-            "FINCO PAY/MONATO",
-            "CLS BANK INTERNATIONAL",
-            "SD. INDEVAL",
-            "CoDi"
+            "BANCO DE GUATEMALA",
+            "EL CRÉDITO HIPOTECARIO NACIONAL DE GUATEMALA",
+            "BANCO DE LOS TRABAJADORES",
+            "BANCO INMOBILIARIO, S.A.",
+            "BANCO INDUSTRIAL, S.A.",
+            "BANCO DE DESARROLLO RURAL, S.A. (BANRURAL)",
+            "BANCO INTERNACIONAL, S.A.",
+            "CITIBANK, N.A. SUCURSAL GUATEMALA",
+            "VIVIBANCO, S.A.",
+            "BANCO FICOHSA GUATEMALA, S.A.",
+            "PROMERICA (BANCASOL S.A.)",
+            "BANCO DE ANTIGUA, S.A.",
+            "BANCO DE AMÉRICA CENTRAL, S.A. (BAC)",
+            "BANCO AGROMERCANTIL DE GUATEMALA, S.A.",
+            "BANCO G\u0026T CONTINENTAL, S.A.",
+            "BANCO AZTECA DE GUATEMALA, S.A.",
+            "BANCO INV, S.A.",
+            "BANCO CREDICORP, S.A.",
+            "BANCO NEXA, S.A."
           ],
           "title": "Bank",
           "type": "string"
@@ -223,11 +155,11 @@
           "type": "string"
         },
         "AccountNumber": {
-          "errorMessage": "must be between 10 and 18 digits",
-          "maxLength": 18,
-          "minLength": 10,
-          "pattern": "^[0-9]{10,18}$",
-          "title": "CLABE / Account number",
+          "errorMessage": "must be between 4 and 20 digits",
+          "maxLength": 20,
+          "minLength": 4,
+          "pattern": "^\\d{4,20}$",
+          "title": "Account number",
           "type": "string"
         },
         "DocumentType": {
@@ -255,14 +187,14 @@
   "metadata": {
     "channels": [
       {
-        "id": "e1a9b968-3e7f-5974-a7aa-80816ecf598a",
-        "country": "MX",
+        "id": "f1c83839-b8b9-5a6c-92b2-749cbb8fee8a",
+        "country": "GT",
         "direction": "Out",
         "finServiceID": "l4p8x",
         "paymentMethodType": "BankLocal"
       }
     ],
-    "contentHash": "4ac05c364ac7184e5fe3586ca4c4b2d4fd1c7f24777a9bb14663e839a5bc4cb6",
+    "contentHash": "b226a58210fad5cfcd0be5d160ac380609dd61b6b5ffbc2a684218f7ab2d82e5",
     "generatedAt": "2026-08-21T14:19:49Z"
   }
 }
