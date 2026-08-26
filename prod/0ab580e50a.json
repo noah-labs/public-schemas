@@ -1,0 +1,122 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "BankDetails": {
+      "properties": {
+        "AccountNumber": {
+          "errorMessage": "Account number must contain only digits",
+          "maxLength": 20,
+          "minLength": 5,
+          "pattern": "^[0-9]+$",
+          "title": "Account number",
+          "type": "string"
+        },
+        "BankCode": {
+          "errorMessage": "Enter a valid SWIFT/BIC code (e.g., DBSSSGSG)",
+          "maxLength": 11,
+          "minLength": 8,
+          "pattern": "^[A-Z]{6}[A-Z0-9]{2}([A-Z0-9]{3})?$",
+          "title": "SWIFT/BIC code",
+          "type": "string"
+        },
+        "BankName": {
+          "maxLength": 50,
+          "minLength": 2,
+          "title": "Bank name",
+          "type": "string"
+        }
+      },
+      "required": ["AccountNumber", "BankCode", "BankName"],
+      "title": "Bank details",
+      "type": "object"
+    },
+    "ChineseName": {
+      "errorMessage": "Enter Chinese characters only, 2-50 characters",
+      "maxLength": 50,
+      "minLength": 2,
+      "pattern": "^[一-鿿]+$",
+      "title": "Chinese full name",
+      "type": "string"
+    },
+    "AccountHolderAddress": {
+      "properties": {
+        "Address": {
+          "maxLength": 70,
+          "minLength": 3,
+          "title": "Address",
+          "type": "string"
+        },
+        "City": {
+          "maxLength": 35,
+          "title": "City",
+          "type": "string"
+        },
+        "PostalCode": {
+          "maxLength": 10,
+          "title": "Postal code",
+          "type": "string"
+        },
+        "State": {
+          "maxLength": 35,
+          "title": "State/province",
+          "type": "string"
+        }
+      },
+      "required": ["Address", "City", "State", "PostalCode"],
+      "title": "Account holder address",
+      "type": "object"
+    },
+    "PhoneNumber": {
+      "title": "Phone number",
+      "type": "string"
+    },
+    "NationalID": {
+      "errorMessage": "Enter a valid 18-character Chinese national ID number",
+      "maxLength": 18,
+      "minLength": 18,
+      "pattern": "^[0-9]{17}[0-9Xx]$",
+      "title": "Chinese national ID",
+      "type": "string"
+    },
+    "PaymentPurpose": {
+      "oneOf": [
+        {
+          "const": "User Withdrawal",
+          "title": "User withdrawal",
+          "type": "string"
+        },
+        {
+          "const": "Personal Remittance",
+          "title": "Personal remittance",
+          "type": "string"
+        }
+      ],
+      "title": "Payment purpose",
+      "type": "string"
+    }
+  },
+  "required": [
+    "BankDetails",
+    "ChineseName",
+    "AccountHolderAddress",
+    "PhoneNumber",
+    "NationalID",
+    "PaymentPurpose"
+  ],
+  "metadata": {
+    "channels": [
+      {
+        "id": "f1cec045-d67b-56dc-9585-6920592abb15",
+        "country": "CN",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankLocal"
+      }
+    ],
+    "contentHash": "0ab580e50ad612325242f18790eec053ba759545d082b283f0815a8272a797df",
+    "generatedAt": "2026-08-26T13:17:47Z"
+  }
+}
