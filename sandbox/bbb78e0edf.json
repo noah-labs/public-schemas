@@ -335,6 +335,13 @@
         "paymentMethodType": "BankLocal"
       },
       {
+        "id": "b7dae83e-68dc-5aee-a488-f7f352b0d14a",
+        "country": "CH",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankLocal"
+      },
+      {
         "id": "3d2ba9db-0478-5564-86f1-c2c01780f8f6",
         "country": "PL",
         "direction": "Out",
@@ -343,6 +350,6 @@
       }
     ],
     "contentHash": "bbb78e0edfa6b9244a25b84a14c1d9f8f249a0dc1c8319612530ae024342f71e",
-    "generatedAt": "2026-08-21T14:19:49Z"
+    "generatedAt": "2026-08-28T09:25:37Z"
   }
 }
