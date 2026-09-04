@@ -4,20 +4,6 @@
   "description": "",
   "type": "object",
   "properties": {
-    "IdentifierDetails": {
-      "properties": {
-        "Identifier": {
-          "errorMessage": "must be 5 to 20 alphanumeric characters",
-          "pattern": "^@?[A-Za-z0-9]{5,20}$",
-          "placeholder": "@",
-          "title": "Bre-B Key (Alias)",
-          "type": "string"
-        }
-      },
-      "required": ["Identifier"],
-      "title": "Bre-B key details",
-      "type": "object"
-    },
     "Beneficiary": {
       "allOf": [
         {
@@ -36,7 +22,7 @@
                 "type": "string"
               },
               "DocumentType": {
-                "enum": ["CC", "CE", "NIT", "PASS", "TI"],
+                "enum": ["CI", "CE", "NIT"],
                 "title": "Document type",
                 "type": "string"
               },
@@ -93,7 +79,7 @@
           "if": {
             "properties": {
               "DocumentType": {
-                "const": "NIT"
+                "const": "CI"
               }
             },
             "required": ["DocumentType"]
@@ -101,50 +87,8 @@
           "then": {
             "properties": {
               "DocumentID": {
-                "errorMessage": "NIT must be 9 digits followed by a check digit",
-                "pattern": "^[0-9]{3}[.]?[0-9]{3}[.]?[0-9]{3}-?[0-9]$",
-                "title": "Document ID",
-                "type": "string"
-              }
-            },
-            "required": ["DocumentID"]
-          }
-        },
-        {
-          "if": {
-            "properties": {
-              "DocumentType": {
-                "const": "CC"
-              }
-            },
-            "required": ["DocumentType"]
-          },
-          "then": {
-            "properties": {
-              "DocumentID": {
-                "errorMessage": "CC must be between 6 and 12 digits",
-                "pattern": "^\\d{6,12}$",
-                "title": "Document ID",
-                "type": "string"
-              }
-            },
-            "required": ["DocumentID"]
-          }
-        },
-        {
-          "if": {
-            "properties": {
-              "DocumentType": {
-                "const": "TI"
-              }
-            },
-            "required": ["DocumentType"]
-          },
-          "then": {
-            "properties": {
-              "DocumentID": {
-                "errorMessage": "TI must be between 6 and 10 digits",
-                "pattern": "^[0-9]{0,1}[.]?[0-9]{0,3}[.]?[0-9]{3}[.]?[0-9]{3}$",
+                "errorMessage": "CI must be 7 or 8 digits with an optional two-letter prefix or suffix",
+                "pattern": "^([0-9]{7,8}([A-Z]{2})?|([A-Z]{2})?[0-9]{7,8})$",
                 "title": "Document ID",
                 "type": "string"
               }
@@ -164,8 +108,8 @@
           "then": {
             "properties": {
               "DocumentID": {
-                "errorMessage": "CE must be 6 or 7 alphanumeric characters",
-                "pattern": "^[a-zA-Z0-9]{6,7}$",
+                "errorMessage": "CE must be 7 or 8 alphanumeric characters",
+                "pattern": "^[a-zA-Z0-9]{7,8}$",
                 "title": "Document ID",
                 "type": "string"
               }
@@ -177,7 +121,7 @@
           "if": {
             "properties": {
               "DocumentType": {
-                "const": "PASS"
+                "const": "NIT"
               }
             },
             "required": ["DocumentType"]
@@ -185,8 +129,8 @@
           "then": {
             "properties": {
               "DocumentID": {
-                "errorMessage": "Passport must be 5-14 digits with optional letter prefix",
-                "pattern": "^([a-zA-Z]{1,6})?([0-9]{5,14})$",
+                "errorMessage": "NIT must be 4 to 15 digits",
+                "pattern": "^[0-9]{4,15}$",
                 "title": "Document ID",
                 "type": "string"
               }
@@ -201,6 +145,54 @@
           "title": "Beneficiary type",
           "type": "string"
         },
+        "Bank": {
+          "enum": [
+            "BANCO MERCANTIL",
+            "BANCO NACIONAL DE BOLIVIA",
+            "BANCO DE CRÉDITO DE BOLIVIA",
+            "BANCO BISA",
+            "BANCO UNIÓN",
+            "BANCO ECONÓMICO",
+            "BANCO SOLIDARIO",
+            "BANCO GANADERO",
+            "LA PRIMERA ENTIDAD FINANCIERA DE VIVIENDA (EX MUTUAL LA PRIMERA)",
+            "MUTUAL LA PROMOTORA",
+            "EL PROGRESO ENTIDAD FINANCIERA DE VIVIENDA (EX MUTUAL EL PROGRESO)",
+            "COOPERATIVA JESÚS NAZARENO",
+            "COOPERATIVA SAN MARTIN",
+            "COOPERATIVA FÁTIMA",
+            "COOPERATIVA PIO X",
+            "COOPERATIVA QUILLACOLLO",
+            "COOPERATIVA TRINIDAD",
+            "COOPERATIVA COMARAPA",
+            "COOPERATIVA SAN MATEO",
+            "COOPERATIVA EL CHOROLQUE",
+            "COOPERATIVA CATEDRAL",
+            "MAGISTERIO RURAL",
+            "BANCO PYME DE LA COMUNIDAD (BANCOMUNIDAD)",
+            "BANCO FIE",
+            "BANCO ECOFUTURO",
+            "BANCO FORTALEZA",
+            "BANCO DE LA NACION ARGENTINA",
+            "TIGO MONEY (BILLETERA MOVIL)",
+            "INSTITUTION FINANCIERA DE DESARROLLO CIDRE"
+          ],
+          "title": "Bank",
+          "type": "string"
+        },
+        "AccountType": {
+          "enum": ["Checking", "Savings"],
+          "title": "Account type",
+          "type": "string"
+        },
+        "AccountNumber": {
+          "errorMessage": "must be between 7 and 14 digits",
+          "maxLength": 14,
+          "minLength": 7,
+          "pattern": "^[0-9]{7,14}$",
+          "title": "Account number",
+          "type": "string"
+        },
         "DocumentType": {
           "title": "Document type",
           "type": "string"
@@ -210,23 +202,30 @@
           "type": "string"
         }
       },
-      "required": ["BeneficiaryType", "DocumentType", "DocumentID"],
+      "required": [
+        "BeneficiaryType",
+        "Bank",
+        "AccountType",
+        "AccountNumber",
+        "DocumentType",
+        "DocumentID"
+      ],
       "title": "Beneficiary",
       "type": "object"
     }
   },
-  "required": ["IdentifierDetails", "Beneficiary"],
+  "required": ["Beneficiary"],
   "metadata": {
     "channels": [
       {
-        "id": "ea5ad47f-22ea-5999-b9af-a7a1917f7dd7",
-        "country": "CO",
+        "id": "2777a3f5-d6ee-5b17-bcb6-89449f20a0b6",
+        "country": "BO",
         "direction": "Out",
         "finServiceID": "l4p8x",
-        "paymentMethodType": "IdentifierAlias"
+        "paymentMethodType": "BankLocal"
       }
     ],
-    "contentHash": "f2dee3c88085bd59c468d1db16f05c602cfcf63b2796002c6cf3d24326f578e2",
+    "contentHash": "fe5704b12a2caf70ce618198b998ccb00286d37659837f86cc2d7f96a2ed1d84",
     "generatedAt": "2026-09-04T12:50:06Z"
   }
 }

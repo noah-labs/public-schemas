@@ -22,7 +22,7 @@
                 "type": "string"
               },
               "DocumentType": {
-                "enum": ["DNI", "CUIL", "CUIT", "CDI"],
+                "enum": ["CI", "DIMEX"],
                 "title": "Document type",
                 "type": "string"
               },
@@ -67,7 +67,7 @@
                 "type": "string"
               },
               "DocumentType": {
-                "enum": ["CUIT", "CDI"],
+                "enum": ["RUT", "CEJ"],
                 "title": "Document type",
                 "type": "string"
               }
@@ -79,7 +79,7 @@
           "if": {
             "properties": {
               "DocumentType": {
-                "const": "DNI"
+                "const": "CI"
               }
             },
             "required": ["DocumentType"]
@@ -87,8 +87,8 @@
           "then": {
             "properties": {
               "DocumentID": {
-                "errorMessage": "DNI must be exactly 8 digits",
-                "pattern": "^[0-9]{8}$",
+                "errorMessage": "CI must be a Costa Rican cédula (e.g. 1-2345-6789)",
+                "pattern": "^[1-9]-?\\d{4}-?\\d{4}$",
                 "title": "Document ID",
                 "type": "string"
               }
@@ -100,7 +100,7 @@
           "if": {
             "properties": {
               "DocumentType": {
-                "const": "CUIL"
+                "const": "DIMEX"
               }
             },
             "required": ["DocumentType"]
@@ -108,8 +108,8 @@
           "then": {
             "properties": {
               "DocumentID": {
-                "errorMessage": "CUIL must match format XX-XXXXXXXX-X (11 digits)",
-                "pattern": "^(20|23|24|25|26|27|30|33|34)-?\\d{2}[.]?\\d{3}[.]?\\d{3}-?\\d$",
+                "errorMessage": "DIMEX must be 11 or 12 digits",
+                "pattern": "^\\d{11,12}$",
                 "title": "Document ID",
                 "type": "string"
               }
@@ -121,7 +121,7 @@
           "if": {
             "properties": {
               "DocumentType": {
-                "const": "CUIT"
+                "const": "RUT"
               }
             },
             "required": ["DocumentType"]
@@ -129,8 +129,8 @@
           "then": {
             "properties": {
               "DocumentID": {
-                "errorMessage": "CUIT must match format XX-XXXXXXXX-X (11 digits)",
-                "pattern": "^(20|23|24|25|26|27|30|33|34)-?\\d{2}[.]?\\d{3}[.]?\\d{3}-?\\d$",
+                "errorMessage": "RUT must be exactly 10 digits",
+                "pattern": "^[0-9]{10}$",
                 "title": "Document ID",
                 "type": "string"
               }
@@ -142,7 +142,7 @@
           "if": {
             "properties": {
               "DocumentType": {
-                "const": "CDI"
+                "const": "CEJ"
               }
             },
             "required": ["DocumentType"]
@@ -150,8 +150,8 @@
           "then": {
             "properties": {
               "DocumentID": {
-                "errorMessage": "CDI must match format XX-XXXXXXXX-X (11 digits)",
-                "pattern": "^(20|23|24|25|26|27|30|33|34)-?\\d{2}[.]?\\d{3}[.]?\\d{3}-?\\d$",
+                "errorMessage": "CEJ must be a cédula jurídica (e.g. 1-234-567890)",
+                "pattern": "^[1-9]-?\\d{3}-?\\d{6}$",
                 "title": "Document ID",
                 "type": "string"
               }
@@ -168,72 +168,96 @@
         },
         "Bank": {
           "enum": [
-            "WALLETS CVU (MERCADO PAGO, PERSONAL PAY, VALEPEI, NUBI)",
-            "BANCO DE GALICIA Y BUENOS AIRES S.A.U.",
-            "BANCO DE LA NACION ARGENTINA",
-            "BANCO DE LA PROVINCIA DE BUENOS AIRES",
-            "INDUSTRIAL AND COMMERCIAL BANK OF CHINA",
-            "CITIBANK N.A.",
-            "BANCO BBVA ARGENTINA S.A.",
-            "BANCO DE LA PROVINCIA DE CORDOBA S.A.",
-            "BANCO SUPERVIELLE S.A.",
-            "BANCO DE LA CIUDAD DE BUENOS AIRES",
-            "BANCO PATAGONIA S.A.",
-            "BANCO HIPOTECARIO S.A.",
-            "BANCO DE SAN JUAN S.A.",
-            "BANCO MUNICIPAL DE ROSARIO",
-            "BANCO SANTANDER ARGENTINA S.A.",
-            "BANCO DEL CHUBUT S.A.",
-            "BANCO DE SANTA CRUZ S.A.",
-            "BANCO DE LA PAMPA SOCIEDAD DE ECONOMIA M",
-            "BANCO DE CORRIENTES S.A.",
-            "BANCO PROVINCIA DEL NEUQUEN SOCIEDAD ANO",
-            "BANK OF CHINA LIMITED SUCURSAL BUENOS AI",
-            "BRUBANK S.A.U.",
-            "BIBANK S.A.",
-            "HSBC BANK ARGENTINA S.A.",
-            "OPEN BANK ARGENTINA S.A.",
-            "JPMORGAN CHASE BANK",
-            "BANCO CREDICOOP COOPERATIVO LIMITADO",
-            "BANCO DE VALORES S.A.",
-            "CREDITO REGIONAL COMPANIA FINANCIERA S.A",
-            "BANCO ROELA S.A.",
-            "BANCO MARIVA S.A.",
-            "BNP PARIBAS",
-            "BANCO PROVINCIA DE TIERRA DEL FUEGO",
-            "BANCO DE LA REPUBLICA ORIENTAL DEL URUGU",
-            "BANCO SAENZ S.A.",
-            "BANCO MERIDIAN S.A.",
-            "BANCO MACRO S.A.",
-            "BANCO COMAFI SOCIEDAD ANONIMA",
-            "BANCO DE INVERSION Y COMERCIO EXTERIOR S",
-            "BANCO PIANO S.A.",
-            "BANCO JULIO SOCIEDAD ANONIMA",
-            "BANCO RIOJA SOCIEDAD ANONIMA UNIPERSONAL",
-            "BANCO DEL SOL S.A.",
-            "NUEVO BANCO DEL CHACO S. A.",
-            "BANCO VOII S.A.",
-            "BANCO DE FORMOSA S.A.",
-            "BANCO CMF S.A.",
-            "BANCO DE SANTIAGO DEL ESTERO S.A.",
-            "BANCO INDUSTRIAL S.A.",
-            "NUEVO BANCO DE SANTA FE SOCIEDAD ANONIMA",
-            "BANCO CETELEM ARGENTINA S.A.",
-            "BANCO DE SERVICIOS FINANCIEROS S.A.",
-            "BANCO DE SERVICIOS Y TRANSACCIONES S.A.",
-            "RCI BANQUE S.A.",
-            "BACS BANCO DE CREDITO Y SECURITIZACION S",
-            "BANCO MASVENTAS S.A.",
-            "WILOBANK S.A. (UILO BANK - UALA)",
-            "NUEVO BANCO DE ENTRE RIOS S.A.",
-            "BANCO COLUMBIA S.A.",
-            "REBANKING HOLDING SA.",
-            "BANCO BICA S.A.",
-            "BANCO COINAG S.A.",
-            "BANCO DE COMERCIO S.A.",
-            "BANCO SUCREDITO REGIONAL S.A.U.",
-            "BANCO DINO S.A.",
-            "NARANJA X"
+            "BANCO BAC SAN JOSÉ",
+            "BANCO DAVIVIENDA COSTA RICA S.A.",
+            "BANCO BCT",
+            "BANCO LAFISE",
+            "BANCO PROMÉRICA",
+            "BANCO IMPROSA",
+            "BANCO SCOTIABANK",
+            "BANCO CATHAY",
+            "BANCO GENERAL DE COSTA RICA S.A.",
+            "BANCO CMB (COSTA RICA) S.A.",
+            "BANCO NACIONAL DE COSTA RICA",
+            "BANCO DE COSTA RICA",
+            "FUSIÓN BCR-BCAC",
+            "BANCO POPULAR DE DESARROLLO COMUNAL",
+            "BANCO HIPOTECARIO DE LA VIVIENDA",
+            "ASOCIACIÓN SOLIDARISTA DE EMPLEADOS DE LA CCSS (ASECCSS)",
+            "FINANCIERA CAFSA S. A.",
+            "FINANCIERA G\u0026T CONTINENTAL COSTA RICA S. A.",
+            "PRIVAL BANK (COSTA RICA) S.A.",
+            "FINANCIERA COMECA S. A.",
+            "FINANCIERA DESYFIN S. A.",
+            "GLOBAL EXCHANGE",
+            "TELEDOLAR S.A.",
+            "LATIN AMERICAN EXCHANGE CASA DE CAMBIO S.A (LATINEX)",
+            "CITI TARJETAS DE COSTA RICA S.A.",
+            "EVERTEC COSTA RICA S.A.",
+            "BOLSA NACIONAL DE VALORES S.A.",
+            "INVERSIONES SAMA, S.A.",
+            "MERCADO DE VALORES DE C. R.",
+            "BCT VALORES",
+            "CITI VALORES ACCIVAL, S.A.",
+            "ACOBO",
+            "INS VALORES",
+            "LAFISE VALORES",
+            "DAVIVIENDA PUESTO DE BOLSA (COSTA RICA) S.A.",
+            "SCOTIA VALORES",
+            "MUTUAL VALORES",
+            "ALDESA VALORES",
+            "BAC SAN JOSÉ (BOLSA DE VALORES)",
+            "BN VALORES",
+            "POPULAR VALORES",
+            "BCR VALORES",
+            "IMPROSA VALORES",
+            "BN-VITAL OPERADORA DE PLANES DE PENSIONES COMPLEMENTARIAS, S. A.",
+            "VIDA PLENA OPERADORA DE PENSIONES COMPLEMENTARIAS S. A",
+            "CAJA COSTARRICENSE DE SEGURO SOCIAL OPERADORA DE PENSIONES COMPLEMENTARIAS",
+            "BAC SAN JOSÉ OPERADORA DE PLANES DE PENSIONES COMPLEMENTARIAS",
+            "O.P.C. BANCO POPULAR Y DESARROLLO COMUNAL",
+            "BCR OPERADORA PLANES DE PENSIONES COMPLEMENTARIAS",
+            "MIDEPLAN",
+            "INSTITUTO DE FOMENTO Y ASESORÍA MUNICIPAL (IFAM)",
+            "INSTITUTO COSTARRICENSE SOBRE DROGAS (ICD)",
+            "INSTITUTO COSTARRICENSE DE ELECTRICIDAD (ICE)",
+            "RECOPE",
+            "MINISTERIO DE HACIENDA",
+            "CENTRAL DE VALORES BOLSA NACIONAL DE VALORES (CEVAL)",
+            "CAJA COSTARRICENSE DE SEGURO SOCIAL (CCSS)",
+            "INSTITUTO NACIONAL DE SEGUROS (INS)",
+            "GOB. TRIBUNAL SUPREMO DE ELECCIONES (TSE)",
+            "JUNTA DE PROTECCIÓN SOCIAL DE SAN JOSÉ",
+            "MUNICIPALIDAD DE SAN JOSÉ",
+            "RADIOGRÁFICA COSTARRICENSE S.A. (RACSA)",
+            "MUNICIPALIDAD DE CARTAGO",
+            "MUNICIPALIDAD DE PALMARES",
+            "MUNICIPALIDAD DEL GUARCO",
+            "MUNICIPALIDAD DE ALAJUELITA",
+            "GRUPO MUTUAL ALAJUELA LA VIVIENDA",
+            "MUTUAL CARTAGO DE AHORRO Y PRÉSTAMO",
+            "COOPERATIVA DE AHORRO Y CRÉDITO DE LA COMUNIDAD DE CIUDAD QUESADA R. L. (COOCIQUE)",
+            "COOPE SAN MARCOS",
+            "COOPERATIVA DE AHORRO Y CRÉDITO ALIANZA DE PÉREZ ZELEDÓN (COOPEALIANZA)",
+            "COOPERATIVA NACIONAL DE EDUCADORES. R.L. (COOPENAE)",
+            "SERVICOOP R.L.",
+            "COOPERATIVA DE AHORRO Y CRÉDITO DE SERVIDORES PÚBLICOS R.L. (COOPESERVIDORES)",
+            "COOPERATIVA DE AHORRO Y CRÉDITO ANDE Nº 1 R.L. (COOPEANDE)",
+            "COOP. COOPECAJA",
+            "CAJA DE AHORRO Y PRÉSTAMOS DE ANDE",
+            "COOPEMEP R.L.",
+            "CREDECOOP",
+            "COOPESAN RAMÓN",
+            "COOPEBANPO",
+            "COOPEAMISTAD",
+            "COOPEGRECIA",
+            "COOPAVEGRA",
+            "COOPEUNA",
+            "COOPEANDE NO. 7 R.L.",
+            "COOPESPARTA R.L.",
+            "PROMOTORA DEL COMERCIO EXTERIOR DE COSTA RICA (PROCOMER)",
+            "INTERCLEAR CENTRAL DE VALORES S.A.",
+            "COOPEMÉDICOS"
           ],
           "title": "Bank",
           "type": "string"
@@ -244,11 +268,11 @@
           "type": "string"
         },
         "AccountNumber": {
-          "errorMessage": "must be a 22-digit CBU or CVU",
+          "errorMessage": "must be a Costa Rican IBAN (CR followed by 20 digits)",
           "maxLength": 22,
           "minLength": 22,
-          "pattern": "^[0-9]{22}$",
-          "title": "CBU/CVU",
+          "pattern": "^(CR)[0-9]{20}$",
+          "title": "Account number",
           "type": "string"
         },
         "DocumentType": {
@@ -276,14 +300,14 @@
   "metadata": {
     "channels": [
       {
-        "id": "00111c37-92fe-58d0-b70e-1ce891a0f253",
-        "country": "AR",
+        "id": "5927ca57-861f-5e36-9f4a-e456720195c3",
+        "country": "CR",
         "direction": "Out",
         "finServiceID": "l4p8x",
         "paymentMethodType": "BankLocal"
       }
     ],
-    "contentHash": "8fb1c1f380aee413c6355e5100fedf6a7278ca45c494a2e9dc958cd898de1b05",
+    "contentHash": "db1ab652493af415dcda3617870fe4f06c68b7427134b5413cd68fcd9a3862e8",
     "generatedAt": "2026-09-04T12:50:06Z"
   }
 }
