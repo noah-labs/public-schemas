@@ -178,7 +178,7 @@
   "metadata": {
     "channels": [
       {
-        "id": "b57fa87f-9d2b-5b42-a6e0-7acdcb1019c5",
+        "id": "ee9d3a15-d7d2-53b9-97b8-68aed04b5e44",
         "country": "GH",
         "direction": "Out",
         "finServiceID": "h5j1y",
@@ -186,6 +186,6 @@
       }
     ],
     "contentHash": "5d13e694226f4861e9dac572b5b930915eb31688e3fa60d57c78aa8537459da7",
-    "generatedAt": "2026-09-04T16:49:31Z"
+    "generatedAt": "2026-09-04T16:49:44Z"
   }
 }

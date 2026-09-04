@@ -302,7 +302,7 @@
   "metadata": {
     "channels": [
       {
-        "id": "e7f0382c-fbd8-5551-bbe0-303c944e18ce",
+        "id": "6c784124-3170-4413-a179-87b0e04a3f47",
         "country": "GB",
         "direction": "Out",
         "finServiceID": "y7n3f",
@@ -310,6 +310,6 @@
       }
     ],
     "contentHash": "9115faf133fa83a3a8a44f424c61a73f1872553d2cefcf24c5266eee297fc58e",
-    "generatedAt": "2026-09-04T16:49:31Z"
+    "generatedAt": "2026-09-04T16:49:44Z"
   }
 }
