@@ -22,7 +22,7 @@
                 "type": "string"
               },
               "DocumentType": {
-                "enum": ["RNC", "CE", "PASS"],
+                "enum": ["RUT"],
                 "title": "Document type",
                 "type": "string"
               },
@@ -67,12 +67,33 @@
                 "type": "string"
               },
               "DocumentType": {
-                "enum": ["RNC"],
+                "enum": ["RUT"],
                 "title": "Document type",
                 "type": "string"
               }
             },
             "required": ["CompanyName", "DocumentType", "DocumentID"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "DocumentType": {
+                "const": "RUT"
+              }
+            },
+            "required": ["DocumentType"]
+          },
+          "then": {
+            "properties": {
+              "DocumentID": {
+                "errorMessage": "RUT must be a Chilean tax ID (e.g. 21846923-K)",
+                "pattern": "^[0-9]{1,2}[.]?[0-9]{3}[.]?[0-9]{3}-?[0-9Kk]$",
+                "title": "Document ID",
+                "type": "string"
+              }
+            },
+            "required": ["DocumentID"]
           }
         }
       ],
@@ -84,30 +105,34 @@
         },
         "Bank": {
           "enum": [
-            "BANCO DE RESERVAS",
-            "BANCO SCOTIABANK",
-            "CITIBANK",
-            "BANCO POPULAR",
-            "BANCO BHD",
-            "BANCO DEL DESARROLLO ADEMI",
-            "BANCO SANTA CRUZ",
-            "BANCO DEL CARIBE",
-            "BANCO BDI",
-            "BANCO VIMENCA",
-            "BANCO LOPEZ DE HARO",
-            "BANCO EMPIRE",
-            "ASOCIACION LA NACIONAL DE AHORROS Y PRESTAMOS",
-            "BANCO ATLANTICO",
-            "BANCO BANESCO",
-            "BANCO LAFISE",
-            "BANCO MULTIPLE ACTIVO",
-            "BANCO UNION",
-            "BANFONDESA",
-            "BANCO PROMERICA",
-            "ASOCIACION POPULAR DE AHORRO",
-            "ASOCIACION CIBAO DE A/P",
-            "BANCO AGRICOLA DE LA REPUBLICA DOMINICANA",
-            "QIK BANCO DIGITAL DOMINICANO, S.A."
+            "BANCO DE CHILE",
+            "BANCO INTERNATIONAL",
+            "BANCO DEL ESTADO DE CHILE",
+            "SCOTIABANK CHILE",
+            "BANCO DE CRÉDITO E INVERSIONES (BCI)",
+            "BANCO BICE",
+            "HSBC BANK CHILE",
+            "BANCO SANTANDER CHILE",
+            "ITAÚ CORPBANCA",
+            "JP MORGAN CHASE BANK",
+            "BANCO SECURITY",
+            "BANCO FALABELLA",
+            "BANCO RIPLEY",
+            "RABOBANK CHILE",
+            "BANCO CONSORCIO",
+            "TANNER BANCO DIGITAL",
+            "COOPPEUCH (TARJETA DALE COOPEUCH)",
+            "PREPAGA LA POLAR",
+            "TRICARD S.A.",
+            "SOCIEDAD EMISORA DE TARJETAS LOS HÉROES S.A.",
+            "TENPO PAYMENTS S.A. (TENPO PREPAGO)",
+            "LOS ANDES TARJETAS DE PREPAGO S.A. (TAPP)",
+            "GLOBAL CARD S.A. (GLOBAL 66)",
+            "COMPAÑÍA EMISORA DE MEDIOS DE PAGO DIGITALES S.A. (COPEC PAY)",
+            "PREX CHILE S.A",
+            "SUMUP CHILE PAYMENTS S.A.",
+            "FINTUAL / FINTUAL PREPAGO",
+            "MERCADO PAGO EMISORA S.A. (MERCADO PAGO)"
           ],
           "title": "Bank",
           "type": "string"
@@ -118,13 +143,30 @@
           "type": "string"
         },
         "AccountNumber": {
-          "maxLength": 26,
-          "minLength": 4,
+          "errorMessage": "must be between 6 and 16 digits",
+          "maxLength": 16,
+          "minLength": 6,
+          "pattern": "^[0-9]{6,16}$",
           "title": "Account number",
+          "type": "string"
+        },
+        "DocumentType": {
+          "title": "Document type",
+          "type": "string"
+        },
+        "DocumentID": {
+          "title": "Document ID",
           "type": "string"
         }
       },
-      "required": ["BeneficiaryType", "Bank", "AccountType", "AccountNumber"],
+      "required": [
+        "BeneficiaryType",
+        "Bank",
+        "AccountType",
+        "AccountNumber",
+        "DocumentType",
+        "DocumentID"
+      ],
       "title": "Beneficiary",
       "type": "object"
     }
@@ -133,14 +175,14 @@
   "metadata": {
     "channels": [
       {
-        "id": "31867eab-a9bc-501e-8f5e-4956cdad9b2c",
-        "country": "DO",
+        "id": "f78cca99-1e50-5edb-8f49-da2091e95656",
+        "country": "CL",
         "direction": "Out",
         "finServiceID": "l4p8x",
-        "paymentMethodType": "BankAch"
+        "paymentMethodType": "BankLocal"
       }
     ],
-    "contentHash": "55122ced66c29ed1c74777b4728708fd5f587c154350443ce19384f07f2de3b0",
+    "contentHash": "78fa9ce55e4aee5b583230e6bbae488f5abd0f83787dabf0be05f3296f334015",
     "generatedAt": "2026-09-10T09:34:54Z"
   }
 }
