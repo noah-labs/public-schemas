@@ -10,7 +10,6 @@ These schemas describe the data required to complete a payment. Use them with fo
 | ------- | --------------------- | --------- | ---------- | ------------------------------------ |
 | AE      | BankLocal             | Out       | y7n3f      | [3c584ebaf4.json](./3c584ebaf4.json) |
 | AR      | BankLocal             | Out       | l4p8x      | [8fb1c1f380.json](./8fb1c1f380.json) |
-| AR      | IdentifierAlias       | Out       | b9s4g      | [8c0c79cd24.json](./8c0c79cd24.json) |
 | AR      | IdentifierQr          | Out       | b9s4g      | [054407430d.json](./054407430d.json) |
 | AT      | BankSepa              | Out       | m1v7p      | [af2c2c8e70.json](./af2c2c8e70.json) |
 | AU      | BankLocal             | Out       | y7n3f      | [cd9d5498c4.json](./cd9d5498c4.json) |
@@ -18,14 +17,12 @@ These schemas describe the data required to complete a payment. Use them with fo
 | BE      | BankSepa              | Out       | m1v7p      | [af2c2c8e70.json](./af2c2c8e70.json) |
 | BG      | BankSepa              | Out       | m1v7p      | [af2c2c8e70.json](./af2c2c8e70.json) |
 | BO      | BankLocal             | Out       | l4p8x      | [fe5704b12a.json](./fe5704b12a.json) |
-| BR      | IdentifierPix         | Out       | b9s4g      | [143499c7fa.json](./143499c7fa.json) |
 | BR      | IdentifierPix         | Out       | l4p8x      | [f236bb544c.json](./f236bb544c.json) |
 | BR      | IdentifierQr          | Out       | b9s4g      | [61082f127f.json](./61082f127f.json) |
 | CA      | BankLocal             | Out       | y7n3f      | [9e0d324746.json](./9e0d324746.json) |
 | CH      | BankLocal             | Out       | y7n3f      | [3c584ebaf4.json](./3c584ebaf4.json) |
 | CH      | BankSepa              | Out       | m1v7p      | [af2c2c8e70.json](./af2c2c8e70.json) |
 | CL      | BankLocal             | Out       | l4p8x      | [78fa9ce55e.json](./78fa9ce55e.json) |
-| CN      | BankLocal             | Out       | y7n3f      | [07f546e7be.json](./07f546e7be.json) |
 | CO      | BankAch               | Out       | l4p8x      | [3bf733bfa6.json](./3bf733bfa6.json) |
 | CO      | IdentifierAlias       | Out       | l4p8x      | [1939493d41.json](./1939493d41.json) |
 | CR      | BankLocal             | Out       | l4p8x      | [db1ab65249.json](./db1ab65249.json) |
@@ -38,7 +35,7 @@ These schemas describe the data required to complete a payment. Use them with fo
 | DO      | BankAch               | Out       | l4p8x      | [55122ced66.json](./55122ced66.json) |
 | DO      | BankLocal             | Out       | l4p8x      | [a5c82d8844.json](./a5c82d8844.json) |
 | EE      | BankSepa              | Out       | m1v7p      | [af2c2c8e70.json](./af2c2c8e70.json) |
-| EG      | BankLocal             | Out       | h5j1y      | [d0aff3285d.json](./d0aff3285d.json) |
+| EG      | BankLocal             | Out       | h5j1y      | [90b02cec64.json](./90b02cec64.json) |
 | ES      | BankSepa              | Out       | m1v7p      | [af2c2c8e70.json](./af2c2c8e70.json) |
 | FI      | BankSepa              | Out       | m1v7p      | [af2c2c8e70.json](./af2c2c8e70.json) |
 | FR      | BankSepa              | Out       | m1v7p      | [af2c2c8e70.json](./af2c2c8e70.json) |
@@ -103,4 +100,4 @@ These schemas describe the data required to complete a payment. Use them with fo
 
 ---
 
-_Generated: 2026-09-17T16:10:49Z_
+_Generated: 2026-09-22T13:10:04Z_
