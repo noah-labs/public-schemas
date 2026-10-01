@@ -4,20 +4,6 @@
   "description": "",
   "type": "object",
   "properties": {
-    "IdentifierDetails": {
-      "properties": {
-        "Identifier": {
-          "description": "Start with @ for alphanumeric",
-          "errorMessage": "must be 5 to 20 alphanumeric characters",
-          "pattern": "^@?[A-Za-z0-9]{5,20}$",
-          "title": "Bre-B Key (Alias)",
-          "type": "string"
-        }
-      },
-      "required": ["Identifier"],
-      "title": "Bre-B key details",
-      "type": "object"
-    },
     "Beneficiary": {
       "allOf": [
         {
@@ -201,6 +187,75 @@
           "title": "Beneficiary type",
           "type": "string"
         },
+        "Bank": {
+          "enum": [
+            "BANCO DE BOGOTA",
+            "BANCO POPULAR",
+            "ITAU (EX BANCO CORPBANCA COLOMBIA S.A)",
+            "BANCOLOMBIA",
+            "CITIBANK",
+            "BANCO GNB SUDAMERIS",
+            "BBVA COLOMBIA",
+            "ITAU CORPBANCA COLOMBIA S.A.",
+            "DAVIBANK",
+            "BANCO DE OCCIDENTE",
+            "BANCO DE COMERCIO EXTERIOR - BANCOLDEX",
+            "BANCO CAJA SOCIAL BCSC SA",
+            "BANCO AGRARIO",
+            "BNP PARIBAS",
+            "BANCO MUNDO MUJER S.A.",
+            "BANCO DAVIVIENDA SA",
+            "BANCO AV VILLAS",
+            "BANCO W S.A.",
+            "BANCO DE LAS MICROFINANZAS BANCAMIA S.A.",
+            "BANCO PICHINCHA",
+            "BANCOOMEVA",
+            "BANCO FALABELLA S.A",
+            "BANCO FINANDINA S.A",
+            "BANCO SANTANDER DE NEGOCIOS COLOMBIA S.A.",
+            "BANCO COOPERATIVO COOPCENTRAL",
+            "MIBANCO S.A.",
+            "BANCO SERFINANZA S.A.",
+            "LULO BANK S.A.",
+            "BANCO J.P. MORGAN COLOMBIA S.A",
+            "CFA (COOPERATIVA FINANCIERA DE ANTIOQUIA)",
+            "JFK COOPERATIVA FINANCIERA",
+            "COOTRAFA COOPERATIVA FINANCIERA",
+            "COOFINEP COOPERATIVA FINANCIERA",
+            "CONFIAR COOPERATIVA FINANCIERA",
+            "BANCO UNION (EX GIROS Y FINANZAS CF)",
+            "COLTEFINANCIERA S.A",
+            "BANCA DIGITAL NEQUI",
+            "DAVIPLATA",
+            "BAN100 (EX BANCO CREDIFINANCIERA SA.)",
+            "PIBANK",
+            "SUPERDIGITAL",
+            "IRIS (FINANCIERA DANN)",
+            "UALA",
+            "BANCO BTG PACTUAL",
+            "NU",
+            "RAPPIPAY",
+            "SANTANDER CONSUMER",
+            "ALIANZA FIDUCIARIA",
+            "CREZCAMOS",
+            "BANCO CONTACTAR S.A"
+          ],
+          "title": "Bank",
+          "type": "string"
+        },
+        "AccountType": {
+          "enum": ["Checking", "Savings"],
+          "title": "Account type",
+          "type": "string"
+        },
+        "AccountNumber": {
+          "errorMessage": "must be between 4 and 20 digits",
+          "maxLength": 20,
+          "minLength": 4,
+          "pattern": "^\\d{4,20}$",
+          "title": "Account number",
+          "type": "string"
+        },
         "DocumentType": {
           "title": "Document type",
           "type": "string"
@@ -210,23 +265,30 @@
           "type": "string"
         }
       },
-      "required": ["BeneficiaryType", "DocumentType", "DocumentID"],
+      "required": [
+        "BeneficiaryType",
+        "Bank",
+        "AccountType",
+        "AccountNumber",
+        "DocumentType",
+        "DocumentID"
+      ],
       "title": "Beneficiary",
       "type": "object"
     }
   },
-  "required": ["IdentifierDetails", "Beneficiary"],
+  "required": ["Beneficiary"],
   "metadata": {
     "channels": [
       {
-        "id": "ea5ad47f-22ea-5999-b9af-a7a1917f7dd7",
+        "id": "c039fa99-aea8-5107-a64f-0017ff15f5d0",
         "country": "CO",
         "direction": "Out",
         "finServiceID": "l4p8x",
-        "paymentMethodType": "IdentifierAlias"
+        "paymentMethodType": "BankAch"
       }
     ],
-    "contentHash": "1939493d410184a4e04e1872240a233aab1d3fc5abffdb87d42e97245030cf2c",
+    "contentHash": "27c05fd280a605abc25c93a2bd953b869f38d108b7887b9f2fca5c2ec89fdf9d",
     "generatedAt": "2026-10-01T14:35:57Z"
   }
 }
