@@ -19,16 +19,16 @@
               "Name": {
                 "properties": {
                   "FirstName": {
-                    "errorMessage": "First name must be between 1 and 22 characters",
-                    "maxLength": 22,
-                    "minLength": 1,
+                    "errorMessage": "First name must be between 3 and 32 characters",
+                    "maxLength": 32,
+                    "minLength": 3,
                     "title": "First name",
                     "type": "string"
                   },
                   "LastName": {
-                    "errorMessage": "Last name must be between 1 and 22 characters",
-                    "maxLength": 22,
-                    "minLength": 1,
+                    "errorMessage": "Last name must be between 3 and 32 characters",
+                    "maxLength": 32,
+                    "minLength": 3,
                     "title": "Last name",
                     "type": "string"
                   }
@@ -36,8 +36,8 @@
                 "required": ["FirstName", "LastName"],
                 "title": "Full name",
                 "type": "object",
-                "x-total-max-length": 45,
-                "x-validation-message": "Combined first and last name must not exceed 45 characters"
+                "x-total-max-length": 35,
+                "x-validation-message": "Combined first and last name must not exceed 35 characters"
               }
             },
             "required": ["Name"]
@@ -54,8 +54,8 @@
           "then": {
             "properties": {
               "Name": {
-                "errorMessage": "Name must be between 3 and 50 characters",
-                "maxLength": 50,
+                "errorMessage": "Name must be between 3 and 35 characters",
+                "maxLength": 35,
                 "minLength": 3,
                 "title": "Business name",
                 "type": "string"
@@ -76,39 +76,20 @@
       "title": "Account holder name",
       "type": "object"
     },
-    "BankDetails": {
-      "properties": {
-        "AccountNumber": {
-          "maxLength": 34,
-          "minLength": 1,
-          "title": "Account number",
-          "type": "string"
-        },
-        "RoutingNumber": {
-          "maxLength": 9,
-          "minLength": 9,
-          "title": "Routing number",
-          "type": "string"
-        },
-        "AccountType": {
-          "enum": ["Checking", "Savings"],
-          "title": "Account type",
-          "type": "string"
-        }
-      },
-      "required": ["AccountNumber", "RoutingNumber", "AccountType"],
-      "title": "Bank details",
-      "type": "object"
-    },
     "AccountHolderAddress": {
       "properties": {
-        "city": {
-          "maxLength": 35,
-          "minLength": 1,
-          "title": "City",
+        "Address": {
+          "maxLength": 70,
+          "minLength": 3,
+          "title": "Address",
           "type": "string"
         },
-        "countryCode": {
+        "City": {
+          "maxLength": 35,
+          "title": "Town",
+          "type": "string"
+        },
+        "Country": {
           "oneOf": [
             {
               "const": "AF",
@@ -1614,27 +1595,39 @@
           "title": "Country",
           "type": "string"
         },
-        "line1": {
-          "maxLength": 70,
-          "minLength": 3,
-          "title": "Address",
-          "type": "string"
-        },
-        "postalCode": {
-          "maxLength": 20,
-          "minLength": 1,
-          "title": "Postal code",
-          "type": "string"
-        },
-        "state": {
+        "PostalCode": {
           "maxLength": 35,
-          "minLength": 1,
-          "title": "State",
+          "title": "Postal Code",
+          "type": "string"
+        },
+        "State": {
+          "maxLength": 35,
+          "title": "State/Province",
           "type": "string"
         }
       },
-      "required": ["line1", "city", "state", "postalCode", "countryCode"],
+      "required": ["City", "Address", "Country"],
       "title": "Account holder address",
+      "type": "object"
+    },
+    "BankDetails": {
+      "properties": {
+        "AccountNumber": {
+          "maxLength": 34,
+          "minLength": 1,
+          "title": "Account number",
+          "type": "string"
+        },
+        "SwiftCode": {
+          "maxLength": 11,
+          "minLength": 8,
+          "pattern": "^[A-Z]{6}[A-Z0-9]{2}([A-Z0-9]{3})?$",
+          "title": "BIC/SWIFT code",
+          "type": "string"
+        }
+      },
+      "required": ["AccountNumber", "SwiftCode"],
+      "title": "Bank details",
       "type": "object"
     },
     "Reference": {
@@ -1642,30 +1635,27 @@
       "errorMessage": "Reference must be at most 140 characters",
       "maxLength": 140,
       "minLength": 0,
-      "pattern": "^[\\x20-\\x7E]*$",
+      "pattern": "^[\\w !\"#$%\u0026'()+,\\-./:;\u003c=\u003e?@\\\\_`~]*$",
       "title": "Reference",
+      "type": "string"
+    },
+    "PaymentPurpose": {
+      "title": "Payment purpose",
       "type": "string"
     }
   },
-  "required": ["AccountHolderName", "BankDetails", "AccountHolderAddress", "Reference"],
+  "required": ["AccountHolderName", "AccountHolderAddress", "BankDetails", "PaymentPurpose"],
   "metadata": {
     "channels": [
       {
-        "id": "48609092-2ee1-5436-8ac4-6b09128c0361",
-        "country": "US",
-        "direction": "In",
-        "finServiceID": "k7m2x",
-        "paymentMethodType": "BankFedwire"
-      },
-      {
-        "id": "c71d435d-2f26-504b-b2ff-744a6e1ab5dd",
-        "country": "US",
+        "id": "37d8c06a-226c-572a-b7ec-52fa8af376c7",
+        "country": "XX",
         "direction": "Out",
-        "finServiceID": "k7m2x",
-        "paymentMethodType": "BankFedwire"
+        "finServiceID": "t6f2c",
+        "paymentMethodType": "BankSwift"
       }
     ],
-    "contentHash": "5015b19b248a91abd09513aa6a292569490b9c5e6374f4bf0756dbcb53e82f5e",
+    "contentHash": "d9793843b49c70681f00013e3b08a557828e6c3c8373bb4eedfd086c80708e41",
     "generatedAt": "2026-10-02T12:54:38Z"
   }
 }
