@@ -106,6 +106,13 @@
   "metadata": {
     "channels": [
       {
+        "id": "77dc2332-d54e-5b48-b999-59b10cf170c8",
+        "country": "AD",
+        "direction": "Out",
+        "finServiceID": "m1v7p",
+        "paymentMethodType": "BankSepa"
+      },
+      {
         "id": "5080cbb9-12f8-5d6a-b74a-b5d0563cbbf4",
         "country": "AT",
         "direction": "Out",
@@ -267,6 +274,34 @@
         "paymentMethodType": "BankSepa"
       },
       {
+        "id": "1a6325ac-af40-506c-9bfd-355a52c45892",
+        "country": "MC",
+        "direction": "Out",
+        "finServiceID": "m1v7p",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "id": "59a90054-4f60-50ea-87d6-d6a87c3ce868",
+        "country": "MD",
+        "direction": "Out",
+        "finServiceID": "m1v7p",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "id": "153b00e6-4635-58e6-8a04-80436bba6190",
+        "country": "ME",
+        "direction": "Out",
+        "finServiceID": "m1v7p",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "id": "f8c8dccf-cb19-54dc-a59d-81cac01c31aa",
+        "country": "MK",
+        "direction": "Out",
+        "finServiceID": "m1v7p",
+        "paymentMethodType": "BankSepa"
+      },
+      {
         "id": "824cf14e-1518-5c78-a298-dd83bdc3f343",
         "country": "MT",
         "direction": "Out",
@@ -335,9 +370,23 @@
         "direction": "Out",
         "finServiceID": "m1v7p",
         "paymentMethodType": "BankSepa"
+      },
+      {
+        "id": "5749447b-e523-5e41-8604-fb6551146a87",
+        "country": "SM",
+        "direction": "Out",
+        "finServiceID": "m1v7p",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "id": "0b6a1717-31c3-5ee3-ad88-5c444a7c5d79",
+        "country": "VA",
+        "direction": "Out",
+        "finServiceID": "m1v7p",
+        "paymentMethodType": "BankSepa"
       }
     ],
     "contentHash": "af2c2c8e70a6d1a1101c4e54bb45897cdcc456d1971d281464ac5e748fe9c9ba",
-    "generatedAt": "2026-10-02T12:54:38Z"
+    "generatedAt": "2026-10-06T10:21:21Z"
   }
 }
