@@ -36,7 +36,7 @@ These schemas describe the data required to complete a payment. Use them with fo
 | DO      | BankAch               | Out       | l4p8x      | [55122ced66.json](./55122ced66.json) |
 | DO      | BankLocal             | Out       | l4p8x      | [a5c82d8844.json](./a5c82d8844.json) |
 | EE      | BankSepa              | Out       | m1v7p      | [af2c2c8e70.json](./af2c2c8e70.json) |
-| EG      | BankLocal             | Out       | h5j1y      | [3bd33aa03d.json](./3bd33aa03d.json) |
+| EG      | BankLocal             | Out       | h5j1y      | [0c8ea24a7e.json](./0c8ea24a7e.json) |
 | ES      | BankSepa              | Out       | m1v7p      | [af2c2c8e70.json](./af2c2c8e70.json) |
 | FI      | BankSepa              | Out       | m1v7p      | [af2c2c8e70.json](./af2c2c8e70.json) |
 | FR      | BankSepa              | Out       | m1v7p      | [af2c2c8e70.json](./af2c2c8e70.json) |
@@ -108,4 +108,4 @@ These schemas describe the data required to complete a payment. Use them with fo
 
 ---
 
-_Generated: 2026-10-06T10:21:21Z_
+_Generated: 2026-10-06T12:40:48Z_
