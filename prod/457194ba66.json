@@ -27,9 +27,16 @@
         "direction": "In",
         "finServiceID": "t6f2c",
         "paymentMethodType": "BankFedwire"
+      },
+      {
+        "id": "950ddced-7161-5dba-b76d-a952f260bd54",
+        "country": "XX",
+        "direction": "In",
+        "finServiceID": "t6f2c",
+        "paymentMethodType": "BankSwift"
       }
     ],
     "contentHash": "457194ba66614b69cb814bd6337f4978c952d06aeb06d81eb966ec42cd873564",
-    "generatedAt": "2026-10-22T12:49:20Z"
+    "generatedAt": "2026-10-26T13:10:02Z"
   }
 }

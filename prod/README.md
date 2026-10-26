@@ -36,7 +36,7 @@ These schemas describe the data required to complete a payment. Use them with fo
 | DO      | BankAch               | Out       | l4p8x      | [55122ced66.json](./55122ced66.json) |
 | DO      | BankLocal             | Out       | l4p8x      | [a5c82d8844.json](./a5c82d8844.json) |
 | EE      | BankSepa              | Out       | m1v7p      | [af2c2c8e70.json](./af2c2c8e70.json) |
-| EG      | BankLocal             | Out       | h5j1y      | [2fdfe15777.json](./2fdfe15777.json) |
+| EG      | BankLocal             | Out       | h5j1y      | [73de586e48.json](./73de586e48.json) |
 | ES      | BankSepa              | Out       | m1v7p      | [af2c2c8e70.json](./af2c2c8e70.json) |
 | FI      | BankSepa              | Out       | m1v7p      | [af2c2c8e70.json](./af2c2c8e70.json) |
 | FR      | BankSepa              | Out       | m1v7p      | [af2c2c8e70.json](./af2c2c8e70.json) |
@@ -102,10 +102,11 @@ These schemas describe the data required to complete a payment. Use them with fo
 | VA      | BankSepa              | Out       | m1v7p      | [af2c2c8e70.json](./af2c2c8e70.json) |
 | VN      | BankLocal             | Out       | y7n3f      | [a636e5a817.json](./a636e5a817.json) |
 | XX      | BankSwift             | In        | k7m2x      | [8c8f8c4d90.json](./8c8f8c4d90.json) |
+| XX      | BankSwift             | In        | t6f2c      | [457194ba66.json](./457194ba66.json) |
 | XX      | BankSwift             | Out       | k7m2x      | [8c8f8c4d90.json](./8c8f8c4d90.json) |
 | XX      | BankSwift             | Out       | t6f2c      | [d9793843b4.json](./d9793843b4.json) |
 | ZA      | BankLocal             | Out       | h5j1y      | [0990ea756b.json](./0990ea756b.json) |
 
 ---
 
-_Generated: 2026-10-22T12:49:20Z_
+_Generated: 2026-10-26T13:10:02Z_
