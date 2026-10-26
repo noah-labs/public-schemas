@@ -9,12 +9,12 @@ These schemas describe the data required to complete a payment. Use them with fo
 | Country | Payment Method  | Direction | FinService | Schema                               |
 | ------- | --------------- | --------- | ---------- | ------------------------------------ |
 | AR      | IdentifierAlias | Out       | b9s4g      | [8c0c79cd24.json](./8c0c79cd24.json) |
-| AR      | IdentifierQr    | Out       | b9s4g      | [054407430d.json](./054407430d.json) |
+| AR      | IdentifierQr    | Out       | b9s4g      | [3d022495e5.json](./3d022495e5.json) |
 | AT      | BankSepa        | Out       | m1v7p      | [af2c2c8e70.json](./af2c2c8e70.json) |
 | BE      | BankSepa        | Out       | m1v7p      | [af2c2c8e70.json](./af2c2c8e70.json) |
 | BG      | BankSepa        | Out       | m1v7p      | [af2c2c8e70.json](./af2c2c8e70.json) |
 | BR      | IdentifierPix   | Out       | b9s4g      | [143499c7fa.json](./143499c7fa.json) |
-| BR      | IdentifierQr    | Out       | b9s4g      | [61082f127f.json](./61082f127f.json) |
+| BR      | IdentifierQr    | Out       | b9s4g      | [3aba32cc82.json](./3aba32cc82.json) |
 | CH      | BankSepa        | Out       | m1v7p      | [af2c2c8e70.json](./af2c2c8e70.json) |
 | CY      | BankSepa        | Out       | m1v7p      | [af2c2c8e70.json](./af2c2c8e70.json) |
 | CZ      | BankSepa        | Out       | m1v7p      | [af2c2c8e70.json](./af2c2c8e70.json) |
@@ -66,4 +66,4 @@ These schemas describe the data required to complete a payment. Use them with fo
 
 ---
 
-_Generated: 2026-10-26T13:10:29Z_
+_Generated: 2026-10-26T18:53:40Z_

@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "QrPayload": {
+      "maxLength": 300,
+      "minLength": 3,
+      "title": "QR3",
+      "type": "string",
+      "x-scan-type": "qr"
+    },
+    "BeneficiaryName": {
+      "properties": {
+        "FirstName": {
+          "errorMessage": "First Name must be between 1 and 50 characters",
+          "maxLength": 50,
+          "minLength": 1,
+          "title": "First name",
+          "type": "string"
+        },
+        "LastName": {
+          "errorMessage": "Last Name must not be longer than 50 characters",
+          "maxLength": 50,
+          "title": "Last name",
+          "type": "string"
+        }
+      },
+      "required": ["FirstName"],
+      "title": "Beneficiary name",
+      "type": "object"
+    }
+  },
+  "required": ["QrPayload", "BeneficiaryName"],
+  "metadata": {
+    "channels": [
+      {
+        "id": "d06f3e81-f046-5dcc-91bf-18df3c185448",
+        "country": "AR",
+        "direction": "Out",
+        "finServiceID": "b9s4g",
+        "paymentMethodType": "IdentifierQr"
+      }
+    ],
+    "contentHash": "3d022495e5a656ed69a6e5e01e36d7c576235ae3d5118d7e119c4d0f484bf3ac",
+    "generatedAt": "2026-10-26T18:53:40Z"
+  }
+}
