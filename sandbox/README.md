@@ -66,4 +66,4 @@ These schemas describe the data required to complete a payment. Use them with fo
 
 ---
 
-_Generated: 2026-10-26T18:53:40Z_
+_Generated: 2026-10-27T14:23:27Z_
