@@ -305,7 +305,14 @@
   "metadata": {
     "channels": [
       {
-        "id": "e7f0382c-fbd8-5551-bbe0-303c944e18ce",
+        "id": "6c784124-3170-4413-a179-87b0e04a3f47",
+        "country": "GB",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankLocal"
+      },
+      {
+        "id": "8fe391bd-70ab-5e97-9bbd-1ede25f93ea1",
         "country": "GB",
         "direction": "Out",
         "finServiceID": "y7n3f",
@@ -313,6 +320,6 @@
       }
     ],
     "contentHash": "bbcddef5fa5c40ce43b2136af1a699c8767399b7a1f62c0ab47441117af9c657",
-    "generatedAt": "2026-11-13T12:18:04Z"
+    "generatedAt": "2026-11-16T18:01:18Z"
   }
 }

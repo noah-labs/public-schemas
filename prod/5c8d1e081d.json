@@ -295,6 +295,13 @@
   "metadata": {
     "channels": [
       {
+        "id": "8e4b1b1c-d6dd-539d-a83a-d1c73b8b17b1",
+        "country": "GB",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankSepa"
+      },
+      {
         "id": "d87173b1-aa3d-5e2c-9f8f-2631a8ebc744",
         "country": "TR",
         "direction": "Out",
@@ -303,6 +310,6 @@
       }
     ],
     "contentHash": "5c8d1e081d9f5e7a4cf4fa9865907258f81a726db5036f2c69115795c991f01e",
-    "generatedAt": "2026-11-13T12:18:04Z"
+    "generatedAt": "2026-11-16T18:01:32Z"
   }
 }
