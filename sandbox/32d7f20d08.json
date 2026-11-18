@@ -1,0 +1,113 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "AccountHolderName": {
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "AccountHolderType": {
+                "const": "Individual"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "Name": {
+                "properties": {
+                  "FirstName": {
+                    "errorMessage": "First name must be between 3 and 32 characters",
+                    "maxLength": 32,
+                    "minLength": 3,
+                    "title": "First name",
+                    "type": "string"
+                  },
+                  "LastName": {
+                    "errorMessage": "Last name must be between 3 and 32 characters",
+                    "maxLength": 32,
+                    "minLength": 3,
+                    "title": "Last name",
+                    "type": "string"
+                  }
+                },
+                "required": ["FirstName", "LastName"],
+                "title": "Full name",
+                "type": "object",
+                "x-total-max-length": 35,
+                "x-validation-message": "Combined first and last name must not exceed 35 characters"
+              }
+            },
+            "required": ["Name"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "AccountHolderType": {
+                "const": "Business"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "Name": {
+                "errorMessage": "Name must be between 3 and 35 characters",
+                "maxLength": 35,
+                "minLength": 3,
+                "title": "Business name",
+                "type": "string"
+              }
+            },
+            "required": ["Name"]
+          }
+        }
+      ],
+      "properties": {
+        "AccountHolderType": {
+          "enum": ["Individual", "Business"],
+          "title": "Account holder type",
+          "type": "string"
+        }
+      },
+      "required": ["AccountHolderType"],
+      "title": "Account holder name",
+      "type": "object"
+    },
+    "BankDetails": {
+      "properties": {
+        "AccountNumber": {
+          "maxLength": 17,
+          "minLength": 1,
+          "title": "Account number",
+          "type": "string"
+        },
+        "BankCode": {
+          "maxLength": 9,
+          "minLength": 9,
+          "title": "Routing number",
+          "type": "string"
+        }
+      },
+      "required": ["AccountNumber", "BankCode"],
+      "title": "Bank details",
+      "type": "object"
+    }
+  },
+  "required": ["AccountHolderName", "BankDetails"],
+  "metadata": {
+    "channels": [
+      {
+        "id": "5322ef6f-3408-57eb-bb71-7a87fb2be64b",
+        "country": "US",
+        "direction": "Out",
+        "finServiceID": "t6f2c",
+        "paymentMethodType": "BankFedNow"
+      }
+    ],
+    "contentHash": "32d7f20d084060da438d9a808754b21114a8dd065c691a62917641ad7fbf5603",
+    "generatedAt": "2026-11-18T19:13:26Z"
+  }
+}
