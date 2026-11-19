@@ -1,0 +1,188 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "Beneficiary": {
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "BeneficiaryType": {
+                "const": "Individual"
+              }
+            },
+            "required": ["BeneficiaryType"]
+          },
+          "then": {
+            "properties": {
+              "DocumentID": {
+                "title": "Document ID",
+                "type": "string"
+              },
+              "DocumentType": {
+                "enum": ["RUT"],
+                "title": "Document type",
+                "type": "string"
+              },
+              "FirstName": {
+                "errorMessage": "must be between 2 and 50 characters",
+                "maxLength": 50,
+                "minLength": 2,
+                "title": "Beneficiary name",
+                "type": "string"
+              },
+              "LastName": {
+                "errorMessage": "must be between 2 and 50 characters",
+                "maxLength": 50,
+                "minLength": 2,
+                "title": "Beneficiary last name",
+                "type": "string"
+              }
+            },
+            "required": ["FirstName", "LastName", "DocumentType", "DocumentID"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "BeneficiaryType": {
+                "const": "Business"
+              }
+            },
+            "required": ["BeneficiaryType"]
+          },
+          "then": {
+            "properties": {
+              "CompanyName": {
+                "errorMessage": "must be between 1 and 100 characters",
+                "maxLength": 100,
+                "minLength": 1,
+                "title": "Company name",
+                "type": "string"
+              },
+              "DocumentID": {
+                "title": "Document ID",
+                "type": "string"
+              },
+              "DocumentType": {
+                "enum": ["RUT"],
+                "title": "Document type",
+                "type": "string"
+              }
+            },
+            "required": ["CompanyName", "DocumentType", "DocumentID"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "DocumentType": {
+                "const": "RUT"
+              }
+            },
+            "required": ["DocumentType"]
+          },
+          "then": {
+            "properties": {
+              "DocumentID": {
+                "errorMessage": "RUT must be a Chilean tax ID (e.g. 21846923-K)",
+                "pattern": "^[0-9]{1,2}[.]?[0-9]{3}[.]?[0-9]{3}-?[0-9Kk]$",
+                "title": "Document ID",
+                "type": "string"
+              }
+            },
+            "required": ["DocumentID"]
+          }
+        }
+      ],
+      "properties": {
+        "BeneficiaryType": {
+          "enum": ["Individual", "Business"],
+          "title": "Beneficiary type",
+          "type": "string"
+        },
+        "Bank": {
+          "enum": [
+            "BANCO DE CHILE",
+            "BANCO INTERNATIONAL",
+            "BANCO DEL ESTADO DE CHILE",
+            "SCOTIABANK CHILE",
+            "BANCO DE CRÉDITO E INVERSIONES (BCI)",
+            "BANCO BICE",
+            "HSBC BANK CHILE",
+            "BANCO SANTANDER CHILE",
+            "ITAÚ CORPBANCA",
+            "JP MORGAN CHASE BANK",
+            "BANCO SECURITY",
+            "BANCO FALABELLA",
+            "BANCO RIPLEY",
+            "RABOBANK CHILE",
+            "BANCO CONSORCIO",
+            "TANNER BANCO DIGITAL",
+            "COOPPEUCH (TARJETA DALE COOPEUCH)",
+            "PREPAGA LA POLAR",
+            "TRICARD S.A.",
+            "SOCIEDAD EMISORA DE TARJETAS LOS HÉROES S.A.",
+            "TENPO PAYMENTS S.A. (TENPO PREPAGO)",
+            "LOS ANDES TARJETAS DE PREPAGO S.A. (TAPP)",
+            "GLOBAL CARD S.A. (GLOBAL 66)",
+            "COMPAÑÍA EMISORA DE MEDIOS DE PAGO DIGITALES S.A. (COPEC PAY)",
+            "PREX CHILE S.A",
+            "SUMUP CHILE PAYMENTS S.A.",
+            "FINTUAL / FINTUAL PREPAGO",
+            "MERCADO PAGO EMISORA S.A. (MERCADO PAGO)"
+          ],
+          "title": "Bank",
+          "type": "string"
+        },
+        "AccountType": {
+          "enum": ["Checking", "Savings"],
+          "title": "Account type",
+          "type": "string"
+        },
+        "AccountNumber": {
+          "errorMessage": "must be between 6 and 16 digits",
+          "maxLength": 16,
+          "minLength": 6,
+          "pattern": "^[0-9]{6,16}$",
+          "title": "Account number",
+          "type": "string"
+        },
+        "DocumentType": {
+          "title": "Document type",
+          "type": "string"
+        },
+        "DocumentID": {
+          "title": "Document ID",
+          "type": "string"
+        }
+      },
+      "required": [
+        "BeneficiaryType",
+        "Bank",
+        "AccountType",
+        "AccountNumber",
+        "DocumentType",
+        "DocumentID"
+      ],
+      "title": "Beneficiary",
+      "type": "object"
+    }
+  },
+  "required": ["Beneficiary"],
+  "metadata": {
+    "channels": [
+      {
+        "id": "f78cca99-1e50-5edb-8f49-da2091e95656",
+        "country": "CL",
+        "direction": "Out",
+        "finServiceID": "l4p8x",
+        "paymentMethodType": "BankLocal"
+      }
+    ],
+    "contentHash": "b62fbe90b6eef1ef0100bceea3aa132dd9c42e44c85d851e4af75c61f513b5fe",
+    "generatedAt": "2026-11-19T16:59:39Z"
+  }
+}

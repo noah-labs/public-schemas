@@ -1,0 +1,200 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "Beneficiary": {
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "BeneficiaryType": {
+                "const": "Individual"
+              }
+            },
+            "required": ["BeneficiaryType"]
+          },
+          "then": {
+            "properties": {
+              "DocumentID": {
+                "title": "Document ID",
+                "type": "string"
+              },
+              "DocumentType": {
+                "enum": ["NIT", "CUI"],
+                "title": "Document type",
+                "type": "string"
+              },
+              "FirstName": {
+                "errorMessage": "must be between 2 and 50 characters",
+                "maxLength": 50,
+                "minLength": 2,
+                "title": "Beneficiary name",
+                "type": "string"
+              },
+              "LastName": {
+                "errorMessage": "must be between 2 and 50 characters",
+                "maxLength": 50,
+                "minLength": 2,
+                "title": "Beneficiary last name",
+                "type": "string"
+              }
+            },
+            "required": ["FirstName", "LastName", "DocumentType", "DocumentID"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "BeneficiaryType": {
+                "const": "Business"
+              }
+            },
+            "required": ["BeneficiaryType"]
+          },
+          "then": {
+            "properties": {
+              "CompanyName": {
+                "errorMessage": "must be between 1 and 100 characters",
+                "maxLength": 100,
+                "minLength": 1,
+                "title": "Company name",
+                "type": "string"
+              },
+              "DocumentID": {
+                "title": "Document ID",
+                "type": "string"
+              },
+              "DocumentType": {
+                "enum": ["NIT"],
+                "title": "Document type",
+                "type": "string"
+              }
+            },
+            "required": ["CompanyName", "DocumentType", "DocumentID"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "DocumentType": {
+                "const": "NIT"
+              }
+            },
+            "required": ["DocumentType"]
+          },
+          "then": {
+            "properties": {
+              "DocumentID": {
+                "errorMessage": "NIT must be digits with an optional check digit",
+                "pattern": "^[0-9]+(-?[0-9kK])?$",
+                "title": "Document ID",
+                "type": "string"
+              }
+            },
+            "required": ["DocumentID"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "DocumentType": {
+                "const": "CUI"
+              }
+            },
+            "required": ["DocumentType"]
+          },
+          "then": {
+            "properties": {
+              "DocumentID": {
+                "errorMessage": "CUI must be exactly 13 digits",
+                "pattern": "^[0-9]{13}$",
+                "title": "Document ID",
+                "type": "string"
+              }
+            },
+            "required": ["DocumentID"]
+          }
+        }
+      ],
+      "properties": {
+        "BeneficiaryType": {
+          "enum": ["Individual", "Business"],
+          "title": "Beneficiary type",
+          "type": "string"
+        },
+        "Bank": {
+          "enum": [
+            "BANCO DE GUATEMALA",
+            "EL CRÉDITO HIPOTECARIO NACIONAL DE GUATEMALA",
+            "BANCO DE LOS TRABAJADORES",
+            "BANCO INMOBILIARIO, S.A.",
+            "BANCO INDUSTRIAL, S.A.",
+            "BANCO DE DESARROLLO RURAL, S.A. (BANRURAL)",
+            "BANCO INTERNACIONAL, S.A.",
+            "CITIBANK, N.A. SUCURSAL GUATEMALA",
+            "VIVIBANCO, S.A.",
+            "BANCO FICOHSA GUATEMALA, S.A.",
+            "PROMERICA (BANCASOL S.A.)",
+            "BANCO DE ANTIGUA, S.A.",
+            "BANCO DE AMÉRICA CENTRAL, S.A. (BAC)",
+            "BANCO AGROMERCANTIL DE GUATEMALA, S.A.",
+            "BANCO G\u0026T CONTINENTAL, S.A.",
+            "BANCO AZTECA DE GUATEMALA, S.A.",
+            "BANCO INV, S.A.",
+            "BANCO CREDICORP, S.A.",
+            "BANCO NEXA, S.A."
+          ],
+          "title": "Bank",
+          "type": "string"
+        },
+        "AccountType": {
+          "enum": ["Checking", "Savings"],
+          "title": "Account type",
+          "type": "string"
+        },
+        "AccountNumber": {
+          "errorMessage": "must be between 4 and 20 digits",
+          "maxLength": 20,
+          "minLength": 4,
+          "pattern": "^\\d{4,20}$",
+          "title": "Account number",
+          "type": "string"
+        },
+        "DocumentType": {
+          "title": "Document type",
+          "type": "string"
+        },
+        "DocumentID": {
+          "title": "Document ID",
+          "type": "string"
+        }
+      },
+      "required": [
+        "BeneficiaryType",
+        "Bank",
+        "AccountType",
+        "AccountNumber",
+        "DocumentType",
+        "DocumentID"
+      ],
+      "title": "Beneficiary",
+      "type": "object"
+    }
+  },
+  "required": ["Beneficiary"],
+  "metadata": {
+    "channels": [
+      {
+        "id": "f1c83839-b8b9-5a6c-92b2-749cbb8fee8a",
+        "country": "GT",
+        "direction": "Out",
+        "finServiceID": "l4p8x",
+        "paymentMethodType": "BankLocal"
+      }
+    ],
+    "contentHash": "0921b340b61600df4b3ec2b4de9c3ccdbd797a2db5b43eebad9856f9c8c49622",
+    "generatedAt": "2026-11-19T16:59:39Z"
+  }
+}

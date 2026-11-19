@@ -1,0 +1,313 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "Beneficiary": {
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "BeneficiaryType": {
+                "const": "Individual"
+              }
+            },
+            "required": ["BeneficiaryType"]
+          },
+          "then": {
+            "properties": {
+              "DocumentID": {
+                "title": "Document ID",
+                "type": "string"
+              },
+              "DocumentType": {
+                "enum": ["CI", "DIMEX"],
+                "title": "Document type",
+                "type": "string"
+              },
+              "FirstName": {
+                "errorMessage": "must be between 2 and 50 characters",
+                "maxLength": 50,
+                "minLength": 2,
+                "title": "Beneficiary name",
+                "type": "string"
+              },
+              "LastName": {
+                "errorMessage": "must be between 2 and 50 characters",
+                "maxLength": 50,
+                "minLength": 2,
+                "title": "Beneficiary last name",
+                "type": "string"
+              }
+            },
+            "required": ["FirstName", "LastName", "DocumentType", "DocumentID"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "BeneficiaryType": {
+                "const": "Business"
+              }
+            },
+            "required": ["BeneficiaryType"]
+          },
+          "then": {
+            "properties": {
+              "CompanyName": {
+                "errorMessage": "must be between 1 and 100 characters",
+                "maxLength": 100,
+                "minLength": 1,
+                "title": "Company name",
+                "type": "string"
+              },
+              "DocumentID": {
+                "title": "Document ID",
+                "type": "string"
+              },
+              "DocumentType": {
+                "enum": ["RUT", "CEJ"],
+                "title": "Document type",
+                "type": "string"
+              }
+            },
+            "required": ["CompanyName", "DocumentType", "DocumentID"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "DocumentType": {
+                "const": "CI"
+              }
+            },
+            "required": ["DocumentType"]
+          },
+          "then": {
+            "properties": {
+              "DocumentID": {
+                "errorMessage": "CI must be a Costa Rican cédula (e.g. 1-2345-6789)",
+                "pattern": "^[1-9]-?\\d{4}-?\\d{4}$",
+                "title": "Document ID",
+                "type": "string"
+              }
+            },
+            "required": ["DocumentID"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "DocumentType": {
+                "const": "DIMEX"
+              }
+            },
+            "required": ["DocumentType"]
+          },
+          "then": {
+            "properties": {
+              "DocumentID": {
+                "errorMessage": "DIMEX must be 11 or 12 digits",
+                "pattern": "^\\d{11,12}$",
+                "title": "Document ID",
+                "type": "string"
+              }
+            },
+            "required": ["DocumentID"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "DocumentType": {
+                "const": "RUT"
+              }
+            },
+            "required": ["DocumentType"]
+          },
+          "then": {
+            "properties": {
+              "DocumentID": {
+                "errorMessage": "RUT must be exactly 10 digits",
+                "pattern": "^[0-9]{10}$",
+                "title": "Document ID",
+                "type": "string"
+              }
+            },
+            "required": ["DocumentID"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "DocumentType": {
+                "const": "CEJ"
+              }
+            },
+            "required": ["DocumentType"]
+          },
+          "then": {
+            "properties": {
+              "DocumentID": {
+                "errorMessage": "CEJ must be a cédula jurídica (e.g. 1-234-567890)",
+                "pattern": "^[1-9]-?\\d{3}-?\\d{6}$",
+                "title": "Document ID",
+                "type": "string"
+              }
+            },
+            "required": ["DocumentID"]
+          }
+        }
+      ],
+      "properties": {
+        "BeneficiaryType": {
+          "enum": ["Individual", "Business"],
+          "title": "Beneficiary type",
+          "type": "string"
+        },
+        "Bank": {
+          "enum": [
+            "BANCO BAC SAN JOSÉ",
+            "BANCO DAVIVIENDA COSTA RICA S.A.",
+            "BANCO BCT",
+            "BANCO LAFISE",
+            "BANCO PROMÉRICA",
+            "BANCO IMPROSA",
+            "BANCO SCOTIABANK",
+            "BANCO CATHAY",
+            "BANCO GENERAL DE COSTA RICA S.A.",
+            "BANCO CMB (COSTA RICA) S.A.",
+            "BANCO NACIONAL DE COSTA RICA",
+            "BANCO DE COSTA RICA",
+            "FUSIÓN BCR-BCAC",
+            "BANCO POPULAR DE DESARROLLO COMUNAL",
+            "BANCO HIPOTECARIO DE LA VIVIENDA",
+            "ASOCIACIÓN SOLIDARISTA DE EMPLEADOS DE LA CCSS (ASECCSS)",
+            "FINANCIERA CAFSA S. A.",
+            "FINANCIERA G\u0026T CONTINENTAL COSTA RICA S. A.",
+            "PRIVAL BANK (COSTA RICA) S.A.",
+            "FINANCIERA COMECA S. A.",
+            "FINANCIERA DESYFIN S. A.",
+            "GLOBAL EXCHANGE",
+            "TELEDOLAR S.A.",
+            "LATIN AMERICAN EXCHANGE CASA DE CAMBIO S.A (LATINEX)",
+            "CITI TARJETAS DE COSTA RICA S.A.",
+            "EVERTEC COSTA RICA S.A.",
+            "BOLSA NACIONAL DE VALORES S.A.",
+            "INVERSIONES SAMA, S.A.",
+            "MERCADO DE VALORES DE C. R.",
+            "BCT VALORES",
+            "CITI VALORES ACCIVAL, S.A.",
+            "ACOBO",
+            "INS VALORES",
+            "LAFISE VALORES",
+            "DAVIVIENDA PUESTO DE BOLSA (COSTA RICA) S.A.",
+            "SCOTIA VALORES",
+            "MUTUAL VALORES",
+            "ALDESA VALORES",
+            "BAC SAN JOSÉ (BOLSA DE VALORES)",
+            "BN VALORES",
+            "POPULAR VALORES",
+            "BCR VALORES",
+            "IMPROSA VALORES",
+            "BN-VITAL OPERADORA DE PLANES DE PENSIONES COMPLEMENTARIAS, S. A.",
+            "VIDA PLENA OPERADORA DE PENSIONES COMPLEMENTARIAS S. A",
+            "CAJA COSTARRICENSE DE SEGURO SOCIAL OPERADORA DE PENSIONES COMPLEMENTARIAS",
+            "BAC SAN JOSÉ OPERADORA DE PLANES DE PENSIONES COMPLEMENTARIAS",
+            "O.P.C. BANCO POPULAR Y DESARROLLO COMUNAL",
+            "BCR OPERADORA PLANES DE PENSIONES COMPLEMENTARIAS",
+            "MIDEPLAN",
+            "INSTITUTO DE FOMENTO Y ASESORÍA MUNICIPAL (IFAM)",
+            "INSTITUTO COSTARRICENSE SOBRE DROGAS (ICD)",
+            "INSTITUTO COSTARRICENSE DE ELECTRICIDAD (ICE)",
+            "RECOPE",
+            "MINISTERIO DE HACIENDA",
+            "CENTRAL DE VALORES BOLSA NACIONAL DE VALORES (CEVAL)",
+            "CAJA COSTARRICENSE DE SEGURO SOCIAL (CCSS)",
+            "INSTITUTO NACIONAL DE SEGUROS (INS)",
+            "GOB. TRIBUNAL SUPREMO DE ELECCIONES (TSE)",
+            "JUNTA DE PROTECCIÓN SOCIAL DE SAN JOSÉ",
+            "MUNICIPALIDAD DE SAN JOSÉ",
+            "RADIOGRÁFICA COSTARRICENSE S.A. (RACSA)",
+            "MUNICIPALIDAD DE CARTAGO",
+            "MUNICIPALIDAD DE PALMARES",
+            "MUNICIPALIDAD DEL GUARCO",
+            "MUNICIPALIDAD DE ALAJUELITA",
+            "GRUPO MUTUAL ALAJUELA LA VIVIENDA",
+            "MUTUAL CARTAGO DE AHORRO Y PRÉSTAMO",
+            "COOPERATIVA DE AHORRO Y CRÉDITO DE LA COMUNIDAD DE CIUDAD QUESADA R. L. (COOCIQUE)",
+            "COOPE SAN MARCOS",
+            "COOPERATIVA DE AHORRO Y CRÉDITO ALIANZA DE PÉREZ ZELEDÓN (COOPEALIANZA)",
+            "COOPERATIVA NACIONAL DE EDUCADORES. R.L. (COOPENAE)",
+            "SERVICOOP R.L.",
+            "COOPERATIVA DE AHORRO Y CRÉDITO DE SERVIDORES PÚBLICOS R.L. (COOPESERVIDORES)",
+            "COOPERATIVA DE AHORRO Y CRÉDITO ANDE Nº 1 R.L. (COOPEANDE)",
+            "COOP. COOPECAJA",
+            "CAJA DE AHORRO Y PRÉSTAMOS DE ANDE",
+            "COOPEMEP R.L.",
+            "CREDECOOP",
+            "COOPESAN RAMÓN",
+            "COOPEBANPO",
+            "COOPEAMISTAD",
+            "COOPEGRECIA",
+            "COOPAVEGRA",
+            "COOPEUNA",
+            "COOPEANDE NO. 7 R.L.",
+            "COOPESPARTA R.L.",
+            "PROMOTORA DEL COMERCIO EXTERIOR DE COSTA RICA (PROCOMER)",
+            "INTERCLEAR CENTRAL DE VALORES S.A.",
+            "COOPEMÉDICOS"
+          ],
+          "title": "Bank",
+          "type": "string"
+        },
+        "AccountType": {
+          "enum": ["Checking", "Savings"],
+          "title": "Account type",
+          "type": "string"
+        },
+        "AccountNumber": {
+          "errorMessage": "must be a Costa Rican IBAN (CR followed by 20 digits)",
+          "maxLength": 22,
+          "minLength": 22,
+          "pattern": "^(CR)[0-9]{20}$",
+          "title": "Account number",
+          "type": "string"
+        },
+        "DocumentType": {
+          "title": "Document type",
+          "type": "string"
+        },
+        "DocumentID": {
+          "title": "Document ID",
+          "type": "string"
+        }
+      },
+      "required": [
+        "BeneficiaryType",
+        "Bank",
+        "AccountType",
+        "AccountNumber",
+        "DocumentType",
+        "DocumentID"
+      ],
+      "title": "Beneficiary",
+      "type": "object"
+    }
+  },
+  "required": ["Beneficiary"],
+  "metadata": {
+    "channels": [
+      {
+        "id": "5927ca57-861f-5e36-9f4a-e456720195c3",
+        "country": "CR",
+        "direction": "Out",
+        "finServiceID": "l4p8x",
+        "paymentMethodType": "BankLocal"
+      }
+    ],
+    "contentHash": "9c486d7469b7ace47a7c1a0f5558cb8188ff2ba9d61222b74a5a55352e39bacc",
+    "generatedAt": "2026-11-19T16:59:39Z"
+  }
+}

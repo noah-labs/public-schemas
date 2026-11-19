@@ -1,0 +1,164 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "Beneficiary": {
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "BeneficiaryType": {
+                "const": "Individual"
+              }
+            },
+            "required": ["BeneficiaryType"]
+          },
+          "then": {
+            "properties": {
+              "DocumentID": {
+                "title": "Document ID",
+                "type": "string"
+              },
+              "DocumentType": {
+                "enum": ["RNC", "CE", "PASS"],
+                "title": "Document type",
+                "type": "string"
+              },
+              "FirstName": {
+                "errorMessage": "must be between 2 and 50 characters",
+                "maxLength": 50,
+                "minLength": 2,
+                "title": "Beneficiary name",
+                "type": "string"
+              },
+              "LastName": {
+                "errorMessage": "must be between 2 and 50 characters",
+                "maxLength": 50,
+                "minLength": 2,
+                "title": "Beneficiary last name",
+                "type": "string"
+              }
+            },
+            "required": ["FirstName", "LastName", "DocumentType", "DocumentID"]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "BeneficiaryType": {
+                "const": "Business"
+              }
+            },
+            "required": ["BeneficiaryType"]
+          },
+          "then": {
+            "properties": {
+              "CompanyName": {
+                "errorMessage": "must be between 1 and 100 characters",
+                "maxLength": 100,
+                "minLength": 1,
+                "title": "Company name",
+                "type": "string"
+              },
+              "DocumentID": {
+                "title": "Document ID",
+                "type": "string"
+              },
+              "DocumentType": {
+                "enum": ["RNC"],
+                "title": "Document type",
+                "type": "string"
+              }
+            },
+            "required": ["CompanyName", "DocumentType", "DocumentID"]
+          }
+        }
+      ],
+      "properties": {
+        "BeneficiaryType": {
+          "enum": ["Individual", "Business"],
+          "title": "Beneficiary type",
+          "type": "string"
+        },
+        "Bank": {
+          "enum": [
+            "BANCO DE RESERVAS",
+            "BANCO SCOTIABANK",
+            "CITIBANK",
+            "BANCO POPULAR",
+            "BANCO BHD",
+            "BANCO DEL DESARROLLO ADEMI",
+            "BANCO SANTA CRUZ",
+            "BANCO DEL CARIBE",
+            "BANCO BDI",
+            "BANCO VIMENCA",
+            "BANCO LOPEZ DE HARO",
+            "BANCO EMPIRE",
+            "ASOCIACION LA NACIONAL DE AHORROS Y PRESTAMOS",
+            "BANCO ATLANTICO",
+            "BANCO BANESCO",
+            "BANCO LAFISE",
+            "BANCO BELLBANK",
+            "BANCO MULTIPLE ACTIVO",
+            "BANCO UNION",
+            "BANFONDESA",
+            "BANCO PROMERICA",
+            "ASOCIACION POPULAR DE AHORRO",
+            "ASOCIACION CIBAO DE A/P",
+            "ASOCIACION BONAO DE AHORROS Y PRESTAMOS",
+            "ASOCIACION DUARTE DE AHORROS Y PRESTAMOS",
+            "ASOCIACION LA VEGA REAL DE AHORROS Y PRESTAMOS",
+            "ASOCIACION MAGUANA DE AHORROS Y PRESTAMOS",
+            "ASOCIACION MOCANA DE AHORROS Y PRESTAMOS",
+            "ASOCIACION ROMANA DE AHORROS Y PRESTAMOS",
+            "BANCO BACC",
+            "BANCO FIHOGAR",
+            "BANCO DE AHORRO Y CREDITO BANCOTUI",
+            "BANCO DE AHORRO Y CREDITO COFACI",
+            "BANCO DE AHORRO Y CREDITO CONFISA",
+            "BANCO DE AHORRO Y CREDITO GRUFICORP",
+            "BANCO DE AHORRO Y CREDITO JMMB BANK",
+            "BONANZA BANCO DE AHORRO Y CREDITO",
+            "BANCO DE AHORRO Y CREDITO ADOPEM",
+            "ASOCIACION PERAVIA DE AHORROS Y PRESTAMOS",
+            "BANCO OPTIMA DE AHORRO Y CREDITO",
+            "QIK BANCO DIGITAL DOMINICANO, S.A.",
+            "MOTOR CREDITO, S.A., BANCO DE AHORROS Y CREDITO"
+          ],
+          "title": "Bank",
+          "type": "string"
+        },
+        "AccountType": {
+          "enum": ["Checking", "Savings"],
+          "title": "Account type",
+          "type": "string"
+        },
+        "AccountNumber": {
+          "maxLength": 26,
+          "minLength": 4,
+          "title": "Account number",
+          "type": "string"
+        }
+      },
+      "required": ["BeneficiaryType", "Bank", "AccountType", "AccountNumber"],
+      "title": "Beneficiary",
+      "type": "object"
+    }
+  },
+  "required": ["Beneficiary"],
+  "metadata": {
+    "channels": [
+      {
+        "id": "8d6ec216-de07-583f-8052-ebf9042b7ee1",
+        "country": "DO",
+        "direction": "Out",
+        "finServiceID": "l4p8x",
+        "paymentMethodType": "BankLocal"
+      }
+    ],
+    "contentHash": "3e8539f7b35c76320cfe56955664656da1091b9d8ce3f9b22e765774371f7b17",
+    "generatedAt": "2026-11-19T16:59:39Z"
+  }
+}
