@@ -338,14 +338,56 @@
         "paymentMethodType": "BankLocal"
       },
       {
+        "id": "98a8afe1-8136-55d7-b91f-6c2f3b2835c8",
+        "country": "DK",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "id": "bbef461a-edc0-58c5-a13e-2f76bf39a2b3",
+        "country": "HU",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "id": "41c49828-70be-5cc4-bf69-7428f8c2bd16",
+        "country": "NO",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankSepa"
+      },
+      {
         "id": "3d2ba9db-0478-5564-86f1-c2c01780f8f6",
         "country": "PL",
         "direction": "Out",
         "finServiceID": "y7n3f",
         "paymentMethodType": "BankLocal"
+      },
+      {
+        "id": "6175f641-b686-5507-b886-38e1a241d5c2",
+        "country": "PL",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "id": "07d11f61-39f3-55f4-a2b9-6989408d2bdd",
+        "country": "RO",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankSepa"
+      },
+      {
+        "id": "692c376a-9c69-53c8-8a8f-2a742af846dd",
+        "country": "SE",
+        "direction": "Out",
+        "finServiceID": "y7n3f",
+        "paymentMethodType": "BankSepa"
       }
     ],
     "contentHash": "e99a298c9dc2b0508d87b756f13451d941ebb3e93a93c9a80dce60cc2fd6b9d0",
-    "generatedAt": "2026-11-19T16:59:39Z"
+    "generatedAt": "2026-11-19T22:30:14Z"
   }
 }
