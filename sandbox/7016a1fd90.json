@@ -339,7 +339,7 @@
   "metadata": {
     "channels": [
       {
-        "id": "d013b40c-0a8d-5ae9-b6d6-7c9bb30a729b",
+        "id": "acc7d425-dfa9-5130-8d0d-6b6fdd496c1d",
         "country": "MY",
         "direction": "Out",
         "finServiceID": "y7n3f",
@@ -347,6 +347,6 @@
       }
     ],
     "contentHash": "7016a1fd90c6456d18471480d260af843e82e8a3c2efbf3a975db2204d248f1d",
-    "generatedAt": "2026-11-23T18:15:29Z"
+    "generatedAt": "2026-11-23T19:30:45Z"
   }
 }
